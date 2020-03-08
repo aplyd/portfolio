@@ -335,14 +335,14 @@ hgroup {
   margin-bottom: 1.45rem;
 }
 ul {
-  margin-left: 1.45rem;
+  margin-left: 0;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
   list-style-position: outside;
   list-style-image: none;
 }
@@ -617,6 +617,76 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+/* ^^^^^NORMALIZE^^^^^^ */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.menu-item {
+    position: fixed;
+    display: block;
+    text-transform: uppercase;
+    transition: opacity .25s;
+    line-height: .7;
+    padding: 2em 1em;
+    z-index: 9998;
+    color: black;
+    margin: auto;
+    height: 4.75em;
+}
+
+.cover {
+  background-color: #f4e5c2;
+  height: 1200px;
+  width: 100%;
+  z-index: 3;
+}
+
+.clear-cover {
+  background: transparent;
+  height: 100vh;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.background {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: gray;
+  z-index: -1;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

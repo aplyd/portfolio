@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Menu from '../components/menu'
+import { graphql } from 'gatsby'
 
 const blog = ({ data }) => {
     return (
         <div>
-        <Menu/>
+        
             <h1>Latest Posts</h1>
             {data.allMarkdownRemark.edges.map(post => {
                 console.log(post)
