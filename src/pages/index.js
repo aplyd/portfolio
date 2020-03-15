@@ -7,9 +7,6 @@ import Cover from '../components/cover'
 import ArrowDown from '../components/arrowDown'
 
 export class index extends Component {
-  constructor() {
-    super();
-  }
 
 
   render() {
