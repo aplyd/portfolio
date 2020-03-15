@@ -1,34 +1,36 @@
-import React from "react"
+import React, { Component } from 'react'
+import SEO from "../components/seo"
 
 import Layout from "../components/layout"
-import CircleSVG from '../components/circle-svg'
-import SEO from "../components/seo"
-  
-const IndexPage = () => (
-  <Layout>
+import Logo from '../components/logo'
+import Cover from '../components/cover'
+import ArrowDown from '../components/arrowDown'
 
-    <SEO title="Home" />
-      <div className="cover">
-        <h1 id="ftacnik-title" className="floating">FTACNIK</h1>
-        <h2 id="ftacnik-subtitle" className="floating">creative front-end developer</h2>
-        <CircleSVG />
+export class index extends Component {
+  constructor() {
+    super();
+  }
+
+
+  render() {
+    return (
+      <Layout>
+      <SEO title="Home" />
+      <div id="container"> 
+        <Logo />
+        <Cover />
+        <ArrowDown />
+
+        <div className="paragraph-container">
+          <h2 className="paragraph-title">Lorem Ipsum</h2>
+          <p className="paragraph">Enim consectetur ullamco non in et mollit in occaecat. Esse fugiat et fugiat aliqua proident sint est. Qui ullamco occaecat culpa est Lorem. Veniam commodo id anim voluptate aliquip et amet minim occaecat esse anim proident. Id ea est dolore ea elit sint sit pariatur laborum consectetur.
+
+          Ipsum velit eiusmod ea aliquip minim labore laborum labore cupidatat ullamco dolore in ipsum laboris. Proident occaecat nulla et nostrud proident non ad consectetur aliqua laborum ad. Labore deserunt ad exercitation ipsum ex minim. Aute aliqua cillum eiusmod incididunt voluptate et anim non magna duis amet deserunt aliqua non. Est consequat officia occaecat velit consectetur. Velit sint aliquip sit duis ea id ea fugiat veniam fugiat qui.</p>
+        </div>
       </div>
-      
-      <div className="clear-cover"></div>
+      </Layout>
+    )
+  }
+}
 
-      <div className="background">
-        <p>Fugiat reprehenderit in ullamco Lorem sunt dolor incididunt. Dolore qui proident adipisicing Lorem aliquip elit amet mollit. Id proident eiusmod et sunt tempor aliquip Lorem eu ex consequat ullamco aute labore ullamco. Labore officia dolor officia fugiat voluptate enim sint et nisi commodo eiusmod. Tempor enim ipsum laborum deserunt duis culpa reprehenderit aute cupidatat fugiat aliqua aliqua elit cupidatat. Velit nostrud ex ipsum mollit occaecat do elit aliqua ex elit est eiusmod. Consequat et dolor sit eu aliquip voluptate anim sint non culpa elit.
-        </p>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <p>Fugiat reprehenderit in ullamco Lorem sunt dolor incididunt. Dolore qui proident adipisicing Lorem aliquip elit amet mollit. Id proident eiusmod et sunt tempor aliquip Lorem eu ex consequat ullamco aute labore ullamco. Labore officia dolor officia fugiat voluptate enim sint et nisi commodo eiusmod. Tempor enim ipsum laborum deserunt duis culpa reprehenderit aute cupidatat fugiat aliqua aliqua elit cupidatat. Velit nostrud ex ipsum mollit occaecat do elit aliqua ex elit est eiusmod. Consequat et dolor sit eu aliquip voluptate anim sint non culpa elit.
-        </p>
-
-      </div>
-  </Layout>
-)
-
-export default IndexPage
+export default index

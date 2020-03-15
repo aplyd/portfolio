@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
 
 
@@ -44,10 +44,10 @@ const Layout = ({ children }) => {
         </footer>
       </div> */}
       
-      <Link to="/" style={{ top: '0', left: '0' }} className="menu-item">Home</Link>
-      <Link to="/blog" style={{ top: '0', right: '0'}} className="menu-item">Blog</Link>
-      <Link to="/contact" style={{ bottom: '0', left: '0'}} className="menu-item">Contact</Link>
-      <Link to="/" style={{ bottom: '0', right: '0'}} className="menu-item">Home</Link>
+      {/* <Link to="/" style={{ top: '0', left: '0' }} className="menu-item menu-item-left">Home</Link>
+      <Link to="/blog" style={{ top: '0', right: '0'}} className="menu-item menu-item-right">Blog</Link>
+      <Link to="/contact" style={{ bottom: '0', left: '0'}} className="menu-item menu-item-left">Contact</Link>
+      <Link to="/" style={{ bottom: '0', right: '0'}} className="menu-item menu-item-right">Home</Link> */}
 
     </>
   )
