@@ -61,29 +61,37 @@ const My = styled.h2`
 	padding-top: 20px;
 `;
 
+const Spacer = styled.div`
+	height: 8px;
+	width: 100%;
+`;
+
 export default function Cover() {
 	return (
-		<Container>
-			<CoverContainer>
-				<CoverDiv>
-					<CoverIntro>
-						<My>my</My>
-						<h2>name</h2>
-						<h2>is</h2>
-						<Highlight>
-							<mark>austin</mark>
-						</Highlight>
-						<Highlight>
-							<mark>ftacnik</mark>
-						</Highlight>
-					</CoverIntro>
-					<CoverTextOutline>
-						<Creative>creative</Creative>
-						<h2>front-end</h2>
-						<h2>developer</h2>
-					</CoverTextOutline>
-				</CoverDiv>
-			</CoverContainer>
-		</Container>
+		<React.Fragment>
+			<Spacer />
+			<Container>
+				<CoverContainer>
+					<CoverDiv>
+						<CoverIntro>
+							<My>my</My>
+							<h2>name</h2>
+							<h2>is</h2>
+							<Highlight>
+								<mark>austin</mark>
+							</Highlight>
+							<Highlight>
+								<mark>ftacnik</mark>
+							</Highlight>
+						</CoverIntro>
+						<CoverTextOutline>
+							<Creative>creative</Creative>
+							<h2>front-end</h2>
+							<h2>developer</h2>
+						</CoverTextOutline>
+					</CoverDiv>
+				</CoverContainer>
+			</Container>
+		</React.Fragment>
 	);
 }

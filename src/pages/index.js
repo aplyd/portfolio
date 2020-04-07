@@ -6,6 +6,7 @@ import Logo from '../components/logo';
 import Cover from '../components/cover';
 import ArrowDown from '../components/arrowDown';
 import BioShort from '../components/bio-short';
+import ScrollText from '../components/scrollTextFrame';
 
 export class index extends Component {
 	render() {
@@ -14,8 +15,9 @@ export class index extends Component {
 				<SEO title='Home' />
 				<div id='container'>
 					<Logo />
-					<Cover />
 					<ArrowDown />
+					<Cover />
+					<ScrollText />
 
 					<div className='paragraph-container'>
 						<h2 className='paragraph-title'>Lorem Ipsum</h2>
