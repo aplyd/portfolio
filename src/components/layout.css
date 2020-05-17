@@ -626,11 +626,6 @@ pre tt:after {
 	box-sizing: border-box;
 }
 
-.dark-mode {
-	-webkit-filter: invert(100%) !important;
-	filter: invert(100%) !important;
-}
-
 html,
 body {
 	margin: 0;
@@ -678,37 +673,4 @@ a {
 img {
 	max-width: 100%;
 	height: auto;
-}
-
-/* MAIN PAGE */
-
-.paragraph-container {
-	width: 90%;
-	margin: 0 auto;
-}
-
-.paragraph-title {
-	font-weight: bold;
-	padding-bottom: 8px;
-	text-transform: uppercase;
-}
-
-/* MEDIA QUERIES */
-
-@media only screen and (min-width: 320px) {
-}
-
-@media screen and (min-width: 425px) {
-}
-
-@media screen and (min-width: 900px) {
-	html {
-		font-size: 18px;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	html {
-		font-size: 20px;
-	}
 }
