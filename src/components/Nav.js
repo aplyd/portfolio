@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useScrollToHideNav } from '../hooks/useScrollToHideNav';
-import { FaRegMoon } from 'react-icons/fa';
+import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
 import { GiStripedSun } from 'react-icons/gi';
 // import Logo from './Logo';
 
@@ -24,21 +24,15 @@ const NavItem = styled.div`
 	width: 100%;
 	cursor: pointer;
 	text-align: center;
-	&& > h2 {
+	&& > h3 {
 		margin-top: 12px;
 		color: var(--main-bg-color);
 		transform: translateY(0);
-		transition: transform 0.3s ease-in-out;
+		transition: transform 1s ease-in-out;
 	}
 	&&:hover {
-		&& > h2 {
-			transform: translateY(5px);
-			transition: transform 0.3s ease-in-out;
-		}
-	}
-	&&:blur {
-		&& > h2 {
-			transform: translateY(5px);
+		&& > h3 {
+			transform: translateY(3px);
 			transition: transform 0.3s ease-in-out;
 		}
 	}
@@ -107,13 +101,13 @@ export default function Nav() {
 						key={index}
 						onClick={() => console.log(i.link || i.shortcut)}
 					>
-						<h2>{i.title}</h2>
+						<h3>{i.title}</h3>
 					</NavItem>
 				);
 			})}
 			<NavItem onClick={toggleDisplayMode}>
 				<ToggleModeBtn
-					as={isDarkMode ? GiStripedSun : FaRegMoon}
+					as={isDarkMode ? GiStripedSun : WiMoonAltWaxingCrescent4}
 				></ToggleModeBtn>
 			</NavItem>
 		</Container>

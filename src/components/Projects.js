@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { HomeSectionTitle } from '../components/GlobalStyle';
 
 const Container = styled.div`
 	height: 360px;
@@ -35,16 +36,10 @@ const ItemImage = styled.div`
 	height: 120px;
 `;
 
-const Title = styled.h1`
-	padding-top: 8px;
-	padding-bottom: 24px;
-	color: var(--main-fg-color);
-`;
-
 export default function Projects() {
 	return (
 		<Container>
-			<Title>Recent Projects</Title>
+			<HomeSectionTitle>Projects</HomeSectionTitle>
 			<ItemContainer>
 				<Item>
 					<ItemImage />

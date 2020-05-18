@@ -10,6 +10,12 @@ export const ContentContainer = styled.div`
 	max-width: 960px;
 `;
 
+export const HomeSectionTitle = styled.h1`
+	padding-top: 8px;
+	padding-bottom: 24px;
+	color: var(--main-fg-color);
+`;
+
 export const GlobalStyle = createGlobalStyle`
     :root {
         --main-bg-color: white;
@@ -23,5 +29,18 @@ export const GlobalStyle = createGlobalStyle`
 
     h1,h2,h3,h4,h5,h6,p {
         color: var(--main-fg-color);
+    }
+
+    input, textarea {
+        border: none;
+        padding: 8px;
+        font-size: 18px;
+        text-indent: 8px;
+    }
+
+    button {
+        min-width: 48px;
+        padding: 4px 24px;
+        cursor: pointer;
     }
 `;
