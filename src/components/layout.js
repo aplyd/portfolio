@@ -7,15 +7,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Nav from './Nav';
 // import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
 
-import { GlobalStyle } from './GlobalStyle';
+import { GlobalStyle, PageContainer } from './GlobalStyle';
 import './layout.css';
 import styled from 'styled-components';
-
-const Header = styled.div``;
 
 const Layout = ({ children }) => {
 	// const data = useStaticQuery(graphql`
@@ -31,8 +29,10 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<GlobalStyle />
-			<Header></Header>
-			<main>{children}</main>
+			<Nav />
+			<PageContainer>
+				<main>{children}</main>
+			</PageContainer>
 		</>
 	);
 };

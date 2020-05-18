@@ -19,13 +19,15 @@ const LogoText = styled.h2`
 `;
 
 const Outline = styled(LogoText)`
-	color: white;
-	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-		1px 1px 0 #000;
+	color: var(--main-bg-color);
+	text-shadow: -1px -1px 0 var(--main-fg-color),
+		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),
+		1px 1px 0 var(--main-fg-color);
 `;
 
 const MainLogo = styled(LogoText)`
 	font-weight: bold;
+	color: var(--main-fg-color);
 `;
 
 const Italic = styled(Outline)`
