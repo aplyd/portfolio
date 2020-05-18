@@ -7,7 +7,7 @@ import { GiStripedSun } from 'react-icons/gi';
 
 const Container = styled.div`
 	width: 100%;
-	background: var(--main-bg-color);
+	background: var(--main-fg-color);
 	height: 56px;
 	position: fixed;
 	top: ${props => (props.visible ? '0' : '-58px')};
@@ -25,8 +25,22 @@ const NavItem = styled.div`
 	cursor: pointer;
 	text-align: center;
 	&& > h2 {
-		padding-top: 12px;
-		color: var(--main-fg-color);
+		margin-top: 12px;
+		color: var(--main-bg-color);
+		transform: translateY(0);
+		transition: transform 0.3s ease-in-out;
+	}
+	&&:hover {
+		&& > h2 {
+			transform: translateY(5px);
+			transition: transform 0.3s ease-in-out;
+		}
+	}
+	&&:blur {
+		&& > h2 {
+			transform: translateY(5px);
+			transition: transform 0.3s ease-in-out;
+		}
 	}
 `;
 
@@ -36,7 +50,7 @@ const LinkTo = styled.h1`
 
 const ToggleModeBtn = styled.svg`
 	margin-top: 12px;
-	color: var(--main-fg-color);
+	color: var(--main-bg-color);
 	font-size: 28px;
 	cursor: pointer;
 `;
