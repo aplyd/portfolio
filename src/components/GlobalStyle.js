@@ -20,11 +20,15 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --main-bg-color: white;
         --main-fg-color: black;
-        --secondary-bg-color: lightgray;
+        --accent-color: blue;
     }
 
     body {
         background-color: var(--main-bg-color);
+    }
+
+    svg {
+        color: var(--main-fg-color);
     }
 
     h1,h2,h3,h4,h5,h6,p {

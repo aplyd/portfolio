@@ -1,9 +1,11 @@
+import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useScrollToHideNav } from '../hooks/useScrollToHideNav';
 import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
 import { GiStripedSun } from 'react-icons/gi';
-// import Logo from './Logo';
+import { AiOutlineMenu } from 'react-icons/ai';
+import useWindowWidth from '../hooks/useWindowWidth';
 
 const Container = styled.div`
 	width: 100%;
@@ -19,16 +21,24 @@ const Container = styled.div`
 	align-content: center;
 `;
 
-const NavItem = styled.div`
-	height: 56px;
+const NavItemsContainer = styled.div`
+	margin: 0 56px 0 0;
 	width: 100%;
-	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+`;
+
+const NavItem = styled.div`
+	height: 48px;
+	width: 100%;
 	text-align: center;
 	&& > h3 {
-		margin-top: 12px;
+		margin-top: 16px;
 		color: var(--main-bg-color);
 		transform: translateY(0);
 		transition: transform 1s ease-in-out;
+		cursor: pointer;
 	}
 	&&:hover {
 		&& > h3 {
@@ -38,21 +48,32 @@ const NavItem = styled.div`
 	}
 `;
 
-const LinkTo = styled.h1`
-	color: var(--main-fg-color);
-`;
-
 const ToggleModeBtn = styled.svg`
-	margin-top: 12px;
 	color: var(--main-bg-color);
 	font-size: 28px;
 	cursor: pointer;
 `;
 
-export default function Nav() {
+const ToggleContainer = styled.div`
+	height: 48px;
+	position: absolute;
+	top: 14px;
+	right: 12px;
+	width: 28px;
+`;
+
+const Hamburger = styled(ToggleModeBtn)``;
+const HamburgerContainer = styled(ToggleContainer)`
+	left: 12px;
+	z-index: 10003;
+`;
+
+export default function Nav({ setIsMobileMenuOpen }) {
 	const [visible, setVisible] = useState(true);
 	const [isDarkMode, setIsDarkMode] = useState(false);
+	const [windowWidth, setWindowWidth] = useState();
 	useScrollToHideNav(setVisible);
+	useWindowWidth(setWindowWidth);
 
 	//detect dark mode
 	useEffect(() => {
@@ -93,23 +114,45 @@ export default function Nav() {
 		{ title: 'contact', shortcut: '#contact' }
 	];
 
+	const desktopMenu = () => {
+		return navItems.map((i, index) => {
+			return (
+				<NavItem
+					key={index}
+					onClick={() => console.log(i.link || i.shortcut)}
+				>
+					<h3>{i.title}</h3>
+				</NavItem>
+			);
+		});
+	};
+
+	const mobileMenu = () => {
+		return (
+			<HamburgerContainer onClick={() => setIsMobileMenuOpen(true)}>
+				<Hamburger as={AiOutlineMenu} />
+			</HamburgerContainer>
+		);
+	};
+
 	return (
 		<Container visible={visible}>
-			{navItems.map((i, index) => {
-				return (
-					<NavItem
-						key={index}
-						onClick={() => console.log(i.link || i.shortcut)}
-					>
-						<h3>{i.title}</h3>
-					</NavItem>
-				);
-			})}
-			<NavItem onClick={toggleDisplayMode}>
+			{windowWidth > 480 ? (
+				<NavItemsContainer windowWidth={windowWidth}>
+					{desktopMenu()}
+				</NavItemsContainer>
+			) : (
+				mobileMenu()
+			)}
+			<ToggleContainer onClick={() => toggleDisplayMode()}>
 				<ToggleModeBtn
 					as={isDarkMode ? GiStripedSun : WiMoonAltWaxingCrescent4}
 				></ToggleModeBtn>
-			</NavItem>
+			</ToggleContainer>
 		</Container>
 	);
 }
+
+Nav.propTypes = {
+	setIsMobileMenuOpen: PropTypes.func
+};
