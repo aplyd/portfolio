@@ -12,9 +12,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Cover from '../components/Cover';
 // import ArrowDown from '../components/arrowDown';
-// import BioShort from '../components/bio-short';
 // import ScrollText from '../components/scrollText';
-// import Canvas3D from '../components/Canvas3D';
 // import styled from 'styled-components';
 
 export default function index() {
