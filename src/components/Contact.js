@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { HomeSectionTitle } from './GlobalStyle';
 
 const Container = styled.div`
 	background: var(--main-bg-color);

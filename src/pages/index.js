@@ -1,16 +1,16 @@
 import React from 'react';
 import SEO from '../components/seo';
 
-import Layout from '../components/Layout';
-import Logo from '../components/Logo';
+import Layout from '../components/layout';
+import Logo from '../components/logo';
 import {
 	ContentContainer,
 	HomeSectionTitle,
 	VerticalSpacer
-} from '../components/GlobalStyle';
-import Projects from '../components/Projects';
-import Contact from '../components/Contact';
-import Cover from '../components/Cover';
+} from '../components/globalStyle';
+import Projects from '../components/projects';
+import Contact from '../components/contact';
+import Cover from '../components/cover';
 // import ArrowDown from '../components/arrowDown';
 // import ScrollText from '../components/scrollText';
 // import styled from 'styled-components';
@@ -22,6 +22,7 @@ export default function index() {
 			<ContentContainer>
 				<Logo />
 			</ContentContainer>
+			<VerticalSpacer height={'120px'} />
 			<ContentContainer>
 				<Cover />
 			</ContentContainer>

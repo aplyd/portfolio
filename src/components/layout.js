@@ -7,11 +7,11 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Nav from './Nav';
+import Nav from './nav';
 // import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
 
-import { GlobalStyle, PageContainer } from './GlobalStyle';
+import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
