@@ -3,7 +3,11 @@ import SEO from '../components/seo';
 
 import Layout from '../components/Layout';
 import Logo from '../components/Logo';
-import { ContentContainer, HomeSectionTitle } from '../components/GlobalStyle';
+import {
+	ContentContainer,
+	HomeSectionTitle,
+	VerticalSpacer
+} from '../components/GlobalStyle';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Cover from '../components/Cover';
@@ -11,12 +15,7 @@ import Cover from '../components/Cover';
 // import BioShort from '../components/bio-short';
 // import ScrollText from '../components/scrollText';
 // import Canvas3D from '../components/Canvas3D';
-import styled from 'styled-components';
-
-const Spacing = styled.div`
-	background: var(--main-bg-color);
-	height: 120px;
-`;
+// import styled from 'styled-components';
 
 export default function index() {
 	return (
@@ -25,7 +24,10 @@ export default function index() {
 			<ContentContainer>
 				<Logo />
 			</ContentContainer>
-			<Spacing />
+			<ContentContainer>
+				<Cover />
+			</ContentContainer>
+			<VerticalSpacer height={'80px'} />
 			<ContentContainer>
 				<HomeSectionTitle>Lorem Ipsum</HomeSectionTitle>
 				<p className='paragraph'>
@@ -44,11 +46,13 @@ export default function index() {
 					id ea fugiat veniam fugiat qui.
 				</p>
 			</ContentContainer>
-			<Spacing />
+
+			<VerticalSpacer height={'80px'} />
 			<ContentContainer>
 				<Projects />
 			</ContentContainer>
-			<Spacing />
+
+			<VerticalSpacer height={'80px'} />
 			<ContentContainer>
 				<Contact />
 			</ContentContainer>

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const PageContainer = styled.div`
 	margin: 0 auto;
@@ -16,6 +16,10 @@ export const HomeSectionTitle = styled.h1`
 	color: var(--main-fg-color);
 `;
 
+export const VerticalSpacer = styled.div`
+	height: ${props => props.height};
+`;
+
 export const GlobalStyle = createGlobalStyle`
     :root {
         --main-bg-color: white;
@@ -27,9 +31,6 @@ export const GlobalStyle = createGlobalStyle`
         background-color: var(--main-bg-color);
     }
 
-    svg {
-        color: var(--main-fg-color);
-    }
 
     h1,h2,h3,h4,h5,h6,p {
         color: var(--main-fg-color);

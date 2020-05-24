@@ -14,34 +14,39 @@ import Nav from './Nav';
 import { GlobalStyle, PageContainer } from './GlobalStyle';
 import './layout.css';
 import styled from 'styled-components';
-import { GrClose } from 'react-icons/gr';
+import { MdClose } from 'react-icons/md';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const MobileMenu = styled.div`
+const MobileMenu = styled(motion.div)`
+	background-color: var(--main-bg-color);
 	position: fixed;
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
-	background-color: var(--main-bg-color);
-	color: var(--main-fg-color);
 	z-index: 1002;
+	display: grid;
+	grid-template-rows: 80px 1fr 80px;
+`;
+
+const MenuItemContainer = styled.div`
+	grid-row: 2;
+	color: var(--main-fg-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
 `;
-
 const MenuItem = styled.h2`
 	cursor: pointer;
 	&&:hover {
 		color: var(--main-bg-color);
 	}
 `;
+
 const CloseMenu = styled.svg`
-	font-size: 40px;
+	font-size: 36px;
 	cursor: pointer;
-	&&:hover {
-		color: red;
-	}
+	color: var(--main-fg-color);
 `;
 
 const Layout = ({ children }) => {
@@ -59,19 +64,31 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<GlobalStyle />
-			{isMobileMenuOpen ? (
-				<MobileMenu>
-					<MenuItem>Home</MenuItem>
-					<MenuItem>Info</MenuItem>
-					<MenuItem>Projects</MenuItem>
-					<MenuItem>Blog</MenuItem>
-					<MenuItem>Contact</MenuItem>
-					<CloseMenu
-						as={GrClose}
-						onClick={() => setIsMobileMenuOpen(false)}
-					></CloseMenu>
-				</MobileMenu>
-			) : null}
+			<AnimatePresence>
+				{isMobileMenuOpen ? (
+					<MobileMenu
+						animate={{ x: [-1000, 0, 10, 0] }}
+						transition={{
+							ease: 'easeInOut',
+							duration: 0.5,
+							times: [0.1, 0.8, 0.9, 1]
+						}}
+						exit={{ x: [0, -500, -800, -1000] }}
+					>
+						<MenuItemContainer>
+							<MenuItem>Home</MenuItem>
+							<MenuItem>Info</MenuItem>
+							<MenuItem>Projects</MenuItem>
+							<MenuItem>Blog</MenuItem>
+							<MenuItem>Contact</MenuItem>
+							<CloseMenu
+								as={MdClose}
+								onClick={() => setIsMobileMenuOpen(false)}
+							></CloseMenu>
+						</MenuItemContainer>
+					</MobileMenu>
+				) : null}
+			</AnimatePresence>
 			<Nav setIsMobileMenuOpen={setIsMobileMenuOpen} />
 			<PageContainer>
 				<main>{children}</main>
