@@ -64,8 +64,9 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<GlobalStyle />
-			<AnimatePresence>
-				{isMobileMenuOpen ? (
+
+			{isMobileMenuOpen ? (
+				<AnimatePresence>
 					<MobileMenu
 						animate={{ x: [-1000, 0, 10, 0] }}
 						transition={{
@@ -87,8 +88,9 @@ const Layout = ({ children }) => {
 							></CloseMenu>
 						</MenuItemContainer>
 					</MobileMenu>
-				) : null}
-			</AnimatePresence>
+				</AnimatePresence>
+			) : null}
+
 			<Nav setIsMobileMenuOpen={setIsMobileMenuOpen} />
 			<PageContainer>
 				<main>{children}</main>

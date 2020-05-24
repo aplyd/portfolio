@@ -75,7 +75,7 @@ export default function Nav({ setIsMobileMenuOpen }) {
 	useScrollToHideNav(setVisible);
 	useWindowWidth(setWindowWidth);
 
-	//detect dark mode
+	//detect dark mode - not sure if it works properly
 	useEffect(() => {
 		if (
 			window.matchMedia &&

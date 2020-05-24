@@ -7,10 +7,12 @@ export const useScrollToHideNav = setVisible => {
 	useLayoutEffect(() => {
 		const handleScroll = () => {
 			setCurrScrollPos(window.pageYOffset);
-			if (prevScrollPos > currScrollPos) {
-				setVisible(true);
-			} else {
+			console.log({ prevScrollPos });
+			console.log({ currScrollPos });
+			if (currScrollPos > 30 && prevScrollPos < currScrollPos) {
 				setVisible(false);
+			} else {
+				setVisible(true);
 			}
 			setPrevScrollPos(currScrollPos);
 		};
