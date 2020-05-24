@@ -6,7 +6,7 @@ import Logo from '../components/logo';
 import {
 	ContentContainer,
 	HomeSectionTitle,
-	VerticalSpacer
+	Spacer
 } from '../components/globalStyle';
 import Projects from '../components/projects';
 import Contact from '../components/contact';
@@ -19,14 +19,15 @@ export default function index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
+			<Spacer height={'20px'} />
 			<ContentContainer>
 				<Logo />
 			</ContentContainer>
-			<VerticalSpacer height={'120px'} />
+			<Spacer height={'120px'} />
 			<ContentContainer>
 				<Cover />
 			</ContentContainer>
-			<VerticalSpacer height={'80px'} />
+			<Spacer height={'80px'} />
 			<ContentContainer>
 				<HomeSectionTitle>Lorem Ipsum</HomeSectionTitle>
 				<p className='paragraph'>
@@ -46,12 +47,12 @@ export default function index() {
 				</p>
 			</ContentContainer>
 
-			<VerticalSpacer height={'80px'} />
+			<Spacer height={'80px'} />
 			<ContentContainer>
 				<Projects />
 			</ContentContainer>
 
-			<VerticalSpacer height={'80px'} />
+			<Spacer height={'80px'} />
 			<ContentContainer>
 				<Contact />
 			</ContentContainer>
