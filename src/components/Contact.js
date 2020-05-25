@@ -67,7 +67,7 @@ export default function Contact() {
 				</AboutContainer>
 				<FormContainer>
 					<h2>Contact</h2>
-					<form>
+					<form name='contact' method='POST' data-netlify='true'>
 						<NameInput
 							type='text'
 							placeholder='name'

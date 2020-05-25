@@ -5,12 +5,11 @@ import { useScrollToHideNav } from '../hooks/useScrollToHideNav';
 import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
 import { GiStripedSun } from 'react-icons/gi';
 import useWindowWidth from '../hooks/useWindowWidth';
-import { navigate } from '@reach/router';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Container = styled.div`
 	width: 100%;
-	background: var(--main-fg-color);
+	background: var(--main-bg-color);
 	height: 56px;
 	position: fixed;
 	top: ${props => (props.visible ? '0' : '-58px')};
@@ -18,13 +17,11 @@ const Container = styled.div`
 	z-index: 1000;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
-	align-content: center;
 `;
 
 const NavItemsContainer = styled.div`
-	margin: 0 58px 0 0;
-	width: 100%;
+	margin: 0 58px 0 16px;
+	width: 480px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -35,8 +32,10 @@ const NavItem = styled.div`
 	width: 100%;
 	text-align: center;
 	&& > h3 {
-		margin-top: 17px;
-		color: var(--main-bg-color);
+		margin-top: 20px;
+		font-size: 16px;
+		text-transform: uppercase;
+		color: var(--main-fg-color);
 		transform: translateY(0);
 		transition: transform 1s ease-in-out;
 		cursor: pointer;
@@ -50,7 +49,7 @@ const NavItem = styled.div`
 `;
 
 const ToggleModeBtn = styled.svg`
-	color: var(--main-bg-color);
+	color: var(--main-fg-color);
 	font-size: 42px;
 	cursor: pointer;
 `;
@@ -67,7 +66,7 @@ const MenuBtnContainer = styled(ToggleContainer)`
 	top: 7px;
 	left: 16px;
 	&& > h3 {
-		color: var(--main-bg-color);
+		color: var(--main-fg-color);
 		z-index: 10003;
 		margin-bottom: -4px;
 		font-size: 22px;
@@ -143,7 +142,7 @@ export default function Nav({ setIsMobileMenuOpen }) {
 
 	return (
 		<Container visible={visible}>
-			{windowWidth > 640 ? (
+			{windowWidth > 800 ? (
 				<NavItemsContainer windowWidth={windowWidth}>
 					{desktopMenu()}
 				</NavItemsContainer>

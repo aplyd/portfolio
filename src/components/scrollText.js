@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ArrowDown from './arrowDown';
 
 const Frame = styled.div`
 	height: 200px;
@@ -13,12 +14,12 @@ const Frame = styled.div`
 
 const Text = styled.div`
 	font-size: 58px;
-	line-height: 38px;
+	line-height: 46px;
 	margin-right: 16px;
-	animation: slide 6s infinite linear;
+	animation: slide 10s infinite linear;
 	@keyframes slide {
 		from {
-			transform: translateY(-380px);
+			transform: translateY(-460px);
 		}
 		to {
 			transform: translateY(0);
@@ -27,6 +28,7 @@ const Text = styled.div`
 `;
 
 const P = styled.p`
+	color: var(--main-fg-color);
 	/* animation: warp 8s linear infinite both;
 	@keyframes warp {
 		0% {
@@ -55,19 +57,17 @@ const P = styled.p`
 `;
 
 export default function scrollText() {
-	const randomSpeed = () => Math.floor(Math.random * 3) + 4;
-
 	const scrollyText = string => {
 		return (
 			<Text>
-				{[...Array(18)].map(i => (
-					<P>{string}</P>
-				))}
+				{[...Array(18)].map((i, index) => {
+					<ArrowDown />;
+				})}
 			</Text>
 		);
 	};
 
-	const quote = 'creative web developer';
+	const quote = 'localhost://';
 
-	return <Frame>{quote.split(' ').map(word => scrollyText(word))}</Frame>;
+	return <Frame>{scrollyText()}</Frame>;
 }

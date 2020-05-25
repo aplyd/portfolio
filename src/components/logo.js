@@ -8,6 +8,9 @@ const Header = styled.div`
 	padding: 24px 0;
 	display: flex;
 	justify-content: flex-end;
+	@media screen and (max-width: 960px) {
+		padding-right: 16px;
+	}
 `;
 
 const LogoContainer = styled.div``;

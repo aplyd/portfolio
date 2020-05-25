@@ -1,63 +1,100 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { HomeSectionTitle } from './globalStyle';
+import { Spacer } from './globalStyle';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { GiCircle } from 'react-icons/gi';
 
-const Container = styled.div`
-	height: 360px;
-`;
-
-const ItemContainer = styled.div`
+const ProjectContainer = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 40px;
-	@media only screen and (max-width: 600px) {
-		grid-template-columns: 1fr;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: 650px;
+`;
+
+const Words = styled.div`
+	height: 100%;
+
+	&& > p {
+		color: white;
 	}
 `;
 
-const Item = styled.div`
-	background-color: var(--main-fg-color);
-	height: 260px;
-	cursor: pointer;
-	transition: transform 1s ease-in-out;
-	&&:hover {
-		transform: translateY(5px);
-		transition: transform 0.3s ease-in-out;
-	}
-	&& > h2,
-	p {
-		padding: 8px;
-		color: var(--main-bg-color);
+const Preview = styled.div`
+	color: white;
+	height: 100%;
+`;
+
+const PTitle = styled.p`
+	color: white;
+	font-size: 48px;
+`;
+
+const PAbout = styled.p`
+	color: white;
+	font-size: 24px;
+	line-height: 1.4em;
+`;
+
+const LIicon = styled.svg``;
+const Tool = styled.div`
+	font-size: 18px;
+	display: flex;
+	flex-direction: row;
+	&& > p {
+		color: white;
 	}
 `;
 
-const ItemImage = styled.div`
-	background: lightgray;
-	height: 120px;
-`;
+const Project = ({ location, title, about, tools, image }) => {
+	return (
+		<AnchorLink to={location} title={title}>
+			<ProjectContainer>
+				<Words>
+					<Spacer height={'48px'} />
+					<PTitle>{title}</PTitle>
+
+					<Spacer height={'32px'} />
+					<PAbout>{about}</PAbout>
+
+					<Spacer height={'24px'} />
+					<p>DEVELOPMENT TOOLS</p>
+
+					{tools.map((t, i) => {
+						return (
+							<Tool key={i}>
+								<LIicon as={GiCircle} />
+								<p>{t}</p>
+							</Tool>
+						);
+					})}
+				</Words>
+				<Preview></Preview>
+			</ProjectContainer>
+		</AnchorLink>
+	);
+};
+
+Project.propTypes = {
+	about: PropTypes.any,
+	image: PropTypes.any,
+	title: PropTypes.any,
+	location: PropTypes.any,
+	tools: PropTypes.any
+};
 
 export default function Projects() {
+	const battleship = {
+		title: 'Battleship',
+		location: '/battleship',
+		about:
+			'Qui esse ut ipsum qui consequat culpa consectetur ex. Occaecat fugiat laboris non dolor consequat proident irure culpa.',
+		tools: ['React', 'Styled-components', 'my brain'],
+		image: 'image url'
+	};
+
 	return (
-		<Container>
-			<HomeSectionTitle>Projects</HomeSectionTitle>
-			<ItemContainer>
-				<Item>
-					<ItemImage />
-					<h2>Battleship</h2>
-					<p>
-						A digital remake of the classic boardgame. Technologies
-						used: React
-					</p>
-				</Item>
-				<Item>
-					<ItemImage />
-					<h2>Front Page of The Front Page</h2>
-					<p>
-						A simplified clone of a popular website (Reddit).
-						Technologies used: React, Firebase
-					</p>
-				</Item>
-			</ItemContainer>
-		</Container>
+		<>
+			<Project {...battleship} />
+		</>
 	);
 }

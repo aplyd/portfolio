@@ -10,7 +10,7 @@ export const ContentContainer = styled.div`
 	max-width: 960px;
 `;
 
-export const HomeSectionTitle = styled.h1`
+export const SectionTitle = styled.h1`
 	padding-top: 8px;
 	padding-bottom: 24px;
 	color: var(--main-fg-color);
@@ -18,6 +18,10 @@ export const HomeSectionTitle = styled.h1`
 
 export const Spacer = styled.div`
 	height: ${props => props.height};
+`;
+
+export const SectionWrapper = styled.div`
+	background-color: ${props => props.bgColor};
 `;
 
 export const GlobalStyle = createGlobalStyle`
