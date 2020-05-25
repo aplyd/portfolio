@@ -27,6 +27,10 @@ export const GlobalStyle = createGlobalStyle`
         --accent-color: blue;
     }
 
+    html {
+        scroll-behavior: 'smooth';
+    }
+
     body {
         background-color: var(--main-bg-color);
     }

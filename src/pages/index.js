@@ -15,7 +15,7 @@ import Cover from '../components/cover';
 // import ScrollText from '../components/scrollText';
 // import styled from 'styled-components';
 
-export default function index() {
+export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
@@ -48,12 +48,14 @@ export default function index() {
 			</ContentContainer>
 
 			<Spacer height={'80px'} />
-			<ContentContainer>
+
+			<ContentContainer id='projects'>
 				<Projects />
 			</ContentContainer>
 
 			<Spacer height={'80px'} />
-			<ContentContainer>
+
+			<ContentContainer id='contact'>
 				<Contact />
 			</ContentContainer>
 		</Layout>

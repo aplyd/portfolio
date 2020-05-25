@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import { useScrollToHideNav } from '../hooks/useScrollToHideNav';
 import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
 import { GiStripedSun } from 'react-icons/gi';
-import { AiOutlineMenu } from 'react-icons/ai';
 import useWindowWidth from '../hooks/useWindowWidth';
+import { navigate } from '@reach/router';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Container = styled.div`
 	width: 100%;
@@ -22,7 +23,7 @@ const Container = styled.div`
 `;
 
 const NavItemsContainer = styled.div`
-	margin: 0 56px 0 0;
+	margin: 0 58px 0 0;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -30,11 +31,11 @@ const NavItemsContainer = styled.div`
 `;
 
 const NavItem = styled.div`
-	height: 48px;
+	height: 56px;
 	width: 100%;
 	text-align: center;
 	&& > h3 {
-		margin-top: 16px;
+		margin-top: 17px;
 		color: var(--main-bg-color);
 		transform: translateY(0);
 		transition: transform 1s ease-in-out;
@@ -50,22 +51,27 @@ const NavItem = styled.div`
 
 const ToggleModeBtn = styled.svg`
 	color: var(--main-bg-color);
-	font-size: 28px;
+	font-size: 42px;
 	cursor: pointer;
 `;
 
 const ToggleContainer = styled.div`
 	height: 48px;
 	position: absolute;
-	top: 14px;
-	right: 12px;
-	width: 28px;
+	top: 8px;
+	right: 16px;
+	width: 42px;
 `;
 
-const Hamburger = styled(ToggleModeBtn)``;
-const HamburgerContainer = styled(ToggleContainer)`
-	left: 12px;
-	z-index: 10003;
+const MenuBtnContainer = styled(ToggleContainer)`
+	top: 7px;
+	left: 16px;
+	&& > h3 {
+		color: var(--main-bg-color);
+		z-index: 10003;
+		margin-bottom: -4px;
+		font-size: 22px;
+	}
 `;
 
 export default function Nav({ setIsMobileMenuOpen }) {
@@ -117,27 +123,27 @@ export default function Nav({ setIsMobileMenuOpen }) {
 	const desktopMenu = () => {
 		return navItems.map((i, index) => {
 			return (
-				<NavItem
-					key={index}
-					onClick={() => console.log(i.link || i.shortcut)}
-				>
-					<h3>{i.title}</h3>
-				</NavItem>
+				<AnchorLink to={i.link || '/' + i.shortcut} key={index}>
+					<NavItem key={index}>
+						<h3>{i.title}</h3>
+					</NavItem>
+				</AnchorLink>
 			);
 		});
 	};
 
 	const mobileMenu = () => {
 		return (
-			<HamburgerContainer onClick={() => setIsMobileMenuOpen(true)}>
-				<Hamburger as={AiOutlineMenu} />
-			</HamburgerContainer>
+			<MenuBtnContainer onClick={() => setIsMobileMenuOpen(true)}>
+				<h3>ME</h3>
+				<h3>NU</h3>
+			</MenuBtnContainer>
 		);
 	};
 
 	return (
 		<Container visible={visible}>
-			{windowWidth > 480 ? (
+			{windowWidth > 640 ? (
 				<NavItemsContainer windowWidth={windowWidth}>
 					{desktopMenu()}
 				</NavItemsContainer>

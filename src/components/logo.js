@@ -5,7 +5,7 @@ const Header = styled.div`
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
-	padding: 24px 8px 0;
+	padding: 24px 0;
 	display: flex;
 	justify-content: flex-end;
 `;
