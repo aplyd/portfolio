@@ -9,6 +9,10 @@ const ProjectContainer = styled.div`
 	display: grid;
 	grid-template-columns: 40% 60%;
 	grid-template-rows: 650px;
+	@media screen and (max-width: 800px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 650px 1fr;
+	}
 `;
 
 const Words = styled.div`
@@ -50,13 +54,13 @@ const Project = ({ location, title, about, tools, image }) => {
 		<AnchorLink to={location} title={title}>
 			<ProjectContainer>
 				<Words>
-					<Spacer height={'48px'} />
+					<Spacer height={'large'} />
 					<PTitle>{title}</PTitle>
 
-					<Spacer height={'32px'} />
+					<Spacer height={'medium'} />
 					<PAbout>{about}</PAbout>
 
-					<Spacer height={'24px'} />
+					<Spacer height={'medium'} />
 					<p>DEVELOPMENT TOOLS</p>
 
 					{tools.map((t, i) => {

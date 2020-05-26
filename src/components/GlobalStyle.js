@@ -17,7 +17,8 @@ export const SectionTitle = styled.h1`
 `;
 
 export const Spacer = styled.div`
-	height: ${props => props.height};
+	height: ${props => `var(--spacing-${props.height})`};
+	background-color: ${props => props.bgColor};
 `;
 
 export const SectionWrapper = styled.div`
@@ -29,6 +30,12 @@ export const GlobalStyle = createGlobalStyle`
         --main-bg-color: white;
         --main-fg-color: black;
         --accent-color: blue;
+        --spacing-xsmall: 4px;
+        --spacing-small: 8px;
+        --spacing-medium: 32px;
+        --spacing-large: 64px;
+        --spacing-xlarge: 128px;
+        --section-height: 764px;
     }
 
     html {
@@ -42,6 +49,19 @@ export const GlobalStyle = createGlobalStyle`
 
     h1,h2,h3,h4,h5,h6,p {
         color: var(--main-fg-color);
+        max-width: 960px;
+        @media screen and (max-width: 960px) {
+            padding: 0 16px;
+        }
+    }
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.3em;
     }
 
     input, textarea {

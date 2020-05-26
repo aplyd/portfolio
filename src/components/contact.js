@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useScrollPos } from '../hooks/useScrollPos';
+import { Scroll, Frame, Override } from 'framer';
+import { Spacer } from './globalStyle';
 
 const Container = styled.div`
 	background: var(--main-bg-color);
@@ -48,14 +51,28 @@ const SubmitBtn = styled.button`
 	}
 `;
 
+// const SpinningTextContainer = styled.div``;
+
+const SpinSVG = styled.svg`
+	fill: transparent;
+	&& > path {
+	}
+`;
+
+const SpinningText = styled.text`
+	font-size: 40px;
+	fill: black;
+`;
+
 export default function Contact() {
 	const [name, setName] = useState();
 	const [message, setMessage] = useState();
+	const scrollPos = useScrollPos();
 
 	return (
 		<Container>
 			{/* <HomeSectionTitle>Contact</HomeSectionTitle> */}
-			<GridContainer>
+			{/* <GridContainer>
 				<AboutContainer>
 					<h2>Hi, I&apos;m Austin Ftacnik</h2>
 					<p>
@@ -82,7 +99,36 @@ export default function Contact() {
 						<SubmitBtn type='submit'>Send</SubmitBtn>
 					</form>
 				</FormContainer>
-			</GridContainer>
+			</GridContainer> */}
+			<Spacer height={'xlarge'} bgColor={'blue'} />
+			{/* <SpinningTextContainer> */}
+			{/* <Scroll> */}
+			<Frame animate={{ rotate: scrollPos / 3 }} width='50%'>
+				<SpinSVG
+					version='1.1'
+					viewBox='0 0 500 500'
+					preserveAspectRatio='xMinYMin meet'
+				>
+					<path
+						d='
+						M 200, 200
+						m -150, 0
+						a 150,150 0 1,0 300,0
+						a 150,150 0 1,0 -300,0
+						'
+						// transform='translate(25, 25)'
+						id='circle'
+					/>{' '}
+					<SpinningText width='500'>
+						<textPath xlinkHref='#circle'>
+							localhost:8000 localhost:8000 localhost:8000
+							localhost:8000
+						</textPath>
+					</SpinningText>
+				</SpinSVG>
+			</Frame>
+			{/* </Scroll> */}
+			{/* </SpinningTextContainer> */}
 		</Container>
 	);
 }

@@ -19,22 +19,26 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
-			<Spacer height={'10px'} />
+			<Spacer height={'large'} />
 			<ContentContainer>
 				<Logo />
 			</ContentContainer>
 
-			<Spacer height={'20px'} />
+			<Spacer height={'medium'} />
+			<Cover />
+
+			<SectionWrapper bgColor={'black'}>
+				<ContentContainer>
+					<Spacer height={'large'} />
+					<About />
+				</ContentContainer>
+			</SectionWrapper>
+
 			<ContentContainer>
-				<Cover />
+				<Contact></Contact>
 			</ContentContainer>
 
-			<Spacer height={'80px'} />
-			<ContentContainer>
-				<About />
-			</ContentContainer>
-
-			<Spacer height={'80px'} />
+			<Spacer height={'large'} />
 
 			<SectionWrapper bgColor={'black'}>
 				<ContentContainer id='projects'>
@@ -42,7 +46,7 @@ export default function Index() {
 				</ContentContainer>
 			</SectionWrapper>
 
-			<Spacer height={'80px'} />
+			<Spacer height={'large'} />
 			<ContentContainer id='contact'>
 				<Contact />
 			</ContentContainer>

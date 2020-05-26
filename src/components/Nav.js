@@ -70,6 +70,7 @@ const MenuBtnContainer = styled(ToggleContainer)`
 		z-index: 10003;
 		margin-bottom: -4px;
 		font-size: 22px;
+		padding: 0;
 	}
 `;
 

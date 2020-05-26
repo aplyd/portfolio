@@ -4,49 +4,23 @@ import ArrowDown from './arrowDown';
 
 const Container = styled.div`
 	position: relative;
-	max-width: 960px;
 	margin: 0 auto;
 	background: var(--main-bg-color);
 	width: 100%;
-	/* @media screen and (max-width: 960px) {
-		padding: 0 16px;
-	} */
-`;
-
-const Introduction = styled.p`
-	padding-top: 36px;
-	font-size: 24px;
-	font-weight: bold;
-	@media screen and (max-width: 960px) {
-		font-size: 14px;
-	}
-`;
-
-const Name = styled.h1`
-	font-size: 80px;
-	text-transform: uppercase;
-	/* @media screen and (max-width: 960px) {
-		font-size: 44px;
-	} */
-`;
-
-const About = styled.p`
-	font-size: 24px;
-	font-weight: bold;
-	/* @media screen and (max-width: 960px) {
-		font-size: 14px;
-	} */
 `;
 
 const Background = styled.svg``;
 
-const WordsContainer = styled.div`
+const YouAreHere = styled.h3`
 	position: absolute;
-	top: 30%;
-	left: calc(30% - 162.5px);
-	/* @media screen and (max-width: 960px) {
-		top: 20%;
-		left: 20%;
+	bottom: 40vw;
+	left: calc(50% - 64px);
+	padding: 0;
+	/* @media screen and (max-width: 630px) {
+		top: 45%;
+	}
+	@media screen and (max-width: 480px) {
+		top: 40%;
 	} */
 `;
 
@@ -132,11 +106,7 @@ export default function Cover() {
 						</g>
 					</g>
 				</Background>
-				{/* <WordsContainer>
-					<Introduction>Hi, my name is</Introduction>
-					<Name>Austin</Name>
-					<About>Front End Developer in Seattle</About>
-				</WordsContainer> */}
+				<YouAreHere>You Are Here</YouAreHere>
 				<ArrowDown />
 			</Container>
 		</React.Fragment>

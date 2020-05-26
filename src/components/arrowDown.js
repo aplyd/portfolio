@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const Container = styled.div`
 	padding: 40px 0;
 	position: absolute;
-	top: 60%;
+	bottom: 0;
 	left: calc(50% - 34.5px);
 	-webkit-animation: slide-top 1s cubic-bezier(0.55, 0.68, 0.085, 0.53)
 		infinite alternate both;
@@ -17,8 +17,8 @@ const Container = styled.div`
 			transform: translateY(0);
 		}
 		100% {
-			-webkit-transform: translateY(-100px);
-			transform: translateY(-100px);
+			-webkit-transform: translateY(-12vw);
+			transform: translateY(-12vw);
 		}
 	}
 	@keyframes slide-top {
@@ -27,13 +27,12 @@ const Container = styled.div`
 			transform: translateY(0);
 		}
 		100% {
-			-webkit-transform: translateY(-100px);
-			transform: translateY(-100px);
+			-webkit-transform: translateY(-12vw);
+			transform: translateY(-12vw);
 		}
 	}
-
-	@media screen and (min-width: 680px) {
-		top: 75%;
+	@media screen and (max-width: 560px) {
+		bottom: -3vw;
 	}
 `;
 

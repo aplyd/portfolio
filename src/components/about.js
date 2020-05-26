@@ -3,16 +3,18 @@ import styled from 'styled-components';
 import { Spacer, SectionTitle } from './globalStyle';
 
 const Container = styled.div`
-	height: 460px;
+	height: var(--section-height);
 	position: relative;
 `;
 
-const P = styled.p``;
+const P = styled.p`
+	color: white;
+`;
 
 const about = () => {
 	return (
 		<Container>
-			<SectionTitle>ABOUT</SectionTitle>
+			<SectionTitle style={{ color: 'white' }}>ABOUT</SectionTitle>
 			<Spacer height={'16px'} />
 			<P>
 				Labore sit esse occaecat occaecat proident veniam. Esse minim
