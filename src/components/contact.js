@@ -6,6 +6,7 @@ import { Spacer } from './globalStyle';
 
 const Container = styled.div`
 	background: var(--main-bg-color);
+	position: relative;
 `;
 
 const GridContainer = styled.div`
@@ -51,7 +52,10 @@ const SubmitBtn = styled.button`
 	}
 `;
 
-// const SpinningTextContainer = styled.div``;
+const SpinningTextContainer = styled.div`
+	width: 50px;
+	height: 50px;
+`;
 
 const SpinSVG = styled.svg`
 	fill: transparent;
@@ -60,7 +64,7 @@ const SpinSVG = styled.svg`
 `;
 
 const SpinningText = styled.text`
-	font-size: 40px;
+	font-size: 28px;
 	fill: black;
 `;
 
@@ -100,35 +104,44 @@ export default function Contact() {
 					</form>
 				</FormContainer>
 			</GridContainer> */}
-			<Spacer height={'xlarge'} bgColor={'blue'} />
-			{/* <SpinningTextContainer> */}
-			{/* <Scroll> */}
-			<Frame animate={{ rotate: scrollPos / 3 }} width='50%'>
-				<SpinSVG
-					version='1.1'
-					viewBox='0 0 500 500'
-					preserveAspectRatio='xMinYMin meet'
+			<Spacer height={'xlarge'} />
+			<Spacer height={'xlarge'} />
+			<Spacer height={'xlarge'} />
+			<SpinningTextContainer>
+				{/* <Scroll> */}
+				<Frame
+					animate={{ rotate: scrollPos / 2 }}
+					top={-200}
+					left='30vw'
+					width={1000}
+					height={1000}
+					background='transparent'
 				>
-					<path
-						d='
-						M 200, 200
+					<SpinSVG
+						version='1.1'
+						viewBox='0 0 1000 1000'
+						preserveAspectRatio='xMinYMin meet'
+					>
+						<path
+							d='
+						M 500, 500
 						m -150, 0
 						a 150,150 0 1,0 300,0
 						a 150,150 0 1,0 -300,0
 						'
-						// transform='translate(25, 25)'
-						id='circle'
-					/>{' '}
-					<SpinningText width='500'>
-						<textPath xlinkHref='#circle'>
-							localhost:8000 localhost:8000 localhost:8000
-							localhost:8000
-						</textPath>
-					</SpinningText>
-				</SpinSVG>
-			</Frame>
-			{/* </Scroll> */}
-			{/* </SpinningTextContainer> */}
+							// transform='translate(25, 25)'
+							id='circle'
+						/>{' '}
+						<SpinningText width='100'>
+							<textPath xlinkHref='#circle'>
+								localhost:3000 localhost:3000 localhost:3000
+								localhost:3000
+							</textPath>
+						</SpinningText>
+					</SpinSVG>
+				</Frame>
+				{/* </Scroll> */}
+			</SpinningTextContainer>
 		</Container>
 	);
 }
