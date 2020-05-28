@@ -12,6 +12,7 @@ import Projects from '../components/projects';
 import Contact from '../components/contact';
 import Cover from '../components/cover';
 import About from '../components/about';
+import SpinningText from '../components/spinningText';
 // import ScrollText from '../components/scrollText';
 // import styled from 'styled-components';
 
@@ -19,6 +20,7 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
+			<SpinningText />
 			<Spacer height={'large'} />
 			<ContentContainer>
 				<Logo />
@@ -34,6 +36,7 @@ export default function Index() {
 				</ContentContainer>
 			</SectionWrapper>
 
+			<Spacer height={'large'} />
 			<ContentContainer>
 				<Contact></Contact>
 			</ContentContainer>
@@ -45,11 +48,6 @@ export default function Index() {
 					<Projects />
 				</ContentContainer>
 			</SectionWrapper>
-
-			<Spacer height={'large'} />
-			<ContentContainer id='contact'>
-				<Contact />
-			</ContentContainer>
 		</Layout>
 	);
 }

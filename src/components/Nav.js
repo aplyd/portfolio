@@ -71,6 +71,7 @@ const MenuBtnContainer = styled(ToggleContainer)`
 		margin-bottom: -4px;
 		font-size: 22px;
 		padding: 0;
+		cursor: pointer;
 	}
 `;
 
