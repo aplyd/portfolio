@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const PageContainer = styled.div`
 	margin: 0 auto;
@@ -18,11 +18,30 @@ export const SectionTitle = styled.h1`
 
 export const Spacer = styled.div`
 	height: ${props => `var(--spacing-${props.height})`};
-	background-color: ${props => props.bgColor};
+	width: ${props =>
+		`var(--spacing-${props.width})` ? `var(--spacing-${props.width})` : 0};
+	display: ${props => (props.width ? 'inline' : 'block')};
 `;
 
 export const SectionWrapper = styled.div`
 	background-color: ${props => props.bgColor};
+`;
+
+export const MobileSpacing = css`
+	@media screen and (max-width: 960px) {
+		margin-left: 16px;
+		margin-right: 16px;
+	}
+`;
+
+export const BtnLg = styled.button`
+	color: white;
+	background-color: black;
+	border: solid 3px white;
+	min-width: 48px;
+	min-height: 64px;
+	text-transform: uppercase;
+	${MobileSpacing}
 `;
 
 export const GlobalStyle = createGlobalStyle`
@@ -35,7 +54,7 @@ export const GlobalStyle = createGlobalStyle`
         --spacing-medium: 32px;
         --spacing-large: 64px;
         --spacing-xlarge: 128px;
-        --section-height: 764px;
+        --section-height: 664px;
     }
 
     html {
@@ -51,8 +70,8 @@ export const GlobalStyle = createGlobalStyle`
         color: var(--main-fg-color);
         max-width: 960px;
         @media screen and (max-width: 960px) {
-            padding: 0 16px;
-        }
+		padding: 0 16px;
+	}
     }
 
     h1 {

@@ -13,14 +13,12 @@ import Contact from '../components/contact';
 import Cover from '../components/cover';
 import About from '../components/about';
 import SpinningText from '../components/spinningText';
-// import ScrollText from '../components/scrollText';
-// import styled from 'styled-components';
 
 export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
-			<SpinningText />
+			{/* <SpinningText /> */}
 			<Spacer height={'large'} />
 			<ContentContainer>
 				<Logo />
@@ -31,7 +29,6 @@ export default function Index() {
 
 			<SectionWrapper bgColor={'black'}>
 				<ContentContainer>
-					<Spacer height={'large'} />
 					<About />
 				</ContentContainer>
 			</SectionWrapper>

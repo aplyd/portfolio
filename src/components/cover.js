@@ -14,8 +14,9 @@ const Background = styled.svg``;
 const YouAreHere = styled.h3`
 	position: absolute;
 	bottom: 40vw;
-	left: calc(50% - 64px);
+	left: calc(50% - 70px);
 	padding: 0;
+	font-size: 24px;
 	/* @media screen and (max-width: 630px) {
 		top: 45%;
 	}

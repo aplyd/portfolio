@@ -4,14 +4,13 @@ import { useScrollPos } from '../hooks/useScrollPos';
 import { Frame } from 'framer';
 
 const SpinningTextContainer = styled.div`
-	display: ${props => (props.scrollPos > 1000 ? 'block' : 'none')};
-	transform: scale(0.5);
-	width: 300px;
-	height: 300px;
+	transform: scale(7);
+	width: 200px;
+	height: 200px;
 	z-index: 10007;
-	position: fixed;
-	right: calc(30vw);
-	top: 30vh;
+	position: absolute;
+	right: -80px;
+	top: 200px;
 `;
 
 const SpinSVG = styled.svg`
@@ -19,8 +18,11 @@ const SpinSVG = styled.svg`
 `;
 
 const Text = styled.text`
-	font-size: 29px;
-	fill: var(--main-fg-color);
+	font-weight: 700;
+	text-transform: uppercase;
+	z-index: 9999;
+	font-size: 23px;
+	fill: white;
 	&& > path {
 	}
 `;
@@ -28,12 +30,12 @@ const Text = styled.text`
 export default function SpinningText() {
 	const scrollPos = useScrollPos();
 	return (
-		<SpinningTextContainer scrollPos={scrollPos}>
+		<SpinningTextContainer>
 			{/* <Scroll> */}
 			<Frame
 				animate={{ rotate: -scrollPos / 2 }}
-				width={1000}
-				height={1000}
+				width={200}
+				height={200}
 				background='transparent'
 			>
 				<SpinSVG
