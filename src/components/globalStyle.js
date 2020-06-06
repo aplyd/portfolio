@@ -42,6 +42,7 @@ export const BtnLg = styled.button`
 	min-height: 64px;
 	text-transform: uppercase;
 	${MobileSpacing}
+	cursor: pointer;
 `;
 
 export const GlobalStyle = createGlobalStyle`

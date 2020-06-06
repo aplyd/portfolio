@@ -12,7 +12,6 @@ import Projects from '../components/projects';
 import Contact from '../components/contact';
 import Cover from '../components/cover';
 import About from '../components/about';
-import SpinningText from '../components/spinningText';
 
 export default function Index() {
 	return (

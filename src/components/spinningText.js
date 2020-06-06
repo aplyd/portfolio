@@ -11,10 +11,12 @@ const SpinningTextContainer = styled.div`
 	position: absolute;
 	right: -80px;
 	top: 200px;
+	pointer-events: none;
 `;
 
 const SpinSVG = styled.svg`
 	fill: transparent;
+	pointer-events: none;
 `;
 
 const Text = styled.text`
@@ -23,7 +25,9 @@ const Text = styled.text`
 	z-index: 9999;
 	font-size: 23px;
 	fill: white;
+	pointer-events: none;
 	&& > path {
+		pointer-events: none;
 	}
 `;
 
@@ -33,7 +37,7 @@ export default function SpinningText() {
 		<SpinningTextContainer>
 			{/* <Scroll> */}
 			<Frame
-				animate={{ rotate: -scrollPos / 2 }}
+				animate={{ rotate: -scrollPos / 3 }}
 				width={200}
 				height={200}
 				background='transparent'

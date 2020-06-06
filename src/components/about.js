@@ -80,7 +80,9 @@ const about = () => {
 					excepteur elit qui commodo commodo proident cupidatat.
 				</P>
 				<Spacer height={'medium'} />
-				<BtnLg mode={'dark'}>Get in touch</BtnLg>
+				<BtnLg mode={'dark'} onClick={() => console.log('click')}>
+					Get in touch
+				</BtnLg>
 			</TextContainer>
 			<ArtContainer>
 				<Spacer height={'medium'} />
