@@ -12,7 +12,6 @@ const Container = styled.div`
 		grid-template-columns: 1fr;
 		grid-template-rows: 580px, 580px;
 	}
-	overflow: hidden;
 `;
 
 const TextContainer = styled.div`
@@ -79,7 +78,7 @@ const about = () => {
 					do proident velit occaecat voluptate. Ut cillum adipisicing
 					excepteur elit qui commodo commodo proident cupidatat.
 				</P>
-				<Spacer height={'medium'} />
+				<Spacer height={'large'} />
 				<BtnLg mode={'dark'} onClick={() => console.log('click')}>
 					Get in touch
 				</BtnLg>
