@@ -32,14 +32,12 @@ export default function Index() {
 				</ContentContainer>
 			</SectionWrapper>
 
-			<Spacer height={'large'} />
+			{/* <Spacer height={'large'} />
 			<ContentContainer>
 				<Contact></Contact>
-			</ContentContainer>
+			</ContentContainer> */}
 
-			<Spacer height={'large'} />
-
-			<SectionWrapper bgColor={'black'}>
+			<SectionWrapper bgColor={'var(--main-bg-color)'}>
 				<ContentContainer id='projects'>
 					<Projects />
 				</ContentContainer>

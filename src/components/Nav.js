@@ -14,7 +14,7 @@ const Container = styled.div`
 	position: fixed;
 	top: ${props => (props.visible ? '0' : '-58px')};
 	transition: top 0.3s;
-	z-index: 1000;
+	z-index: 1009;
 	display: flex;
 	flex-direction: row;
 `;

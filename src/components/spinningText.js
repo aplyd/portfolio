@@ -7,11 +7,12 @@ const SpinningTextContainer = styled.div`
 	transform: scale(7);
 	width: 200px;
 	height: 200px;
-	z-index: 10007;
+	z-index: 1007;
 	position: absolute;
 	right: -80px;
 	top: 200px;
 	pointer-events: none;
+	overflow: hidden;
 `;
 
 const SpinSVG = styled.svg`
