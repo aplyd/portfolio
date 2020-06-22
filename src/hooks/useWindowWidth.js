@@ -1,18 +1,22 @@
 import { useLayoutEffect } from 'react';
 
+let defaultWidth;
+
+if (typeof window !== 'undefined') {
+	defaultWidth = window.innerWidth;
+}
+
 const useWindowWidth = setWidth => {
 	useLayoutEffect(() => {
 		const handleResize = () => {
-			setWidth(window.innerWidth);
+			setWidth(defaultWidth);
 		};
-		if (typeof window !== 'undefined') {
-			handleResize();
-			window.addEventListener('resize', handleResize);
-		}
+
+		handleResize();
+		window.addEventListener('resize', handleResize);
+
 		return () => {
-			if (typeof window !== 'undefined') {
-				window.removeEventListener('resize', handleResize);
-			}
+			window.removeEventListener('resize', handleResize);
 		};
 	}, [setWidth]);
 };

@@ -1,12 +1,19 @@
 import { useState, useLayoutEffect } from 'react';
 
+let defaultScrollPos;
+
+if (typeof window !== 'undefined') {
+	defaultScrollPos = window.pageYOffset;
+}
+
 export const useScrollToHideNav = setVisible => {
-	const [prevScrollPos, setPrevScrollPos] = useState(0);
-	const [currScrollPos, setCurrScrollPos] = useState(0);
+	const [prevScrollPos, setPrevScrollPos] = useState(defaultScrollPos);
+	const [currScrollPos, setCurrScrollPos] = useState(defaultScrollPos);
 
 	useLayoutEffect(() => {
 		const handleScroll = () => {
 			setCurrScrollPos(window.pageYOffset);
+
 			if (currScrollPos > 20 && prevScrollPos < currScrollPos) {
 				setVisible(false);
 			} else {
@@ -14,13 +21,11 @@ export const useScrollToHideNav = setVisible => {
 			}
 			setPrevScrollPos(currScrollPos);
 		};
-		if (typeof window !== 'undefined') {
-			window.addEventListener('scroll', handleScroll);
-		}
+
+		window.addEventListener('scroll', handleScroll);
+
 		return () => {
-			if (typeof window !== 'undefined') {
-				window.removeEventListener('scroll', handleScroll);
-			}
+			window.removeEventListener('scroll', handleScroll);
 		};
 	}, [currScrollPos, prevScrollPos, setVisible]);
 };
