@@ -7,9 +7,13 @@ export const useScrollPos = () => {
 		const handleScroll = () => {
 			setScrollPos(window.pageYOffset);
 		};
-		window.addEventListener('scroll', handleScroll);
+		if (window !== 'undefined') {
+			window.addEventListener('scroll', handleScroll);
+		}
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			if (window !== 'undefined') {
+				window.removeEventListener('scroll', handleScroll);
+			}
 		};
 	}, []);
 	return scrollPos;

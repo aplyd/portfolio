@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { GiCircle } from 'react-icons/gi';
-import { Spacer } from './globalStyle';
+import { Spacer, BtnLg } from './globalStyle';
 
 const ProjectContainer = styled.div`
 	background-color: var(--main-bg-color);
@@ -66,6 +66,15 @@ const Tool = styled.div`
 	}
 `;
 
+const BtnsContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+`;
+
+const InfoBtn = styled(BtnLg)``;
+const DemoBtn = styled(BtnLg)``;
+
 const ProjectCard = ({ location, title, about, tools, image }) => {
 	return (
 		<AnchorLink to={location} title={title}>
@@ -90,6 +99,10 @@ const ProjectCard = ({ location, title, about, tools, image }) => {
 						);
 					})}
 					<Spacer height={'medium'} />
+					<BtnsContainer>
+						<InfoBtn>Info</InfoBtn>
+						<DemoBtn>Demo</DemoBtn>
+					</BtnsContainer>
 				</Words>
 				<Preview></Preview>
 			</ProjectContainer>

@@ -14,9 +14,13 @@ export const useScrollToHideNav = setVisible => {
 			}
 			setPrevScrollPos(currScrollPos);
 		};
-		window.addEventListener('scroll', handleScroll);
+		if (window !== 'undefined') {
+			window.addEventListener('scroll', handleScroll);
+		}
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			if (window !== 'undefined') {
+				window.removeEventListener('scroll', handleScroll);
+			}
 		};
 	}, [currScrollPos, prevScrollPos, setVisible]);
 };

@@ -85,6 +85,7 @@ export default function Nav({ setIsMobileMenuOpen }) {
 	//detect dark mode - not sure if it works properly
 	useEffect(() => {
 		if (
+			window !== 'undefined' &&
 			window.matchMedia &&
 			window.matchMedia('(prefers-color-scheme: dark)').matches
 		) {
@@ -95,22 +96,24 @@ export default function Nav({ setIsMobileMenuOpen }) {
 	//toggle dark/light modes
 	const toggleDisplayMode = () => {
 		setIsDarkMode(!isDarkMode);
-		const bg = window
-			.getComputedStyle(document.documentElement)
-			.getPropertyValue('--main-bg-color');
+		if (window !== 'undefined') {
+			const bg = window
+				.getComputedStyle(document.documentElement)
+				.getPropertyValue('--main-bg-color');
 
-		const fg = window
-			.getComputedStyle(document.documentElement)
-			.getPropertyValue('--main-fg-color');
+			const fg = window
+				.getComputedStyle(document.documentElement)
+				.getPropertyValue('--main-fg-color');
 
-		document.documentElement.style.setProperty(
-			'--main-bg-color',
-			bg === bg ? fg : bg
-		);
-		document.documentElement.style.setProperty(
-			'--main-fg-color',
-			fg === fg ? bg : fg
-		);
+			document.documentElement.style.setProperty(
+				'--main-bg-color',
+				bg === bg ? fg : bg
+			);
+			document.documentElement.style.setProperty(
+				'--main-fg-color',
+				fg === fg ? bg : fg
+			);
+		}
 	};
 
 	const navItems = [
