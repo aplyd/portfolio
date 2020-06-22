@@ -34,7 +34,6 @@ const Text = styled.text`
 
 export default function SpinningText() {
 	const scrollPos = useScrollPos();
-	console.log(scrollPos);
 	return (
 		<SpinningTextContainer>
 			<Frame

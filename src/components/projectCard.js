@@ -39,7 +39,7 @@ const PTitle = styled.h1`
 
 const PAbout = styled.p`
 	color: var(--main-fg-color);
-	font-size: 24px;
+
 	line-height: 1.3em;
 `;
 
