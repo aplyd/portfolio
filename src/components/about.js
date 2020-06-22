@@ -60,7 +60,7 @@ const ProfileSVG = styled.div`
 	}
 `;
 
-const about = () => {
+const About = () => {
 	return (
 		<Container>
 			<TextContainer>
@@ -127,4 +127,4 @@ const about = () => {
 	);
 };
 
-export default about;
+export default About;

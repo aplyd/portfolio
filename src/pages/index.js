@@ -26,6 +26,7 @@ export default function Index() {
 			<Spacer height={'medium'} />
 			<Cover />
 
+			<Spacer height={'large'} />
 			<SectionWrapper bgColor={'black'}>
 				<ContentContainer>
 					<About />
