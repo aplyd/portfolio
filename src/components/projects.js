@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
-import { useScrollPos } from '../hooks/useScrollPos';
 
 const ProjectCardsContainer = styled.div`
 	display: grid;
@@ -20,8 +19,6 @@ const ProjectsTitle = styled.h1`
 `;
 
 export default function Projects() {
-	const scrollPos = useScrollPos();
-
 	const battleship = {
 		title: 'Battleship',
 		location: '/battleship',
