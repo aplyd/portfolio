@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useScrollPos } from '../hooks/useScrollPos';
-import { Frame } from 'framer';
+// import { Frame } from 'framer';
+import { motion } from 'framer-motion';
 
 const SpinningTextContainer = styled.div`
 	transform: scale(7);
@@ -36,7 +37,7 @@ export default function SpinningText() {
 	let scrollPos = useScrollPos();
 	return (
 		<SpinningTextContainer>
-			<Frame
+			<motion.div
 				animate={{ rotate: -scrollPos / 3 }}
 				width={200}
 				height={200}
@@ -65,7 +66,7 @@ export default function SpinningText() {
 						</textPath>
 					</Text>
 				</SpinSVG>
-			</Frame>
+			</motion.div>
 			{/* </Scroll> */}
 		</SpinningTextContainer>
 	);

@@ -15,7 +15,7 @@ import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
-import { Frame, AnimatePresence } from 'framer';
+// import { Frame, AnimatePresence } from 'framer';
 
 const MobileMenu = styled.div`
 	background-color: var(--main-bg-color);
@@ -65,29 +65,22 @@ const Layout = ({ children }) => {
 		<>
 			<GlobalStyle />
 
-			<AnimatePresence>
-				{isMobileMenuOpen ? (
-					<Frame
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-					>
-						<MobileMenu>
-							<MenuItemContainer>
-								<MenuItem>Home</MenuItem>
-								<MenuItem>Info</MenuItem>
-								<MenuItem>Projects</MenuItem>
-								<MenuItem>Blog</MenuItem>
-								<MenuItem>Contact</MenuItem>
-								<CloseMenu
-									as={MdClose}
-									onClick={() => setIsMobileMenuOpen(false)}
-								></CloseMenu>
-							</MenuItemContainer>
-						</MobileMenu>
-					</Frame>
-				) : null}
-			</AnimatePresence>
+			{/* TODO - animate with framer-motion */}
+			{isMobileMenuOpen ? (
+				<MobileMenu>
+					<MenuItemContainer>
+						<MenuItem>Home</MenuItem>
+						<MenuItem>Info</MenuItem>
+						<MenuItem>Projects</MenuItem>
+						<MenuItem>Blog</MenuItem>
+						<MenuItem>Contact</MenuItem>
+						<CloseMenu
+							as={MdClose}
+							onClick={() => setIsMobileMenuOpen(false)}
+						></CloseMenu>
+					</MenuItemContainer>
+				</MobileMenu>
+			) : null}
 
 			<Nav setIsMobileMenuOpen={setIsMobileMenuOpen} />
 			<PageContainer>
