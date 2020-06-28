@@ -60,6 +60,10 @@ const ProfileSVG = styled.div`
 	}
 `;
 
+const Art = styled.div`
+	position: relative;
+`;
+
 const About = () => {
 	return (
 		<Container>
@@ -84,24 +88,25 @@ const About = () => {
 				</BtnLg>
 			</TextContainer>
 			<ArtContainer>
-				<Spacer height={'medium'} />
-				<SpinningText />
-				<ProfileSVG>
-					<svg
-						version='1.0'
-						xmlns='http://www.w3.org/2000/svg'
-						width='100%'
-						height='100%'
-						viewBox='0 0 944.000000 1280.000000'
-						preserveAspectRatio='xMidYMid meet'
-					>
-						<g
-							transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)'
-							fill='#000000'
-							stroke='none'
+				<Art>
+					<Spacer height={'medium'} />
+					<SpinningText />
+					<ProfileSVG>
+						<svg
+							version='1.0'
+							xmlns='http://www.w3.org/2000/svg'
+							width='100%'
+							height='100%'
+							viewBox='0 0 944.000000 1280.000000'
+							preserveAspectRatio='xMidYMid meet'
 						>
-							<path
-								d='M4425 12789 c-413 -38 -882 -147 -1240 -289 -549 -217 -1170 -697
+							<g
+								transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)'
+								fill='#000000'
+								stroke='none'
+							>
+								<path
+									d='M4425 12789 c-413 -38 -882 -147 -1240 -289 -549 -217 -1170 -697
 -1437 -1110 -249 -385 -415 -1109 -395 -1720 17 -507 106 -966 254 -1310 113
 -262 359 -667 568 -935 69 -88 283 -300 443 -439 l102 -89 2 -56 c18 -661
 -141 -1513 -392 -2095 -93 -218 -518 -1009 -990 -1846 -637 -1129 -924 -1697
@@ -118,10 +123,11 @@ const About = () => {
 355 -6 22 -18 150 -26 285 -41 687 -69 945 -135 1272 -114 555 -334 995 -681
 1362 -202 214 -408 361 -724 516 -592 291 -1224 469 -1935 545 -177 19 -569
 27 -705 14z'
-							/>
-						</g>
-					</svg>
-				</ProfileSVG>
+								/>
+							</g>
+						</svg>
+					</ProfileSVG>
+				</Art>
 			</ArtContainer>
 		</Container>
 	);
