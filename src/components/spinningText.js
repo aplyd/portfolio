@@ -4,7 +4,7 @@ import { useScrollPos } from '../hooks/useScrollPos';
 import { motion } from 'framer-motion';
 
 const SpinningTextContainer = styled.div`
-	transform: scale(1.75);
+	transform: ${props => `rotate(${props.scrollPos}deg)`};
 	width: 400px;
 	height: 400px;
 	z-index: 1007;
@@ -15,6 +15,7 @@ const SpinningTextContainer = styled.div`
 `;
 
 const SpinSVG = styled.svg`
+	transform: scale(1.75);
 	fill: transparent;
 	pointer-events: none;
 `;
@@ -34,43 +35,35 @@ const Text = styled.text`
 export default function SpinningText() {
 	let scrollPos = useScrollPos();
 	return (
-		<SpinningTextContainer>
-			<motion.div
+		<SpinningTextContainer scrollPos={scrollPos}>
+			{/* <motion.div
 				animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
 				style={{ transformOrigin: 'center-center' }}
+			> */}
+			<SpinSVG
+				version='1.1'
+				viewBox='0 0 500 500'
+				preserveAspectRatio='xMinYMin meet'
+				height='400px'
+				width='400px'
 			>
-				<h1 style={{ color: 'white' }}>
-					idle hands build nothing idle hands build nothing idle hands
-					build nothingidle hands build nothing idle hands build
-					nothing idle hands build nothingidle hands build nothing
-					idle hands build nothing idle hands build nothingidle hands
-					build nothing idle hands build nothing idle hands build
-					nothing
-				</h1>
-				{/* <SpinSVG
-					version='1.1'
-					viewBox='0 0 500 500'
-					preserveAspectRatio='xMinYMin meet'
-					height='400px'
-					width='400px'
-				>
-					<path
-						d='
+				<path
+					d='
                 M 250, 250
                 m -150, 0
                 a 150,150 0 1,1 300,0
                 a 150,150 0 1,1 -300,0
                 '
-						id='circle'
-					/>{' '}
-					<Text width='100'>
-						<textPath xlinkHref='#circle'>
-							idle hands build nothing idle hands build nothing
-							idle hands build nothing
-						</textPath>
-					</Text>
-				</SpinSVG> */}
-			</motion.div>
+					id='circle'
+				/>{' '}
+				<Text width='100'>
+					<textPath xlinkHref='#circle'>
+						idle hands build nothing idle hands build nothing idle
+						hands build nothing
+					</textPath>
+				</Text>
+			</SpinSVG>
+			{/* </motion.div> */}
 		</SpinningTextContainer>
 	);
 }
