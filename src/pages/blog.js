@@ -34,15 +34,15 @@ const Blog = ({ data }) => {
 	);
 };
 
-// Blog.propTypes = {
-// 	data: PropTypes.shape({
-// 		allMarkdownRemark: PropTypes.shape({
-// 			edges: PropTypes.shape({
-// 				map: PropTypes.func
-// 			})
-// 		})
-// 	})
-// };
+Blog.propTypes = {
+	data: PropTypes.shape({
+		allMarkdownRemark: PropTypes.shape({
+			edges: PropTypes.shape({
+				map: PropTypes.func
+			})
+		})
+	})
+};
 
 export const pageQuery = graphql`
 	query BlogIndexQuery {
