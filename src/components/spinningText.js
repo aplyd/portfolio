@@ -33,7 +33,10 @@ const Text = styled.text`
 `;
 
 export default function SpinningText() {
-	const scrollPos = useScrollPos();
+	let scrollPos;
+	if (typeof window !== `undefined`) {
+		scrollPos = useScrollPos();
+	}
 	return (
 		<SpinningTextContainer>
 			<Frame

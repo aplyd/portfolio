@@ -17,7 +17,6 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
-			{/* <SpinningText /> */}
 			<Spacer height={'large'} />
 			<ContentContainer>
 				<Logo />
@@ -26,7 +25,7 @@ export default function Index() {
 			<Spacer height={'medium'} />
 			<Cover />
 
-			<Spacer height={'large'} />
+			{/* <Spacer height={'large'} /> */}
 			<SectionWrapper bgColor={'black'}>
 				<ContentContainer>
 					<About />

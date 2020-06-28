@@ -84,13 +84,11 @@ export default function Nav({ setIsMobileMenuOpen }) {
 
 	//detect dark mode - not sure if it works properly
 	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			if (
-				window.matchMedia &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches
-			) {
-				setIsDarkMode(true);
-			}
+		if (
+			window.matchMedia &&
+			window.matchMedia('(prefers-color-scheme: dark)').matches
+		) {
+			setIsDarkMode(true);
 		}
 	}, [isDarkMode]);
 

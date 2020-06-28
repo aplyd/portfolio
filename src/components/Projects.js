@@ -7,7 +7,10 @@ const ProjectCardsContainer = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 	grid-gap: 16px;
-	padding: 0 16px;
+	margin-left: 9px;
+	@media screen and (max-width: 975px) {
+		padding: 0 16px;
+	}
 `;
 
 const ProjectsTitle = styled.h1`
