@@ -39,7 +39,15 @@ export default function SpinningText() {
 				animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
 				style={{ transformOrigin: 'center-center' }}
 			>
-				<SpinSVG
+				<h1 style={{ color: 'white' }}>
+					idle hands build nothing idle hands build nothing idle hands
+					build nothingidle hands build nothing idle hands build
+					nothing idle hands build nothingidle hands build nothing
+					idle hands build nothing idle hands build nothingidle hands
+					build nothing idle hands build nothing idle hands build
+					nothing
+				</h1>
+				{/* <SpinSVG
 					version='1.1'
 					viewBox='0 0 500 500'
 					preserveAspectRatio='xMinYMin meet'
@@ -61,7 +69,7 @@ export default function SpinningText() {
 							idle hands build nothing
 						</textPath>
 					</Text>
-				</SpinSVG>
+				</SpinSVG> */}
 			</motion.div>
 		</SpinningTextContainer>
 	);
