@@ -99,19 +99,19 @@ export default function Nav({ setIsMobileMenuOpen }) {
 		setIsDarkMode(!isDarkMode);
 
 		const bg = windowGlobal
-			.getComputedStyle(document.documentElement)
+			.getComputedStyle(windowGlobal.document.documentElement)
 			.getPropertyValue('--main-bg-color');
 
 		const fg = windowGlobal
-			.getComputedStyle(document.documentElement)
+			.getComputedStyle(windowGlobal.document.documentElement)
 			.getPropertyValue('--main-fg-color');
 
-		document.documentElement.style.setProperty(
+		windowGlobal.document.documentElement.style.setProperty(
 			'--main-bg-color',
 			bg === bg ? fg : bg
 		);
 
-		document.documentElement.style.setProperty(
+		windowGlobal.document.documentElement.style.setProperty(
 			'--main-fg-color',
 			fg === fg ? bg : fg
 		);
