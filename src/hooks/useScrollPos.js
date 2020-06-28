@@ -1,21 +1,16 @@
 import { useState, useLayoutEffect } from 'react';
 
-let defaultScrollPos;
-
-if (typeof window !== `undefined`) {
-	defaultScrollPos = window.pageYOffset;
-}
-
 export const useScrollPos = () => {
-	const [scrollPos, setScrollPos] = useState(defaultScrollPos);
+	const [scrollPos, setScrollPos] = useState(0);
 
 	useLayoutEffect(() => {
 		const handleScroll = () => {
-			setScrollPos(window.pageYOffset);
+			const scroll =
+				typeof window !== `undefined` ? window.pageYOffset : 0;
+			setScrollPos(scroll);
 		};
 
 		window.addEventListener('scroll', handleScroll);
-
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};

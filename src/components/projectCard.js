@@ -63,6 +63,7 @@ const Tool = styled.div`
 	flex-direction: row;
 	&& > p {
 		color: var(--main-fg-color);
+		font-weight: 300;
 	}
 `;
 
@@ -72,8 +73,12 @@ const BtnsContainer = styled.div`
 	justify-content: flex-end;
 `;
 
-const InfoBtn = styled(BtnLg)``;
-const DemoBtn = styled(BtnLg)``;
+const InfoBtn = styled(BtnLg)`
+	font-weight: 700;
+`;
+const DemoBtn = styled(BtnLg)`
+	font-weight: 700;
+`;
 
 const ProjectCard = ({ location, title, about, tools, image }) => {
 	return (
