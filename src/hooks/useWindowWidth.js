@@ -1,22 +1,17 @@
 import { useLayoutEffect } from 'react';
 
-let defaultWidth;
-
-if (typeof window !== 'undefined') {
-	defaultWidth = window.innerWidth;
-}
-
 const useWindowWidth = setWidth => {
 	useLayoutEffect(() => {
+		const windowGlobal = typeof window !== 'undefined' && window;
 		const handleResize = () => {
-			setWidth(defaultWidth);
+			setWidth(windowGlobal.innerWidth);
 		};
 
 		handleResize();
-		window.addEventListener('resize', handleResize);
+		windowGlobal.addEventListener('resize', handleResize);
 
 		return () => {
-			window.removeEventListener('resize', handleResize);
+			windowGlobal.removeEventListener('resize', handleResize);
 		};
 	}, [setWidth]);
 };

@@ -82,38 +82,39 @@ export default function Nav({ setIsMobileMenuOpen }) {
 	useScrollToHideNav(setVisible);
 	useWindowWidth(setWindowWidth);
 
+	const windowGlobal = typeof window !== 'undefined' && window;
+
 	//detect dark mode - not sure if it works properly
 	useEffect(() => {
 		if (
-			window.matchMedia &&
-			window.matchMedia('(prefers-color-scheme: dark)').matches
+			windowGlobal.matchMedia &&
+			windowGlobal.matchMedia('(prefers-color-scheme: dark)').matches
 		) {
 			setIsDarkMode(true);
 		}
-	}, [isDarkMode]);
+	}, [isDarkMode, windowGlobal]);
 
 	//toggle dark/light modes
 	const toggleDisplayMode = () => {
 		setIsDarkMode(!isDarkMode);
-		if (typeof window !== 'undefined') {
-			const bg = window
-				.getComputedStyle(document.documentElement)
-				.getPropertyValue('--main-bg-color');
 
-			const fg = window
-				.getComputedStyle(document.documentElement)
-				.getPropertyValue('--main-fg-color');
+		const bg = windowGlobal
+			.getComputedStyle(document.documentElement)
+			.getPropertyValue('--main-bg-color');
 
-			document.documentElement.style.setProperty(
-				'--main-bg-color',
-				bg === bg ? fg : bg
-			);
+		const fg = windowGlobal
+			.getComputedStyle(document.documentElement)
+			.getPropertyValue('--main-fg-color');
 
-			document.documentElement.style.setProperty(
-				'--main-fg-color',
-				fg === fg ? bg : fg
-			);
-		}
+		document.documentElement.style.setProperty(
+			'--main-bg-color',
+			bg === bg ? fg : bg
+		);
+
+		document.documentElement.style.setProperty(
+			'--main-fg-color',
+			fg === fg ? bg : fg
+		);
 	};
 
 	const navItems = [

@@ -4,15 +4,14 @@ export const useScrollPos = () => {
 	const [scrollPos, setScrollPos] = useState(0);
 
 	useLayoutEffect(() => {
+		const windowGlobal = typeof window !== 'undefined' && window;
 		const handleScroll = () => {
-			const scroll =
-				typeof window !== `undefined` ? window.pageYOffset : 0;
-			setScrollPos(scroll);
+			setScrollPos(windowGlobal.pageYOffset);
 		};
 
-		window.addEventListener('scroll', handleScroll);
+		windowGlobal.addEventListener('scroll', handleScroll);
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			windowGlobal.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 	return scrollPos;
