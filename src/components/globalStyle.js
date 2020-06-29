@@ -79,13 +79,14 @@ export const GlobalStyle = createGlobalStyle`
     }
     input, textarea {
         border: none;
-        padding: 8px;
+        padding: 8px 8px 8px 0;
         font-size: 18px;
-        text-indent: 8px;
+        
     }
     button {
         min-width: 48px;
         padding: 4px 24px;
         cursor: pointer;
+        border-radius: 8px;
     }
 `;

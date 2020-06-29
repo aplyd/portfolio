@@ -25,23 +25,23 @@ export default function Index() {
 			<Spacer height={'medium'} />
 			<Cover />
 
-			{/* <Spacer height={'large'} /> */}
-			<SectionWrapper bgColor={'black'}>
+			<Spacer height={'large'} />
+			<SectionWrapper>
 				<ContentContainer>
 					<About />
 				</ContentContainer>
 			</SectionWrapper>
-
-			{/* <Spacer height={'large'} />
-			<ContentContainer>
-				<Contact></Contact>
-			</ContentContainer> */}
 
 			<SectionWrapper bgColor={'var(--main-bg-color)'}>
 				<ContentContainer id='projects'>
 					<Projects />
 				</ContentContainer>
 			</SectionWrapper>
+
+			<Spacer height={'medium'} />
+			<ContentContainer>
+				<Contact></Contact>
+			</ContentContainer>
 		</Layout>
 	);
 }

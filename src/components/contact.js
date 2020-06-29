@@ -1,53 +1,69 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
+import ScrollText from './ScrollText';
 
 const Container = styled.div`
-	background: var(--main-bg-color);
 	position: relative;
-`;
-
-const GridContainer = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 40px;
-	@media only screen and (max-width: 600px) {
+	grid-template-rows: 360px;
+	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
+		grid-template-rows: 360px 360px;
 	}
+	box-shadow: -1px -1px var(--main-fg-color), -2px -2px black,
+		-3px -3px var(--main-fg-color), -4px -4px var(--main-fg-color),
+		-5px -5px var(--main-fg-color), -6px -6px var(--main-fg-color),
+		-7px -7px var(--main-fg-color), -8px -8px var(--main-fg-color);
+	background-color: var(--main-bg-color);
+	border: solid 2px var(--main-fg-color);
 `;
 
-const SplitContainer = styled.div`
-	height: 400px;
-	&& > h2 {
-		padding-top: 8px;
-		padding-bottom: 16px;
-	}
+const FormContainer = styled.div`
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 `;
-const AboutContainer = styled(SplitContainer)``;
-const FormContainer = styled(SplitContainer)``;
 
-const NameInput = styled.input`
-	display: block;
+const ArtContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
+
+const Input = styled.input`
+	border: none;
+	outline: none;
+	color: var(--main-fg-color);
+	background-color: var(--main-bg-color);
+	border-bottom: 2px solid var(--main-fg-color);
 	width: 100%;
-	margin-bottom: 8px;
-	border: solid 2px black;
+	max-width: 320px;
+	margin-top: 24px;
 `;
+
+const NameInput = styled(Input)``;
+
+const EmailInput = styled(Input)``;
+
 const MessageInput = styled.textarea`
-	display: block;
+	color: var(--main-fg-color);
+	border: none;
+	outline: none;
+	border-bottom: 2px solid var(--main-fg-color);
+	background-color: var(--main-bg-color);
 	width: 100%;
-	margin-bottom: 8px;
-	border: solid 2px black;
+	max-width: 320px;
+	margin-top: 24px;
+	&&::placeholder {
+		color: var(--main-fg-color);
+	}
 `;
 
-const SubmitBtn = styled.button`
-	border: solid 2px black;
-	background-color: var(--main-fg-color);
-	color: var(--main-bg-color);
-	transition: transform 0.3s ease-in-out;
-	&&:hover {
-		transform: translateY(2px);
-		transition: transform 0.3s ease-in-out;
-	}
+const ScrollTextContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	height: 204px;
 `;
 
 export default function Contact() {
@@ -56,35 +72,16 @@ export default function Contact() {
 
 	return (
 		<Container>
-			{/* <HomeSectionTitle>Contact</HomeSectionTitle> */}
-			{/* <GridContainer>
-				<AboutContainer>
-					<h2>Hi, I&apos;m Austin Ftacnik</h2>
-					<p>
-						Laboris cupidatat amet aute aliquip anim est.
-						Consectetur veniam deserunt minim nisi qui et excepteur.
-						Proident veniam Lorem dolore esse anim. Est culpa culpa
-						occaecat in dolor et laboris sint.
-					</p>
-				</AboutContainer>
-				<FormContainer>
-					<h2>Contact</h2>
-					<form name='contact' method='POST' data-netlify='true'>
-						<NameInput
-							type='text'
-							placeholder='name'
-							onChange={e => setName(e.target.value)}
-							value={name}
-						></NameInput>
-						<MessageInput
-							placeholder='message'
-							onChange={e => setMessage(e.target.value)}
-							value={message}
-						></MessageInput>
-						<SubmitBtn type='submit'>Send</SubmitBtn>
-					</form>
-				</FormContainer>
-			</GridContainer> */}
+			<FormContainer>
+				<NameInput placeholder='Your Name'></NameInput>
+				<EmailInput placeholder='You Email'></EmailInput>
+				<MessageInput placeholder='Share Your Thoughts'></MessageInput>
+			</FormContainer>
+			<ArtContainer>
+				<ScrollTextContainer>
+					<ScrollText />
+				</ScrollTextContainer>
+			</ArtContainer>
 		</Container>
 	);
 }

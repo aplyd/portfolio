@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
 
+const Container = styled.div`
+	position: relative;
+`;
+
 const ProjectCardsContainer = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 	grid-gap: 16px;
-	margin-left: 9px;
 	@media screen and (max-width: 975px) {
 		padding: 0 16px;
 	}
@@ -16,6 +19,8 @@ const ProjectCardsContainer = styled.div`
 const ProjectsTitle = styled.h1`
 	color: var(--main-bg-color);
 	text-transform: uppercase;
+
+	font-size: 88px;
 	text-shadow: -1px -1px 0 var(--main-fg-color),
 		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),
 		1px 1px 0 var(--main-fg-color);
@@ -59,15 +64,16 @@ export default function Projects() {
 	};
 
 	return (
-		<>
+		<Container>
 			<Spacer height={'large'} />
-			<ProjectsTitle>Recent Projects</ProjectsTitle>
+			<ProjectsTitle>Projects</ProjectsTitle>
+
 			<Spacer height={'medium'} />
 			<ProjectCardsContainer>
 				<ProjectCard {...battleship} />
 				<ProjectCard {...wheresWaldo} />
 				<ProjectCard {...fpotfp} />
 			</ProjectCardsContainer>
-		</>
+		</Container>
 	);
 }

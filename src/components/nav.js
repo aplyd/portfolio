@@ -156,9 +156,13 @@ export default function Nav({ setIsMobileMenuOpen }) {
 				mobileMenu()
 			)}
 			<ToggleContainer onClick={() => toggleDisplayMode()}>
-				<ToggleModeBtn
-					as={isDarkMode ? GiStripedSun : WiMoonAltWaxingCrescent4}
-				></ToggleModeBtn>
+				{isDarkMode ? (
+					<ToggleModeBtn as={GiStripedSun}></ToggleModeBtn>
+				) : (
+					<ToggleModeBtn
+						as={WiMoonAltWaxingCrescent4}
+					></ToggleModeBtn>
+				)}
 			</ToggleContainer>
 		</Container>
 	);

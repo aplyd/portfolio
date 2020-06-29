@@ -25,7 +25,7 @@ const Text = styled.text`
 	text-transform: uppercase;
 	z-index: 9999;
 	font-size: 23px;
-	fill: white;
+	fill: var(--main-fg-color);
 	pointer-events: none;
 	&& > path {
 		pointer-events: none;

@@ -30,11 +30,11 @@ const ArtContainer = styled.div`
 `;
 
 const P = styled.p`
-	color: white;
+	color: var(--main-fg-color);
 `;
 
 const BoldTitle = styled.h1`
-	color: white;
+	color: var(--main-fg-color);
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 40px;
@@ -42,7 +42,7 @@ const BoldTitle = styled.h1`
 
 const SubTitle = styled.h2`
 	margin-top: -4px;
-	color: white;
+	color: var(--main-fg-color);
 	text-transform: uppercase;
 	font-size: 30px;
 `;
@@ -54,9 +54,14 @@ const ProfileSVG = styled.div`
 	&& > svg {
 		height: 340px;
 		width: 300px;
-		background-color: white;
+		background-color: var(--main-fg-color);
+		fill: var(--main-bg-color);
 		display: block;
 		margin: 0 auto;
+	}
+	&& path,
+	g {
+		fill: var(--main-bg-color);
 	}
 `;
 
