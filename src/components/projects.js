@@ -19,7 +19,6 @@ const ProjectCardsContainer = styled.div`
 const ProjectsTitle = styled.h1`
 	color: var(--main-bg-color);
 	text-transform: uppercase;
-
 	font-size: 88px;
 	text-shadow: -1px -1px 0 var(--main-fg-color),
 		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),

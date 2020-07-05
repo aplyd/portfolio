@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import ArrowDown from './arrowDown';
 
 const Frame = styled.div`
-	width: 150px;
+	width: 200px;
 	height: 200px;
 	overflow: hidden;
 `;
