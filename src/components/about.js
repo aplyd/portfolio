@@ -19,6 +19,15 @@ const TextContainer = styled.div`
 	height: 580px;
 `;
 
+const AboutTitle = styled.h1`
+	color: var(--main-bg-color);
+	text-transform: uppercase;
+	font-size: 88px;
+	text-shadow: -1px -1px 0 var(--main-fg-color),
+		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),
+		1px 1px 0 var(--main-fg-color);
+`;
+
 const ArtContainer = styled.div`
 	height: 580px;
 	grid-column: 2;
@@ -71,47 +80,50 @@ const Art = styled.div`
 
 const About = () => {
 	return (
-		<Container>
-			<TextContainer>
-				<Spacer height={'medium'} />
-				<BoldTitle>Austin Ftacnik</BoldTitle>
-				<SubTitle>Front-End Developer</SubTitle>
-				<Spacer height={'large'} />
-				<P>
-					Labore sit esse occaecat occaecat proident veniam. Esse
-					minim sit tempor sint laborum duis magna mollit
-					reprehenderit. Adipisicing aliquip laborum cillum voluptate.
-					Cupidatat et elit laboris ea commodo adipisicing occaecat ad
-					pariatur cupidatat laborum eiusmod. In adipisicing
-					exercitation amet duis amet qui laboris culpa exercitation
-					do proident velit occaecat voluptate. Ut cillum adipisicing
-					excepteur elit qui commodo commodo proident cupidatat.
-				</P>
-				<Spacer height={'large'} />
-				<BtnLg mode={'dark'} onClick={() => console.log('click')}>
-					Get in touch
-				</BtnLg>
-			</TextContainer>
-			<ArtContainer>
-				<Art>
+		<>
+			<AboutTitle>about</AboutTitle>
+			<Container>
+				<TextContainer>
 					<Spacer height={'medium'} />
-					<SpinningText />
-					<ProfileSVG>
-						<svg
-							version='1.0'
-							xmlns='http://www.w3.org/2000/svg'
-							width='100%'
-							height='100%'
-							viewBox='0 0 944.000000 1280.000000'
-							preserveAspectRatio='xMidYMid meet'
-						>
-							<g
-								transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)'
-								fill='#000000'
-								stroke='none'
+					<BoldTitle>Austin Ftacnik</BoldTitle>
+					<SubTitle>Front-End Developer</SubTitle>
+					<Spacer height={'large'} />
+					<P>
+						Labore sit esse occaecat occaecat proident veniam. Esse
+						minim sit tempor sint laborum duis magna mollit
+						reprehenderit. Adipisicing aliquip laborum cillum
+						voluptate. Cupidatat et elit laboris ea commodo
+						adipisicing occaecat ad pariatur cupidatat laborum
+						eiusmod. In adipisicing exercitation amet duis amet qui
+						laboris culpa exercitation do proident velit occaecat
+						voluptate. Ut cillum adipisicing excepteur elit qui
+						commodo commodo proident cupidatat.
+					</P>
+					<Spacer height={'large'} />
+					<BtnLg mode={'dark'} onClick={() => console.log('click')}>
+						Get in touch
+					</BtnLg>
+				</TextContainer>
+				<ArtContainer>
+					<Art>
+						<Spacer height={'medium'} />
+						<SpinningText />
+						<ProfileSVG>
+							<svg
+								version='1.0'
+								xmlns='http://www.w3.org/2000/svg'
+								width='100%'
+								height='100%'
+								viewBox='0 0 944.000000 1280.000000'
+								preserveAspectRatio='xMidYMid meet'
 							>
-								<path
-									d='M4425 12789 c-413 -38 -882 -147 -1240 -289 -549 -217 -1170 -697
+								<g
+									transform='translate(0.000000,1280.000000) scale(0.100000,-0.100000)'
+									fill='#000000'
+									stroke='none'
+								>
+									<path
+										d='M4425 12789 c-413 -38 -882 -147 -1240 -289 -549 -217 -1170 -697
 -1437 -1110 -249 -385 -415 -1109 -395 -1720 17 -507 106 -966 254 -1310 113
 -262 359 -667 568 -935 69 -88 283 -300 443 -439 l102 -89 2 -56 c18 -661
 -141 -1513 -392 -2095 -93 -218 -518 -1009 -990 -1846 -637 -1129 -924 -1697
@@ -128,13 +140,14 @@ const About = () => {
 355 -6 22 -18 150 -26 285 -41 687 -69 945 -135 1272 -114 555 -334 995 -681
 1362 -202 214 -408 361 -724 516 -592 291 -1224 469 -1935 545 -177 19 -569
 27 -705 14z'
-								/>
-							</g>
-						</svg>
-					</ProfileSVG>
-				</Art>
-			</ArtContainer>
-		</Container>
+									/>
+								</g>
+							</svg>
+						</ProfileSVG>
+					</Art>
+				</ArtContainer>
+			</Container>
+		</>
 	);
 };
 
