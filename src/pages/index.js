@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from '../components/seo';
+import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import Logo from '../components/logo';
@@ -12,6 +13,16 @@ import Projects from '../components/projects';
 import Contact from '../components/contact';
 import Cover from '../components/cover';
 import About from '../components/about';
+
+const ProjectsTitle = styled.h1`
+	color: var(--main-bg-color);
+	text-transform: uppercase;
+	font-size: 88px;
+	font-weight: bold;
+	text-shadow: -1px -1px 0 var(--main-fg-color),
+		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),
+		1px 1px 0 var(--main-fg-color);
+`;
 
 export default function Index() {
 	return (
@@ -32,10 +43,12 @@ export default function Index() {
 				</ContentContainer>
 			</SectionWrapper>
 
-			<SectionWrapper bgColor={'var(--main-bg-color)'}>
+			<SectionWrapper>
 				<ContentContainer id='projects'>
-					<Projects />
+					<ProjectsTitle>Projects</ProjectsTitle>
 				</ContentContainer>
+
+				<Projects />
 			</SectionWrapper>
 
 			<Spacer height={'medium'} />

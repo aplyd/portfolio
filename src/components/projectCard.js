@@ -16,15 +16,11 @@ const ProjectContainer = styled.div`
 		-3px -3px var(--main-fg-color), -4px -4px var(--main-fg-color),
 		-5px -5px var(--main-fg-color), -6px -6px var(--main-fg-color),
 		-7px -7px var(--main-fg-color), -8px -8px var(--main-fg-color); */
+	border-right: ${props => (props.borderRight ? props.borderRight : null)};
+	border-left: ${props => (props.borderLeft ? props.borderLeft : null)};
 `;
 
 const Words = styled.div`
-	height: 100%;
-`;
-
-const Preview = styled.div`
-	background-color: black;
-	color: black;
 	height: 100%;
 `;
 
@@ -77,38 +73,45 @@ const DemoBtn = styled(BtnLg)`
 	font-weight: 700;
 `;
 
-const ProjectCard = ({ location, title, about, tools, image }) => {
+const ProjectCard = ({
+	location,
+	title,
+	about,
+	tools,
+	image,
+	borderRight,
+	borderLeft
+}) => {
 	return (
-		<AnchorLink to={location} title={title}>
-			<ProjectContainer>
-				<Words>
-					<Spacer height={'medium'} />
-					<PTitle>{title}</PTitle>
+		// <AnchorLink to={location} title={title}>
+		<ProjectContainer borderRight={borderRight} borderLeft={borderLeft}>
+			<Words>
+				<Spacer height={'medium'} />
+				<PTitle>{title}</PTitle>
 
-					<Spacer height={'medium'} />
-					<PAbout>{about}</PAbout>
+				<Spacer height={'medium'} />
+				<PAbout>{about}</PAbout>
 
-					<Spacer height={'medium'} />
+				<Spacer height={'medium'} />
 
-					<ToolsTitle>DEVELOPMENT TOOLS</ToolsTitle>
+				<ToolsTitle>DEVELOPMENT TOOLS</ToolsTitle>
 
-					{tools.map((t, i) => {
-						return (
-							<Tool key={i}>
-								<LIicon as={GiCircle} />
-								<p>{t}</p>
-							</Tool>
-						);
-					})}
-					<Spacer height={'medium'} />
-					<BtnsContainer>
-						<InfoBtn>Info</InfoBtn>
-						<DemoBtn>Demo</DemoBtn>
-					</BtnsContainer>
-				</Words>
-				<Preview></Preview>
-			</ProjectContainer>
-		</AnchorLink>
+				{tools.map((t, i) => {
+					return (
+						<Tool key={i}>
+							<LIicon as={GiCircle} />
+							<p>{t}</p>
+						</Tool>
+					);
+				})}
+				<Spacer height={'medium'} />
+				<BtnsContainer>
+					<InfoBtn>Info</InfoBtn>
+					<DemoBtn>Demo</DemoBtn>
+				</BtnsContainer>
+			</Words>
+		</ProjectContainer>
+		// </AnchorLink>
 	);
 };
 
@@ -117,7 +120,9 @@ ProjectCard.propTypes = {
 	image: PropTypes.any,
 	title: PropTypes.any,
 	location: PropTypes.any,
-	tools: PropTypes.any
+	tools: PropTypes.any,
+	borderRight: PropTypes.string,
+	borderLeft: PropTypes.string
 };
 
 export default ProjectCard;

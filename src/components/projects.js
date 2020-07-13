@@ -2,30 +2,37 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
+import { useWindowWidth } from '../hooks/useWindowWidth';
 
 const Container = styled.div`
 	position: relative;
+	margin: 0 auto;
 `;
 
 const ProjectCardsContainer = styled.div`
+	margin: 0 auto;
+	max-width: 960px;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-	grid-gap: 16px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
 	@media screen and (max-width: 975px) {
 		padding: 0 16px;
 	}
+	@media screen and (max-width: 800px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
 `;
 
-const ProjectsTitle = styled.h1`
-	color: var(--main-bg-color);
-	text-transform: uppercase;
-	font-size: 88px;
-	text-shadow: -1px -1px 0 var(--main-fg-color),
-		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),
-		1px 1px 0 var(--main-fg-color);
+const BorderLine = styled.div`
+	height: 2px;
+	background-color: var(--main-fg-color);
+	width: 100%;
 `;
 
 export default function Projects() {
+	const [width, setWidth] = useState();
+	useWindowWidth(setWidth);
 	const battleship = {
 		title: 'Battleship',
 		location: '/battleship',
@@ -64,15 +71,32 @@ export default function Projects() {
 
 	return (
 		<Container>
-			<Spacer height={'large'} />
-			<ProjectsTitle>Projects</ProjectsTitle>
-
-			<Spacer height={'medium'} />
-			<ProjectCardsContainer>
-				<ProjectCard {...battleship} />
-				<ProjectCard {...wheresWaldo} />
-				<ProjectCard {...fpotfp} />
-			</ProjectCardsContainer>
+			<BorderLine></BorderLine>
+			{width > 800 ? (
+				<>
+					<ProjectCardsContainer>
+						<ProjectCard
+							{...fpotfp}
+							borderRight={'solid 1px black'}
+						/>
+						<ProjectCard
+							{...wheresWaldo}
+							borderLeft={'solid 1px black'}
+						/>
+					</ProjectCardsContainer>
+					<BorderLine></BorderLine>
+					<ProjectCardsContainer>
+						<ProjectCard
+							{...battleship}
+							borderRight={'solid 2px black'}
+						/>
+					</ProjectCardsContainer>
+				</>
+			) : (
+				<ProjectCardsContainer>
+					{/* TODO mobile layout */}
+				</ProjectCardsContainer>
+			)}
 		</Container>
 	);
 }
