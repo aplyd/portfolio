@@ -78,9 +78,8 @@ const MenuBtnContainer = styled(ToggleContainer)`
 export default function Nav({ setIsMobileMenuOpen }) {
 	const [visible, setVisible] = useState(true);
 	const [isDarkMode, setIsDarkMode] = useState(false);
-	const [windowWidth, setWindowWidth] = useState();
 	useScrollToHideNav(setVisible);
-	useWindowWidth(setWindowWidth);
+	const [windowWidth] = useWindowWidth();
 
 	const windowGlobal = typeof window !== 'undefined' && window;
 

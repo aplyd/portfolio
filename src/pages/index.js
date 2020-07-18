@@ -47,7 +47,6 @@ export default function Index() {
 				<ContentContainer id='projects'>
 					<ProjectsTitle>Projects</ProjectsTitle>
 				</ContentContainer>
-
 				<Projects />
 			</SectionWrapper>
 

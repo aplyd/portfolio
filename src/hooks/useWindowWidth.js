@@ -1,6 +1,7 @@
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
-const useWindowWidth = setWidth => {
+const useWindowWidth = () => {
+	const [width, setWidth] = useState();
 	useLayoutEffect(() => {
 		const windowGlobal = typeof window !== 'undefined' && window;
 		const handleResize = () => {
@@ -13,7 +14,9 @@ const useWindowWidth = setWidth => {
 		return () => {
 			windowGlobal.removeEventListener('resize', handleResize);
 		};
-	}, [setWidth]);
+	}, []);
+
+	return [width];
 };
 
 export default useWindowWidth;

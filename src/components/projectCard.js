@@ -6,22 +6,20 @@ import { GiCircle } from 'react-icons/gi';
 import { Spacer, BtnLg } from './globalStyle';
 
 const ProjectContainer = styled.div`
-	/* box-shadow: -1.5px -1.5px var(--main-fg-color),
-		-3px -3px var(--main-fg-color), -4.5px -4.5px var(--main-fg-color),
-		-6px -6px var(--main-fg-color), -7.5px -7.5px var(--main-fg-color),
-		-9px -9px var(--main-fg-color), -10.5px -10.5px var(--main-fg-color),
-		-12px -12px var(--main-fg-color); */
+	width: 100%;
+	/* max-width: 960px; */
 
-	/* box-shadow: -1px -1px var(--main-fg-color), -2px -2px black,
-		-3px -3px var(--main-fg-color), -4px -4px var(--main-fg-color),
-		-5px -5px var(--main-fg-color), -6px -6px var(--main-fg-color),
-		-7px -7px var(--main-fg-color), -8px -8px var(--main-fg-color); */
-	border-right: ${props => (props.borderRight ? props.borderRight : null)};
-	border-left: ${props => (props.borderLeft ? props.borderLeft : null)};
+	/* border-right: ${props => (props.borderRight ? props.borderRight : null)};
+	border-left: ${props => (props.borderLeft ? props.borderLeft : null)}; */
+	/* @media screen and (max-width: 800px) {
+		border: none;
+		border-top: solid 2px var(--main-fg-color);
+	} */
 `;
 
 const Words = styled.div`
 	height: 100%;
+	margin: 0 auto;
 `;
 
 const PTitle = styled.h1`

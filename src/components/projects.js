@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
-import { useWindowWidth } from '../hooks/useWindowWidth';
 
 const Container = styled.div`
 	position: relative;
@@ -11,28 +10,49 @@ const Container = styled.div`
 
 const ProjectCardsContainer = styled.div`
 	margin: 0 auto;
-	max-width: 960px;
+	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 2px 1fr;
 	grid-template-rows: 1fr;
-	@media screen and (max-width: 975px) {
+	/* @media screen and (max-width: 975px) {
 		padding: 0 16px;
-	}
+	} */
 	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 1fr 2px 1fr;
 	}
 `;
 
-const BorderLine = styled.div`
+const CardContainer = styled.div`
+	outline: solid 1px red;
+	width: 480px;
+	height: 480px;
+	border-top: blue solid 4px;
+`;
+
+const HorizontalLine = styled.div`
 	height: 2px;
 	background-color: var(--main-fg-color);
 	width: 100%;
 `;
 
+const MobileHorizontalLine = styled(HorizontalLine)`
+	display: none;
+	@media screen and (max-width: 800px) {
+		display: block;
+	}
+`;
+
+const VerticalLine = styled.div`
+	width: 2px;
+	background-color: black;
+	height: 100%;
+	@media screen and (max-width: 800px) {
+		display: none;
+	}
+`;
+
 export default function Projects() {
-	const [width, setWidth] = useState();
-	useWindowWidth(setWidth);
 	const battleship = {
 		title: 'Battleship',
 		location: '/battleship',
@@ -71,32 +91,46 @@ export default function Projects() {
 
 	return (
 		<Container>
-			<BorderLine></BorderLine>
-			{width > 800 ? (
-				<>
-					<ProjectCardsContainer>
-						<ProjectCard
-							{...fpotfp}
-							borderRight={'solid 1px black'}
-						/>
-						<ProjectCard
-							{...wheresWaldo}
-							borderLeft={'solid 1px black'}
-						/>
-					</ProjectCardsContainer>
-					<BorderLine></BorderLine>
-					<ProjectCardsContainer>
-						<ProjectCard
-							{...battleship}
-							borderRight={'solid 2px black'}
-						/>
-					</ProjectCardsContainer>
-				</>
-			) : (
-				<ProjectCardsContainer>
-					{/* TODO mobile layout */}
-				</ProjectCardsContainer>
-			)}
+			<HorizontalLine />
+			<ProjectCardsContainer>
+				<ProjectCard {...fpotfp} />
+				<VerticalLine />
+				<MobileHorizontalLine />
+				<ProjectCard {...battleship} />
+			</ProjectCardsContainer>
+
+			<HorizontalLine />
+			<ProjectCardsContainer>
+				<ProjectCard {...wheresWaldo} />
+				<VerticalLine />
+			</ProjectCardsContainer>
 		</Container>
 	);
+}
+
+{
+	/* <HorizontalLine></HorizontalLine>
+<Spacer height={'medium'} />
+<ProjectCardsContainer>
+	<CardContainer>
+		<ProjectCard {...fpotfp} borderRight={'solid 1px black'} />
+	</CardContainer>
+	<CardContainer>
+		<ProjectCard
+			{...wheresWaldo}
+			borderLeft={'solid 1px black'}
+		/>
+	</CardContainer>
+</ProjectCardsContainer>
+
+<HorizontalLine></HorizontalLine>
+<Spacer height={'medium'} />
+<ProjectCardsContainer>
+	<CardContainer>
+		<ProjectCard
+			{...battleship}
+			borderRight={'solid 2px black'}
+		/>
+	</CardContainer>
+</ProjectCardsContainer> */
 }
