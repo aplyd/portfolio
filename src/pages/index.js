@@ -36,13 +36,14 @@ export default function Index() {
 			<Spacer height={'medium'} />
 			<Cover />
 
-			<Spacer height={'large'} />
+			<Spacer height={'xlarge'} />
 			<SectionWrapper>
 				<ContentContainer>
 					<About />
 				</ContentContainer>
 			</SectionWrapper>
 
+			<Spacer height={'xlarge'} />
 			<SectionWrapper>
 				<ContentContainer id='projects'>
 					<ProjectsTitle>Projects</ProjectsTitle>
@@ -50,10 +51,19 @@ export default function Index() {
 				<Projects />
 			</SectionWrapper>
 
-			<Spacer height={'medium'} />
+			<Spacer height={'xlarge'} />
 			<ContentContainer>
 				<Contact></Contact>
 			</ContentContainer>
+
+			{/* <Spacer height={'xlarge'} />
+			<ContentContainer>
+				<h1>blog</h1>
+			</ContentContainer>
+			<Spacer height={'xlarge'} />
+			<ContentContainer>
+				<h1>footer</h1>
+			</ContentContainer> */}
 		</Layout>
 	);
 }

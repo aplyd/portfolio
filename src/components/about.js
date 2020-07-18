@@ -61,6 +61,7 @@ const ProfileSVG = styled.div`
 	height: 100%;
 	position: relative;
 	&& > svg {
+		border-radius: 12px;
 		height: 340px;
 		width: 300px;
 		background-color: var(--main-fg-color);
@@ -78,10 +79,19 @@ const Art = styled.div`
 	position: relative;
 `;
 
+const CTAbtn = styled.button`
+	border-radius: 50px;
+	border: solid 3px black;
+	padding: 24px 64px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: var(--main-fg-color);
+	color: var(--main-bg-color);
+`;
+
 const About = () => {
 	return (
 		<>
-			<AboutTitle>about</AboutTitle>
 			<Container>
 				<TextContainer>
 					<Spacer height={'medium'} />
@@ -100,9 +110,9 @@ const About = () => {
 						commodo commodo proident cupidatat.
 					</P>
 					<Spacer height={'large'} />
-					<BtnLg mode={'dark'} onClick={() => console.log('click')}>
+					<CTAbtn mode={'dark'} onClick={() => console.log('click')}>
 						Get in touch
-					</BtnLg>
+					</CTAbtn>
 				</TextContainer>
 				<ArtContainer>
 					<Art>

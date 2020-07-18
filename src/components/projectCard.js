@@ -7,19 +7,19 @@ import { Spacer, BtnLg } from './globalStyle';
 
 const ProjectContainer = styled.div`
 	width: 100%;
-	/* max-width: 960px; */
-
-	/* border-right: ${props => (props.borderRight ? props.borderRight : null)};
-	border-left: ${props => (props.borderLeft ? props.borderLeft : null)}; */
-	/* @media screen and (max-width: 800px) {
-		border: none;
-		border-top: solid 2px var(--main-fg-color);
-	} */
+	position: relative;
 `;
 
 const Words = styled.div`
-	height: 100%;
-	margin: 0 auto;
+	height: 480px;
+	width: 100%;
+	padding: 48px 24px 0 24px;
+	float: ${props => (props.right ? 'right' : null)};
+	max-width: 504px;
+	@media screen and (max-width: 800px) {
+		padding: 24px 0;
+		margin: 0 auto;
+	}
 `;
 
 const PTitle = styled.h1`
@@ -30,8 +30,8 @@ const PTitle = styled.h1`
 
 const PAbout = styled.p`
 	color: var(--main-fg-color);
-
 	line-height: 1.3em;
+	min-height: 70px;
 `;
 
 const LIicon = styled.svg`
@@ -48,7 +48,7 @@ const ToolsTitle = styled.p`
 `;
 
 const Tool = styled.div`
-	padding: 0 16px 8px 32px;
+	padding: 0 16px 8px 0;
 	font-size: 18px;
 	display: flex;
 	flex-direction: row;
@@ -64,27 +64,29 @@ const BtnsContainer = styled.div`
 	justify-content: flex-end;
 `;
 
-const InfoBtn = styled(BtnLg)`
-	font-weight: 700;
-`;
-const DemoBtn = styled(BtnLg)`
-	font-weight: 700;
+const Btn = styled.button`
+	border-radius: 50px;
+	border: solid 3px black;
+	padding: 6px 44px;
+	font-weight: bold;
+	text-transform: uppercase;
 `;
 
-const ProjectCard = ({
-	location,
-	title,
-	about,
-	tools,
-	image,
-	borderRight,
-	borderLeft
-}) => {
+const RepoBtn = styled(Btn)`
+	font-weight: 700;
+`;
+const DemoBtn = styled(Btn)`
+	font-weight: 700;
+	margin-left: 12px;
+	background-color: var(--main-fg-color);
+	color: var(--main-bg-color);
+`;
+
+const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {
 	return (
-		// <AnchorLink to={location} title={title}>
-		<ProjectContainer borderRight={borderRight} borderLeft={borderLeft}>
-			<Words>
-				<Spacer height={'medium'} />
+		<ProjectContainer>
+			<Words right={right} paddingLeft={paddingLeft}>
+				{/* <Spacer height={'medium'} /> */}
 				<PTitle>{title}</PTitle>
 
 				<Spacer height={'medium'} />
@@ -104,12 +106,11 @@ const ProjectCard = ({
 				})}
 				<Spacer height={'medium'} />
 				<BtnsContainer>
-					<InfoBtn>Info</InfoBtn>
+					<RepoBtn>Repo</RepoBtn>
 					<DemoBtn>Demo</DemoBtn>
 				</BtnsContainer>
 			</Words>
 		</ProjectContainer>
-		// </AnchorLink>
 	);
 };
 
@@ -117,10 +118,11 @@ ProjectCard.propTypes = {
 	about: PropTypes.any,
 	image: PropTypes.any,
 	title: PropTypes.any,
-	location: PropTypes.any,
+	right: PropTypes.bool,
 	tools: PropTypes.any,
 	borderRight: PropTypes.string,
-	borderLeft: PropTypes.string
+	borderLeft: PropTypes.string,
+	paddingLeft: PropTypes.bool
 };
 
 export default ProjectCard;

@@ -14,20 +14,16 @@ const ProjectCardsContainer = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 2px 1fr;
 	grid-template-rows: 1fr;
-	/* @media screen and (max-width: 975px) {
-		padding: 0 16px;
-	} */
 	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 2px 1fr;
 	}
 `;
 
-const CardContainer = styled.div`
-	outline: solid 1px red;
-	width: 480px;
-	height: 480px;
-	border-top: blue solid 4px;
+const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
+	@media screen and (max-width: 800px) {
+		grid-template-rows: 1fr;
+	}
 `;
 
 const HorizontalLine = styled.div`
@@ -66,26 +62,15 @@ export default function Projects() {
 		title: "Where's Waldo",
 		location: '/wheres-waldo',
 		about: 'Est mollit cillum nulla quis elit consequat sit ullamco.',
-		tools: [
-			'React',
-			'Styled-components',
-			'firebase firestore',
-			'firebase cloud functions',
-			'resize observer'
-		],
+		tools: ['React', 'Styled-components', 'firebase firestore'],
 		image: 'imgae url'
 	};
 
 	const fpotfp = {
-		title: 'Front Page of the Front Page',
+		title: 'Front Page',
 		location: 'fpotfp',
 		about: 'Velit officia sunt sunt do.',
-		tools: [
-			'React',
-			'Styled-components',
-			'firebase firestore',
-			'custom hooks'
-		],
+		tools: ['React', 'Styled-components', 'firebase firestore'],
 		image: 'image'
 	};
 
@@ -93,44 +78,17 @@ export default function Projects() {
 		<Container>
 			<HorizontalLine />
 			<ProjectCardsContainer>
-				<ProjectCard {...fpotfp} />
+				<ProjectCard {...fpotfp} right={true} />
 				<VerticalLine />
 				<MobileHorizontalLine />
-				<ProjectCard {...battleship} />
+				<ProjectCard {...battleship} paddingLeft={true} />
 			</ProjectCardsContainer>
 
 			<HorizontalLine />
-			<ProjectCardsContainer>
-				<ProjectCard {...wheresWaldo} />
+			<LowerProjectCardsContainer>
+				<ProjectCard {...wheresWaldo} right={true} />
 				<VerticalLine />
-			</ProjectCardsContainer>
+			</LowerProjectCardsContainer>
 		</Container>
 	);
-}
-
-{
-	/* <HorizontalLine></HorizontalLine>
-<Spacer height={'medium'} />
-<ProjectCardsContainer>
-	<CardContainer>
-		<ProjectCard {...fpotfp} borderRight={'solid 1px black'} />
-	</CardContainer>
-	<CardContainer>
-		<ProjectCard
-			{...wheresWaldo}
-			borderLeft={'solid 1px black'}
-		/>
-	</CardContainer>
-</ProjectCardsContainer>
-
-<HorizontalLine></HorizontalLine>
-<Spacer height={'medium'} />
-<ProjectCardsContainer>
-	<CardContainer>
-		<ProjectCard
-			{...battleship}
-			borderRight={'solid 2px black'}
-		/>
-	</CardContainer>
-</ProjectCardsContainer> */
 }
