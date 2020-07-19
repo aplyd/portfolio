@@ -61,7 +61,7 @@ const ProfileSVG = styled.div`
 	height: 100%;
 	position: relative;
 	&& > svg {
-		border-radius: 12px;
+		/* border-radius: 50px; */
 		height: 340px;
 		width: 300px;
 		background-color: var(--main-fg-color);

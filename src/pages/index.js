@@ -13,6 +13,7 @@ import Projects from '../components/projects';
 import Contact from '../components/contact';
 import Cover from '../components/cover';
 import About from '../components/about';
+import Footer from '../components/footer';
 
 const ProjectsTitle = styled.h1`
 	color: var(--main-bg-color);
@@ -56,14 +57,9 @@ export default function Index() {
 				<Contact></Contact>
 			</ContentContainer>
 
-			{/* <Spacer height={'xlarge'} />
-			<ContentContainer>
-				<h1>blog</h1>
-			</ContentContainer>
-			<Spacer height={'xlarge'} />
-			<ContentContainer>
-				<h1>footer</h1>
-			</ContentContainer> */}
+			<SectionWrapper>
+				<Footer></Footer>
+			</SectionWrapper>
 		</Layout>
 	);
 }
