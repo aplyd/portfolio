@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ScrollText from './ScrollText';
+import TextareaAutosize from 'react-textarea-autosize';
 
 const mobileWidth = '800px';
 
@@ -21,6 +22,7 @@ const FormContainer = styled.div`
 	display: grid;
 	grid-template-rows: 80px 360px;
 	@media screen and (max-width: ${mobileWidth}) {
+		grid-template-rows: 20px 360px;
 		grid-row: 2;
 		width: 100%;
 		max-width: 640px;
@@ -38,26 +40,30 @@ const Input = styled.input`
 	color: var(--main-fg-color);
 	background-color: var(--main-bg-color);
 	border-bottom: 2px solid var(--main-fg-color);
-	width: calc(100% - 24px);
-	/* max-width: 320px; */
+	width: 100%;
 	margin-top: 48px;
-	margin-left: 24px;
+	@media screen and (min-width: ${mobileWidth}) {
+		width: calc(100% - 24px);
+		margin-left: 24px;
+	}
 `;
 
 const NameInput = styled(Input)``;
 
 const EmailInput = styled(Input)``;
 
-const MessageInput = styled.textarea`
+const MessageInput = styled(TextareaAutosize)`
 	color: var(--main-fg-color);
 	border: none;
 	outline: none;
 	border-bottom: 2px solid var(--main-fg-color);
 	background-color: var(--main-bg-color);
 	width: 100%;
-	width: calc(100% - 24px);
-	margin-left: 24px;
-	margin-top: 24px;
+	padding-top: 64px;
+	@media screen and (min-width: ${mobileWidth}) {
+		width: calc(100% - 24px);
+		margin-left: 24px;
+	}
 	&&::placeholder {
 		color: var(--main-fg-color);
 	}
@@ -94,7 +100,7 @@ const BlobSVG = styled.svg`
 	position: absolute;
 	width: 675px;
 	height: 1050px;
-	left: -40px;
+	right: -140px;
 	top: -180px;
 	z-index: 3;
 
@@ -124,6 +130,12 @@ const Cube = styled.div`
 	}
 `;
 
+const BlackSpacer = styled.div`
+	width: 100%;
+	height: 16px;
+	background-color: var(--main-fg-color);
+`;
+
 export default function Contact() {
 	// const [name, setName] = useState();
 	// const [message, setMessage] = useState();
@@ -141,29 +153,37 @@ export default function Contact() {
 	};
 
 	return (
-		<Container>
-			<ArtContainer>
-				<ScrollTextContainer>
-					<ScrollText />
-				</ScrollTextContainer>
-				<ScrollTextContainer>
-					<ScrollText />
-				</ScrollTextContainer>
-				<Cube>
-					<p>hello</p>
-				</Cube>
-				{blob()}
-			</ArtContainer>
-			<FormContainer>
-				<Form>
-					<NameInput placeholder='Your Name'></NameInput>
-					<EmailInput placeholder='You Email'></EmailInput>
+		<>
+			{/* <BlackSpacer /> */}
+			<Container>
+				<ArtContainer>
+					<ScrollTextContainer>
+						<ScrollText />
+					</ScrollTextContainer>
+					<ScrollTextContainer>
+						<ScrollText />
+					</ScrollTextContainer>
+					<Cube>
+						<p>hello</p>
+					</Cube>
+					{blob()}
+				</ArtContainer>
+				<FormContainer>
+					<Form>
+						<NameInput placeholder='Your Name'></NameInput>
+						<EmailInput placeholder='You Email'></EmailInput>
 
-					<MessageInput placeholder='Share Your Thoughts'></MessageInput>
+						<MessageInput
+							placeholder='Share Your Thoughts'
+							maxLength='375'
+						>
+							{' '}
+						</MessageInput>
 
-					<SendBtn>Send</SendBtn>
-				</Form>
-			</FormContainer>
-		</Container>
+						<SendBtn>Send</SendBtn>
+					</Form>
+				</FormContainer>
+			</Container>
+		</>
 	);
 }

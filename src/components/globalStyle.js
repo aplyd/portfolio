@@ -57,32 +57,36 @@ export const GlobalStyle = createGlobalStyle`
         --spacing-xlarge: 128px;
         --section-height: 664px;
     }
+
     html {
         scroll-behavior: 'smooth';
     }
+
     body {
         background-color: var(--main-bg-color);
     }
+
     h1,h2,h3,h4,h5,h6,p {
         color: var(--main-fg-color);
         max-width: 960px;
-        @media screen and (max-width: 960px) {
-		padding: 0 16px;
-	}
     }
+
     h1 {
         text-transform: uppercase;
     }
+
     p {
         font-size: 18px;
         line-height: 1.3em;
     }
+
     input, textarea {
         border: none;
         padding: 8px 8px 8px 0;
         font-size: 18px;
         
     }
+    
     button {
         min-width: 48px;
         padding: 4px 24px;
