@@ -18,7 +18,7 @@ import Footer from '../components/footer';
 const ProjectsTitle = styled.h1`
 	color: var(--main-bg-color);
 	text-transform: uppercase;
-	font-size: 88px;
+	font-size: 64px;
 	font-weight: bold;
 	text-shadow: -1px -1px 0 var(--main-fg-color),
 		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),

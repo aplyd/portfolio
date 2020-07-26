@@ -16,7 +16,7 @@ const Words = styled.div`
 	padding: 48px 24px 0 24px;
 	float: ${props => (props.right ? 'right' : null)};
 	max-width: 504px;
-	outline: dotted red 2px;
+
 	@media screen and (max-width: 800px) {
 		float: none;
 		padding: 24px 0;

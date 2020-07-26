@@ -3,23 +3,28 @@ import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ScrollText from './ScrollText';
 
+const mobileWidth = '800px';
+
 const Container = styled.div`
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 700px;
+	grid-template-rows: 600px;
 	overflow: hidden;
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: ${mobileWidth}) {
 		grid-template-columns: 1fr;
-		grid-template-rows: 700px 700px;
+		grid-template-rows: 600px 600px;
 	}
 `;
 
 const FormContainer = styled.div`
 	display: grid;
 	grid-template-rows: 80px 360px;
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: ${mobileWidth}) {
 		grid-row: 2;
+		width: 100%;
+		max-width: 640px;
+		margin: 0 auto;
 	}
 `;
 
@@ -61,10 +66,14 @@ const MessageInput = styled.textarea`
 const ArtContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: ${mobileWidth}) {
 		grid-row: 1;
+		width: 100%;
+		max-width: 640px;
+		margin: 0 auto;
 	}
 	position: relative;
+	overflow-y: hidden;
 `;
 
 const ScrollTextContainer = styled.div``;
@@ -83,12 +92,13 @@ const SendBtn = styled.button`
 
 const BlobSVG = styled.svg`
 	position: absolute;
-	width: 150%;
-	height: 150%;
-	left: -90px;
-	top: -100px;
+	width: 675px;
+	height: 1050px;
+	left: -40px;
+	top: -180px;
 	z-index: 3;
-	transform: scale(-1, 1);
+
+	/* transform: scale(-1, 1); */
 `;
 
 const Cube = styled.div`
@@ -97,8 +107,8 @@ const Cube = styled.div`
 	z-index: 4;
 	width: 280px;
 	height: 200px;
-	top: 120px;
-	left: 7px;
+	top: 80px;
+	right: 8px;
 	background-color: var(--main-bg-color);
 	box-shadow: -1px -1px var(--main-fg-color), -2px -2px black,
 		-3px -3px var(--main-fg-color), -4px -4px var(--main-fg-color),
@@ -108,6 +118,9 @@ const Cube = styled.div`
 	border: solid 3px var(--main-fg-color);
 	&& p {
 		transform: scale(-1, 1);
+	}
+	@media screen and (max-width: 640px) {
+		margin-right: 16px;
 	}
 `;
 
