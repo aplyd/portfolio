@@ -11,7 +11,7 @@ const Container = styled.div`
 	overflow: hidden;
 	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
-		grid-template-rows: 360px 360px;
+		grid-template-rows: 700px 700px;
 	}
 `;
 
@@ -19,7 +19,7 @@ const FormContainer = styled.div`
 	display: grid;
 	grid-template-rows: 80px 360px;
 	@media screen and (max-width: 800px) {
-		grid-row: 1;
+		grid-row: 2;
 	}
 `;
 
@@ -62,7 +62,7 @@ const ArtContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	@media screen and (max-width: 800px) {
-		grid-row: 2;
+		grid-row: 1;
 	}
 	position: relative;
 `;
@@ -88,9 +88,11 @@ const BlobSVG = styled.svg`
 	left: -90px;
 	top: -100px;
 	z-index: 3;
+	transform: scale(-1, 1);
 `;
 
 const Cube = styled.div`
+	transform: scale(-1, 1);
 	position: absolute;
 	z-index: 4;
 	width: 280px;
@@ -104,6 +106,9 @@ const Cube = styled.div`
 		-7px -7px var(--main-fg-color), -8px -8px var(--main-fg-color);
 	background-color: var(--main-bg-color);
 	border: solid 3px var(--main-fg-color);
+	&& p {
+		transform: scale(-1, 1);
+	}
 `;
 
 export default function Contact() {

@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Frame = styled.div`
-	float: right;
+	/* float: right; */
 	width: 300px;
 	height: 384px;
 	overflow: hidden;
 `;
 
 const P = styled.p`
+	white-space: nowrap;
 	color: var(--main-bg-color);
 	font-size: 64px;
 	line-height: 64px;
