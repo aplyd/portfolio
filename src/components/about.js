@@ -60,14 +60,19 @@ const ProfileSVG = styled.div`
 	width: 100%;
 	height: 100%;
 	position: relative;
+	padding-top: 38px;
+	@media screen and (max-width: 800px) {
+		margin-left: calc(50% - 195px);
+	}
 	&& > svg {
 		/* border-radius: 50px; */
-		height: 340px;
-		width: 300px;
+
+		height: 442px;
+		width: 390px;
 		background-color: var(--main-fg-color);
 		fill: var(--main-bg-color);
 		display: block;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 	}
 	&& path,
 	g {
@@ -77,6 +82,8 @@ const ProfileSVG = styled.div`
 
 const Art = styled.div`
 	position: relative;
+	width: 100%;
+	height: 100%;
 `;
 
 const CTAbtn = styled.button`
@@ -116,7 +123,6 @@ const About = () => {
 				</TextContainer>
 				<ArtContainer>
 					<Art>
-						<Spacer height={'medium'} />
 						<SpinningText />
 						<ProfileSVG>
 							<svg

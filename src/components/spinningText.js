@@ -9,9 +9,12 @@ const SpinningTextContainer = styled.div`
 	height: 400px;
 	z-index: 1007;
 	position: absolute;
-	right: -160px;
-	top: 100px;
+	left: 200px;
+	top: 140px;
 	pointer-events: none;
+	@media screen and (max-width: 800px) {
+		left: calc(50%);
+	}
 `;
 
 const SpinSVG = styled.svg`
