@@ -12,8 +12,8 @@ const ProjectCardsContainer = styled.div`
 	margin: 0 auto;
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 2px 1fr;
-	grid-template-rows: 1fr;
+	/* grid-template-columns: 1fr 2px 1fr;
+	grid-template-rows: 1fr; */
 	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 2px 1fr;
@@ -21,9 +21,10 @@ const ProjectCardsContainer = styled.div`
 `;
 
 const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
-	@media screen and (max-width: 800px) {
 		grid-template-rows: 1fr;
-	}
+	/* @media screen and (max-width: 800px) {
+		grid-template-rows: 1fr;
+	} */
 `;
 
 const HorizontalLine = styled.div`
@@ -34,18 +35,20 @@ const HorizontalLine = styled.div`
 
 const MobileHorizontalLine = styled(HorizontalLine)`
 	display: none;
-	@media screen and (max-width: 800px) {
 		display: block;
-	}
+	/* @media screen and (max-width: 800px) {
+		display: block;
+	} */
 `;
 
 const VerticalLine = styled.div`
 	width: 2px;
 	background-color: black;
 	height: 100%;
-	@media screen and (max-width: 800px) {
 		display: none;
-	}
+	/* @media screen and (max-width: 800px) {
+		display: none;
+	} */
 `;
 
 export default function Projects() {
@@ -76,6 +79,8 @@ export default function Projects() {
 
 	return (
 		<Container>
+			<Spacer height={'xlarge'} />
+			<Spacer height={'xlarge'} />
 			<HorizontalLine />
 			<ProjectCardsContainer>
 				<ProjectCard {...fpotfp} right={true} />

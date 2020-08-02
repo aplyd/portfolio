@@ -14,6 +14,7 @@ import Contact from '../components/contact';
 import Cover from '../components/cover';
 import About from '../components/about';
 import Footer from '../components/footer';
+import SpinningText from '../components/spinningText'
 
 const ProjectsTitle = styled.h1`
 	color: var(--main-bg-color);
@@ -29,30 +30,32 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
-			<Spacer height={'large'} />
+
 			<ContentContainer>
 				<Logo />
 			</ContentContainer>
 
-			<Spacer height={'medium'} />
 			<Cover />
 
-			<Spacer height={'xlarge'} />
+
 			<SectionWrapper>
 				<ContentContainer>
 					<About />
 				</ContentContainer>
 			</SectionWrapper>
 
-			<Spacer height={'xlarge'} />
 			<SectionWrapper>
-				<ContentContainer id='projects'>
-					<ProjectsTitle>Projects</ProjectsTitle>
+				<ContentContainer>
+					<SpinningText />
 				</ContentContainer>
+			</SectionWrapper>
+
+
+			<SectionWrapper id='projects'>
 				<Projects />
 			</SectionWrapper>
 
-			<Spacer height={'xlarge'} />
+
 			<ContentContainer>
 				<Contact></Contact>
 			</ContentContainer>

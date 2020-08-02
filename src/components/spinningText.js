@@ -2,15 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { useScrollPos } from '../hooks/useScrollPos';
 import { motion } from 'framer-motion';
+import { Spacer } from './globalStyle'
 
 const SpinningTextContainer = styled.div`
 	transform: ${props => `rotate(${props.scrollPos}deg)`};
+	
 	width: 400px;
-	height: 400px;
 	z-index: 1007;
-	position: absolute;
-	left: 200px;
-	top: 140px;
+	margin: 0 auto;
 	pointer-events: none;
 	@media screen and (max-width: 800px) {
 		left: calc(50%);
@@ -18,7 +17,7 @@ const SpinningTextContainer = styled.div`
 `;
 
 const SpinSVG = styled.svg`
-	transform: scale(1.75);
+	transform: scale(2);
 	fill: transparent;
 	pointer-events: none;
 `;
@@ -39,7 +38,10 @@ export default function SpinningText() {
 	let scrollPos = useScrollPos();
 	return (
 		<SpinningTextContainer>
+			<Spacer height={'xlarge'} />
+			<Spacer height={'xlarge'} />
 			<motion.div
+				// animate={{ rotate: -scrollPos / 3, x: 0, y: 0, rotateY: scrollPos / 8 }}
 				animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
 				style={{ transformOrigin: 'center-center' }}
 			>
@@ -69,21 +71,4 @@ export default function SpinningText() {
 			</motion.div>
 		</SpinningTextContainer>
 	);
-}
-
-{
-	/* <SpinSVG
-					version='1.1'
-					viewBox='0 0 1000 1000'
-					preserveAspectRatio='xMinYMin meet'
-					height='400px'
-					width='400px'
-				>
-					<path
-						d='
-                M 500, 500
-                m -150, 0
-                a 150,150 0 1,1 300,0
-                a 150,150 0 1,1 -300,0
-                ' */
 }

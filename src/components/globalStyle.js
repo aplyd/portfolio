@@ -3,6 +3,7 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 export const PageContainer = styled.div`
 	margin: 0 auto;
 	padding-top: 56px;
+    background-color: var(--main-bg-color);
 `;
 
 export const ContentContainer = styled.div`
@@ -19,7 +20,7 @@ export const SectionTitle = styled.h1`
 export const Spacer = styled.div`
 	height: ${props => `var(--spacing-${props.height})`};
 	width: ${props =>
-		`var(--spacing-${props.width})` ? `var(--spacing-${props.width})` : 0};
+        `var(--spacing-${props.width})` ? `var(--spacing-${props.width})` : 0};
 	display: ${props => (props.width ? 'inline' : 'block')};
 `;
 
@@ -47,7 +48,7 @@ export const BtnLg = styled.button`
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --main-bg-color: white;
+        --main-bg-color: #c8c8c8;
         --main-fg-color: black;
         --accent-color: blue;
         --spacing-xsmall: 4px;
