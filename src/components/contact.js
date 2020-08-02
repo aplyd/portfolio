@@ -16,6 +16,9 @@ const Container = styled.div`
 		grid-template-columns: 1fr;
 		grid-template-rows: 600px 600px;
 	}
+	@media screen and (max-width: 960px) {
+		margin: 0 16px;
+	}
 `;
 
 const FormContainer = styled.div`
@@ -53,7 +56,7 @@ const NameInput = styled(Input)``;
 const EmailInput = styled(Input)``;
 
 const MessageInput = styled(TextareaAutosize)`
-	color: var(--main-fg-color);
+	/* color: var(--main-fg-color); */
 	border: none;
 	outline: none;
 	border-bottom: 2px solid var(--main-fg-color);

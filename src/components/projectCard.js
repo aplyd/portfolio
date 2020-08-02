@@ -22,6 +22,10 @@ const Words = styled.div`
 		padding: 24px 0;
 		margin: 0 auto;
 	}
+	@media screen and (max-width: 504px) {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
 `;
 
 const PTitle = styled.h1`

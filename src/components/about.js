@@ -12,6 +12,10 @@ const Container = styled.div`
 		grid-template-columns: 1fr;
 		grid-template-rows: 580px, 580px;
 	}
+	/* @media screen and (max-width: 960px) {
+		padding-left: 16px;
+		padding-right: 16px;
+	} */
 `;
 
 const TextContainer = styled.div`
@@ -66,7 +70,6 @@ const ProfileSVG = styled.div`
 	}
 	&& > svg {
 		/* border-radius: 50px; */
-
 		height: 442px;
 		width: 390px;
 		background-color: var(--main-fg-color);

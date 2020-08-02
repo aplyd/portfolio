@@ -6,6 +6,9 @@ const Frame = styled.div`
 	width: 300px;
 	height: 384px;
 	overflow: hidden;
+	/* @media screen and (max-width: 675px) {
+		margin-left: 16px;
+	} */
 `;
 
 const P = styled.p`
