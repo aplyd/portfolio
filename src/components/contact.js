@@ -32,7 +32,6 @@ const EmailInput = styled(Input)`
 
 const MessageInput = styled(TextareaAutosize)`
 	/* color: var(--main-fg-color); */
-	color: red;
 	border: none;
 	outline: none;
 	border-bottom: 2px solid var(--main-fg-color);
@@ -81,8 +80,8 @@ const SlantedLine = styled.div`
 `
 
 export default function Contact() {
-	// const [name, setName] = useState();
-	// const [message, setMessage] = useState();
+	const [name, setName] = useState();
+	const [message, setMessage] = useState(null);
 
 	return (
 		<>
@@ -106,8 +105,10 @@ export default function Contact() {
 					<EmailInput placeholder='You Email'></EmailInput>
 
 					<MessageInput
-						placeholder='Share Your Thoughts'
+						placeholder='Your Message'
 						maxLength='375'
+						value={message}
+						onChange={(e) => setMessage(e.target.value)}
 					>
 						{' '}
 					</MessageInput>

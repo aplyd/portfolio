@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Spacer, SectionTitle, BtnLg } from './globalStyle';
-import SpinningText from './spinningText';
 
 const Container = styled.div`
 	margin: 0 auto;
-	text-align: center;
 	max-width: 680px;
 `;
 
