@@ -56,8 +56,8 @@ export default function Index() {
 			</SectionWrapper>
 
 
+			<Contact />
 			<ContentContainer>
-				<Contact></Contact>
 			</ContentContainer>
 
 			<SectionWrapper>

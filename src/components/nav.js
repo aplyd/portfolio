@@ -152,16 +152,16 @@ export default function Nav({ setIsMobileMenuOpen }) {
 					{desktopMenu()}
 				</NavItemsContainer>
 			) : (
-				mobileMenu()
-			)}
+					mobileMenu()
+				)}
 			<ToggleContainer onClick={() => toggleDisplayMode()}>
 				{isDarkMode ? (
 					<ToggleModeBtn as={GiStripedSun}></ToggleModeBtn>
 				) : (
-					<ToggleModeBtn
-						as={WiMoonAltWaxingCrescent4}
-					></ToggleModeBtn>
-				)}
+						<ToggleModeBtn
+							as={WiMoonAltWaxingCrescent4}
+						></ToggleModeBtn>
+					)}
 			</ToggleContainer>
 		</Container>
 	);

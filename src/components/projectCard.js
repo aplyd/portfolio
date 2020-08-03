@@ -14,24 +14,14 @@ const Words = styled.div`
 	height: 480px;
 	width: 100%;
 	padding: 48px 24px 0 24px;
-	/* float: ${props => (props.right ? 'right' : null)}; */
 	max-width: 680px;
-	text-align: center;
 	float: none;
 	padding: 24px 0;
 	margin: 0 auto;
-	/* @media screen and (max-width: 800px) {
-		float: none;
-		padding: 24px 0;
-		margin: 0 auto;
-	}
-	@media screen and (max-width: 504px) {
-		padding-left: 16px;
-		padding-right: 16px;
-	} */
 `;
 
 const PTitle = styled.h1`
+	text-align: center;
 	font-weight: bold;
 	color: var(--main-fg-color);
 	text-transform: uppercase;
@@ -58,7 +48,6 @@ const ToolsTitle = styled.p`
 
 const Tool = styled.div`
 	padding: 0 16px 8px 0;
-	background: red;
 	font-size: 18px;
 	display: flex;
 	flex-direction: row;
@@ -69,9 +58,7 @@ const Tool = styled.div`
 `;
 
 const BtnsContainer = styled.div`
-	/* display: flex;
-	flex-direction: row;
-	justify-content: flex-end; */
+	text-align: center;
 `;
 
 const Btn = styled.button`
@@ -96,7 +83,7 @@ const DemoBtn = styled(Btn)`
 const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {
 	return (
 		<ProjectContainer>
-			<Spacer height={'large'} />
+			<Spacer height={'medium'} />
 			<Words right={right} paddingLeft={paddingLeft}>
 				{/* <Spacer height={'medium'} /> */}
 				<PTitle>{title}</PTitle>

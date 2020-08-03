@@ -5,8 +5,7 @@ import { motion } from 'framer-motion';
 import { Spacer } from './globalStyle'
 
 const SpinningTextContainer = styled.div`
-	transform: ${props => `rotate(${props.scrollPos}deg)`};
-	
+	/* transform: rotateY(90); */
 	width: 400px;
 	z-index: 1007;
 	margin: 0 auto;
@@ -41,8 +40,8 @@ export default function SpinningText() {
 			<Spacer height={'xlarge'} />
 			<Spacer height={'xlarge'} />
 			<motion.div
-				// animate={{ rotate: -scrollPos / 3, x: 0, y: 0, rotateY: scrollPos / 8 }}
-				animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
+				animate={{ rotate: -scrollPos / 2, x: 0, y: 0, rotateY: scrollPos / 4.5 }}
+				// animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
 				style={{ transformOrigin: 'center-center' }}
 			>
 				<SpinSVG

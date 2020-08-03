@@ -2,29 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Frame = styled.div`
-	/* float: right; */
-	width: 300px;
-	height: 384px;
-	overflow: hidden;
-	/* @media screen and (max-width: 675px) {
-		margin-left: 16px;
-	} */
+	width: 220px;
+	height: 260px;
 `;
+
+const fontSize = '48px'
 
 const P = styled.p`
 	white-space: nowrap;
-	color: var(--main-bg-color);
-	font-size: 64px;
-	line-height: 64px;
+	color: var(--main-fg-color);
+	font-size: ${fontSize};
+	line-height: ${fontSize};
 	font-weight: bold;
 	animation: slide 1s infinite linear;
-	text-shadow: -1.5px -1.5px 0 var(--main-fg-color),
-		1.5px -1.5px 0 var(--main-fg-color), -1.5px 1.5px 0 var(--main-fg-color),
-		1.5px 1.5px 0 var(--main-fg-color);
 	text-transform: uppercase;
 	@keyframes slide {
 		from {
-			transform: translateY(-64px);
+			transform: translateY(-48px);
 		}
 		to {
 			transform: translateY(0);
