@@ -48,7 +48,7 @@ export const BtnLg = styled.button`
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --main-bg-color: #c8c8c8;
+        --main-bg-color: white;
         --main-fg-color: black;
         --accent-color: blue;
         --spacing-xsmall: 4px;

@@ -6,7 +6,6 @@ import Layout from '../components/layout';
 import Logo from '../components/logo';
 import {
 	ContentContainer,
-	Spacer,
 	SectionWrapper
 } from '../components/globalStyle';
 import Projects from '../components/projects';
@@ -15,16 +14,6 @@ import Cover from '../components/cover';
 import About from '../components/about';
 import Footer from '../components/footer';
 import SpinningText from '../components/spinningText'
-
-const ProjectsTitle = styled.h1`
-	color: var(--main-bg-color);
-	text-transform: uppercase;
-	font-size: 64px;
-	font-weight: bold;
-	text-shadow: -1px -1px 0 var(--main-fg-color),
-		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),
-		1px 1px 0 var(--main-fg-color);
-`;
 
 export default function Index() {
 	return (

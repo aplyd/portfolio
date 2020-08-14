@@ -20,10 +20,6 @@ const ProjectCardsContainer = styled.div`
 	margin: 0 auto;
 	width: 100%;
 	display: grid;
-	@media screen and (max-width: 800px) {
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 2px 1fr;
-	}
 `;
 
 const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
