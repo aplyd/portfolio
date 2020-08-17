@@ -7,10 +7,10 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider } from "@chakra-ui/core";
-import { customTheme } from '../gatsby-plugin-chakra-ui/theme'
+import { ThemeProvider, ColorModeProvider } from "@chakra-ui/core";
+import customTheme from '../gatsby-plugin-chakra-ui/theme'
 import Nav from './nav';
-import { Box, Text } from '@chakra-ui/core'
+import { Box, Text, Icon } from '@chakra-ui/core'
 // import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
 
@@ -66,23 +66,31 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<ThemeProvider theme={customTheme}>
+				<ColorModeProvider>
 
-				{/* MOBILE MENU */}
-				<Box backgroundColor="brand.700">
-					<Text fontSize="2xl">NAV TEST</Text>
-				</Box>
+					{/* MOBILE MENU */}
+					{/* <Box backgroundColor="brand.700">
+						<Box>
+							<Text fontSize="2xl">Home</Text>
+							<Text fontSize="2xl">Info</Text>
+							<Text fontSize="2xl">Projects</Text>
+							<Text fontSize="2xl">Contact</Text>
+							<Text fontSize="2xl">Blog</Text>
+							<Icon as={MdClose}
+								onClick={() => setIsMobileMenuOpen(false)}>
+							</Icon>
+						</Box>
+					</Box> */}
 
-				{/* DESKTOP MENU */}
-				<Box>
+					{/* DESKTOP MENU */}
+					<Nav setIsMobileMenuOpen={setIsMobileMenuOpen} />
 
-				</Box>
+					<main>{children}</main>
 
-				<main>{children}</main>
-
-				{/* <GlobalStyle />
+					{/* <GlobalStyle />
 			
 			{/* TODO - animate with framer-motion */}
-				{/* {isMobileMenuOpen ? (
+					{/* {isMobileMenuOpen ? (
 				<MobileMenu>
 					<MenuItemContainer>
 						<MenuItem>Home</MenuItem>
@@ -102,14 +110,14 @@ const Layout = ({ children }) => {
 			<PageContainer>
 			</PageContainer> */}
 
-
+				</ColorModeProvider>
 			</ThemeProvider>
 		</>
 	);
 };
 
-// Layout.propTypes = {
-// 	children: PropTypes.node.isRequired
-// };
+Layout.propTypes = {
+	children: PropTypes.any
+};
 
 export default Layout;

@@ -5,7 +5,7 @@ import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
 import { GiStripedSun } from 'react-icons/gi';
 import useWindowWidth from '../hooks/useWindowWidth';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import { Box, Text } from '@chakra-ui/core'
+import { Box, Text, IconButton, useColorMode } from '@chakra-ui/core'
 
 // const Container = styled.div`
 // 	width: 100%;
@@ -77,44 +77,9 @@ import { Box, Text } from '@chakra-ui/core'
 
 export default function Nav({ setIsMobileMenuOpen }) {
 	const [visible, setVisible] = useState(true);
-	const [isDarkMode, setIsDarkMode] = useState(false);
 	useScrollToHideNav(setVisible);
 	const [windowWidth] = useWindowWidth();
-
-	const windowGlobal = typeof window !== 'undefined' && window;
-
-	//detect dark mode - not sure if it works properly
-	useEffect(() => {
-		if (
-			windowGlobal.matchMedia &&
-			windowGlobal.matchMedia('(prefers-color-scheme: dark)').matches
-		) {
-			setIsDarkMode(true);
-		}
-	}, [isDarkMode, windowGlobal]);
-
-	//toggle dark/light modes
-	const toggleDisplayMode = () => {
-		setIsDarkMode(!isDarkMode);
-
-		const bg = windowGlobal
-			.getComputedStyle(windowGlobal.document.documentElement)
-			.getPropertyValue('--main-bg-color');
-
-		const fg = windowGlobal
-			.getComputedStyle(windowGlobal.document.documentElement)
-			.getPropertyValue('--main-fg-color');
-
-		windowGlobal.document.documentElement.style.setProperty(
-			'--main-bg-color',
-			bg === bg ? fg : bg
-		);
-
-		windowGlobal.document.documentElement.style.setProperty(
-			'--main-fg-color',
-			fg === fg ? bg : fg
-		);
-	};
+	const { colorMode, toggleColorMode } = useColorMode();
 
 	const navItems = [
 		{ title: 'home', link: '/' },
@@ -133,8 +98,18 @@ export default function Nav({ setIsMobileMenuOpen }) {
 				// 	</NavItem>
 				// </AnchorLink>
 				<AnchorLink to={i.link || '/' + i.shortcut} key={index}>
-					<Box key={index}>
-						<Text fontSize="2xl">{i.title}</Text>
+					<Box
+						key={index}
+						height="56px"
+						width="100%"
+						textAlign="center"
+					>
+						<Text
+							fontSize="2xl"
+							textTransform="uppercase"
+							mt="20px"
+							cursor="pointer"
+						>{i.title}</Text>
 					</Box>
 				</AnchorLink>
 			);
@@ -155,16 +130,61 @@ export default function Nav({ setIsMobileMenuOpen }) {
 	};
 
 	return (
-		<Box visible={visible}>
-			{windowWidth > 800 ? (
-				<Box>
-					{desktopMenu()}
+		<>
+			<Box
+				visible={visible}
+				height="56px"
+				width="100%"
+				position="fixed"
+				top={() => visible ? 0 : '-58px'}
+				transition='top 0.3s'
+				zIndex="1009"
+				display="flex"
+				flexDirection="row"
+			>
+				{windowWidth > 800 ? (
+					<Box
+						windowWidth={windowWidth}
+					>
+						<Box
+							width="480px"
+							margin="0 58px 0 16px"
+							display="flex"
+							flex-direction="row"
+							justifyContent="space-between"
+						>
+							{desktopMenu()}
+						</Box>
+					</Box>
+				) : (
+						mobileMenu()
+					)
+				}
+				<Box onClick={toggleColorMode}>
+					{colorMode === 'dark' ? (
+						<IconButton
+							aria-label="Toggle dark mode"
+							fontSize="42px"
+							icon={GiStripedSun}
+							position="absolute"
+							top="8px"
+							right="16px"
+
+						></IconButton>
+					) : (
+							<IconButton
+								aria-label="Toggle dark mode"
+								fontSize="42px"
+								icon={WiMoonAltWaxingCrescent4}
+								position="absolute"
+								top="8px"
+								right="16px"
+							></IconButton>
+						)}
 				</Box>
-			) : (
-					mobileMenu()
-				)
-			}
-		</Box>
+			</Box>
+
+		</>
 		// <Container visible={visible}>
 		// 	{windowWidth > 800 ? (
 		// 		<NavItemsContainer windowWidth={windowWidth}>
