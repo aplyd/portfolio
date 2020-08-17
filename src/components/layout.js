@@ -66,13 +66,23 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<ThemeProvider theme={customTheme}>
-				<main>{children}</main>
-			</ThemeProvider>
 
-			{/* <GlobalStyle />
+				{/* MOBILE MENU */}
+				<Box backgroundColor="brand.700">
+					<Text fontSize="2xl">NAV TEST</Text>
+				</Box>
+
+				{/* DESKTOP MENU */}
+				<Box>
+
+				</Box>
+
+				<main>{children}</main>
+
+				{/* <GlobalStyle />
 			
 			{/* TODO - animate with framer-motion */}
-			{/* {isMobileMenuOpen ? (
+				{/* {isMobileMenuOpen ? (
 				<MobileMenu>
 					<MenuItemContainer>
 						<MenuItem>Home</MenuItem>
@@ -93,13 +103,13 @@ const Layout = ({ children }) => {
 			</PageContainer> */}
 
 
-
+			</ThemeProvider>
 		</>
 	);
 };
 
-Layout.propTypes = {
-	children: PropTypes.node.isRequired
-};
+// Layout.propTypes = {
+// 	children: PropTypes.node.isRequired
+// };
 
 export default Layout;

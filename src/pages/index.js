@@ -17,10 +17,6 @@ import { Box, Text } from '@chakra-ui/core'
 export default function Index() {
 	return (
 		<Layout>
-			<Box p={8} bgColor="red.800">
-				<Text fontSize="xl" color="brand.700">HLLLEOO</Text>
-			</Box>
-			<h1>fjmdkslfjkdsl</h1>
 			{/* <SEO title='Home' />
 
 			<ContentContainer>

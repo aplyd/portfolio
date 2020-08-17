@@ -5,6 +5,7 @@ import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
 import { GiStripedSun } from 'react-icons/gi';
 import useWindowWidth from '../hooks/useWindowWidth';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { Box, Text } from '@chakra-ui/core'
 
 // const Container = styled.div`
 // 	width: 100%;
@@ -123,28 +124,47 @@ export default function Nav({ setIsMobileMenuOpen }) {
 		{ title: 'contact', shortcut: '#contact' }
 	];
 
-	// const desktopMenu = () => {
-	// 	return navItems.map((i, index) => {
-	// 		return (
-	// 			<AnchorLink to={i.link || '/' + i.shortcut} key={index}>
-	// 				<NavItem key={index}>
-	// 					<h3>{i.title}</h3>
-	// 				</NavItem>
-	// 			</AnchorLink>
-	// 		);
-	// 	});
-	// };
+	const desktopMenu = () => {
+		return navItems.map((i, index) => {
+			return (
+				// <AnchorLink to={i.link || '/' + i.shortcut} key={index}>
+				// 	<NavItem key={index}>
+				// 		<h3>{i.title}</h3>
+				// 	</NavItem>
+				// </AnchorLink>
+				<AnchorLink to={i.link || '/' + i.shortcut} key={index}>
+					<Box key={index}>
+						<Text fontSize="2xl">{i.title}</Text>
+					</Box>
+				</AnchorLink>
+			);
+		});
+	};
 
-	// const mobileMenu = () => {
-	// 	return (
-	// 		<MenuBtnContainer onClick={() => setIsMobileMenuOpen(true)}>
-	// 			<h3>ME</h3>
-	// 			<h3>NU</h3>
-	// 		</MenuBtnContainer>
-	// 	);
-	// };
+	const mobileMenu = () => {
+		return (
+			// <MenuBtnContainer onClick={() => setIsMobileMenuOpen(true)}>
+			// 	<h3>ME</h3>
+			// 	<h3>NU</h3>
+			// </MenuBtnContainer>
+			<Box onClick={() => setIsMobileMenuOpen(true)}>
+				<Text>ME</Text>
+				<Text>NU</Text>
+			</Box>
+		);
+	};
 
 	return (
+		<Box visible={visible}>
+			{windowWidth > 800 ? (
+				<Box>
+					{desktopMenu()}
+				</Box>
+			) : (
+					mobileMenu()
+				)
+			}
+		</Box>
 		// <Container visible={visible}>
 		// 	{windowWidth > 800 ? (
 		// 		<NavItemsContainer windowWidth={windowWidth}>
@@ -163,7 +183,6 @@ export default function Nav({ setIsMobileMenuOpen }) {
 		// 			)}
 		// 	</ToggleContainer>
 		// </Container>
-		<></>
 	);
 }
 
