@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { Box, Text } from '@chakra-ui/core'
-// import Logo from '../components/logo';
+import Logo from '../components/logo';
 // import {
 // 	ContentContainer,
 // 	SectionWrapper
@@ -17,15 +17,14 @@ import { Box, Text } from '@chakra-ui/core'
 export default function Index() {
 	return (
 		<Layout>
-			{/* <SEO title='Home' />
+			<SEO title='Home' />
 
-			<ContentContainer>
-				<Logo />
-			</ContentContainer>
-
-			<Cover />
+			<Logo />
 
 
+			{/* <Cover /> */}
+
+			{/* 
 			<SectionWrapper>
 				<ContentContainer>
 					<About />

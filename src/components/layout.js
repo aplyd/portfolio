@@ -10,13 +10,14 @@ import PropTypes from 'prop-types';
 import { ThemeProvider, ColorModeProvider } from "@chakra-ui/core";
 import customTheme from '../gatsby-plugin-chakra-ui/theme'
 import Nav from './nav';
-import { Box, Text, Icon } from '@chakra-ui/core'
+import { Box, Text, IconButton } from '@chakra-ui/core'
 // import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
 
 import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
 import { MdClose } from 'react-icons/md';
+import styled from '@emotion/styled'
 // import { Frame, AnimatePresence } from 'framer';
 
 // const MobileMenu = styled.div`
@@ -68,21 +69,36 @@ const Layout = ({ children }) => {
 			<ThemeProvider theme={customTheme}>
 				<ColorModeProvider>
 
-					{/* MOBILE MENU */}
-					{/* <Box backgroundColor="brand.700">
-						<Box>
-							<Text fontSize="2xl">Home</Text>
-							<Text fontSize="2xl">Info</Text>
-							<Text fontSize="2xl">Projects</Text>
-							<Text fontSize="2xl">Contact</Text>
-							<Text fontSize="2xl">Blog</Text>
-							<Icon as={MdClose}
-								onClick={() => setIsMobileMenuOpen(false)}>
-							</Icon>
-						</Box>
-					</Box> */}
+					{/* MOBILE SLIDE OUT MENU */}
+					{isMobileMenuOpen ? (
+						<Box
+							position="fixed"
+							height="100vh"
+							width="100vw"
+							overflow="hidden"
+							zIndex={1002}
+							display="grid"
+							gridTemplateRows="80px 1fr 80px"
+						>
+							<Box
+								gridRow="2"
+								display="flex"
+								flexDirection="column"
+								alignItems="center"
+								justifyContent="space-evenly"
+							>
+								<Text fontSize="2xl" cursor="pointer">Home</Text>
+								<Text fontSize="2xl" cursor="pointer">Info</Text>
+								<Text fontSize="2xl" cursor="pointer">Projects</Text>
+								<Text fontSize="2xl" cursor="pointer">Contact</Text>
+								<Text fontSize="2xl" cursor="pointer">Blog</Text>
+								<IconButton as={MdClose}
+									onClick={() => setIsMobileMenuOpen(false)}>
+								</IconButton>
+							</Box>
+						</Box>) : null}
 
-					{/* DESKTOP MENU */}
+					{/* DESKTOP & MOBILE NAV */}
 					<Nav setIsMobileMenuOpen={setIsMobileMenuOpen} />
 
 					<main>{children}</main>

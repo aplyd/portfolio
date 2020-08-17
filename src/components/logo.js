@@ -1,5 +1,6 @@
 import React from 'react';
-import { Spacer } from './globalStyle'
+import { Box, Text } from '@chakra-ui/core'
+import { sigTextShadow } from './globalStyle'
 
 // const Header = styled.div`
 // 	position: relative;
@@ -49,6 +50,12 @@ export default function Logo() {
 		// 		<Italic>Ftacnik</Italic>
 		// 	</LogoContainer>
 		// </Header>
-		<></>
+		<>
+			<Box w="100%" p="4">
+				<Text fontSize="6xl">FTACNIK</Text>
+				<Text fontSize="6xl" textShadow={sigTextShadow}>FTACNIK</Text>
+				<Text fontSize="6xl">FTACNIK</Text>
+			</Box>
+		</>
 	);
 }

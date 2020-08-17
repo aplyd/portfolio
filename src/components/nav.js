@@ -122,9 +122,24 @@ export default function Nav({ setIsMobileMenuOpen }) {
 			// 	<h3>ME</h3>
 			// 	<h3>NU</h3>
 			// </MenuBtnContainer>
-			<Box onClick={() => setIsMobileMenuOpen(true)}>
-				<Text>ME</Text>
-				<Text>NU</Text>
+			<Box
+				onClick={() => setIsMobileMenuOpen(true)}
+				height="48px"
+				position="absolute"
+				top="7px"
+				left="16px"
+				width="42px"
+			>
+				<Text
+					zIndex={10003}
+					mb="-4px"
+					padding={0}
+				>ME</Text>
+				<Text
+					zIndex={10003}
+					mb="-4px"
+					padding={0}
+				>NU</Text>
 			</Box>
 		);
 	};
