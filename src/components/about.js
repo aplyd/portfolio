@@ -1,44 +1,43 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Spacer, SectionTitle, BtnLg } from './globalStyle';
 
-const Container = styled.div`
-	margin: 0 auto;
-	max-width: 680px;
-`;
+// const Container = styled.div`
+// 	margin: 0 auto;
+// 	max-width: 680px;
+// `;
 
-const P = styled.p`
-	color: var(--main-fg-color);
-`;
+// const P = styled.p`
+// 	color: var(--main-fg-color);
+// `;
 
-const BoldTitle = styled.h1`
-	color: var(--main-fg-color);
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 60px;
-`;
+// const BoldTitle = styled.h1`
+// 	color: var(--main-fg-color);
+// 	text-transform: uppercase;
+// 	font-weight: bold;
+// 	font-size: 60px;
+// `;
 
-const SubTitle = styled.h2`
-	margin-top: -4px;
-	color: var(--main-fg-color);
-	text-transform: uppercase;
-	font-size: 32px;
-`;
+// const SubTitle = styled.h2`
+// 	margin-top: -4px;
+// 	color: var(--main-fg-color);
+// 	text-transform: uppercase;
+// 	font-size: 32px;
+// `;
 
-const CTAbtn = styled.button`
-	border-radius: 50px;
-	border: solid 3px black;
-	padding: 20px 48px;
-	font-weight: bold;
-	text-transform: uppercase;
-	background-color: var(--main-fg-color);
-	color: var(--main-bg-color);
-`;
+// const CTAbtn = styled.button`
+// 	border-radius: 50px;
+// 	border: solid 3px black;
+// 	padding: 20px 48px;
+// 	font-weight: bold;
+// 	text-transform: uppercase;
+// 	background-color: var(--main-fg-color);
+// 	color: var(--main-bg-color);
+// `;
 
 const About = () => {
 	return (
 		<>
-			<Container>
+			{/* <Container>
 				<Spacer height={'xlarge'} />
 				<Spacer height={'large'} />
 				<BoldTitle>Austin Ftacnik</BoldTitle>
@@ -60,7 +59,7 @@ const About = () => {
 					Get in touch
 				</CTAbtn>
 
-			</Container>
+			</Container> */}
 		</>
 	);
 };

@@ -7,47 +7,49 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from "@chakra-ui/core";
+import { customTheme } from '../gatsby-plugin-chakra-ui/theme'
 import Nav from './nav';
+import { Box, Text } from '@chakra-ui/core'
 // import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
 
 import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
-import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 // import { Frame, AnimatePresence } from 'framer';
 
-const MobileMenu = styled.div`
-	background-color: var(--main-bg-color);
-	position: fixed;
-	height: 100vh;
-	width: 100vw;
-	overflow: hidden;
-	z-index: 1002;
-	display: grid;
-	grid-template-rows: 80px 1fr 80px;
-`;
+// const MobileMenu = styled.div`
+// 	background-color: var(--main-bg-color);
+// 	position: fixed;
+// 	height: 100vh;
+// 	width: 100vw;
+// 	overflow: hidden;
+// 	z-index: 1002;
+// 	display: grid;
+// 	grid-template-rows: 80px 1fr 80px;
+// `;
 
-const MenuItemContainer = styled.div`
-	grid-row: 2;
-	color: var(--main-fg-color);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
-`;
-const MenuItem = styled.h2`
-	cursor: pointer;
-	&&:hover {
-		color: var(--main-bg-color);
-	}
-`;
+// const MenuItemContainer = styled.div`
+// 	grid-row: 2;
+// 	color: var(--main-fg-color);
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	justify-content: space-evenly;
+// `;
+// const MenuItem = styled.h2`
+// 	cursor: pointer;
+// 	&&:hover {
+// 		color: var(--main-bg-color);
+// 	}
+// `;
 
-const CloseMenu = styled.svg`
-	font-size: 36px;
-	cursor: pointer;
-	color: var(--main-fg-color);
-`;
+// const CloseMenu = styled.svg`
+// 	font-size: 36px;
+// 	cursor: pointer;
+// 	color: var(--main-fg-color);
+// `;
 
 const Layout = ({ children }) => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -63,10 +65,14 @@ const Layout = ({ children }) => {
 
 	return (
 		<>
-			<GlobalStyle />
+			<ThemeProvider theme={customTheme}>
+				<main>{children}</main>
+			</ThemeProvider>
 
+			{/* <GlobalStyle />
+			
 			{/* TODO - animate with framer-motion */}
-			{isMobileMenuOpen ? (
+			{/* {isMobileMenuOpen ? (
 				<MobileMenu>
 					<MenuItemContainer>
 						<MenuItem>Home</MenuItem>
@@ -84,8 +90,10 @@ const Layout = ({ children }) => {
 
 			<Nav setIsMobileMenuOpen={setIsMobileMenuOpen} />
 			<PageContainer>
-				<main>{children}</main>
-			</PageContainer>
+			</PageContainer> */}
+
+
+
 		</>
 	);
 };

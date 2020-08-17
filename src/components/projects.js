@@ -1,49 +1,48 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
 
-const Container = styled.div`
-	position: relative;
-	margin: 0 auto;
-`;
+// const Container = styled.div`
+// 	position: relative;
+// 	margin: 0 auto;
+// `;
 
-const Title = styled.h1`
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 60px;
-	max-width: 680px;
-	margin: 0 auto;
-`;
+// const Title = styled.h1`
+// 	text-transform: uppercase;
+// 	font-weight: 700;
+// 	font-size: 60px;
+// 	max-width: 680px;
+// 	margin: 0 auto;
+// `;
 
-const ProjectCardsContainer = styled.div`
-	margin: 0 auto;
-	width: 100%;
-	display: grid;
-`;
+// const ProjectCardsContainer = styled.div`
+// 	margin: 0 auto;
+// 	width: 100%;
+// 	display: grid;
+// `;
 
-const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
-		grid-template-rows: 1fr;
+// const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
+// 		grid-template-rows: 1fr;
 
-`;
+// `;
 
-const HorizontalLine = styled.div`
-	height: 2px;
-	background-color: var(--main-fg-color);
-	width: 100%;
-`;
+// const HorizontalLine = styled.div`
+// 	height: 2px;
+// 	background-color: var(--main-fg-color);
+// 	width: 100%;
+// `;
 
-const MobileHorizontalLine = styled(HorizontalLine)`
-	display: none;
-	display: block;
-`;
+// const MobileHorizontalLine = styled(HorizontalLine)`
+// 	display: none;
+// 	display: block;
+// `;
 
-const VerticalLine = styled.div`
-	width: 2px;
-	background-color: black;
-	height: 100%;
-	display: none;
-`;
+// const VerticalLine = styled.div`
+// 	width: 2px;
+// 	background-color: black;
+// 	height: 100%;
+// 	display: none;
+// `;
 
 export default function Projects() {
 	const battleship = {
@@ -72,24 +71,25 @@ export default function Projects() {
 	};
 
 	return (
-		<Container>
-			<Spacer height={'xlarge'} />
-			<Spacer height={'xlarge'} />
-			<Title>Projects</Title>
+		<></>
+		// <Container>
+		// 	<Spacer height={'xlarge'} />
+		// 	<Spacer height={'xlarge'} />
+		// 	<Title>Projects</Title>
 
-			<HorizontalLine />
-			<ProjectCardsContainer>
-				<ProjectCard {...fpotfp} right={true} />
-				<VerticalLine />
-				<MobileHorizontalLine />
-				<ProjectCard {...battleship} paddingLeft={true} />
-			</ProjectCardsContainer>
+		// 	<HorizontalLine />
+		// 	<ProjectCardsContainer>
+		// 		<ProjectCard {...fpotfp} right={true} />
+		// 		<VerticalLine />
+		// 		<MobileHorizontalLine />
+		// 		<ProjectCard {...battleship} paddingLeft={true} />
+		// 	</ProjectCardsContainer>
 
-			<HorizontalLine />
-			<LowerProjectCardsContainer>
-				<ProjectCard {...wheresWaldo} right={true} />
-				<VerticalLine />
-			</LowerProjectCardsContainer>
-		</Container>
+		// 	<HorizontalLine />
+		// 	<LowerProjectCardsContainer>
+		// 		<ProjectCard {...wheresWaldo} right={true} />
+		// 		<VerticalLine />
+		// 	</LowerProjectCardsContainer>
+		// </Container>
 	);
 }

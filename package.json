@@ -5,12 +5,17 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.34",
+    "@emotion/styled": "^10.0.27",
     "babel-plugin-styled-components": "^1.10.7",
+    "emotion-theming": "^10.0.27",
     "framer-motion": "^1.11.1",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-anchor-links": "^1.1.1",
     "gatsby-plugin-catch-links": "^2.1.27",
+    "gatsby-plugin-chakra-ui": "^0.1.4",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
@@ -24,8 +29,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.10.0",
-    "react-textarea-autosize": "^8.2.0",
-    "styled-components": "^5.1.0"
+    "react-textarea-autosize": "^8.2.0"
   },
   "devDependencies": {
     "eslint-plugin-react-hooks": "^4.0.2",
