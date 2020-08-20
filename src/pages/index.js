@@ -20,17 +20,14 @@ export default function Index() {
 			<SEO title='Home' />
 			<Cover />
 
-
 			<SectionWrapper>
 				<ContentContainer>
 					<About />
 				</ContentContainer>
 			</SectionWrapper>
 
+			<Projects />
 
-			<SectionWrapper id='projects'>
-				<Projects />
-			</SectionWrapper>
 
 
 			<Contact />

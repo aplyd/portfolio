@@ -4,7 +4,8 @@ import { Spacer, SectionTitle, BtnLg } from './globalStyle';
 
 const Container = styled.div`
 	margin: 0 auto;
-	max-width: 680px;
+	max-width: 50em;
+	text-align: center;
 `;
 
 const P = styled.p`
@@ -15,14 +16,14 @@ const BoldTitle = styled.h1`
 	color: var(--main-fg-color);
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 60px;
+	font-size: 3.5em;
 `;
 
 const SubTitle = styled.h2`
 	margin-top: -4px;
 	color: var(--main-fg-color);
 	text-transform: uppercase;
-	font-size: 32px;
+	font-size: 1.8em;
 `;
 
 const CTAbtn = styled.button`
@@ -39,8 +40,7 @@ const About = () => {
 	return (
 		<>
 			<Container>
-				<Spacer height={'xlarge'} />
-				<Spacer height={'large'} />
+				{[...Array(6)].map((_, i) => <Spacer height={'large'} key={i} />)}
 				<BoldTitle>Austin Ftacnik</BoldTitle>
 				<SubTitle>Front-End Developer</SubTitle>
 				<Spacer height={'large'} />

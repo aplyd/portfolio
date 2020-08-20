@@ -14,14 +14,15 @@ const Words = styled.div`
 	height: 480px;
 	width: 100%;
 	padding: 48px 24px 0 24px;
-	max-width: 680px;
+	max-width: 50em;
 	float: none;
 	padding: 24px 0;
 	margin: 0 auto;
 `;
 
 const PTitle = styled.h1`
-	
+	text-decoration: underline;
+	font-size: 3em;
 	font-weight: bold;
 	color: var(--main-fg-color);
 	text-transform: uppercase;

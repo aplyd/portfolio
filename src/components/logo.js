@@ -5,7 +5,7 @@ import { Spacer } from './globalStyle'
 const Container = styled.div`
 	position: absolute;
 	top: 124px;
-	left: -164px;
+	left: -145px;
 	text-align: center;
 	/* @media screen and (max-width: 960px) {
 		padding-right: 16px;
@@ -18,8 +18,8 @@ const LogoContainer = styled.div``;
 
 const LogoText = styled.h2`
 	text-transform: uppercase;
-	font-size: 140px;
-	line-height: 130px;
+	font-size: 120px;
+	line-height: 105px;
 	margin: -12px 0;
 	color: var(--accent-color);
 	font-weight: bold;

@@ -75,9 +75,8 @@ export default function Projects() {
 		<Container>
 			<Spacer height={'xlarge'} />
 			<Spacer height={'xlarge'} />
-			<Title>Projects</Title>
 
-			<HorizontalLine />
+
 			<ProjectCardsContainer>
 				<ProjectCard {...fpotfp} right={true} />
 				<VerticalLine />

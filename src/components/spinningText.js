@@ -14,7 +14,7 @@ const SpinningTextContainer = styled.div`
 		left: calc(50%);
 	}
 	position: absolute;
-	bottom: -150px;
+	bottom: -200px;
 	right: -150px;
 `;
 
@@ -28,7 +28,7 @@ const Text = styled.text`
 	font-weight: 700;
 	text-transform: uppercase;
 	z-index: 9999;
-	font-size: 23px;
+	font-size: 35px;
 	/* fill: var(--main-fg-color); */
 	fill: white;
 	pointer-events: none;
@@ -65,7 +65,7 @@ export default function SpinningText() {
 					<Text width='100'>
 						<textPath xlinkHref='#circle'>
 							idle hands build nothing idle hands build nothing
-							idle hands build nothing
+							
 						</textPath>
 					</Text>
 				</SpinSVG>

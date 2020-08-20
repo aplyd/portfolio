@@ -20,7 +20,7 @@ const ArtContainer = styled.div`
 	height: 100%;
 	position: relative;
 	margin: 0 auto;
-	max-width: 640px;
+	max-width: 34em;
 	&& > svg {
 		
 	}
@@ -47,7 +47,7 @@ export default function Cover() {
 
 		<Container>
 			<Spacer height={'xlarge'} />
-			<Spacer height={'xlarge'} />
+			<Spacer height={'medium'} />
 			<ArtContainer>
 				<Logo />
 				<SpinningText />
