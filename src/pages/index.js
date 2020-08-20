@@ -3,7 +3,6 @@ import SEO from '../components/seo';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-import Logo from '../components/logo';
 import {
 	ContentContainer,
 	SectionWrapper
@@ -19,23 +18,12 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
-
-			<ContentContainer>
-				<Logo />
-			</ContentContainer>
-
 			<Cover />
 
 
 			<SectionWrapper>
 				<ContentContainer>
 					<About />
-				</ContentContainer>
-			</SectionWrapper>
-
-			<SectionWrapper>
-				<ContentContainer>
-					<SpinningText />
 				</ContentContainer>
 			</SectionWrapper>
 

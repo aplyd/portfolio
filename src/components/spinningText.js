@@ -13,12 +13,15 @@ const SpinningTextContainer = styled.div`
 	@media screen and (max-width: 800px) {
 		left: calc(50%);
 	}
+	position: absolute;
+	bottom: -150px;
+	right: -150px;
 `;
 
 const SpinSVG = styled.svg`
-	transform: scale(2);
-	fill: transparent;
+	transform: scale(1.5);
 	pointer-events: none;
+	fill: transparent;
 `;
 
 const Text = styled.text`
@@ -26,7 +29,8 @@ const Text = styled.text`
 	text-transform: uppercase;
 	z-index: 9999;
 	font-size: 23px;
-	fill: var(--main-fg-color);
+	/* fill: var(--main-fg-color); */
+	fill: white;
 	pointer-events: none;
 	&& > path {
 		pointer-events: none;
@@ -37,11 +41,9 @@ export default function SpinningText() {
 	let scrollPos = useScrollPos();
 	return (
 		<SpinningTextContainer>
-			<Spacer height={'xlarge'} />
-			<Spacer height={'xlarge'} />
 			<motion.div
-				animate={{ rotate: -scrollPos / 2, x: 0, y: 0, rotateY: scrollPos / 4.5 }}
-				// animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
+				// animate={{ rotate: -scrollPos / 2, x: 0, y: 0, rotateY: scrollPos / 4.5 }}
+				animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
 				style={{ transformOrigin: 'center-center' }}
 			>
 				<SpinSVG
