@@ -28,7 +28,7 @@ const Text = styled.text`
 	font-weight: 700;
 	text-transform: uppercase;
 	z-index: 9999;
-	font-size: 35px;
+	font-size: 3.5rem;
 	/* fill: var(--main-fg-color); */
 	fill: white;
 	pointer-events: none;

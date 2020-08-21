@@ -18,7 +18,7 @@ const LogoContainer = styled.div``;
 
 const LogoText = styled.h2`
 	text-transform: uppercase;
-	font-size: 120px;
+	font-size: 12rem;
 	line-height: 105px;
 	margin: -12px 0;
 	color: var(--accent-color);

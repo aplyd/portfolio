@@ -22,7 +22,7 @@ const Words = styled.div`
 
 const PTitle = styled.h1`
 	text-decoration: underline;
-	font-size: 3em;
+	font-size: 2.2em;
 	font-weight: bold;
 	color: var(--main-fg-color);
 	text-transform: uppercase;
@@ -49,7 +49,7 @@ const ToolsTitle = styled.p`
 
 const Tool = styled.div`
 	padding: 0 16px 8px 0;
-	font-size: 18px;
+	font-size: 1.8rem;
 	display: flex;
 	flex-direction: row;
 	&& > p {

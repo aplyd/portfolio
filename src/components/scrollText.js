@@ -6,7 +6,7 @@ const Frame = styled.div`
 	height: 260px;
 `;
 
-const fontSize = '48px'
+const fontSize = '4.8rem'
 
 const P = styled.p`
 	white-space: nowrap;

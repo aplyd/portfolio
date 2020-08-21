@@ -61,6 +61,7 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         scroll-behavior: 'smooth';
+        font-size: 10px;
     }
 
     body {
@@ -77,15 +78,14 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     p {
-        font-size: 18px;
+        font-size: 1.8rem;
         line-height: 1.3em;
     }
 
     input, textarea {
         border: none;
         padding: 8px 8px 8px 0;
-        font-size: 18px;
-        
+        font-size: 1.8rem;
     }
     
     button {

@@ -33,7 +33,7 @@ const NavItem = styled.div`
 	text-align: center;
 	&& > h3 {
 		margin-top: 20px;
-		font-size: 16px;
+		font-size: 1.6rem;
 		text-transform: uppercase;
 		color: var(--main-fg-color);
 		transform: translateY(0);
@@ -50,7 +50,7 @@ const NavItem = styled.div`
 
 const ToggleModeBtn = styled.svg`
 	color: var(--main-fg-color);
-	font-size: 42px;
+	font-size: 4.2rem;
 	cursor: pointer;
 `;
 
@@ -69,7 +69,7 @@ const MenuBtnContainer = styled(ToggleContainer)`
 		color: var(--main-fg-color);
 		z-index: 10003;
 		margin-bottom: -4px;
-		font-size: 22px;
+		font-size: 2.2rem;
 		padding: 0;
 		cursor: pointer;
 	}

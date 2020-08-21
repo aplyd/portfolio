@@ -8,13 +8,13 @@ const Container = styled.div`
 	margin: 0 auto;
 `;
 
-const Title = styled.h1`
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 60px;
-	max-width: 680px;
-	margin: 0 auto;
-`;
+// const Title = styled.h1`
+// 	text-transform: uppercase;
+// 	font-weight: 700;
+// 	font-size: 60px;
+// 	max-width: 680px;
+// 	margin: 0 auto;
+// `;
 
 const ProjectCardsContainer = styled.div`
 	margin: 0 auto;

@@ -5,11 +5,11 @@ import { Spacer, SectionTitle, BtnLg } from './globalStyle';
 const Container = styled.div`
 	margin: 0 auto;
 	max-width: 50em;
-	text-align: center;
 `;
 
 const P = styled.p`
 	color: var(--main-fg-color);
+	
 `;
 
 const BoldTitle = styled.h1`
@@ -43,7 +43,7 @@ const About = () => {
 				{[...Array(6)].map((_, i) => <Spacer height={'large'} key={i} />)}
 				<BoldTitle>Austin Ftacnik</BoldTitle>
 				<SubTitle>Front-End Developer</SubTitle>
-				<Spacer height={'large'} />
+				<Spacer height={'medium'} />
 				<P>
 					Labore sit esse occaecat occaecat proident veniam. Esse
 					minim sit tempor sint laborum duis magna mollit
@@ -55,7 +55,7 @@ const About = () => {
 					voluptate. Ut cillum adipisicing excepteur elit qui
 					commodo commodo proident cupidatat.
 					</P>
-				<Spacer height={'large'} />
+				<Spacer height={'medium'} />
 				<CTAbtn mode={'dark'} onClick={() => console.log('click')}>
 					Get in touch
 				</CTAbtn>
