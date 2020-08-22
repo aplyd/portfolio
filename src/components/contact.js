@@ -85,7 +85,7 @@ export default function Contact() {
 
 	return (
 		<>
-			<Spacer height={'xlarge'} />
+			{/* <Spacer height={'xlarge'} />
 			<ArtContainer>
 				<ScrollTextContainer>
 					<ScrollText />
@@ -96,7 +96,7 @@ export default function Contact() {
 				<ScrollTextContainer>
 					<ScrollText />
 				</ScrollTextContainer>
-			</ArtContainer>
+			</ArtContainer> */}
 
 			<FormContainer>
 				<Spacer height={'medium'} />
@@ -110,7 +110,7 @@ export default function Contact() {
 						value={message}
 						onChange={(e) => setMessage(e.target.value)}
 					>
-						{' '}
+
 					</MessageInput>
 
 					<SendBtn>Send</SendBtn>

@@ -19,12 +19,8 @@ export default function Index() {
 		<Layout>
 			<SEO title='Home' />
 			<Cover />
-
-			<SectionWrapper>
-				<ContentContainer>
-					<About />
-				</ContentContainer>
-			</SectionWrapper>
+			
+			<About />
 
 			<Projects />
 

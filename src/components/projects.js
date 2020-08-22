@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
+import ScrollText from './scrollText';
 
 const Container = styled.div`
 	position: relative;
@@ -23,8 +24,7 @@ const ProjectCardsContainer = styled.div`
 `;
 
 const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
-		grid-template-rows: 1fr;
-
+	grid-template-rows: 1fr;
 `;
 
 const HorizontalLine = styled.div`
@@ -73,9 +73,9 @@ export default function Projects() {
 
 	return (
 		<Container>
+			{/* <Spacer height={'xlarge'} /> */}
+			<ScrollText />
 			<Spacer height={'xlarge'} />
-			<Spacer height={'xlarge'} />
-
 
 			<ProjectCardsContainer>
 				<ProjectCard {...fpotfp} right={true} />

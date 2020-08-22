@@ -9,7 +9,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Container = styled.div`
 	width: 100%;
-	background: var(--main-bg-color);
+	/* background: var(--main-bg-color); */
 	height: 56px;
 	position: fixed;
 	top: ${props => (props.visible ? '0' : '-58px')};
@@ -33,7 +33,8 @@ const NavItem = styled.div`
 	text-align: center;
 	&& > h3 {
 		margin-top: 20px;
-		font-size: 1.6rem;
+		/* font-weight: 500; */
+		font-size: 1.8rem;
 		text-transform: uppercase;
 		color: var(--main-fg-color);
 		transform: translateY(0);

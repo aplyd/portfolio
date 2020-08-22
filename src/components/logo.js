@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { Spacer } from './globalStyle'
+import { Spacer } from './globalStyle';
+import { useViewportScroll } from 'framer-motion';
 
 const Container = styled.div`
 	position: absolute;
@@ -31,8 +32,8 @@ const Outline = styled(LogoText)`
 		3px -3px 0 var(--main-fg-color), -3px 3px 0 var(--main-fg-color),
 		3px 3px 0 var(--main-fg-color); */
 	/* font-weight: bold; */
-font-style: italic;
-padding-left: 32px;
+	font-style: italic;
+	padding-left: 32px;
 `;
 
 const MainLogo = styled(LogoText)`
@@ -42,14 +43,20 @@ const MainLogo = styled(LogoText)`
 `;
 
 const Italic = styled(Outline)`
-padding-left: 0;
+	padding-left: 0;
 `;
 
 export default function Logo() {
+	const { scrollYProgress } = useViewportScroll()
+
+	useEffect(() => {
+		console.log(scrollYProgress)
+	}, [scrollYProgress])
+
 	return (
 		<Container>
 			<LogoContainer>
-				<Outline>Ftacnik</Outline>
+				<Outline scrollY={scrollY}>Ftacnik</Outline>
 				<MainLogo>Ftacnik</MainLogo>
 				<Italic>Ftacnik</Italic>
 			</LogoContainer>

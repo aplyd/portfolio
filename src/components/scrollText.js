@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Frame = styled.div`
-	width: 220px;
+	width: 360px;
 	height: 260px;
+	overflow: hidden;
+	position: absolute;
 `;
 
-const fontSize = '4.8rem'
+const fontSize = '4.8rem';
 
 const P = styled.p`
 	white-space: nowrap;
@@ -26,16 +28,16 @@ const P = styled.p`
 	}
 `;
 
-export default function scrollText() {
+export default function ScrollText() {
 	return (
 		<Frame>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
 		</Frame>
 	);
 }

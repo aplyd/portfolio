@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useScrollPos } from '../hooks/useScrollPos';
 import { motion } from 'framer-motion';
-import { Spacer } from './globalStyle'
+import { Spacer } from './globalStyle';
 
 const SpinningTextContainer = styled.div`
 	/* transform: rotateY(90); */
