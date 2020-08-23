@@ -147,6 +147,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 8px 8px 8px 0;
         font-size: 1.8rem;
     }
+
+    input::placeholder {
+        color: #ffffff;
+    }
     
     button {
         min-width: 48px;

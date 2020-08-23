@@ -8,22 +8,22 @@ import { Spacer, BtnLg } from './globalStyle';
 const ProjectContainer = styled.div`
 	width: 100%;
 	position: relative;
+	max-width: 70rem;
+	margin: 0 auto;
 `;
 
 const Words = styled.div`
 	height: 480px;
 	width: 100%;
 	padding: 48px 24px 0 24px;
-	max-width: 50em;
+	/* max-width: 50em; */
 	float: none;
 	padding: 24px 0;
 	margin: 0 auto;
 `;
 
-const PTitle = styled.h1`
-	text-decoration: underline;
-	font-size: 2.8rem;
-	font-weight: bold;
+const PTitle = styled.h3`
+	font-weight: 500;
 	color: var(--main-fg-color);
 	text-transform: uppercase;
 `;
@@ -65,7 +65,7 @@ const BtnsContainer = styled.div`
 const Btn = styled.button`
 	border-radius: 50px;
 	border: solid 3px black;
-	padding: 6px 44px;
+	padding: 14px 48px;
 	font-weight: bold;
 	text-transform: uppercase;
 `;
@@ -84,7 +84,7 @@ const DemoBtn = styled(Btn)`
 const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {
 	return (
 		<ProjectContainer>
-			<Spacer height={'medium'} />
+			<Spacer height={'large'} />
 			<Words right={right} paddingLeft={paddingLeft}>
 				{/* <Spacer height={'medium'} /> */}
 				<PTitle>{title}</PTitle>

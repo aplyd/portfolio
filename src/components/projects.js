@@ -7,14 +7,13 @@ import ScrollText from './scrollText';
 const Container = styled.div`
 	position: relative;
 	margin: 0 auto;
-	max-width: 50em;
+	max-width: 80%;
 `;
 
 const Title = styled.h2`
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 3.6rem;
-	max-width: 50em;
+	/* font-size: 3.6rem; */
 	margin: 0 auto;
 `;
 
@@ -73,12 +72,13 @@ export default function Projects() {
 	};
 
 	return (
-		<Container>
+		<Container name='projects'>
 			{/* <Spacer height={'xlarge'} /> */}
 
-			<Spacer height={'xlarge'} />
-
-			<Title>Projects</Title>
+			{/* <Title>Projects</Title>
+			<Spacer height={'medium'} />
+			<HorizontalLine /> */}
+			<Spacer height={'large'} />
 			<ProjectCardsContainer>
 				<ProjectCard {...fpotfp} right={true} />
 				<VerticalLine />
@@ -91,6 +91,7 @@ export default function Projects() {
 				<ProjectCard {...wheresWaldo} right={true} />
 				<VerticalLine />
 			</LowerProjectCardsContainer>
+			<Spacer height={'large'} />
 		</Container>
 	);
 }

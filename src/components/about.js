@@ -23,6 +23,7 @@ const Container = styled(motion.div)`
 
 const P = styled.p`
 	color: white;
+	font-size: 1.9rem;
 `;
 
 const BoldTitle = styled.h1`
@@ -42,7 +43,7 @@ const CTAbtn = styled.button`
 	border-radius: 50px;
 	/* border: solid 3px black; */
 	border: none;
-	padding: 20px 48px;
+	padding: 28px 48px;
 	font-weight: bold;
 	text-transform: uppercase;
 	background-color: white;
@@ -120,7 +121,7 @@ const About = () => {
 						Get in touch
 					</CTAbtn>
 					<Spacer height={'xlarge'} />
-					<Spacer height={'medium'} />
+					<Spacer height={'large'} />
 				</Container>
 			</Background>
 			{/* <UpsideDownSlantedSVG
