@@ -91,9 +91,9 @@ const About = () => {
 				<Spacer height={'xlarge'} />
 
 				<Container
-				// style={{ opacity: opacityVal, y: yTransformVal }}
-				// animate={{ y: [200, -200, 0] }}
-				// animate={{ y: yTransformVal }}
+					style={{ opacity: opacityVal, y: yTransformVal }}
+					// animate={{ y: [200, -200, 0] }}
+					// animate={{ y: yTransformVal }}
 				>
 					<BoldTitle>Austin Ftacnik</BoldTitle>
 					<SubTitle>Front-End Developer</SubTitle>

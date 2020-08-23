@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
-import { useViewportScroll } from 'framer-motion';
+import { useViewportScroll, useTransform, motion } from 'framer-motion';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
 	position: absolute;
 	top: 124px;
 	left: -145px;
@@ -34,6 +34,7 @@ const Outline = styled(LogoText)`
 	/* font-weight: bold; */
 	font-style: italic;
 	padding-left: 32px;
+	transform: ${props => `skewX(${props.vals})`};
 `;
 
 const MainLogo = styled(LogoText)`
@@ -47,13 +48,25 @@ const Italic = styled(Outline)`
 `;
 
 export default function Logo() {
+	const [val, setVal] = useState();
+	const { scrollY } = useViewportScroll();
+	const pageY = [0, 300];
+	const warps = [0, 100];
+	const tVal = useTransform(scrollY, pageY, warps);
+
+	useEffect(() => {
+		setVal(tVal);
+	}, [tVal, scrollY]);
+
 	return (
 		<Container>
-			<LogoContainer>
-				<Outline scrollY={scrollY}>Ftacnik</Outline>
-				<MainLogo>Ftacnik</MainLogo>
-				<Italic>Ftacnik</Italic>
-			</LogoContainer>
+			<motion.div animate={{ rotate: val }}>
+				<LogoContainer>
+					<Outline>Ftacnik</Outline>
+					<MainLogo>Ftacnik</MainLogo>
+					<Italic>Ftacnik</Italic>
+				</LogoContainer>
+			</motion.div>
 		</Container>
 	);
 }

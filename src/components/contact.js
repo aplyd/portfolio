@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
-import ScrollText from './ScrollText';
+import ScrollText from './scrollText';
 import TextareaAutosize from 'react-textarea-autosize';
 
 const Container = styled.div`
