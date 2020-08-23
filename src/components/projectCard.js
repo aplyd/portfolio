@@ -22,7 +22,7 @@ const Words = styled.div`
 
 const PTitle = styled.h1`
 	text-decoration: underline;
-	font-size: 2.2em;
+	font-size: 2.8rem;
 	font-weight: bold;
 	color: var(--main-fg-color);
 	text-transform: uppercase;

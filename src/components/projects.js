@@ -7,15 +7,16 @@ import ScrollText from './scrollText';
 const Container = styled.div`
 	position: relative;
 	margin: 0 auto;
+	max-width: 50em;
 `;
 
-// const Title = styled.h1`
-// 	text-transform: uppercase;
-// 	font-weight: 700;
-// 	font-size: 60px;
-// 	max-width: 680px;
-// 	margin: 0 auto;
-// `;
+const Title = styled.h2`
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 3.6rem;
+	max-width: 50em;
+	margin: 0 auto;
+`;
 
 const ProjectCardsContainer = styled.div`
 	margin: 0 auto;
@@ -74,9 +75,10 @@ export default function Projects() {
 	return (
 		<Container>
 			{/* <Spacer height={'xlarge'} /> */}
-			<ScrollText />
+
 			<Spacer height={'xlarge'} />
 
+			<Title>Projects</Title>
 			<ProjectCardsContainer>
 				<ProjectCard {...fpotfp} right={true} />
 				<VerticalLine />

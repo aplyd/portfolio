@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Spacer } from './globalStyle'
+import { Spacer } from './globalStyle';
 import Logo from '../components/logo';
-import SpinningText from '../components/spinningText'
+import SpinningText from '../components/spinningText';
 
 const Container = styled.div`
 	position: relative;
@@ -20,9 +20,8 @@ const ArtContainer = styled.div`
 	height: 100%;
 	position: relative;
 	margin: 0 auto;
-	max-width: 34em;
+	max-width: 50rem;
 	&& > svg {
-		
 	}
 	&& path,
 	g {
@@ -31,23 +30,23 @@ const ArtContainer = styled.div`
 
 const ProfileSVG = styled.svg`
 	border-radius: 12px;
-		height: 100%;
-		width: 100%;
-		background-color: var(--main-fg-color);
-		fill: var(--main-bg-color);
-		display: block;
-		margin: 0 auto;
-	&& > path, g {
+	height: 100%;
+	width: 100%;
+	background-color: var(--main-fg-color);
+	fill: var(--main-bg-color);
+	display: block;
+	margin: 0 auto;
+	&& > path,
+	g {
 		fill: var(--main-bg-color);
 	}
-`
+`;
 
 export default function Cover() {
 	return (
-
 		<Container>
 			<Spacer height={'xlarge'} />
-			<Spacer height={'medium'} />
+			<Spacer height={'xlarge'} />
 			<ArtContainer>
 				<Logo />
 				<SpinningText />
@@ -87,6 +86,5 @@ export default function Cover() {
 				</ProfileSVG>
 			</ArtContainer>
 		</Container>
-
 	);
 }

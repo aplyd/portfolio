@@ -2,17 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Frame = styled.div`
-	width: 360px;
-	height: 260px;
+	width: 240px;
+	height: 300px;
 	overflow: hidden;
 	position: absolute;
+	bottom: -240px;
+	right: 0;
+	z-index: 999;
 `;
 
 const fontSize = '4.8rem';
 
 const P = styled.p`
 	white-space: nowrap;
-	color: var(--main-fg-color);
+	color: white;
 	font-size: ${fontSize};
 	line-height: ${fontSize};
 	font-weight: bold;

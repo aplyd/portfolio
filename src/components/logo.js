@@ -47,12 +47,6 @@ const Italic = styled(Outline)`
 `;
 
 export default function Logo() {
-	const { scrollYProgress } = useViewportScroll()
-
-	useEffect(() => {
-		console.log(scrollYProgress)
-	}, [scrollYProgress])
-
 	return (
 		<Container>
 			<LogoContainer>

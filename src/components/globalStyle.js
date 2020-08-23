@@ -3,7 +3,7 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 export const PageContainer = styled.div`
 	margin: 0 auto;
 	padding-top: 56px;
-    background-color: var(--main-bg-color);
+	background-color: var(--main-bg-color);
 `;
 
 export const ContentContainer = styled.div`
@@ -20,7 +20,7 @@ export const SectionTitle = styled.h1`
 export const Spacer = styled.div`
 	height: ${props => `var(--spacing-${props.height})`};
 	width: ${props =>
-        `var(--spacing-${props.width})` ? `var(--spacing-${props.width})` : 0};
+		`var(--spacing-${props.width})` ? `var(--spacing-${props.width})` : 0};
 	display: ${props => (props.width ? 'inline' : 'block')};
 `;
 
@@ -47,6 +47,10 @@ export const BtnLg = styled.button`
 `;
 
 export const GlobalStyle = createGlobalStyle`
+    * {
+        box-sizing: border-box;
+    }
+
     :root {
         --main-bg-color: #c9c9c9;
         --main-fg-color: black;
@@ -59,27 +63,83 @@ export const GlobalStyle = createGlobalStyle`
         --section-height: 664px;
     }
 
+    html,
+    body,
+    :root {
+        margin: 0;
+        padding: 0;
+        ${'' /* font-size: 10px; */}
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
     html {
         scroll-behavior: 'smooth';
         font-size: 10px;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ol,
+    ul {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     body {
         background-color: var(--main-bg-color);
     }
 
-    h1,h2,h3,h4,h5,h6,p {
-        color: var(--main-fg-color);
-        max-width: 960px;
-    }
-
     h1 {
         text-transform: uppercase;
+        font-size: 6.4rem;
+    }
+
+    h2 {
+        font-size: 4.8rem;
+    }
+
+    h3 {
+        font-size: 3.6rem;
+    }
+
+    h4 {
+        font-size: 2.4rem;
+    }
+
+    h5 {
+        font-size: 2.2rem;
+    }
+
+    h6 {
+        font-size: 2rem;
     }
 
     p {
         font-size: 1.8rem;
-        line-height: 1.3em;
+        line-height: 1.6em;
     }
 
     input, textarea {
@@ -93,5 +153,6 @@ export const GlobalStyle = createGlobalStyle`
         padding: 4px 24px;
         cursor: pointer;
         border-radius: 8px;
+        font-size: 1.8rem;
     }
 `;
