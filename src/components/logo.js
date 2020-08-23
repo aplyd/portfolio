@@ -48,25 +48,28 @@ const Italic = styled(Outline)`
 `;
 
 export default function Logo() {
-	const [val, setVal] = useState();
 	const { scrollY } = useViewportScroll();
-	const pageY = [0, 300];
-	const warps = [0, 100];
-	const tVal = useTransform(scrollY, pageY, warps);
-
-	useEffect(() => {
-		setVal(tVal);
-	}, [tVal, scrollY]);
+	const pageY = [0, 800];
+	const skews = [0, -20];
+	const skews2 = [0, -10];
+	const xs = [0, -12];
+	const skewTran = useTransform(scrollY, pageY, skews);
+	const skewTran2 = useTransform(scrollY, pageY, skews2);
+	const xTran = useTransform(scrollY, pageY, xs);
 
 	return (
 		<Container>
-			<motion.div animate={{ rotate: val }}>
-				<LogoContainer>
+			<LogoContainer>
+				<motion.div style={{ skewX: skewTran }}>
 					<Outline>Ftacnik</Outline>
+				</motion.div>
+				<motion.div style={{ x: xTran }}>
 					<MainLogo>Ftacnik</MainLogo>
-					<Italic>Ftacnik</Italic>
-				</LogoContainer>
-			</motion.div>
+					<motion.div style={{ skewX: skewTran2, x: xTran }}>
+						<Italic>Ftacnik</Italic>
+					</motion.div>
+				</motion.div>
+			</LogoContainer>
 		</Container>
 	);
 }

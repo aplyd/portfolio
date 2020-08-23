@@ -1,13 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Spacer, SectionTitle, BtnLg } from './globalStyle';
-import ScrollText from './scrollText';
-import {
-	useViewportScroll,
-	useTransform,
-	useAnimation,
-	motion
-} from 'framer-motion';
+import { useViewportScroll, useTransform, motion } from 'framer-motion';
 
 const Background = styled.div`
 	margin-top: -8px;
@@ -21,25 +15,25 @@ const Container = styled(motion.div)`
 	position: relative;
 `;
 
-const P = styled.p`
+const P = styled(motion.p)`
 	color: white;
 	font-size: 1.9rem;
 `;
 
-const BoldTitle = styled.h1`
+const BoldTitle = styled(motion.h1)`
 	color: white;
 	text-transform: uppercase;
 	font-weight: 500;
 `;
 
-const SubTitle = styled.h3`
+const SubTitle = styled(motion.h3)`
 	font-weight: 300;
 	margin-top: -4px;
 	color: var(--main-bg-color);
 	text-transform: uppercase;
 `;
 
-const CTAbtn = styled.button`
+const CTAbtn = styled(motion.button)`
 	border-radius: 50px;
 	/* border: solid 3px black; */
 	border: none;
@@ -62,18 +56,31 @@ const SlantedSVG = styled.svg`
 
 const About = () => {
 	const { scrollY } = useViewportScroll();
-	// const mv = useMotionValue(0);
-	const yRange = [0, 850, 1100];
-	const opacityRange = [0, 0, 1];
+	// const yRange = [0, 900, 1300];
+	const opacRange = [0, 0, 1];
 	const transformRange = [100, 100, 0];
-	const opacityVal = useTransform(scrollY, yRange, opacityRange);
-	const yTransformVal = useTransform(scrollY, yRange, transformRange);
-	const controls = useAnimation();
+	// const opacityVal = useTransform(scrollY, yRange, opacityRange);
+	// const yTransformVal = useTransform(scrollY, yRange, transformRange);
+
+	const yRange1 = [0, 800, 1300];
+	const yRange2 = [0, 900, 1300];
+	const yRange3 = [0, 1000, 1300];
+	const yRange4 = [0, 1100, 1300];
+
+	const y1 = useTransform(scrollY, yRange1, transformRange);
+	const opac1 = useTransform(scrollY, yRange1, opacRange);
+
+	const y2 = useTransform(scrollY, yRange2, transformRange);
+	const opac2 = useTransform(scrollY, yRange2, opacRange);
+
+	const y3 = useTransform(scrollY, yRange3, transformRange);
+	const opac3 = useTransform(scrollY, yRange3, opacRange);
+
+	const y4 = useTransform(scrollY, yRange4, transformRange);
+	const opac4 = useTransform(scrollY, yRange4, opacRange);
 
 	return (
-		<motion.div
-		// style={{ opacity: opacityVal, y: yTransformVal }}
-		>
+		<>
 			{[...Array(3)].map((_, i) => (
 				<Spacer height={'large'} key={i} />
 			))}
@@ -91,14 +98,16 @@ const About = () => {
 				<Spacer height={'xlarge'} />
 
 				<Container
-					style={{ opacity: opacityVal, y: yTransformVal }}
-					// animate={{ y: [200, -200, 0] }}
-					// animate={{ y: yTransformVal }}
+				// style={{ opacity: opacityVal, y: yTransformVal }}
 				>
-					<BoldTitle>Austin Ftacnik</BoldTitle>
-					<SubTitle>Front-End Developer</SubTitle>
+					<BoldTitle style={{ y: y1, opacity: opac1 }}>
+						Austin Ftacnik
+					</BoldTitle>
+					<SubTitle style={{ y: y2, opacity: opac2 }}>
+						Front-End Developer
+					</SubTitle>
 					<Spacer height={'medium'} />
-					<P>
+					<P style={{ y: y3, opacity: opac3 }}>
 						{/* Labore sit esse occaecat occaecat proident veniam. Esse
 						minim sit tempor sint laborum duis magna mollit
 						reprehenderit. Adipisicing aliquip laborum cillum
@@ -117,7 +126,10 @@ const About = () => {
 						able to bring ideas to life through design and code.
 					</P>
 					<Spacer height={'large'} />
-					<CTAbtn mode={'dark'} onClick={() => console.log('click')}>
+					<CTAbtn
+						onClick={() => console.log('click')}
+						style={{ y: y4, opacity: opac4 }}
+					>
 						Get in touch
 					</CTAbtn>
 					<Spacer height={'xlarge'} />
@@ -134,7 +146,7 @@ const About = () => {
 					d='M0,288L1440,160L1440,320L0,320Z'
 				></path>
 			</UpsideDownSlantedSVG> */}
-		</motion.div>
+		</>
 	);
 };
 

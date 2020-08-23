@@ -50,6 +50,7 @@ export default function Cover() {
 			<ArtContainer>
 				<Logo />
 				<SpinningText />
+
 				<ProfileSVG
 					version='1.0'
 					xmlns='http://www.w3.org/2000/svg'
