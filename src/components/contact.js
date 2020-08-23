@@ -110,7 +110,7 @@ export default function Contact() {
 				</ScrollTextContainer>
 			</ArtContainer> */}
 
-			<FormContainer>
+			<FormContainer id='contact'>
 				<Spacer height={'xlarge'} />
 				<Spacer height={'large'} />
 				<Form>

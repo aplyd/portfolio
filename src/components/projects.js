@@ -72,7 +72,7 @@ export default function Projects() {
 	};
 
 	return (
-		<Container name='projects'>
+		<Container id='projects'>
 			{/* <Spacer height={'xlarge'} /> */}
 
 			{/* <Title>Projects</Title>

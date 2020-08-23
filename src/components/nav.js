@@ -17,6 +17,7 @@ const Container = styled.div`
 	z-index: 1009;
 	display: flex;
 	flex-direction: row;
+	mix-blend-mode: difference;
 `;
 
 const NavItemsContainer = styled.div`
@@ -34,12 +35,13 @@ const NavItem = styled.div`
 	&& > h3 {
 		margin-top: 20px;
 		/* font-weight: 500; */
-		font-size: 1.8rem;
+		font-size: 2rem;
 		text-transform: uppercase;
-		color: var(--main-fg-color);
+		color: white;
 		transform: translateY(0);
 		transition: transform 1s ease-in-out;
 		cursor: pointer;
+		/* font-weight: 500; */
 	}
 	&&:hover {
 		&& > h3 {
@@ -78,44 +80,44 @@ const MenuBtnContainer = styled(ToggleContainer)`
 
 export default function Nav({ setIsMobileMenuOpen }) {
 	const [visible, setVisible] = useState(true);
-	const [isDarkMode, setIsDarkMode] = useState(false);
+	// const [isDarkMode, setIsDarkMode] = useState(false);
 	useScrollToHideNav(setVisible);
 	const [windowWidth] = useWindowWidth();
 
-	const windowGlobal = typeof window !== 'undefined' && window;
+	// const windowGlobal = typeof window !== 'undefined' && window;
 
-	//detect dark mode - not sure if it works properly
-	useEffect(() => {
-		if (
-			windowGlobal.matchMedia &&
-			windowGlobal.matchMedia('(prefers-color-scheme: dark)').matches
-		) {
-			setIsDarkMode(true);
-		}
-	}, [isDarkMode, windowGlobal]);
+	// //detect dark mode - not sure if it works properly
+	// useEffect(() => {
+	// 	if (
+	// 		windowGlobal.matchMedia &&
+	// 		windowGlobal.matchMedia('(prefers-color-scheme: dark)').matches
+	// 	) {
+	// 		setIsDarkMode(true);
+	// 	}
+	// }, [isDarkMode, windowGlobal]);
 
-	//toggle dark/light modes
-	const toggleDisplayMode = () => {
-		setIsDarkMode(!isDarkMode);
+	// //toggle dark/light modes
+	// const toggleDisplayMode = () => {
+	// 	setIsDarkMode(!isDarkMode);
 
-		const bg = windowGlobal
-			.getComputedStyle(windowGlobal.document.documentElement)
-			.getPropertyValue('--main-bg-color');
+	// 	const bg = windowGlobal
+	// 		.getComputedStyle(windowGlobal.document.documentElement)
+	// 		.getPropertyValue('--main-bg-color');
 
-		const fg = windowGlobal
-			.getComputedStyle(windowGlobal.document.documentElement)
-			.getPropertyValue('--main-fg-color');
+	// 	const fg = windowGlobal
+	// 		.getComputedStyle(windowGlobal.document.documentElement)
+	// 		.getPropertyValue('--main-fg-color');
 
-		windowGlobal.document.documentElement.style.setProperty(
-			'--main-bg-color',
-			bg === bg ? fg : bg
-		);
+	// 	windowGlobal.document.documentElement.style.setProperty(
+	// 		'--main-bg-color',
+	// 		bg === bg ? fg : bg
+	// 	);
 
-		windowGlobal.document.documentElement.style.setProperty(
-			'--main-fg-color',
-			fg === fg ? bg : fg
-		);
-	};
+	// 	windowGlobal.document.documentElement.style.setProperty(
+	// 		'--main-fg-color',
+	// 		fg === fg ? bg : fg
+	// 	);
+	// };
 
 	const navItems = [
 		{ title: 'home', link: '/' },
@@ -153,9 +155,9 @@ export default function Nav({ setIsMobileMenuOpen }) {
 					{desktopMenu()}
 				</NavItemsContainer>
 			) : (
-					mobileMenu()
-				)}
-			<ToggleContainer onClick={() => toggleDisplayMode()}>
+				mobileMenu()
+			)}
+			{/* <ToggleContainer onClick={() => toggleDisplayMode()}>
 				{isDarkMode ? (
 					<ToggleModeBtn as={GiStripedSun}></ToggleModeBtn>
 				) : (
@@ -163,7 +165,7 @@ export default function Nav({ setIsMobileMenuOpen }) {
 							as={WiMoonAltWaxingCrescent4}
 						></ToggleModeBtn>
 					)}
-			</ToggleContainer>
+			</ToggleContainer> */}
 		</Container>
 	);
 }
