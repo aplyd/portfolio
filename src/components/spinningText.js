@@ -30,7 +30,7 @@ const Text = styled.text`
 	z-index: 9999;
 	font-size: 3.5rem;
 	/* fill: var(--main-fg-color); */
-	fill: white;
+	fill: #e5b0a0;
 	pointer-events: none;
 	&& > path {
 		pointer-events: none;
@@ -65,7 +65,6 @@ export default function SpinningText() {
 					<Text width='100'>
 						<textPath xlinkHref='#circle'>
 							idle hands build nothing idle hands build nothing
-							
 						</textPath>
 					</Text>
 				</SpinSVG>

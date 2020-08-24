@@ -15,6 +15,7 @@ const Title = styled.h2`
 	font-weight: 700;
 	/* font-size: 3.6rem; */
 	margin: 0 auto;
+	color: var(--accent-light);
 `;
 
 const ProjectCardsContainer = styled.div`
@@ -28,8 +29,9 @@ const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
 `;
 
 const HorizontalLine = styled.div`
-	height: 2px;
-	background-color: var(--main-fg-color);
+	height: 6px;
+	border-radius: 50px;
+	background-color: var(--accent-light);
 	width: 100%;
 `;
 
@@ -73,12 +75,11 @@ export default function Projects() {
 
 	return (
 		<Container id='projects'>
-			{/* <Spacer height={'xlarge'} /> */}
-
-			{/* <Title>Projects</Title>
-			<Spacer height={'medium'} />
-			<HorizontalLine /> */}
-			<Spacer height={'large'} />
+			<Spacer height={'xlarge'} />
+			<Title>Projects</Title>
+			<Spacer height={'small'} />
+			<HorizontalLine />
+			{/* <Spacer height={'large'} /> */}
 			<ProjectCardsContainer>
 				<ProjectCard {...fpotfp} right={true} />
 				<VerticalLine />

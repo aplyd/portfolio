@@ -35,13 +35,16 @@ const PAbout = styled.p`
 `;
 
 const LIicon = styled.svg`
-	color: var(--main-fg-color);
+	color: black;
 	position: relative;
-	top: 2px;
+	top: 4px;
+	margin-right: 4px;
+
+	/* font-weight: 500; */
 `;
 
 const ToolsTitle = styled.p`
-	color: var(--main-fg-color);
+	color: var(--accent-light);
 	text-transform: uppercase;
 	padding-bottom: 16px;
 	font-weight: bold;
@@ -53,8 +56,8 @@ const Tool = styled.div`
 	display: flex;
 	flex-direction: row;
 	&& > p {
-		color: var(--main-fg-color);
-		font-weight: 300;
+		color: black;
+		/* font-weight: 300; */
 	}
 `;
 
@@ -71,14 +74,17 @@ const Btn = styled.button`
 `;
 
 const RepoBtn = styled(Btn)`
+	border-color: var(--accent-light);
+	color: var(--accent-light);
 	font-weight: 700;
 	background-color: var(--main-bg-color);
 `;
 const DemoBtn = styled(Btn)`
 	font-weight: 700;
 	margin-left: 12px;
-	background-color: var(--main-fg-color);
-	color: var(--main-bg-color);
+	background-color: var(--accent-color);
+	color: var(--accent-light);
+	border-color: var(--accent-color);
 `;
 
 const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {

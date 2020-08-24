@@ -5,12 +5,15 @@ import ScrollText from './scrollText';
 import TextareaAutosize from 'react-textarea-autosize';
 
 const Container = styled.div`
-	background-color: black;
+	background-color: var(--dark-color);
+	&& > div {
+		margin: 0 auto;
+		max-width: 70rem;
+	}
 `;
 
 const FormContainer = styled.div`
-	max-width: 70rem;
-	margin: 0 auto;
+	max-width: 50rem;
 `;
 
 const Form = styled.form``;
@@ -19,7 +22,7 @@ const Input = styled.input`
 	border: none;
 	outline: none;
 	color: white;
-	background-color: black;
+	background-color: var(--dark-color);
 	border-bottom: 1px solid white;
 	width: 100%;
 	font-size: 2rem;
@@ -42,7 +45,7 @@ const MessageInput = styled(TextareaAutosize)`
 	border: none;
 	outline: none;
 	border-bottom: 1px solid white;
-	background-color: black;
+	background-color: var(--dark-color);
 	width: 100%;
 	margin-top: 64px;
 	padding-bottom: 2rem;
@@ -60,10 +63,10 @@ const SendBtn = styled.button`
 	padding: 20px 52px;
 	font-weight: bold;
 	text-transform: uppercase;
-	background-color: white;
-	color: black;
+	background-color: var(--accent-color2);
+	color: var(--accent-light);
 	margin-top: 48px;
-	float: right;
+	/* float: right; */
 `;
 
 // const ArtContainer = styled.div`
@@ -110,25 +113,27 @@ export default function Contact() {
 				</ScrollTextContainer>
 			</ArtContainer> */}
 
-			<FormContainer id='contact'>
+			<div>
+				<FormContainer id='contact'>
+					<Spacer height={'xlarge'} />
+					<Spacer height={'large'} />
+					<Form>
+						<NameInput placeholder='Your Name'></NameInput>
+						<EmailInput placeholder='You Email'></EmailInput>
+
+						<MessageInput
+							placeholder='Your Message'
+							maxLength='375'
+							value={message}
+							onChange={e => setMessage(e.target.value)}
+						></MessageInput>
+
+						<SendBtn>Send</SendBtn>
+					</Form>
+				</FormContainer>
 				<Spacer height={'xlarge'} />
 				<Spacer height={'large'} />
-				<Form>
-					<NameInput placeholder='Your Name'></NameInput>
-					<EmailInput placeholder='You Email'></EmailInput>
-
-					<MessageInput
-						placeholder='Your Message'
-						maxLength='375'
-						value={message}
-						onChange={e => setMessage(e.target.value)}
-					></MessageInput>
-
-					<SendBtn>Send</SendBtn>
-				</Form>
-			</FormContainer>
-			<Spacer height={'xlarge'} />
-			<Spacer height={'large'} />
+			</div>
 		</Container>
 	);
 }

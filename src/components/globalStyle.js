@@ -52,9 +52,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     :root {
-        --main-bg-color: #c9c9c9;
-        --main-fg-color: black;
-        --accent-color: #3464de;
+        --dark-color: #252525;
+        --light-color: #c9c9c9;
+        --accent-light: white;
+        --accent-color: #3199D3;
+        --accent-color2: #e5b0a0;
         --spacing-xsmall: 4px;
         --spacing-small: 8px;
         --spacing-medium: 32px;
@@ -109,7 +111,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: var(--main-bg-color);
+        background-color: var(--light-color);
     }
 
     h1 {

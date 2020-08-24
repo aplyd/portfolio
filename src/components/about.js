@@ -5,7 +5,7 @@ import { useViewportScroll, useTransform, motion } from 'framer-motion';
 
 const Background = styled.div`
 	margin-top: -8px;
-	background-color: var(--main-fg-color);
+	background-color: var(--dark-color);
 	/* color: var(--main-bg-color); */
 `;
 
@@ -16,12 +16,12 @@ const Container = styled(motion.div)`
 `;
 
 const P = styled(motion.p)`
-	color: white;
+	color: var(--accent-light);
 	font-size: 1.9rem;
 `;
 
 const BoldTitle = styled(motion.h1)`
-	color: white;
+	color: var(--accent-light);
 	text-transform: uppercase;
 	font-weight: 500;
 `;
@@ -29,24 +29,25 @@ const BoldTitle = styled(motion.h1)`
 const SubTitle = styled(motion.h3)`
 	font-weight: 300;
 	margin-top: -4px;
-	color: var(--main-bg-color);
+	color: var(--light-color);
 	text-transform: uppercase;
 `;
 
 const CTAbtn = styled(motion.button)`
 	border-radius: 50px;
-	/* border: solid 3px black; */
 	border: none;
 	padding: 28px 48px;
-	font-weight: bold;
 	text-transform: uppercase;
-	background-color: white;
-	color: black;
+	background-color: var(--accent-color);
+	color: var(--accent-light);
 `;
 
 const SlantedSVG = styled.svg`
 	width: 100%;
 	transform: scale(-1, 1);
+	&& > path {
+		fill: var(--dark-color);
+	}
 `;
 
 // const UpsideDownSlantedSVG = styled(SlantedSVG)`
@@ -89,7 +90,7 @@ const About = () => {
 				viewBox='0 0 1440 320'
 			>
 				<path
-					fill='#00000'
+					// fill='#00000'
 					fillOpacity='1'
 					d='M0,288L1440,160L1440,320L0,320Z'
 				></path>

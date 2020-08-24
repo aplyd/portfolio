@@ -21,8 +21,8 @@ const Container = styled.div`
 `;
 
 const NavItemsContainer = styled.div`
-	margin: 0 58px 0 16px;
-	width: 480px;
+	margin: 0 58px 0 32px;
+	width: 520px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -34,14 +34,14 @@ const NavItem = styled.div`
 	text-align: center;
 	&& > h3 {
 		margin-top: 20px;
-		/* font-weight: 500; */
 		font-size: 2rem;
 		text-transform: uppercase;
 		color: white;
 		transform: translateY(0);
 		transition: transform 1s ease-in-out;
 		cursor: pointer;
-		/* font-weight: 500; */
+		/* color: white; */
+		font-weight: 500;
 	}
 	&&:hover {
 		&& > h3 {

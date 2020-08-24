@@ -29,16 +29,16 @@ const ArtContainer = styled.div`
 `;
 
 const ProfileSVG = styled.svg`
-	border-radius: 12px;
+	border-radius: 36px;
 	height: 100%;
 	width: 100%;
-	background-color: var(--main-fg-color);
-	fill: var(--main-bg-color);
+	background-color: white;
+	/* fill: red; */
 	display: block;
 	margin: 0 auto;
 	&& > path,
 	g {
-		fill: var(--main-bg-color);
+		fill: var(--dark-color);
 	}
 `;
 
@@ -46,7 +46,7 @@ export default function Cover() {
 	return (
 		<Container>
 			<Spacer height={'xlarge'} />
-			<Spacer height={'xlarge'} />
+			<Spacer height={'large'} />
 			<ArtContainer>
 				<Logo />
 				<SpinningText />

@@ -53,9 +53,11 @@ export default function Logo() {
 	const skews = [0, -20];
 	const skews2 = [0, -10];
 	const xs = [0, -12];
+	const xs2 = [0, -6];
 	const skewTran = useTransform(scrollY, pageY, skews);
 	const skewTran2 = useTransform(scrollY, pageY, skews2);
 	const xTran = useTransform(scrollY, pageY, xs);
+	const xTran2 = useTransform(scrollY, pageY, xs2);
 
 	return (
 		<Container>
@@ -65,7 +67,7 @@ export default function Logo() {
 				</motion.div>
 				<motion.div style={{ x: xTran }}>
 					<MainLogo>Ftacnik</MainLogo>
-					<motion.div style={{ skewX: skewTran2, x: xTran }}>
+					<motion.div style={{ skewX: skewTran2, x: xTran2 }}>
 						<Italic>Ftacnik</Italic>
 					</motion.div>
 				</motion.div>
