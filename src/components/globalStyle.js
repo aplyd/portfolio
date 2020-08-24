@@ -52,11 +52,19 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     :root {
+        ${'' /* black */}
         --dark-color: #252525;
-        --light-color: #c9c9c9;
+        ${'' /* light gray */}
+        --light-color: #bcbcbc;
+        ${'' /* medium gray */}
+        --medium-color: #999999;
+        ${'' /* white */}
         --accent-light: white;
+        ${'' /* blue */}
         --accent-color: #3199D3;
+        ${'' /* peach */}
         --accent-color2: #e5b0a0;
+
         --spacing-xsmall: 4px;
         --spacing-small: 8px;
         --spacing-medium: 32px;

@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useScrollPos } from '../hooks/useScrollPos';
-import { motion } from 'framer-motion';
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { Spacer } from './globalStyle';
 
 const SpinningTextContainer = styled.div`
 	/* transform: rotateY(90); */
 	width: 400px;
-	z-index: 1007;
+	z-index: 0;
 	margin: 0 auto;
 	pointer-events: none;
 	@media screen and (max-width: 800px) {
@@ -29,8 +29,12 @@ const Text = styled.text`
 	text-transform: uppercase;
 	z-index: 9999;
 	font-size: 3.5rem;
-	/* fill: var(--main-fg-color); */
-	fill: #e5b0a0;
+	/* fill: var(--dark-color); */
+	/* text-shadow: -2px -2px 0 var(--dark-color), 2px -2px 0 var(--dark-color),
+		-2px 2px 0 var(--dark-color), 2px 2px 0 var(--dark-color); */
+	/* font-weight: bold; */
+	fill: var(--accent-light);
+	mix-blend-mode: difference;
 	pointer-events: none;
 	&& > path {
 		pointer-events: none;
@@ -39,6 +43,11 @@ const Text = styled.text`
 
 export default function SpinningText() {
 	let scrollPos = useScrollPos();
+	const yRange = [0, 1200];
+	const spinRange = [0, 450];
+	const { scrollY } = useViewportScroll();
+	const spinY = useTransform(scrollY, yRange, spinRange);
+
 	return (
 		<SpinningTextContainer>
 			<motion.div

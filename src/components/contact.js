@@ -59,7 +59,7 @@ const MessageInput = styled(TextareaAutosize)`
 `;
 const SendBtn = styled.button`
 	border-radius: 50px;
-	border: solid 3px black;
+	border: solid 3px var(--accent-color2);
 	padding: 20px 52px;
 	font-weight: bold;
 	text-transform: uppercase;

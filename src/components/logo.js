@@ -12,7 +12,7 @@ const Container = styled(motion.div)`
 		padding-right: 16px;
 	} */
 	/* background: red; */
-	z-index: 1004;
+	/* z-index: 1004; */
 `;
 
 const LogoContainer = styled.div``;
@@ -50,10 +50,10 @@ const Italic = styled(Outline)`
 export default function Logo() {
 	const { scrollY } = useViewportScroll();
 	const pageY = [0, 800];
-	const skews = [0, -20];
-	const skews2 = [0, -10];
-	const xs = [0, -12];
-	const xs2 = [0, -6];
+	const skews = [0, -28];
+	const skews2 = [0, -14];
+	const xs = [0, -18];
+	const xs2 = [0, -10];
 	const skewTran = useTransform(scrollY, pageY, skews);
 	const skewTran2 = useTransform(scrollY, pageY, skews2);
 	const xTran = useTransform(scrollY, pageY, xs);

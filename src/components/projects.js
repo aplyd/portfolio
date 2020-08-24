@@ -6,7 +6,7 @@ import ScrollText from './scrollText';
 
 const Container = styled.div`
 	position: relative;
-	margin: 0 auto;
+	margin: -260px auto 0 auto;
 	max-width: 80%;
 `;
 
@@ -15,37 +15,37 @@ const Title = styled.h2`
 	font-weight: 700;
 	/* font-size: 3.6rem; */
 	margin: 0 auto;
+	max-width: 70rem;
 	color: var(--accent-light);
 `;
 
-const ProjectCardsContainer = styled.div`
+const ProjectCardContainer = styled.div`
 	margin: 0 auto;
 	width: 100%;
-	display: grid;
 `;
 
-const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
-	grid-template-rows: 1fr;
-`;
+// const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
+// 	grid-template-rows: 1fr;
+// `;
 
-const HorizontalLine = styled.div`
-	height: 6px;
-	border-radius: 50px;
-	background-color: var(--accent-light);
-	width: 100%;
-`;
+// const HorizontalLine = styled.div`
+// 	height: 6px;
+// 	border-radius: 50px;
+// 	background-color: var(--accent-light);
+// 	width: 100%;
+// `;
 
-const MobileHorizontalLine = styled(HorizontalLine)`
-	display: none;
-	display: block;
-`;
+// const MobileHorizontalLine = styled(HorizontalLine)`
+// 	display: none;
+// 	display: block;
+// `;
 
-const VerticalLine = styled.div`
-	width: 2px;
-	background-color: black;
-	height: 100%;
-	display: none;
-`;
+// const VerticalLine = styled.div`
+// 	width: 2px;
+// 	background-color: black;
+// 	height: 100%;
+// 	display: none;
+// `;
 
 export default function Projects() {
 	const battleship = {
@@ -74,25 +74,31 @@ export default function Projects() {
 	};
 
 	return (
-		<Container id='projects'>
-			<Spacer height={'xlarge'} />
-			<Title>Projects</Title>
-			<Spacer height={'small'} />
-			<HorizontalLine />
-			{/* <Spacer height={'large'} /> */}
-			<ProjectCardsContainer>
-				<ProjectCard {...fpotfp} right={true} />
-				<VerticalLine />
-				<MobileHorizontalLine />
-				<ProjectCard {...battleship} paddingLeft={true} />
-			</ProjectCardsContainer>
+		<>
+			<Container id='projects'>
+				<Spacer height={'large'} />
+				{/* <HorizontalLine /> */}
+				{/* <Spacer height={'large'} /> */}
+				<Spacer height={'large'} />
+				<ProjectCardContainer>
+					<ProjectCard {...fpotfp} />
+					{/* <VerticalLine /> */}
+					{/* <MobileHorizontalLine /> */}
+				</ProjectCardContainer>
 
-			<HorizontalLine />
-			<LowerProjectCardsContainer>
-				<ProjectCard {...wheresWaldo} right={true} />
-				<VerticalLine />
-			</LowerProjectCardsContainer>
-			<Spacer height={'large'} />
-		</Container>
+				<Spacer height={'large'} />
+				<ProjectCardContainer>
+					<ProjectCard {...battleship} />
+				</ProjectCardContainer>
+
+				{/* <HorizontalLine /> */}
+				<Spacer height={'large'} />
+				<ProjectCardContainer>
+					<ProjectCard {...wheresWaldo} />
+					{/* <VerticalLine /> */}
+				</ProjectCardContainer>
+				<Spacer height={'large'} />
+			</Container>
+		</>
 	);
 }

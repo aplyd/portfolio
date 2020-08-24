@@ -10,6 +10,11 @@ const ProjectContainer = styled.div`
 	position: relative;
 	max-width: 70rem;
 	margin: 0 auto;
+	/* border-radius: 50px; */
+	box-shadow: 40px 40px 80px #a0a0a0, -40px -40px 80px #d8d8d8;
+	background-color: var(--light-color);
+	border-radius: 50px;
+	z-index: -1;
 `;
 
 const Words = styled.div`
