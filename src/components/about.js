@@ -12,7 +12,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 const Background = styled.div`
 	margin-top: -8px;
 	background-color: var(--dark-color);
-	z-index: 2;
+	/* z-index: 1; */
 	/* border-radius: 50px; */
 	/* color: var(--main-bg-color); */
 `;
@@ -69,7 +69,7 @@ const UpsideDownSlantedSVG = styled(SlantedSVG)`
 const About = () => {
 	const { scrollY } = useViewportScroll();
 	const controls = useAnimation();
-	const scrollRange = [0, 1500];
+	const scrollRange = [0, 1150];
 	const scrollTransformRange = [0, -350];
 	const scrollTransform = useTransform(
 		scrollY,

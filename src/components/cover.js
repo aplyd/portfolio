@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import Logo from '../components/logo';
 import SpinningText from '../components/spinningText';
+import useWindowWidth from '../hooks/useWindowWidth';
+import { useTransform, useMotionValue, motion } from 'framer-motion';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
 	position: relative;
 	margin: 0 auto;
-	background: var(--main-bg-color);
 	width: 100%;
+	max-width: 85rem;
+	background: red;
 	/* min-width: 600px; */
 	/* @media screen and (max-width: 600px) {
 		overflow: hidden;
@@ -20,7 +23,8 @@ const ArtContainer = styled.div`
 	height: 100%;
 	position: relative;
 	margin: 0 auto;
-	max-width: 55rem;
+	max-width: 56.2rem;
+	padding: 0 1.2rem;
 	&& > svg {
 	}
 	&& path,
@@ -42,18 +46,28 @@ const ProfileSVG = styled.svg`
 `;
 
 const ProfileBackground = styled.div`
-	box-shadow: 40px 40px 80px #a0a0a0, -40px -40px 80px #d8d8d8;
+	/* box-shadow: 40px 40px 80px #a0a0a0, -40px -40px 80px #d8d8d8; */
+	box-shadow: 24px 24px 48px #a0a0a0, -24px -24px 48px #d8d8d8;
 	background-color: var(--light-color);
 	border-radius: 50px;
 	padding: 50px;
 `;
 
 export default function Cover() {
+	// super complicated way of scaling the logo via window width
+	const [windowWidth] = useWindowWidth();
+	const motionVal = useMotionValue(windowWidth);
+	const scaleTran = useTransform(motionVal, [0, 550, 4000], [0.8, 1, 1]);
+
+	useEffect(() => {
+		motionVal.set(windowWidth);
+	}, [windowWidth, motionVal]);
+
 	return (
 		<Container>
 			<Spacer height={'xlarge'} />
 			<Spacer height={'large'} />
-			<ArtContainer>
+			<ArtContainer windowWidth={windowWidth}>
 				<Logo />
 				<SpinningText />
 				<ProfileBackground>

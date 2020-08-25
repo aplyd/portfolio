@@ -10,11 +10,12 @@ const ProjectContainer = styled.div`
 	position: relative;
 	max-width: 70rem;
 	margin: 0 auto;
-	/* border-radius: 50px; */
-	box-shadow: 40px 40px 80px #a0a0a0, -40px -40px 80px #d8d8d8;
-	background-color: var(--light-color);
-	border-radius: 50px;
-	z-index: -1;
+`;
+
+const InnerContainer = styled.div`
+	width: 100%;
+	max-width: 60rem;
+	margin: 0 auto;
 `;
 
 const Words = styled.div`
@@ -29,18 +30,18 @@ const Words = styled.div`
 
 const PTitle = styled.h3`
 	font-weight: 500;
-	color: var(--main-fg-color);
+	color: var(--dark-color);
 	text-transform: uppercase;
 `;
 
 const PAbout = styled.p`
-	color: var(--main-fg-color);
+	color: var(--accent-light);
 	line-height: 1.3em;
 	min-height: 70px;
 `;
 
 const LIicon = styled.svg`
-	color: black;
+	color: var(--accent-light);
 	position: relative;
 	top: 4px;
 	margin-right: 4px;
@@ -61,7 +62,7 @@ const Tool = styled.div`
 	display: flex;
 	flex-direction: row;
 	&& > p {
-		color: black;
+		color: var(--accent-light);
 		/* font-weight: 300; */
 	}
 `;
@@ -72,24 +73,28 @@ const BtnsContainer = styled.div`
 
 const Btn = styled.button`
 	border-radius: 50px;
-	border: solid 3px black;
-	padding: 14px 48px;
+	border: none;
+	padding: 20px 50px;
 	font-weight: bold;
 	text-transform: uppercase;
+	font-weight: 700;
+	/* color: var(--accent-light);
+	background-color: var(--light-color);
+	box-shadow: 16px 16px 32px #a0a0a0, -16px -16px 32px #d8d8d8; */
 `;
 
 const RepoBtn = styled(Btn)`
-	border-color: var(--accent-light);
+	border: solid 3px var(--accent-light);
 	color: var(--accent-light);
 	font-weight: 700;
 	background-color: var(--main-bg-color);
 `;
 const DemoBtn = styled(Btn)`
 	font-weight: 700;
-	margin-left: 12px;
+	margin-left: 24px;
 	background-color: var(--accent-color);
 	color: var(--accent-light);
-	border-color: var(--accent-color);
+	border: solid 3px var(--accent-color);
 `;
 
 const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {
@@ -121,6 +126,7 @@ const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {
 					<DemoBtn>Demo</DemoBtn>
 				</BtnsContainer>
 			</Words>
+			<Spacer height={'large'} />
 		</ProjectContainer>
 	);
 };

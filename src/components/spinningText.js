@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useScrollPos } from '../hooks/useScrollPos';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import { Spacer } from './globalStyle';
+import {
+	motion,
+	useViewportScroll,
+	useTransform,
+	useMotionValue
+} from 'framer-motion';
+import useWindowWidth from '../hooks/useWindowWidth';
 
 const SpinningTextContainer = styled.div`
 	/* transform: rotateY(90); */
@@ -10,12 +15,17 @@ const SpinningTextContainer = styled.div`
 	z-index: 0;
 	margin: 0 auto;
 	pointer-events: none;
-	@media screen and (max-width: 800px) {
+	/* @media screen and (max-width: 800px) {
 		left: calc(50%);
-	}
+	} */
 	position: absolute;
-	bottom: -200px;
-	right: -150px;
+	bottom: -28%;
+	right: -23%;
+	/* transform: ${props => {
+		if (props.windowWidth < 850) {
+			return `scale(${(props.windowWidth / 1000) * 1.2})`;
+		}
+	}}; */
 `;
 
 const SpinSVG = styled.svg`
@@ -43,17 +53,22 @@ const Text = styled.text`
 
 export default function SpinningText() {
 	let scrollPos = useScrollPos();
-	const yRange = [0, 1200];
-	const spinRange = [0, 450];
-	const { scrollY } = useViewportScroll();
-	const spinY = useTransform(scrollY, yRange, spinRange);
+
+	// complicated way of scaling via window width
+	const [windowWidth] = useWindowWidth();
+	const motionVal = useMotionValue(windowWidth);
+	const scaleTran = useTransform(motionVal, [320, 850, 4000], [0.5, 1, 1]);
+
+	useEffect(() => {
+		motionVal.set(windowWidth);
+	}, [windowWidth, motionVal]);
 
 	return (
-		<SpinningTextContainer>
+		<SpinningTextContainer windowWidth={windowWidth}>
 			<motion.div
 				// animate={{ rotate: -scrollPos / 2, x: 0, y: 0, rotateY: scrollPos / 4.5 }}
 				animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
-				style={{ transformOrigin: 'center-center' }}
+				style={{ transformOrigin: 'center-center', scale: scaleTran }}
 			>
 				<SpinSVG
 					version='1.1'

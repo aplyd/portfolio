@@ -10,7 +10,7 @@ const Container = styled.div`
 	max-width: 80%;
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
 	text-transform: uppercase;
 	font-weight: 700;
 	/* font-size: 3.6rem; */
@@ -28,12 +28,12 @@ const ProjectCardContainer = styled.div`
 // 	grid-template-rows: 1fr;
 // `;
 
-// const HorizontalLine = styled.div`
-// 	height: 6px;
-// 	border-radius: 50px;
-// 	background-color: var(--accent-light);
-// 	width: 100%;
-// `;
+const HorizontalLine = styled.div`
+	height: 6px;
+	border-radius: 50px;
+	background-color: var(--accent-light);
+	width: 100%;
+`;
 
 // const MobileHorizontalLine = styled(HorizontalLine)`
 // 	display: none;
@@ -77,27 +77,23 @@ export default function Projects() {
 		<>
 			<Container id='projects'>
 				<Spacer height={'large'} />
-				{/* <HorizontalLine /> */}
-				{/* <Spacer height={'large'} /> */}
-				<Spacer height={'large'} />
+				<Title>Projects</Title>
+
+				<HorizontalLine />
 				<ProjectCardContainer>
 					<ProjectCard {...fpotfp} />
-					{/* <VerticalLine /> */}
-					{/* <MobileHorizontalLine /> */}
 				</ProjectCardContainer>
 
-				<Spacer height={'large'} />
+				<HorizontalLine />
 				<ProjectCardContainer>
 					<ProjectCard {...battleship} />
 				</ProjectCardContainer>
 
-				{/* <HorizontalLine /> */}
-				<Spacer height={'large'} />
+				<HorizontalLine />
 				<ProjectCardContainer>
 					<ProjectCard {...wheresWaldo} />
-					{/* <VerticalLine /> */}
 				</ProjectCardContainer>
-				<Spacer height={'large'} />
+				<Spacer height={'xlarge'} />
 			</Container>
 		</>
 	);

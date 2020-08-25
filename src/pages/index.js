@@ -27,7 +27,6 @@ export default function Index() {
 			<SEO title='Home' />
 			<Cover />
 			<About />
-			<ProjectsTitle>Projects</ProjectsTitle>
 			<Projects />
 			<Contact />
 			<Footer />

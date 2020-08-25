@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
-import { useViewportScroll, useTransform, motion } from 'framer-motion';
+import useWindowWidth from '../hooks/useWindowWidth';
+import {
+	useViewportScroll,
+	useTransform,
+	motion,
+	useMotionValue
+} from 'framer-motion';
 
 const Container = styled(motion.div)`
 	position: absolute;
-	top: 124px;
-	left: -145px;
+	top: 17%;
+	left: -26%;
 	text-align: center;
+	transform: ${props => `scale(${props.scaleTran})`};
+	/* transform: scale(0.6); */
 	/* @media screen and (max-width: 960px) {
 		padding-right: 16px;
 	} */
@@ -20,7 +28,7 @@ const LogoContainer = styled.div``;
 const LogoText = styled.h2`
 	text-transform: uppercase;
 	font-size: 12rem;
-	line-height: 105px;
+	line-height: 10.5rem;
 	margin: -12px 0;
 	color: var(--accent-color);
 	font-weight: bold;
@@ -34,13 +42,11 @@ const Outline = styled(LogoText)`
 	/* font-weight: bold; */
 	font-style: italic;
 	padding-left: 32px;
-	transform: ${props => `skewX(${props.vals})`};
 `;
 
 const MainLogo = styled(LogoText)`
 	font-weight: bold;
 	padding-left: 12px;
-	/* color: var(--main-fg-color); */
 `;
 
 const Italic = styled(Outline)`
@@ -59,8 +65,17 @@ export default function Logo() {
 	const xTran = useTransform(scrollY, pageY, xs);
 	const xTran2 = useTransform(scrollY, pageY, xs2);
 
+	// super complicated way of scaling the logo via window width
+	const [windowWidth] = useWindowWidth();
+	const motionVal = useMotionValue(windowWidth);
+	const scaleTran = useTransform(motionVal, [320, 850, 4000], [0.5, 1, 1]);
+
+	useEffect(() => {
+		motionVal.set(windowWidth);
+	}, [windowWidth, motionVal]);
+
 	return (
-		<Container>
+		<Container style={{ scale: scaleTran }}>
 			<LogoContainer>
 				<motion.div style={{ skewX: skewTran }}>
 					<Outline>Ftacnik</Outline>
