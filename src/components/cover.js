@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import Logo from '../components/logo';
 import SpinningText from '../components/spinningText';
-import useWindowWidth from '../hooks/useWindowWidth';
 
 const Container = styled.div`
 	position: relative;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 85rem;
-	/* min-width: 600px; */
-	/* @media screen and (max-width: 600px) {
-		overflow: hidden;
-	} */
 `;
 
 const ArtContainer = styled.div`
@@ -51,6 +46,13 @@ const ProfileBackground = styled.div`
 	padding: 50px;
 `;
 
+const DesktopSpacer = styled(Spacer)`
+	display: block;
+	@media screen and (max-width: 850px) {
+		display: none;
+	}
+`;
+
 const MobileSpacer = styled(Spacer)`
 	display: none;
 	@media screen and (max-width: 850px) {
@@ -59,14 +61,12 @@ const MobileSpacer = styled(Spacer)`
 `;
 
 export default function Cover() {
-	const [windowWidth] = useWindowWidth();
 	return (
 		<Container>
-			<Spacer height={'xlarge'} />
 			<Spacer height={'large'} />
-			{/* <MobileSpacer height={'large'} /> */}
+			<DesktopSpacer height={'xlarge'} />
 			<Logo />
-			<ArtContainer windowWidth={windowWidth}>
+			<ArtContainer>
 				<SpinningText />
 				<ProfileBackground>
 					<ProfileSVG

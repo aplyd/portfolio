@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Spacer } from './globalStyle';
-import useWindowWidth from '../hooks/useWindowWidth';
-import {
-	useViewportScroll,
-	useTransform,
-	motion,
-	useMotionValue
-} from 'framer-motion';
 
-const Container = styled(motion.div)`
-	width: 55rem;
+const Container = styled.div`
+	width: 50rem;
 	z-index: 1;
 	position: absolute;
-	top: 28%;
-	left: 2%;
+	top: 32%;
+	left: 3%;
 	margin: 0 auto;
 	@media screen and (max-width: 850px) {
 		position: relative;
 		width: 100%;
-		max-width: 56.2rem;
-		padding: 0 1.2rem;
+		max-width: 55rem;
+		padding: 0 2.4rem 0 1.2rem;
 		padding-bottom: 32px;
 	}
 `;

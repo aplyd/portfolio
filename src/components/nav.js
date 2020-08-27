@@ -69,7 +69,7 @@ const MenuBtnContainer = styled(ToggleContainer)`
 	top: 7px;
 	left: 16px;
 	&& > h3 {
-		color: var(--main-fg-color);
+		color: var(--accent-light);
 		z-index: 10003;
 		margin-bottom: -4px;
 		font-size: 2.2rem;
