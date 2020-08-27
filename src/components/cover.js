@@ -4,14 +4,12 @@ import { Spacer } from './globalStyle';
 import Logo from '../components/logo';
 import SpinningText from '../components/spinningText';
 import useWindowWidth from '../hooks/useWindowWidth';
-import { useTransform, useMotionValue, motion } from 'framer-motion';
 
-const Container = styled(motion.div)`
+const Container = styled.div`
 	position: relative;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 85rem;
-	background: red;
 	/* min-width: 600px; */
 	/* @media screen and (max-width: 600px) {
 		overflow: hidden;
@@ -53,22 +51,22 @@ const ProfileBackground = styled.div`
 	padding: 50px;
 `;
 
+const MobileSpacer = styled(Spacer)`
+	display: none;
+	@media screen and (max-width: 850px) {
+		display: block;
+	}
+`;
+
 export default function Cover() {
-	// super complicated way of scaling the logo via window width
 	const [windowWidth] = useWindowWidth();
-	const motionVal = useMotionValue(windowWidth);
-	const scaleTran = useTransform(motionVal, [0, 550, 4000], [0.8, 1, 1]);
-
-	useEffect(() => {
-		motionVal.set(windowWidth);
-	}, [windowWidth, motionVal]);
-
 	return (
 		<Container>
 			<Spacer height={'xlarge'} />
 			<Spacer height={'large'} />
+			{/* <MobileSpacer height={'large'} /> */}
+			<Logo />
 			<ArtContainer windowWidth={windowWidth}>
-				<Logo />
 				<SpinningText />
 				<ProfileBackground>
 					<ProfileSVG

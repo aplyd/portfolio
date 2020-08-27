@@ -66,6 +66,12 @@ const UpsideDownSlantedSVG = styled(SlantedSVG)`
 	margin-top: -2px;
 `;
 
+const MobileSpacer = styled(Spacer)`
+	@media screen and (max-width: 850px) {
+		display: none;
+	}
+`;
+
 const About = () => {
 	const { scrollY } = useViewportScroll();
 	const controls = useAnimation();
@@ -95,9 +101,9 @@ const About = () => {
 	return (
 		<>
 			<motion.div style={{ y: scrollTransform }}>
-				{[...Array(3)].map((_, i) => (
-					<Spacer height={'large'} key={i} />
-				))}
+				<Spacer height={'large'} />
+				<Spacer height={'large'} />
+				<Spacer height={'large'} />
 				<SlantedSVG
 					xmlns='http://www.w3.org/2000/svg'
 					viewBox='0 0 1440 320'
