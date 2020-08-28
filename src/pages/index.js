@@ -3,63 +3,33 @@ import SEO from '../components/seo';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-import Logo from '../components/logo';
-import {
-	ContentContainer,
-	Spacer,
-	SectionWrapper
-} from '../components/globalStyle';
+import { ContentContainer, SectionWrapper } from '../components/globalStyle';
 import Projects from '../components/projects';
 import Contact from '../components/contact';
 import Cover from '../components/cover';
 import About from '../components/about';
 import Footer from '../components/footer';
+import SpinningText from '../components/spinningText';
 
 const ProjectsTitle = styled.h1`
-	color: var(--main-bg-color);
+	color: var(--accent-light);
+	max-width: 60rem;
+	margin: 0 auto;
+	transform: translateY(-200px);
+	font-weight: 700;
 	text-transform: uppercase;
-	font-size: 64px;
-	font-weight: bold;
-	text-shadow: -1px -1px 0 var(--main-fg-color),
-		1px -1px 0 var(--main-fg-color), -1px 1px 0 var(--main-fg-color),
-		1px 1px 0 var(--main-fg-color);
+	z-index: -1;
 `;
 
 export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Home' />
-			<Spacer height={'large'} />
-			<ContentContainer>
-				<Logo />
-			</ContentContainer>
-
-			<Spacer height={'medium'} />
 			<Cover />
-
-			<Spacer height={'xlarge'} />
-			<SectionWrapper>
-				<ContentContainer>
-					<About />
-				</ContentContainer>
-			</SectionWrapper>
-
-			<Spacer height={'xlarge'} />
-			<SectionWrapper>
-				<ContentContainer id='projects'>
-					<ProjectsTitle>Projects</ProjectsTitle>
-				</ContentContainer>
-				<Projects />
-			</SectionWrapper>
-
-			<Spacer height={'xlarge'} />
-			<ContentContainer>
-				<Contact></Contact>
-			</ContentContainer>
-
-			<SectionWrapper>
-				<Footer></Footer>
-			</SectionWrapper>
+			<About />
+			<Projects />
+			<Contact />
+			<Footer />
 		</Layout>
 	);
 }

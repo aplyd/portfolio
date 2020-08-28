@@ -3,6 +3,7 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 export const PageContainer = styled.div`
 	margin: 0 auto;
 	padding-top: 56px;
+	background-color: var(--main-bg-color);
 `;
 
 export const ContentContainer = styled.div`
@@ -46,10 +47,24 @@ export const BtnLg = styled.button`
 `;
 
 export const GlobalStyle = createGlobalStyle`
+    * {
+        box-sizing: border-box;
+    }
+
     :root {
-        --main-bg-color: white;
-        --main-fg-color: black;
-        --accent-color: blue;
+        ${'' /* black */}
+        --dark-color: #252525;
+        ${'' /* light gray */}
+        --light-color: #bcbcbc;
+        ${'' /* medium gray */}
+        --medium-color: #999999;
+        ${'' /* white */}
+        --accent-light: white;
+        ${'' /* blue */}
+        --accent-color: #3199D3;
+        ${'' /* peach */}
+        --accent-color2: #e5b0a0;
+
         --spacing-xsmall: 4px;
         --spacing-small: 8px;
         --spacing-medium: 32px;
@@ -58,33 +73,93 @@ export const GlobalStyle = createGlobalStyle`
         --section-height: 664px;
     }
 
+    html,
+    body,
+    :root {
+        margin: 0;
+        padding: 0;
+        ${'' /* font-size: 10px; */}
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
     html {
         scroll-behavior: 'smooth';
+        font-size: 10px;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ol,
+    ul {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     body {
-        background-color: var(--main-bg-color);
-    }
-
-    h1,h2,h3,h4,h5,h6,p {
-        color: var(--main-fg-color);
-        max-width: 960px;
+        background-color: var(--light-color);
     }
 
     h1 {
         text-transform: uppercase;
+        font-size: 6.4rem;
+    }
+
+    h2 {
+        font-size: 4.8rem;
+    }
+
+    h3 {
+        font-size: 3.6rem;
+    }
+
+    h4 {
+        font-size: 2.4rem;
+    }
+
+    h5 {
+        font-size: 2.2rem;
+    }
+
+    h6 {
+        font-size: 2rem;
     }
 
     p {
-        font-size: 18px;
-        line-height: 1.3em;
+        font-size: 1.8rem;
+        line-height: 1.6em;
     }
 
     input, textarea {
         border: none;
         padding: 8px 8px 8px 0;
-        font-size: 18px;
-        
+        font-size: 1.8rem;
+    }
+
+    input::placeholder {
+        color: #ffffff;
     }
     
     button {
@@ -92,5 +167,33 @@ export const GlobalStyle = createGlobalStyle`
         padding: 4px 24px;
         cursor: pointer;
         border-radius: 8px;
+        font-size: 1.8rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        h1 {
+            text-transform: uppercase;
+            font-size: 5.8rem;
+        }
+
+        h2 {
+            font-size: 4.2rem;
+        }
+
+        h3 {
+            font-size: 3rem;
+        }
+
+        h4 {
+            font-size: 1.8rem;
+        }
+
+        h5 {
+            font-size: 1.6rem;
+        }
+
+        h6 {
+            font-size: 1.4rem;
+        }
     }
 `;

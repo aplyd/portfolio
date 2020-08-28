@@ -2,26 +2,28 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Frame = styled.div`
-	/* float: right; */
-	width: 300px;
-	height: 384px;
+	width: 240px;
+	height: 300px;
 	overflow: hidden;
+	position: absolute;
+	bottom: -240px;
+	right: 0;
+	z-index: 999;
 `;
+
+const fontSize = '4.8rem';
 
 const P = styled.p`
 	white-space: nowrap;
-	color: var(--main-bg-color);
-	font-size: 64px;
-	line-height: 64px;
+	color: white;
+	font-size: ${fontSize};
+	line-height: ${fontSize};
 	font-weight: bold;
 	animation: slide 1s infinite linear;
-	text-shadow: -1.5px -1.5px 0 var(--main-fg-color),
-		1.5px -1.5px 0 var(--main-fg-color), -1.5px 1.5px 0 var(--main-fg-color),
-		1.5px 1.5px 0 var(--main-fg-color);
 	text-transform: uppercase;
 	@keyframes slide {
 		from {
-			transform: translateY(-64px);
+			transform: translateY(-48px);
 		}
 		to {
 			transform: translateY(0);
@@ -29,16 +31,16 @@ const P = styled.p`
 	}
 `;
 
-export default function scrollText() {
+export default function ScrollText() {
 	return (
 		<Frame>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
-			<P>Contact</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
+			<P>Projects</P>
 		</Frame>
 	);
 }

@@ -44,7 +44,7 @@ const MenuItem = styled.h2`
 `;
 
 const CloseMenu = styled.svg`
-	font-size: 36px;
+	font-size: 3.6rem;
 	cursor: pointer;
 	color: var(--main-fg-color);
 `;

@@ -8,42 +8,49 @@ import { Spacer, BtnLg } from './globalStyle';
 const ProjectContainer = styled.div`
 	width: 100%;
 	position: relative;
+	max-width: 70rem;
+	margin: 0 auto;
+`;
+
+const InnerContainer = styled.div`
+	width: 100%;
+	max-width: 60rem;
+	margin: 0 auto;
 `;
 
 const Words = styled.div`
 	height: 480px;
 	width: 100%;
 	padding: 48px 24px 0 24px;
-	float: ${props => (props.right ? 'right' : null)};
-	max-width: 504px;
-
-	@media screen and (max-width: 800px) {
-		float: none;
-		padding: 24px 0;
-		margin: 0 auto;
-	}
+	/* max-width: 50em; */
+	float: none;
+	padding: 24px 0;
+	margin: 0 auto;
 `;
 
-const PTitle = styled.h1`
-	font-weight: bold;
-	color: var(--main-fg-color);
+const PTitle = styled.h3`
+	font-weight: 500;
+	color: var(--dark-color);
 	text-transform: uppercase;
 `;
 
 const PAbout = styled.p`
-	color: var(--main-fg-color);
+	color: var(--dark-color);
 	line-height: 1.3em;
 	min-height: 70px;
 `;
 
 const LIicon = styled.svg`
-	color: var(--main-fg-color);
+	color: var(--dark-color);
 	position: relative;
-	top: 2px;
+	top: 4px;
+	margin-right: 4px;
+
+	/* font-weight: 500; */
 `;
 
 const ToolsTitle = styled.p`
-	color: var(--main-fg-color);
+	color: var(--dark-color);
 	text-transform: uppercase;
 	padding-bottom: 16px;
 	font-weight: bold;
@@ -51,42 +58,48 @@ const ToolsTitle = styled.p`
 
 const Tool = styled.div`
 	padding: 0 16px 8px 0;
-	font-size: 18px;
+	font-size: 1.8rem;
 	display: flex;
 	flex-direction: row;
 	&& > p {
-		color: var(--main-fg-color);
-		font-weight: 300;
+		color: var(--dark-color);
 	}
 `;
 
 const BtnsContainer = styled.div`
+	float: right;
+	width: 100%;
+	max-width: 26rem;
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
+	justify-content: space-between;
 `;
 
 const Btn = styled.button`
-	border-radius: 50px;
-	border: solid 3px black;
-	padding: 6px 44px;
-	font-weight: bold;
+	border-radius: 5rem;
+	border: none;
+	height: 5rem;
+	width: 12rem;
 	text-transform: uppercase;
+	/* color: var(--accent-light);
+	background-color: var(--light-color);
+	box-shadow: 16px 16px 32px #a0a0a0, -16px -16px 32px #d8d8d8; */
 `;
 
 const RepoBtn = styled(Btn)`
-	font-weight: 700;
+	border: solid 2px var(--dark-color);
+	color: var(--dark-color);
+	background-color: var(--light-color);
 `;
 const DemoBtn = styled(Btn)`
-	font-weight: 700;
-	margin-left: 12px;
-	background-color: var(--main-fg-color);
-	color: var(--main-bg-color);
+	background-color: var(--dark-color);
+	color: var(--light-color);
+	border: solid 2px var(--dark-color);
 `;
 
 const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {
 	return (
 		<ProjectContainer>
+			<Spacer height={'large'} />
 			<Words right={right} paddingLeft={paddingLeft}>
 				{/* <Spacer height={'medium'} /> */}
 				<PTitle>{title}</PTitle>
@@ -112,6 +125,7 @@ const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {
 					<DemoBtn>Demo</DemoBtn>
 				</BtnsContainer>
 			</Words>
+			<Spacer height={'large'} />
 		</ProjectContainer>
 	);
 };

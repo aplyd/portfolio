@@ -9,7 +9,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Container = styled.div`
 	width: 100%;
-	background: var(--main-bg-color);
+	/* background: var(--main-bg-color); */
 	height: 56px;
 	position: fixed;
 	top: ${props => (props.visible ? '0' : '-58px')};
@@ -17,11 +17,12 @@ const Container = styled.div`
 	z-index: 1009;
 	display: flex;
 	flex-direction: row;
+	mix-blend-mode: difference;
 `;
 
 const NavItemsContainer = styled.div`
-	margin: 0 58px 0 16px;
-	width: 480px;
+	margin: 0 58px 0 32px;
+	width: 520px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -33,16 +34,16 @@ const NavItem = styled.div`
 	text-align: center;
 	&& > h3 {
 		margin-top: 20px;
-		font-size: 16px;
+		font-size: 2rem;
 		text-transform: uppercase;
-		color: var(--main-fg-color);
+		color: var(--accent-light);
 		transform: translateY(0);
 		transition: transform 1s ease-in-out;
 		cursor: pointer;
 	}
 	&&:hover {
 		&& > h3 {
-			transform: translateY(3px);
+			transform: translateY(4px);
 			transition: transform 0.3s ease-in-out;
 		}
 	}
@@ -50,7 +51,7 @@ const NavItem = styled.div`
 
 const ToggleModeBtn = styled.svg`
 	color: var(--main-fg-color);
-	font-size: 42px;
+	font-size: 4.2rem;
 	cursor: pointer;
 `;
 
@@ -66,10 +67,10 @@ const MenuBtnContainer = styled(ToggleContainer)`
 	top: 7px;
 	left: 16px;
 	&& > h3 {
-		color: var(--main-fg-color);
+		color: var(--accent-light);
 		z-index: 10003;
 		margin-bottom: -4px;
-		font-size: 22px;
+		font-size: 2.2rem;
 		padding: 0;
 		cursor: pointer;
 	}
@@ -77,44 +78,44 @@ const MenuBtnContainer = styled(ToggleContainer)`
 
 export default function Nav({ setIsMobileMenuOpen }) {
 	const [visible, setVisible] = useState(true);
-	const [isDarkMode, setIsDarkMode] = useState(false);
+	// const [isDarkMode, setIsDarkMode] = useState(false);
 	useScrollToHideNav(setVisible);
 	const [windowWidth] = useWindowWidth();
 
-	const windowGlobal = typeof window !== 'undefined' && window;
+	// const windowGlobal = typeof window !== 'undefined' && window;
 
-	//detect dark mode - not sure if it works properly
-	useEffect(() => {
-		if (
-			windowGlobal.matchMedia &&
-			windowGlobal.matchMedia('(prefers-color-scheme: dark)').matches
-		) {
-			setIsDarkMode(true);
-		}
-	}, [isDarkMode, windowGlobal]);
+	// //detect dark mode - not sure if it works properly
+	// useEffect(() => {
+	// 	if (
+	// 		windowGlobal.matchMedia &&
+	// 		windowGlobal.matchMedia('(prefers-color-scheme: dark)').matches
+	// 	) {
+	// 		setIsDarkMode(true);
+	// 	}
+	// }, [isDarkMode, windowGlobal]);
 
-	//toggle dark/light modes
-	const toggleDisplayMode = () => {
-		setIsDarkMode(!isDarkMode);
+	// //toggle dark/light modes
+	// const toggleDisplayMode = () => {
+	// 	setIsDarkMode(!isDarkMode);
 
-		const bg = windowGlobal
-			.getComputedStyle(windowGlobal.document.documentElement)
-			.getPropertyValue('--main-bg-color');
+	// 	const bg = windowGlobal
+	// 		.getComputedStyle(windowGlobal.document.documentElement)
+	// 		.getPropertyValue('--main-bg-color');
 
-		const fg = windowGlobal
-			.getComputedStyle(windowGlobal.document.documentElement)
-			.getPropertyValue('--main-fg-color');
+	// 	const fg = windowGlobal
+	// 		.getComputedStyle(windowGlobal.document.documentElement)
+	// 		.getPropertyValue('--main-fg-color');
 
-		windowGlobal.document.documentElement.style.setProperty(
-			'--main-bg-color',
-			bg === bg ? fg : bg
-		);
+	// 	windowGlobal.document.documentElement.style.setProperty(
+	// 		'--main-bg-color',
+	// 		bg === bg ? fg : bg
+	// 	);
 
-		windowGlobal.document.documentElement.style.setProperty(
-			'--main-fg-color',
-			fg === fg ? bg : fg
-		);
-	};
+	// 	windowGlobal.document.documentElement.style.setProperty(
+	// 		'--main-fg-color',
+	// 		fg === fg ? bg : fg
+	// 	);
+	// };
 
 	const navItems = [
 		{ title: 'home', link: '/' },
@@ -147,22 +148,22 @@ export default function Nav({ setIsMobileMenuOpen }) {
 
 	return (
 		<Container visible={visible}>
-			{windowWidth > 800 ? (
+			{windowWidth > 550 ? (
 				<NavItemsContainer windowWidth={windowWidth}>
 					{desktopMenu()}
 				</NavItemsContainer>
 			) : (
 				mobileMenu()
 			)}
-			<ToggleContainer onClick={() => toggleDisplayMode()}>
+			{/* <ToggleContainer onClick={() => toggleDisplayMode()}>
 				{isDarkMode ? (
 					<ToggleModeBtn as={GiStripedSun}></ToggleModeBtn>
 				) : (
-					<ToggleModeBtn
-						as={WiMoonAltWaxingCrescent4}
-					></ToggleModeBtn>
-				)}
-			</ToggleContainer>
+						<ToggleModeBtn
+							as={WiMoonAltWaxingCrescent4}
+						></ToggleModeBtn>
+					)}
+			</ToggleContainer> */}
 		</Container>
 	);
 }
