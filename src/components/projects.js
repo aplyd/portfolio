@@ -54,7 +54,9 @@ export default function Projects() {
 		about:
 			'Qui esse ut ipsum qui consequat culpa consectetur ex. Occaecat fugiat laboris non dolor consequat proident irure culpa.',
 		tools: ['React', 'Styled-components', 'my brain'],
-		image: 'image url'
+		image: 'image url',
+		repo: 'https://github.com/aplyd/battleship',
+		demo: 'https://aplyd.github.io/battleship/'
 	};
 
 	const wheresWaldo = {
@@ -62,7 +64,9 @@ export default function Projects() {
 		location: '/wheres-waldo',
 		about: 'Est mollit cillum nulla quis elit consequat sit ullamco.',
 		tools: ['React', 'Styled-components', 'firebase firestore'],
-		image: 'imgae url'
+		image: 'imgae url',
+		repo: 'https://github.com/aplyd/wheres-waldo',
+		demo: 'https://aplyd.github.io/wheres-waldo/'
 	};
 
 	const fpotfp = {
@@ -70,7 +74,9 @@ export default function Projects() {
 		location: 'fpotfp',
 		about: 'Velit officia sunt sunt do.',
 		tools: ['React', 'Styled-components', 'firebase firestore'],
-		image: 'image'
+		image: 'image',
+		repo: 'https://github.com/aplyd/front-page-of-the-front-page',
+		demo: 'https://aplyd.github.io/front-page-of-the-front-page/'
 	};
 
 	return (
