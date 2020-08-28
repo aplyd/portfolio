@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useScrollPos } from '../hooks/useScrollPos';
 import {
@@ -44,6 +44,7 @@ const Text = styled.text`
 
 export default function SpinningText() {
 	let scrollPos = useScrollPos();
+	const [scrollAnimation, setScrollAnimation] = useState(0);
 
 	// complicated way of scaling via window width
 	// const [windowWidth] = useWindowWidth();

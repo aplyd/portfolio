@@ -17,7 +17,6 @@ const Title = styled.h2`
 	margin: 0 auto;
 	max-width: 70rem;
 	color: var(--accent-light);
-	white-space: nowrap;
 `;
 
 const ProjectCardContainer = styled.div`
@@ -78,7 +77,7 @@ export default function Projects() {
 		<>
 			<Container id='projects'>
 				<Spacer height={'medium'} />
-				<Title>Projects</Title>
+				<Title>Recent Projects</Title>
 
 				<ProjectCardContainer>
 					<ProjectCard {...fpotfp} />
