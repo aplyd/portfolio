@@ -35,13 +35,13 @@ const PTitle = styled.h3`
 `;
 
 const PAbout = styled.p`
-	color: var(--accent-light);
+	color: var(--dark-color);
 	line-height: 1.3em;
 	min-height: 70px;
 `;
 
 const LIicon = styled.svg`
-	color: var(--accent-light);
+	color: var(--dark-color);
 	position: relative;
 	top: 4px;
 	margin-right: 4px;
@@ -50,7 +50,7 @@ const LIicon = styled.svg`
 `;
 
 const ToolsTitle = styled.p`
-	color: var(--accent-light);
+	color: var(--dark-color);
 	text-transform: uppercase;
 	padding-bottom: 16px;
 	font-weight: bold;
@@ -62,39 +62,38 @@ const Tool = styled.div`
 	display: flex;
 	flex-direction: row;
 	&& > p {
-		color: var(--accent-light);
-		/* font-weight: 300; */
+		color: var(--dark-color);
 	}
 `;
 
 const BtnsContainer = styled.div`
 	float: right;
+	width: 100%;
+	max-width: 26rem;
+	display: flex;
+	justify-content: space-between;
 `;
 
 const Btn = styled.button`
-	border-radius: 50px;
+	border-radius: 5rem;
 	border: none;
-	padding: 20px 50px;
-	font-weight: bold;
+	height: 5rem;
+	width: 12rem;
 	text-transform: uppercase;
-	font-weight: 700;
 	/* color: var(--accent-light);
 	background-color: var(--light-color);
 	box-shadow: 16px 16px 32px #a0a0a0, -16px -16px 32px #d8d8d8; */
 `;
 
 const RepoBtn = styled(Btn)`
-	border: solid 3px var(--accent-light);
-	color: var(--accent-light);
-	font-weight: 700;
-	background-color: var(--main-bg-color);
+	border: solid 2px var(--dark-color);
+	color: var(--dark-color);
+	background-color: var(--light-color);
 `;
 const DemoBtn = styled(Btn)`
-	font-weight: 700;
-	margin-left: 24px;
-	background-color: var(--accent-color);
-	color: var(--accent-light);
-	border: solid 3px var(--accent-color);
+	background-color: var(--dark-color);
+	color: var(--light-color);
+	border: solid 2px var(--dark-color);
 `;
 
 const ProjectCard = ({ right, title, about, tools, paddingLeft }) => {

@@ -36,16 +36,14 @@ const NavItem = styled.div`
 		margin-top: 20px;
 		font-size: 2rem;
 		text-transform: uppercase;
-		color: white;
+		color: var(--accent-light);
 		transform: translateY(0);
 		transition: transform 1s ease-in-out;
 		cursor: pointer;
-		/* color: white; */
-		font-weight: 500;
 	}
 	&&:hover {
 		&& > h3 {
-			transform: translateY(3px);
+			transform: translateY(4px);
 			transition: transform 0.3s ease-in-out;
 		}
 	}
@@ -150,7 +148,7 @@ export default function Nav({ setIsMobileMenuOpen }) {
 
 	return (
 		<Container visible={visible}>
-			{windowWidth > 800 ? (
+			{windowWidth > 550 ? (
 				<NavItemsContainer windowWidth={windowWidth}>
 					{desktopMenu()}
 				</NavItemsContainer>

@@ -50,9 +50,9 @@ const CTAbtn = styled(motion.button)`
 	border: none;
 	padding: 28px 48px;
 	text-transform: uppercase;
-	background-color: var(--light-color);
-	color: var(--accent-light);
-	font-weight: 500;
+	background-color: var(--accent-light);
+	color: var(--dark-color);
+	/* font-weight: 500; */
 `;
 
 const SlantedSVG = styled.svg`
@@ -98,8 +98,6 @@ const About = () => {
 			}));
 		}
 	};
-
-	// controls.start({ opacity: 1, transition: 3 });
 
 	return (
 		<>

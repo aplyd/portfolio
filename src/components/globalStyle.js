@@ -169,4 +169,31 @@ export const GlobalStyle = createGlobalStyle`
         border-radius: 8px;
         font-size: 1.8rem;
     }
+
+    @media screen and (max-width: 480px) {
+        h1 {
+            text-transform: uppercase;
+            font-size: 5.8rem;
+        }
+
+        h2 {
+            font-size: 4.2rem;
+        }
+
+        h3 {
+            font-size: 3rem;
+        }
+
+        h4 {
+            font-size: 1.8rem;
+        }
+
+        h5 {
+            font-size: 1.6rem;
+        }
+
+        h6 {
+            font-size: 1.4rem;
+        }
+    }
 `;

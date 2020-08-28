@@ -10,13 +10,14 @@ const Container = styled.div`
 	max-width: 80%;
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
 	text-transform: uppercase;
 	font-weight: 700;
 	/* font-size: 3.6rem; */
 	margin: 0 auto;
 	max-width: 70rem;
 	color: var(--accent-light);
+	white-space: nowrap;
 `;
 
 const ProjectCardContainer = styled.div`
@@ -29,7 +30,7 @@ const ProjectCardContainer = styled.div`
 // `;
 
 const HorizontalLine = styled.div`
-	height: 6px;
+	height: 2px;
 	border-radius: 50px;
 	background-color: var(--accent-light);
 	width: 100%;
@@ -76,20 +77,17 @@ export default function Projects() {
 	return (
 		<>
 			<Container id='projects'>
-				<Spacer height={'large'} />
+				<Spacer height={'medium'} />
 				<Title>Projects</Title>
 
-				<HorizontalLine />
 				<ProjectCardContainer>
 					<ProjectCard {...fpotfp} />
 				</ProjectCardContainer>
 
-				<HorizontalLine />
 				<ProjectCardContainer>
 					<ProjectCard {...battleship} />
 				</ProjectCardContainer>
 
-				<HorizontalLine />
 				<ProjectCardContainer>
 					<ProjectCard {...wheresWaldo} />
 				</ProjectCardContainer>

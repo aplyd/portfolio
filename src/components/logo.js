@@ -13,8 +13,11 @@ const Container = styled.div`
 		width: 100%;
 		max-width: 55rem;
 		padding: 0 2.4rem 0 1.2rem;
-		padding-bottom: 4rem;
+		padding-bottom: 2rem;
 	}
+	/* && path {
+		fill: red;
+	} */
 `;
 
 export default function Logo() {
