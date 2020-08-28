@@ -13,7 +13,7 @@ const Container = styled.div`
 		width: 100%;
 		max-width: 55rem;
 		padding: 0 2.4rem 0 1.2rem;
-		padding-bottom: 32px;
+		padding-bottom: 4rem;
 	}
 `;
 

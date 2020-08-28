@@ -21,6 +21,9 @@ const Container = styled(motion.div)`
 	max-width: 70rem;
 	margin: 0 auto;
 	position: relative;
+	@media screen and (max-width: 700px) {
+		padding: 0 16px;
+	}
 `;
 
 const P = styled(motion.p)`
@@ -47,8 +50,8 @@ const CTAbtn = styled(motion.button)`
 	border: none;
 	padding: 28px 48px;
 	text-transform: uppercase;
-	background-color: var(--accent-color2);
-	color: var(--dark-color);
+	background-color: var(--light-color);
+	color: var(--accent-light);
 	font-weight: 500;
 `;
 
@@ -90,7 +93,7 @@ const About = () => {
 				y: 0,
 				transition: {
 					delay: i * 0.3,
-					duration: 2
+					duration: 1
 				}
 			}));
 		}

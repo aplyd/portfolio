@@ -26,10 +26,6 @@ const SpinningTextContainer = styled.div`
 `;
 
 const SpinSVG = styled.svg`
-	/* transform: scale(1.5);
-	@media screen and (max-width: 550px) {
-		transform: scale(1.3);
-	} */
 	pointer-events: none;
 	fill: transparent;
 `;

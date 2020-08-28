@@ -26,7 +26,7 @@ const ArtContainer = styled.div`
 `;
 
 const ProfileSVG = styled.svg`
-	border-radius: 50px;
+	border-radius: 100px;
 	height: 100%;
 	width: 100%;
 	background-color: var(--light-color);
@@ -43,7 +43,7 @@ const ProfileBackground = styled.div`
 	box-shadow: 24px 24px 48px #a0a0a0, -24px -24px 48px #d8d8d8;
 	background-color: var(--light-color);
 	border-radius: 50px;
-	padding: 50px;
+	padding: 2.4rem;
 `;
 
 const DesktopSpacer = styled(Spacer)`
@@ -65,7 +65,9 @@ export default function Cover() {
 		<Container>
 			<Spacer height={'large'} />
 			<DesktopSpacer height={'xlarge'} />
+			<MobileSpacer height={'large'} />
 			<Logo />
+			<MobileSpacer height={'medium'} />
 			<ArtContainer>
 				<SpinningText />
 				<ProfileBackground>
