@@ -32,18 +32,18 @@ const Words = styled.div`
 
 const PTitle = styled(motion.h3)`
 	font-weight: 500;
-	color: var(--dark-color);
+	color: var(--accent-light);
 	text-transform: uppercase;
 `;
 
 const PAbout = styled(motion.p)`
-	color: var(--dark-color);
+	color: var(--accent-light);
 	line-height: 1.3em;
 	min-height: 70px;
 `;
 
 const LIicon = styled.svg`
-	color: var(--dark-color);
+	color: var(--accent-light);
 	position: relative;
 	top: 4px;
 	margin-right: 4px;
@@ -52,7 +52,7 @@ const LIicon = styled.svg`
 `;
 
 const ToolsTitle = styled(motion.p)`
-	color: var(--dark-color);
+	color: var(--accent-light);
 	text-transform: uppercase;
 	padding-bottom: 16px;
 	font-weight: bold;
@@ -66,7 +66,7 @@ const Tool = styled(motion.div)`
 `;
 
 const ToolP = styled.p`
-	color: var(--dark-color);
+	color: var(--accent-light);
 `;
 
 const BtnsContainer = styled(motion.div)`
@@ -89,25 +89,27 @@ const Btn = styled.button`
 `;
 
 const RepoBtn = styled(Btn)`
-	border: solid 2px var(--dark-color);
-	color: var(--dark-color);
+	border: solid 1px var(--accent-light);
+	color: var(--accent-light);
 	background-color: var(--light-color);
+	&&:hover {
+		border: solid 1px var(--accent-light);
+		color: var(--accent-light);
+		background-color: var(--light-color);
+	}
 `;
 const DemoBtn = styled(Btn)`
-	background-color: var(--dark-color);
+	background-color: var(--accent-light);
 	color: var(--light-color);
-	border: solid 2px var(--dark-color);
+	border: solid 1px var(--accent-light);
+	&&:hover {
+		background-color: var(--accent-light);
+		color: var(--light-color);
+		border: solid 1px var(--accent-light);
+	}
 `;
 
-const ProjectCard = ({
-	right,
-	title,
-	about,
-	tools,
-	paddingLeft,
-	repo,
-	demo
-}) => {
+const ProjectCard = ({ title, about, tools, repo, demo }) => {
 	const controls = useAnimation();
 	const handleScroll = isVisible => {
 		if (isVisible) {
@@ -125,7 +127,7 @@ const ProjectCard = ({
 		<VisibilitySensor onChange={handleScroll} partialVisibility={true}>
 			<ProjectContainer>
 				<Spacer height={'large'} />
-				<Words right={right} paddingLeft={paddingLeft}>
+				<Words>
 					{/* <Spacer height={'medium'} /> */}
 					<PTitle
 						animate={controls}

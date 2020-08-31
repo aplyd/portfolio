@@ -55,9 +55,9 @@ export const GlobalStyle = createGlobalStyle`
         ${'' /* black */}
         --dark-color: #252525;
         ${'' /* light gray */}
-        --light-color: #bcbcbc;
+        --light-color: #5F6E83;
         ${'' /* medium gray */}
-        --medium-color: #999999;
+        --medium-color: #bcbcbc;
         ${'' /* white */}
         --accent-light: white;
         ${'' /* blue */}

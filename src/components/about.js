@@ -38,7 +38,7 @@ const BoldTitle = styled(motion.h1)`
 const SubTitle = styled(motion.h3)`
 	font-weight: 300;
 	margin-top: -4px;
-	color: var(--light-color);
+	color: var(--medium-color);
 	text-transform: uppercase;
 `;
 

@@ -17,7 +17,7 @@ const Container = styled.div`
 	z-index: 1009;
 	display: flex;
 	flex-direction: row;
-	mix-blend-mode: difference;
+	/* mix-blend-mode: difference; */
 `;
 
 const NavItemsContainer = styled.div`
@@ -45,6 +45,7 @@ const NavItem = styled.div`
 		&& > h3 {
 			transform: translateY(4px);
 			transition: transform 0.3s ease-in-out;
+			color: var(--dark-color);
 		}
 	}
 `;

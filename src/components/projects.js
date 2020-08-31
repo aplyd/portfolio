@@ -83,7 +83,6 @@ export default function Projects() {
 		<>
 			<Container id='projects'>
 				<Spacer height={'medium'} />
-				<Title>Recent Projects</Title>
 
 				<ProjectCardContainer>
 					<ProjectCard {...fpotfp} />

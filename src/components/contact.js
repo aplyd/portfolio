@@ -12,6 +12,13 @@ const Container = styled.div`
 	}
 `;
 
+const Title = styled.h2`
+	/* max-width: 50rem;
+	margin: 0 auto; */
+	color: var(--accent-light);
+	text-transform: uppercase;
+`;
+
 const FormContainer = styled.div`
 	max-width: 50rem;
 `;
@@ -29,7 +36,7 @@ const Input = styled.input`
 	padding-bottom: 2rem;
 	&& ::placeholder,
 	::-webkit-input-placeholder {
-		color: white;
+		color: var(--medium-color);
 		opacity: 1;
 	}
 `;
@@ -53,18 +60,17 @@ const MessageInput = styled(TextareaAutosize)`
 	line-height: 2.4rem;
 	&& ::placeholder,
 	::-webkit-input-placeholder {
-		color: white;
+		color: var(--medium-color);
 		opacity: 1;
 	}
 `;
 const SendBtn = styled.button`
 	border-radius: 50px;
-	border: solid 3px var(--accent-color2);
+	border: solid 2px var(--accent-light);
 	padding: 20px 52px;
-	font-weight: bold;
 	text-transform: uppercase;
-	background-color: var(--accent-color2);
-	color: var(--accent-light);
+	background-color: var(--accent-light);
+	color: var(--dark-color);
 	margin-top: 48px;
 	/* float: right; */
 `;
@@ -95,8 +101,9 @@ const SendBtn = styled.button`
 // `;
 
 export default function Contact() {
-	const [name, setName] = useState();
-	const [message, setMessage] = useState(null);
+	// const [name, setName] = useState(null);
+	// const [email, setEmail] = useState(null)
+	// const [message, setMessage] = useState(null);
 
 	return (
 		<Container>
@@ -114,8 +121,9 @@ export default function Contact() {
 			</ArtContainer> */}
 
 			<div>
+				<Spacer height={'xlarge'} />
+				<Title>Say Hello</Title>
 				<FormContainer id='contact'>
-					<Spacer height={'xlarge'} />
 					<Spacer height={'large'} />
 					<Form>
 						<NameInput placeholder='Your Name'></NameInput>
@@ -124,8 +132,8 @@ export default function Contact() {
 						<MessageInput
 							placeholder='Your Message'
 							maxLength='375'
-							value={message}
-							onChange={e => setMessage(e.target.value)}
+							// value={message}
+							// onChange={e => setMessage(e.target.value)}
 						></MessageInput>
 
 						<SendBtn>Send</SendBtn>
