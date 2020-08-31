@@ -12,8 +12,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 const Background = styled.div`
 	margin-top: -8px;
 	background-color: var(--dark-color);
-	border-bottom-left-radius: 5rem;
-	border-bottom-right-radius: 5rem;
+
 	/* z-index: 1; */
 	/* border-radius: 50px; */
 	/* color: var(--main-bg-color); */
