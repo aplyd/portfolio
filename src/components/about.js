@@ -12,10 +12,6 @@ import VisibilitySensor from 'react-visibility-sensor';
 const Background = styled.div`
 	margin-top: -8px;
 	background-color: var(--dark-color);
-
-	/* z-index: 1; */
-	/* border-radius: 50px; */
-	/* color: var(--main-bg-color); */
 `;
 
 const Container = styled(motion.div)`
