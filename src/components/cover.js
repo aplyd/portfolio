@@ -17,7 +17,7 @@ const ArtContainer = styled.div`
 	position: relative;
 	margin: 0 auto;
 	max-width: 56.2rem;
-	padding: 0 1.2rem;
+	padding: 0 1.6rem;
 	&& > svg {
 	}
 	&& path,

@@ -1,7 +1,7 @@
 [([([([([([( TODO )])])])])])]
 
-(()) consistency in button sizing (create button components for small and large)
-(()) fix left/right padding on xs mobile
+(̶(̶)̶)̶ ̶c̶o̶n̶s̶i̶s̶t̶e̶n̶c̶y̶ ̶i̶n̶ ̶b̶u̶t̶t̶o̶n̶ ̶s̶i̶z̶i̶n̶g̶ ̶(̶c̶r̶e̶a̶t̶e̶ ̶b̶u̶t̶t̶o̶n̶ ̶c̶o̶m̶p̶o̶n̶e̶n̶t̶s̶ ̶f̶o̶r̶ ̶s̶m̶a̶l̶l̶ ̶a̶n̶d̶ ̶l̶a̶r̶g̶e̶)̶
+(̶(̶)̶)̶ ̶f̶i̶x̶ ̶l̶e̶f̶t̶/̶r̶i̶g̶h̶t̶ ̶p̶a̶d̶d̶i̶n̶g̶ ̶o̶n̶ ̶x̶s̶ ̶m̶o̶b̶i̶l̶e̶
 (()) design blog/posts page
 (()) design individual blog post template
 (()) design info page
@@ -11,3 +11,4 @@
 (̶(̶)̶)̶ ̶f̶i̶x̶ ̶l̶o̶g̶o̶ ̶r̶i̶g̶h̶t̶ ̶s̶i̶d̶e̶ ̶s̶p̶a̶c̶i̶n̶g̶ ̶a̶n̶d̶ ̶s̶p̶a̶c̶i̶n̶g̶ ̶b̶e̶t̶w̶e̶e̶n̶ ̶w̶o̶r̶d̶s̶
 (()) fix mobile menu (also, remove "close" button from bottom and instead keep top right)
 (()) scaling font sizes
+(()) buttons in project card need to move upper padding for mobile

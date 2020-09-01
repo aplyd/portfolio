@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { GiCircle } from 'react-icons/gi';
-import { Spacer, BtnLg } from './globalStyle';
+import { Spacer, BtnSmall } from './globalStyle';
 import VisibilitySensor from 'react-visibility-sensor';
 import { useAnimation, motion } from 'framer-motion';
 
@@ -180,14 +180,26 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 							target='_blank'
 							rel='noopener noreferrer'
 						>
-							<RepoBtn>Repo</RepoBtn>
+							<BtnSmall
+								backgroundColor={'var(--light-color)'}
+								color={'var(--accent-light)'}
+								borderColor={'var(--accent-light)'}
+							>
+								Repo
+							</BtnSmall>
 						</a>
 						<a
 							href={demo}
 							target='_blank'
 							rel='noopener noreferrer'
 						>
-							<DemoBtn>Demo</DemoBtn>
+							<BtnSmall
+								backgroundColor={'var(--accent-light)'}
+								color={'var(--light-color)'}
+								borderColor={'var(--accent-light)'}
+							>
+								Demo
+							</BtnSmall>
 						</a>
 					</BtnsContainer>
 				</Words>

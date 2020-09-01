@@ -14,17 +14,10 @@ const TM = styled.p`
 	padding: 1.6rem 2.4rem 1.6rem 2.4rem;
 `;
 
-const Location = styled.p`
-	float: right;
-
-	padding: 1.6rem 2.4rem 1.6rem 2.4rem;
-`;
-
 export default function Footer() {
 	return (
 		<Container>
 			<TM>© 2020 Austin Ftacnik</TM>
-			<Location>Seattle, WA</Location>
 		</Container>
 	);
 }

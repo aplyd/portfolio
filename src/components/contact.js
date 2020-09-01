@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Spacer } from './globalStyle';
+import { Spacer, BtnSmall } from './globalStyle';
 import ScrollText from './scrollText';
 import TextareaAutosize from 'react-textarea-autosize';
 
 const Container = styled.div`
 	background-color: var(--dark-color);
+	@media screen and (max-width: 700px) {
+		padding: 0 16px;
+	}
 	&& > div {
 		margin: 0 auto;
 		max-width: 70rem;
@@ -64,15 +67,8 @@ const MessageInput = styled(TextareaAutosize)`
 		opacity: 1;
 	}
 `;
-const SendBtn = styled.button`
-	border-radius: 50px;
-	border: solid 2px var(--accent-light);
-	padding: 20px 52px;
-	text-transform: uppercase;
-	background-color: var(--accent-light);
-	color: var(--dark-color);
+const SendBtn = styled(BtnSmall)`
 	margin-top: 48px;
-	/* float: right; */
 `;
 
 // const ArtContainer = styled.div`
@@ -136,7 +132,13 @@ export default function Contact() {
 							// onChange={e => setMessage(e.target.value)}
 						></MessageInput>
 
-						<SendBtn>Send</SendBtn>
+						<SendBtn
+							backgroundColor={'var(--accent-light)'}
+							color={'var(--dark-color)'}
+							borderColor={'var(--accent-light)'}
+						>
+							Send
+						</SendBtn>
 					</Form>
 				</FormContainer>
 				<Spacer height={'xlarge'} />

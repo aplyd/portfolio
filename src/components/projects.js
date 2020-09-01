@@ -8,6 +8,10 @@ const Container = styled.div`
 	position: relative;
 	margin: -260px auto 0 auto;
 	max-width: 80%;
+	@media screen and (max-width: 700px) {
+		max-width: 100%;
+		padding: 0 16px;
+	}
 `;
 
 const Title = styled.h2`
@@ -82,7 +86,7 @@ export default function Projects() {
 	return (
 		<>
 			<Container id='projects'>
-				<Spacer height={'medium'} />
+				<Spacer height={'small'} />
 
 				<ProjectCardContainer>
 					<ProjectCard {...fpotfp} />
@@ -95,7 +99,7 @@ export default function Projects() {
 				<ProjectCardContainer>
 					<ProjectCard {...wheresWaldo} />
 				</ProjectCardContainer>
-				<Spacer height={'xlarge'} />
+				<Spacer height={'large'} />
 			</Container>
 		</>
 	);

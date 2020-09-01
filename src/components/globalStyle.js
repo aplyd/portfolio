@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const PageContainer = styled.div`
 	margin: 0 auto;
@@ -35,15 +36,26 @@ export const MobileSpacing = css`
 	}
 `;
 
-export const BtnLg = styled.button`
-	color: white;
-	background-color: black;
-	border: solid 3px white;
-	min-width: 48px;
-	min-height: 64px;
+const Btn = styled(motion.button)`
 	text-transform: uppercase;
-	${MobileSpacing}
 	cursor: pointer;
+	border-radius: 5rem;
+`;
+
+export const BtnLarge = styled(Btn)`
+	width: 19rem;
+	height: 7rem;
+	background-color: ${props => props.backgroundColor};
+	color: ${props => props.color};
+	border: ${props => `1px solid ${props.borderColor}`};
+`;
+
+export const BtnSmall = styled(Btn)`
+	width: 12rem;
+	height: 5rem;
+	background-color: ${props => props.backgroundColor};
+	color: ${props => props.color};
+	border: ${props => `1px solid ${props.borderColor}`};
 `;
 
 export const GlobalStyle = createGlobalStyle`
