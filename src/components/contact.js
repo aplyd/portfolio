@@ -121,21 +121,27 @@ export default function Contact() {
 				<Title>Say Hello</Title>
 				<FormContainer id='contact'>
 					<Spacer height={'large'} />
-					<Form>
-						<NameInput placeholder='Your Name'></NameInput>
-						<EmailInput placeholder='You Email'></EmailInput>
+					<Form name='contact' method='POST' data-netlify='true'>
+						<NameInput
+							placeholder='Your Name'
+							name='name'
+						></NameInput>
+						<EmailInput
+							placeholder='You Email'
+							email='email'
+						></EmailInput>
 
 						<MessageInput
 							placeholder='Your Message'
 							maxLength='375'
-							// value={message}
-							// onChange={e => setMessage(e.target.value)}
+							name='message'
 						></MessageInput>
 
 						<SendBtn
 							backgroundColor={'var(--accent-light)'}
 							color={'var(--dark-color)'}
 							borderColor={'var(--accent-light)'}
+							type='submit'
 						>
 							Send
 						</SendBtn>
