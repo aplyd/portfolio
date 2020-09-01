@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Spacer, BtnSmall } from './globalStyle';
 import ScrollText from './scrollText';
@@ -97,25 +97,8 @@ const SendBtn = styled(BtnSmall)`
 // `;
 
 export default function Contact() {
-	// const [name, setName] = useState(null);
-	// const [email, setEmail] = useState(null)
-	// const [message, setMessage] = useState(null);
-
 	return (
 		<Container>
-			{/* <Spacer height={'xlarge'} />
-			<ArtContainer>
-				<ScrollTextContainer>
-					<ScrollText />
-				</ScrollTextContainer>
-				<SlantedLine>
-					<div></div>
-				</SlantedLine>
-				<ScrollTextContainer>
-					<ScrollText />
-				</ScrollTextContainer>
-			</ArtContainer> */}
-
 			<div>
 				<Spacer height={'xlarge'} />
 				<Title>Say Hello</Title>
@@ -126,9 +109,10 @@ export default function Contact() {
 							placeholder='Your Name'
 							name='name'
 						></NameInput>
+
 						<EmailInput
 							placeholder='You Email'
-							email='email'
+							name='email'
 						></EmailInput>
 
 						<MessageInput
