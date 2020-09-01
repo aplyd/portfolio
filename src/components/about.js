@@ -33,6 +33,8 @@ const BoldTitle = styled(motion.h1)`
 	text-transform: uppercase;
 	font-weight: 500;
 	z-index: 1000;
+	line-height: 5rem;
+	padding-bottom: 0.8rem;
 `;
 
 const SubTitle = styled(motion.h3)`

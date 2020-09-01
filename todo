@@ -6,3 +6,7 @@
 (()) design individual blog post template
 (()) design info page
 (()) hook up netlify contact form
+(()) fix footer on xs mobile
+(()) rename color css variables
+(()) fix logo right side spacing and spacing between words
+(()) fix mobile menu (also, remove "close" button from bottom and instead keep top right)

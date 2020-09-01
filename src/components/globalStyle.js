@@ -78,13 +78,12 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         margin: 0;
         padding: 0;
-        ${'' /* font-size: 10px; */}
         width: 100vw;
         overflow-x: hidden;
     }
 
     html {
-        scroll-behavior: 'smooth';
+        scroll-behavior: smooth;
         font-size: 10px;
     }
 
