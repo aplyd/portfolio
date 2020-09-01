@@ -5,8 +5,8 @@
 (()) design blog/posts page
 (()) design individual blog post template
 (()) design info page
-(()) hook up netlify contact form
-(()) fix footer on xs mobile
+(̶(̶)̶)̶ ̶h̶o̶o̶k̶ ̶u̶p̶ ̶n̶e̶t̶l̶i̶f̶y̶ ̶c̶o̶n̶t̶a̶c̶t̶ ̶f̶o̶r̶m̶
+(̶(̶)̶)̶ ̶f̶i̶x̶ ̶f̶o̶o̶t̶e̶r̶ ̶o̶n̶ ̶x̶s̶ ̶m̶o̶b̶i̶l̶e̶
 (()) rename color css variables
 (̶(̶)̶)̶ ̶f̶i̶x̶ ̶l̶o̶g̶o̶ ̶r̶i̶g̶h̶t̶ ̶s̶i̶d̶e̶ ̶s̶p̶a̶c̶i̶n̶g̶ ̶a̶n̶d̶ ̶s̶p̶a̶c̶i̶n̶g̶ ̶b̶e̶t̶w̶e̶e̶n̶ ̶w̶o̶r̶d̶s̶
 (()) fix mobile menu (also, remove "close" button from bottom and instead keep top right)

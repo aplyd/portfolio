@@ -46,7 +46,20 @@ const Input = styled.input`
 
 const NameInput = styled(Input)``;
 
-const EmailInput = styled(Input)`
+const EmailInput = styled.input`
+	border: none;
+	outline: none;
+	color: white;
+	background-color: var(--dark-color);
+	border-bottom: 1px solid white;
+	width: 100%;
+	font-size: 2rem;
+	padding-bottom: 2rem;
+	&& ::placeholder,
+	::-webkit-input-placeholder {
+		color: var(--medium-color);
+		opacity: 1;
+	}
 	margin-top: 48px;
 `;
 
@@ -111,7 +124,7 @@ export default function Contact() {
 						></NameInput>
 
 						<EmailInput
-							placeholder='You Email'
+							placeholder='Your Email'
 							name='email'
 						></EmailInput>
 
