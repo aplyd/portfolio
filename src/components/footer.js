@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const TM = styled.p`
 	float: left;
-	padding: 1.6rem 2.4rem 1.6rem 2.4rem;
+	padding: 1.6rem 2.4rem 1.6rem 1.6rem;
 `;
 
 export default function Footer() {

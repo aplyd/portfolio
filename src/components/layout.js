@@ -41,11 +41,11 @@ const MenuItem = styled(motion.h3)`
 `;
 
 const CloseMenuContainer = styled.div`
-	height: 48px;
+	height: 40px;
 	position: absolute;
 	top: 6px;
 	left: 6px;
-	width: 48px;
+	width: 40px;
 `;
 
 const CloseMenuSVG = styled.svg`

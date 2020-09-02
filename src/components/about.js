@@ -151,15 +151,6 @@ const About = () => {
 									custom={2}
 									animate={controls}
 								>
-									{/* Labore sit esse occaecat occaecat proident veniam. Esse
-						minim sit tempor sint laborum duis magna mollit
-						reprehenderit. Adipisicing aliquip laborum cillum
-						voluptate. Cupidatat et elit laboris ea commodo
-						adipisicing occaecat ad pariatur cupidatat laborum
-						eiusmod. In adipisicing exercitation amet duis amet qui
-						laboris culpa exercitation do proident velit occaecat
-						voluptate. Ut cillum adipisicing excepteur elit qui
-						commodo commodo proident cupidatat. */}
 									I began playing guitar a piano in my early
 									teens and shortly after picked photography
 									and filmmaking. I guess you could say
@@ -172,7 +163,7 @@ const About = () => {
 									code.
 								</P>
 								<Spacer height={'large'} />
-								<AnchorLink to={'#contact'}>
+								<AnchorLink to='/#contact'>
 									<BtnLarge
 										initial={{ opacity: 0, y: 100 }}
 										custom={3}

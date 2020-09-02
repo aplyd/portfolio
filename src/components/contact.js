@@ -81,7 +81,7 @@ const MessageInput = styled(TextareaAutosize)`
 	}
 `;
 const SendBtn = styled(BtnSmall)`
-	margin-top: 48px;
+	margin-top: 64px;
 `;
 
 // const ArtContainer = styled.div`
@@ -111,9 +111,10 @@ const SendBtn = styled(BtnSmall)`
 
 export default function Contact() {
 	return (
-		<Container>
+		<Container id='contact'>
 			<div>
 				<Spacer height={'xlarge'} />
+				<Spacer height={'medium'} />
 				<Title>Say Hello</Title>
 				<FormContainer id='contact'>
 					<Spacer height={'large'} />
@@ -145,7 +146,7 @@ export default function Contact() {
 					</Form>
 				</FormContainer>
 				<Spacer height={'xlarge'} />
-				<Spacer height={'large'} />
+				<Spacer height={'medium'} />
 			</div>
 		</Container>
 	);
