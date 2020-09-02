@@ -65,17 +65,13 @@ export const GlobalStyle = createGlobalStyle`
 
     :root {
         ${'' /* black */}
-        --dark-color: #252525;
+        --color-dark: #252525;
         ${'' /* light gray */}
-        --light-color: #5F6E83;
+        --color-light: #5F6E83;
         ${'' /* medium gray */}
-        --medium-color: #bcbcbc;
+        --color-medium: #bcbcbc;
         ${'' /* white */}
         --accent-light: white;
-        ${'' /* blue */}
-        --accent-color: #3199D3;
-        ${'' /* peach */}
-        --accent-color2: #e5b0a0;
 
         --spacing-xsmall: 4px;
         --spacing-small: 8px;
@@ -130,7 +126,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: var(--light-color);
+        background-color: var(--color-light);
     }
 
     h1 {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 	width: 100%;
-	background-color: var(--dark-color);
+	background-color: var(--color-dark);
 	height: 60px;
 	text-align: center;
 	color: var(--accent-light);

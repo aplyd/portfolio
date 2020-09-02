@@ -18,7 +18,7 @@ import { VscClose } from 'react-icons/vsc';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 
 const MobileMenu = styled(motion.div)`
-	background-color: var(--dark-color);
+	background-color: var(--color-dark);
 	position: fixed;
 	height: 100vh;
 	width: 100vw;

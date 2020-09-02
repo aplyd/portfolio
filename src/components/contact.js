@@ -5,7 +5,7 @@ import ScrollText from './scrollText';
 import TextareaAutosize from 'react-textarea-autosize';
 
 const Container = styled.div`
-	background-color: var(--dark-color);
+	background-color: var(--color-dark);
 	@media screen and (max-width: 700px) {
 		padding: 0 16px;
 	}
@@ -32,14 +32,14 @@ const Input = styled.input`
 	border: none;
 	outline: none;
 	color: white;
-	background-color: var(--dark-color);
+	background-color: var(--color-dark);
 	border-bottom: 1px solid white;
 	width: 100%;
 	font-size: 2rem;
 	padding-bottom: 2rem;
 	&& ::placeholder,
 	::-webkit-input-placeholder {
-		color: var(--medium-color);
+		color: var(--color-medium);
 		opacity: 1;
 	}
 `;
@@ -50,14 +50,14 @@ const EmailInput = styled.input`
 	border: none;
 	outline: none;
 	color: white;
-	background-color: var(--dark-color);
+	background-color: var(--color-dark);
 	border-bottom: 1px solid white;
 	width: 100%;
 	font-size: 2rem;
 	padding-bottom: 2rem;
 	&& ::placeholder,
 	::-webkit-input-placeholder {
-		color: var(--medium-color);
+		color: var(--color-medium);
 		opacity: 1;
 	}
 	margin-top: 48px;
@@ -68,7 +68,7 @@ const MessageInput = styled(TextareaAutosize)`
 	border: none;
 	outline: none;
 	border-bottom: 1px solid white;
-	background-color: var(--dark-color);
+	background-color: var(--color-dark);
 	width: 100%;
 	margin-top: 64px;
 	padding-bottom: 2rem;
@@ -76,7 +76,7 @@ const MessageInput = styled(TextareaAutosize)`
 	line-height: 2.4rem;
 	&& ::placeholder,
 	::-webkit-input-placeholder {
-		color: var(--medium-color);
+		color: var(--color-medium);
 		opacity: 1;
 	}
 `;
@@ -137,7 +137,7 @@ export default function Contact() {
 
 						<SendBtn
 							backgroundColor={'var(--accent-light)'}
-							color={'var(--dark-color)'}
+							color={'var(--color-dark)'}
 							borderColor={'var(--accent-light)'}
 							type='submit'
 						>

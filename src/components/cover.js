@@ -29,18 +29,18 @@ const ProfileSVG = styled.svg`
 	border-radius: 100px;
 	height: 100%;
 	width: 100%;
-	background-color: var(--light-color);
+	background-color: var(--color-light);
 	display: block;
 	margin: 0 auto;
 	&& > path,
 	g {
-		fill: var(--dark-color);
+		fill: var(--color-dark);
 	}
 `;
 
 const ProfileBackground = styled.div`
 	box-shadow: 16px 16px 32px #515e6f, -16px -16px 32px #6d7f97;
-	background-color: var(--light-color);
+	background-color: var(--color-light);
 	border-radius: 50px;
 	padding: 2.4rem;
 `;

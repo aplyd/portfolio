@@ -2,17 +2,17 @@
 
 (̶(̶)̶)̶ ̶c̶o̶n̶s̶i̶s̶t̶e̶n̶c̶y̶ ̶i̶n̶ ̶b̶u̶t̶t̶o̶n̶ ̶s̶i̶z̶i̶n̶g̶ ̶(̶c̶r̶e̶a̶t̶e̶ ̶b̶u̶t̶t̶o̶n̶ ̶c̶o̶m̶p̶o̶n̶e̶n̶t̶s̶ ̶f̶o̶r̶ ̶s̶m̶a̶l̶l̶ ̶a̶n̶d̶ ̶l̶a̶r̶g̶e̶)̶
 (̶(̶)̶)̶ ̶f̶i̶x̶ ̶l̶e̶f̶t̶/̶r̶i̶g̶h̶t̶ ̶p̶a̶d̶d̶i̶n̶g̶ ̶o̶n̶ ̶x̶s̶ ̶m̶o̶b̶i̶l̶e̶
-(()) design blog/posts page
-(()) design individual blog post template
-(()) design info page
 (̶(̶)̶)̶ ̶h̶o̶o̶k̶ ̶u̶p̶ ̶n̶e̶t̶l̶i̶f̶y̶ ̶c̶o̶n̶t̶a̶c̶t̶ ̶f̶o̶r̶m̶
 (̶(̶)̶)̶ ̶f̶i̶x̶ ̶f̶o̶o̶t̶e̶r̶ ̶o̶n̶ ̶x̶s̶ ̶m̶o̶b̶i̶l̶e̶
-(()) rename color css variables
 (̶(̶)̶)̶ ̶f̶i̶x̶ ̶l̶o̶g̶o̶ ̶r̶i̶g̶h̶t̶ ̶s̶i̶d̶e̶ ̶s̶p̶a̶c̶i̶n̶g̶ ̶a̶n̶d̶ ̶s̶p̶a̶c̶i̶n̶g̶ ̶b̶e̶t̶w̶e̶e̶n̶ ̶w̶o̶r̶d̶s̶
-(()) fix mobile menu (also, remove "close" button from bottom and instead keep top right)
+(̶(̶)̶)̶ ̶f̶i̶x̶ ̶m̶o̶b̶i̶l̶e̶ ̶m̶e̶n̶u̶ ̶(̶a̶l̶s̶o̶,̶ ̶r̶e̶m̶o̶v̶e̶ ̶"̶c̶l̶o̶s̶e̶"̶ ̶b̶u̶t̶t̶o̶n̶ ̶f̶r̶o̶m̶ ̶b̶o̶t̶t̶o̶m̶ ̶a̶n̶d̶ ̶i̶n̶s̶t̶e̶a̶d̶ ̶k̶e̶e̶p̶ ̶t̶o̶p̶ ̶r̶i̶g̶h̶t̶)̶
+(̶(̶)̶)̶ ̶b̶u̶t̶t̶o̶n̶s̶ ̶i̶n̶ ̶p̶r̶o̶j̶e̶c̶t̶ ̶c̶a̶r̶d̶ ̶n̶e̶e̶d̶ ̶t̶o̶ ̶m̶o̶v̶e̶ ̶u̶p̶p̶e̶r̶ ̶p̶a̶d̶d̶i̶n̶g̶ ̶f̶o̶r̶ ̶m̶o̶b̶i̶l̶e̶
+(̶(̶)̶)̶ ̶r̶e̶n̶a̶m̶e̶ ̶"̶m̶o̶b̶i̶l̶e̶ ̶m̶e̶n̶u̶"̶ ̶a̶n̶d̶ ̶"̶d̶e̶s̶k̶t̶o̶p̶ ̶m̶e̶n̶u̶"̶ ̶t̶o̶ ̶"̶m̶o̶b̶i̶l̶e̶ ̶n̶a̶v̶,̶ ̶d̶e̶s̶k̶t̶o̶p̶ ̶n̶a̶v̶"̶ ̶(̶i̶n̶ ̶N̶a̶v̶ ̶c̶o̶m̶p̶o̶n̶e̶n̶t̶)̶
+(()) rename color css variables
 (()) scaling font sizes
     [] about title spacing needs to be more consistent
     [] 
-(()) buttons in project card need to move upper padding for mobile
 (()) overall spacing should be consistent and line up to a grid
-(()) rename "mobile menu" and "desktop menu" to "mobile nav, desktop nav" (in Nav component)
+(()) design blog/posts page
+(()) design individual blog post template
+(()) design info page

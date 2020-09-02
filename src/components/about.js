@@ -12,7 +12,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Background = styled.div`
 	margin-top: -8px;
-	background-color: var(--dark-color);
+	background-color: var(--color-dark);
 `;
 
 const Container = styled(motion.div)`
@@ -41,7 +41,7 @@ const BoldTitle = styled(motion.h1)`
 const SubTitle = styled(motion.h3)`
 	font-weight: 300;
 	margin-top: -4px;
-	color: var(--medium-color);
+	color: var(--color-medium);
 	text-transform: uppercase;
 `;
 
@@ -51,7 +51,7 @@ const CTAbtn = styled(motion.button)`
 	padding: 28px 48px;
 	text-transform: uppercase;
 	background-color: var(--accent-light);
-	color: var(--dark-color);
+	color: var(--color-dark);
 	/* font-weight: 500; */
 `;
 
@@ -60,7 +60,7 @@ const SlantedSVG = styled.svg`
 	transform: scale(-1, 1);
 	/* z-index: 9999; */
 	&& > path {
-		fill: var(--dark-color);
+		fill: var(--color-dark);
 	}
 `;
 
@@ -169,7 +169,7 @@ const About = () => {
 										custom={3}
 										animate={controls}
 										backgroundColor={'var(--accent-light)'}
-										color={'var(--dark-color)'}
+										color={'var(--color-dark)'}
 										borderColor={'var(--accent-light)'}
 									>
 										Get in touch

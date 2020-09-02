@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { GiCircle } from 'react-icons/gi';
 import { Spacer, BtnSmall } from './globalStyle';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -84,27 +83,27 @@ const Btn = styled.button`
 	width: 12rem;
 	text-transform: uppercase;
 	/* color: var(--accent-light);
-	background-color: var(--light-color);
+	background-color: var(--color-light);
 	box-shadow: 16px 16px 32px #a0a0a0, -16px -16px 32px #d8d8d8; */
 `;
 
 const RepoBtn = styled(Btn)`
 	border: solid 1px var(--accent-light);
 	color: var(--accent-light);
-	background-color: var(--light-color);
+	background-color: var(--color-light);
 	&&:hover {
 		border: solid 1px var(--accent-light);
 		color: var(--accent-light);
-		background-color: var(--light-color);
+		background-color: var(--color-light);
 	}
 `;
 const DemoBtn = styled(Btn)`
 	background-color: var(--accent-light);
-	color: var(--light-color);
+	color: var(--color-light);
 	border: solid 1px var(--accent-light);
 	&&:hover {
 		background-color: var(--accent-light);
-		color: var(--light-color);
+		color: var(--color-light);
 		border: solid 1px var(--accent-light);
 	}
 `;
@@ -169,7 +168,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 							</Tool>
 						);
 					})}
-					<Spacer height={'medium'} />
+					<Spacer height={'large'} />
 					<BtnsContainer
 						animate={controls}
 						custom={4}
@@ -181,7 +180,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 							rel='noopener noreferrer'
 						>
 							<BtnSmall
-								backgroundColor={'var(--light-color)'}
+								backgroundColor={'var(--color-light)'}
 								color={'var(--accent-light)'}
 								borderColor={'var(--accent-light)'}
 							>
@@ -195,7 +194,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 						>
 							<BtnSmall
 								backgroundColor={'var(--accent-light)'}
-								color={'var(--light-color)'}
+								color={'var(--color-light)'}
 								borderColor={'var(--accent-light)'}
 							>
 								Demo

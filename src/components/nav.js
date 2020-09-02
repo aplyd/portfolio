@@ -45,7 +45,7 @@ const NavItem = styled.div`
 		&& > h3 {
 			transform: translateY(4px);
 			transition: transform 0.3s ease-in-out;
-			color: var(--dark-color);
+			color: var(--color-dark);
 		}
 	}
 `;
@@ -64,7 +64,7 @@ const ToggleContainer = styled.div`
 	width: 42px;
 `;
 
-const MenuBtnContainer = styled(ToggleContainer)`
+const MobileNavBtnContainer = styled(ToggleContainer)`
 	top: 13px;
 	left: 15px;
 	&& > h3 {
@@ -126,7 +126,7 @@ export default function Nav({ toggleMobileMenu }) {
 		{ title: 'contact', shortcut: '#contact' }
 	];
 
-	const desktopMenu = () => {
+	const desktopNav = () => {
 		return navItems.map((i, index) => {
 			return (
 				<AnchorLink to={i.link || '/' + i.shortcut} key={index}>
@@ -138,12 +138,12 @@ export default function Nav({ toggleMobileMenu }) {
 		});
 	};
 
-	const mobileMenu = () => {
+	const mobileNav = () => {
 		return (
-			<MenuBtnContainer onClick={() => toggleMobileMenu(true)}>
+			<MobileNavBtnContainer onClick={() => toggleMobileMenu(true)}>
 				<h3>ME</h3>
 				<h3>NU</h3>
-			</MenuBtnContainer>
+			</MobileNavBtnContainer>
 		);
 	};
 
@@ -151,12 +151,14 @@ export default function Nav({ toggleMobileMenu }) {
 		<Container visible={visible}>
 			{windowWidth > 550 ? (
 				<NavItemsContainer windowWidth={windowWidth}>
-					{desktopMenu()}
+					{desktopNav()}
 				</NavItemsContainer>
 			) : (
-				mobileMenu()
+				mobileNav()
 			)}
-			{/* <ToggleContainer onClick={() => toggleDisplayMode()}>
+			{/* this is the dark/light mode toggle
+			
+			<ToggleContainer onClick={() => toggleDisplayMode()}>
 				{isDarkMode ? (
 					<ToggleModeBtn as={GiStripedSun}></ToggleModeBtn>
 				) : (
