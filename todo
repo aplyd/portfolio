@@ -11,4 +11,8 @@
 (̶(̶)̶)̶ ̶f̶i̶x̶ ̶l̶o̶g̶o̶ ̶r̶i̶g̶h̶t̶ ̶s̶i̶d̶e̶ ̶s̶p̶a̶c̶i̶n̶g̶ ̶a̶n̶d̶ ̶s̶p̶a̶c̶i̶n̶g̶ ̶b̶e̶t̶w̶e̶e̶n̶ ̶w̶o̶r̶d̶s̶
 (()) fix mobile menu (also, remove "close" button from bottom and instead keep top right)
 (()) scaling font sizes
+    [] about title spacing needs to be more consistent
+    [] 
 (()) buttons in project card need to move upper padding for mobile
+(()) overall spacing should be consistent and line up to a grid
+(()) rename "mobile menu" and "desktop menu" to "mobile nav, desktop nav" (in Nav component)

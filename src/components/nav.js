@@ -77,7 +77,7 @@ const MenuBtnContainer = styled(ToggleContainer)`
 	}
 `;
 
-export default function Nav({ setIsMobileMenuOpen }) {
+export default function Nav({ toggleMobileMenu }) {
 	const [visible, setVisible] = useState(true);
 	// const [isDarkMode, setIsDarkMode] = useState(false);
 	useScrollToHideNav(setVisible);
@@ -140,7 +140,7 @@ export default function Nav({ setIsMobileMenuOpen }) {
 
 	const mobileMenu = () => {
 		return (
-			<MenuBtnContainer onClick={() => setIsMobileMenuOpen(true)}>
+			<MenuBtnContainer onClick={() => toggleMobileMenu(true)}>
 				<h3>ME</h3>
 				<h3>NU</h3>
 			</MenuBtnContainer>
