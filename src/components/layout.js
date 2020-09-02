@@ -14,7 +14,7 @@ import Nav from './nav';
 import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
 import styled from 'styled-components';
-import { MdClose } from 'react-icons/md';
+import { VscClose } from 'react-icons/vsc';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 
 const MobileMenu = styled(motion.div)`
@@ -43,9 +43,9 @@ const MenuItem = styled(motion.h3)`
 const CloseMenuContainer = styled.div`
 	height: 48px;
 	position: absolute;
-	top: 7px;
-	left: 16px;
-	width: 42px;
+	top: 6px;
+	left: 6px;
+	width: 48px;
 `;
 
 const CloseMenuSVG = styled.svg`
@@ -75,14 +75,6 @@ const Layout = ({ children }) => {
 	const toggleMobileMenu = menuIsOpening => {
 		if (menuIsOpening) {
 			setIsMobileMenuOpen(true);
-			controls.start(i => ({
-				opacity: 1,
-				y: 0,
-				transition: {
-					delay: i * 0.3,
-					duration: 1
-				}
-			}));
 		} else {
 			setIsMobileMenuOpen(false);
 		}
@@ -104,41 +96,46 @@ const Layout = ({ children }) => {
 							// as={MdClose}
 							onClick={() => toggleMobileMenu(false)}
 						>
-							<CloseMenuSVG as={MdClose}></CloseMenuSVG>
+							<CloseMenuSVG as={VscClose}></CloseMenuSVG>
 						</CloseMenuContainer>
 						<MenuItemContainer>
 							<MenuItem
 								initial={{ opacity: 0, y: 100 }}
-								custom={1}
-								animate={controls}
+								// custom={1}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.3, delay: 0.1 }}
 							>
 								Home
 							</MenuItem>
 							<MenuItem
 								initial={{ opacity: 0, y: 100 }}
-								custom={1.5}
-								animate={controls}
+								// custom={1.5}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.3, delay: 0.2 }}
 							>
 								Info
 							</MenuItem>
 							<MenuItem
 								initial={{ opacity: 0, y: 100 }}
-								custom={2}
-								animate={controls}
+								// custom={2}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.3, delay: 0.3 }}
 							>
 								Projects
 							</MenuItem>
 							<MenuItem
 								initial={{ opacity: 0, y: 100 }}
-								custom={2.5}
-								animate={controls}
+								// custom={2.5}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.3, delay: 0.4 }}
 							>
 								Blog
 							</MenuItem>
 							<MenuItem
 								initial={{ opacity: 0, y: 100 }}
-								custom={3}
-								animate={controls}
+								// custom={3}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.3, delay: 0.5 }}
 							>
 								Contact
 							</MenuItem>

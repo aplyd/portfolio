@@ -65,8 +65,8 @@ const ToggleContainer = styled.div`
 `;
 
 const MenuBtnContainer = styled(ToggleContainer)`
-	top: 7px;
-	left: 16px;
+	top: 13px;
+	left: 15px;
 	&& > h3 {
 		color: var(--accent-light);
 		z-index: 10003;
@@ -170,5 +170,5 @@ export default function Nav({ toggleMobileMenu }) {
 }
 
 Nav.propTypes = {
-	setIsMobileMenuOpen: PropTypes.func
+	toggleMobileMenu: PropTypes.func
 };
