@@ -122,11 +122,14 @@ export default function Contact() {
 						<NameInput
 							placeholder='Your Name'
 							name='name'
+							type='text'
 						></NameInput>
 
 						<EmailInput
 							placeholder='Your Email'
 							name='email'
+							type='text'
+							required
 						></EmailInput>
 
 						<MessageInput
