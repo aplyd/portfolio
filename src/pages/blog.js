@@ -3,11 +3,31 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
+import styled from 'styled-components';
+import { Spacer } from '../components/globalStyle';
+
+const Container = styled.div`
+	max-width: 70rem;
+	margin: 0 auto;
+	@media screen and (max-width: 700px) {
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+	}
+`;
+
+const Title = styled.h2`
+	color: var(--accent-light);
+	text-align: center;
+`;
 
 const Blog = ({ data }) => {
 	return (
 		<Layout>
-			<div>
+			<Container>
+				<Spacer height={'xlarge'} />
+				<Title>Recent Posts</Title>
+			</Container>
+			{/* <div>
 				<h1>Latest Posts</h1>
 				{data.allMarkdownRemark.edges.map(post => {
 					console.log(post);
@@ -29,7 +49,7 @@ const Blog = ({ data }) => {
 						</div>
 					);
 				})}
-			</div>
+			</div> */}
 		</Layout>
 	);
 };
