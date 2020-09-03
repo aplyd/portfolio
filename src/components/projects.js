@@ -56,9 +56,8 @@ export default function Projects() {
 		title: 'Battleship',
 		location: '/battleship',
 		about:
-			'Qui esse ut ipsum qui consequat culpa consectetur ex. Occaecat fugiat laboris non dolor consequat proident irure culpa.',
-		tools: ['React', 'Styled-components', 'my brain'],
-		image: 'image url',
+			'A single player, digital version of the popular board game, Battleship. I learned a lot from this project and plan to improve the UI. Randomly generating ship placement on the board was easily the most difficult part of this project.',
+		tools: ['React', 'Styled Components'],
 		repo: 'https://github.com/aplyd/battleship',
 		demo: 'https://aplyd.github.io/battleship/'
 	};
@@ -66,18 +65,31 @@ export default function Projects() {
 	const wheresWaldo = {
 		title: "Where's Waldo",
 		location: '/wheres-waldo',
-		about: 'Est mollit cillum nulla quis elit consequat sit ullamco.',
-		tools: ['React', 'Styled-components', 'firebase firestore'],
-		image: 'imgae url',
+		about:
+			"A timed, digital version of one of my favorite childhood games, Where's Waldo. The timer is done using Firebase Functions on the backend to prevent users from being able to edit their time.",
+		tools: [
+			'React',
+			'React Router',
+			'Styled Components',
+			'Firebase Firestore',
+			'Firebase Functions'
+		],
 		repo: 'https://github.com/aplyd/wheres-waldo',
 		demo: 'https://aplyd.github.io/wheres-waldo/'
 	};
 
 	const fpotfp = {
 		title: 'Front Page',
-		location: 'fpotfp',
-		about: 'Velit officia sunt sunt do.',
-		tools: ['React', 'Styled-components', 'firebase firestore'],
+		location: '/fpotfp',
+		about:
+			'A simplified Reddit clone without subreddits. Users are able to create accounts via email and and password, post photos and videos, comment on posts as well as vote on posts and other comments. Some of the more challenging parts of this project were validating media uploads and displaying posts/comments.',
+		tools: [
+			'React',
+			'React Router',
+			'Styled Components',
+			'Firebase Firestore',
+			'Firebase Authentication'
+		],
 		image: 'image',
 		repo: 'https://github.com/aplyd/front-page-of-the-front-page',
 		demo: 'https://aplyd.github.io/front-page-of-the-front-page/'
@@ -99,7 +111,7 @@ export default function Projects() {
 				<ProjectCardContainer>
 					<ProjectCard {...wheresWaldo} />
 				</ProjectCardContainer>
-				<Spacer height={'large'} />
+				<Spacer height={'xlarge'} />
 			</Container>
 		</>
 	);
