@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { Spacer } from '../components/globalStyle';
 
 const Container = styled.div`
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 	@media screen and (max-width: 700px) {
 		padding-left: 1.6rem;
@@ -17,7 +17,24 @@ const Container = styled.div`
 
 const Title = styled.h2`
 	color: var(--accent-light);
-	text-align: center;
+	text-transform: uppercase;
+`;
+
+const Line = styled.div`
+	height: 2px;
+	border-radius: 50px;
+	width: 100%;
+	background-color: var(--accent-light);
+`;
+
+const PostPreviewContainer = styled.div`
+	background-color: var(--color-dark);
+	border-radius: 50px;
+	color: var(--accent-light);
+	padding: 24px 0;
+	min-height: 24rem;
+	&& > h3 {
+	}
 `;
 
 const Blog = ({ data }) => {
@@ -26,42 +43,37 @@ const Blog = ({ data }) => {
 			<Container>
 				<Spacer height={'xlarge'} />
 				<Title>Recent Posts</Title>
-			</Container>
-			{/* <div>
-				<h1>Latest Posts</h1>
+				<Spacer height={'small'} />
+				<Line />
 				{data.allMarkdownRemark.edges.map(post => {
 					console.log(post);
 					return (
-						<div key={post.node.id}>
-							<h3>{post.node.frontmatter.title}</h3>
-							<small>
-								Posted by {post.node.frontmatter.author} on{' '}
-								{post.node.frontmatter.date}
-							</small>
-							<br />
-							<br />
-							<Link to={post.node.frontmatter.path}>
-								Read More
-							</Link>
-							<br />
-							<br />
-							<hr />
-						</div>
+						<React.Fragment key={post.node.id}>
+							<PostPreviewContainer>
+								<h3>{post.node.frontmatter.title}</h3>
+								<small>
+									Posted by {post.node.frontmatter.author} on{' '}
+									{post.node.frontmatter.date}
+								</small>
+								<Link to={post.node.frontmatter.path}>
+									Read More
+								</Link>
+							</PostPreviewContainer>
+							<Spacer height={'large'} />
+						</React.Fragment>
 					);
 				})}
+			</Container>
+			{/* <div>
+				<h1>Latest Posts</h1>
+				
 			</div> */}
 		</Layout>
 	);
 };
 
 Blog.propTypes = {
-	data: PropTypes.shape({
-		allMarkdownRemark: PropTypes.shape({
-			edges: PropTypes.shape({
-				map: PropTypes.func
-			})
-		})
-	})
+	data: PropTypes.any
 };
 
 export const pageQuery = graphql`

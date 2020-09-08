@@ -4,9 +4,8 @@ const { paginate } = require('gatsby-awesome-pagination');
 exports.createPages = async ({ actions, graphql }) => {
 	const { createPage } = actions;
 
-	const postTemplate = path.resolve('src/templates/blog-post.js');
-
-	const articles = await graphql(`
+	// const blogPost = path.resolve('src/templates/blog-post.js');
+	const blogPosts = await graphql(`
 		{
 			allMarkdownRemark {
 				edges {
@@ -25,7 +24,13 @@ exports.createPages = async ({ actions, graphql }) => {
 		}
 	`);
 
-	console.log(articles.data.allMarkdownRemark);
+	paginate({
+		createPage,
+		items: blogPosts,
+		itemsPerPage: 2,
+		pathPrefix: '/blog',
+		component: path.resolve('src/template/blog.js')
+	});
 
 	// return graphql(`
 	// {
