@@ -149,7 +149,7 @@ export default function Nav({ toggleMobileMenu }) {
 
 	return (
 		<Container visible={visible}>
-			{windowWidth > 550 ? (
+			{windowWidth > 620 ? (
 				<NavItemsContainer windowWidth={windowWidth}>
 					{desktopNav()}
 				</NavItemsContainer>
