@@ -1,15 +1,15 @@
 const path = require('path');
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
 	const { createPage } = actions;
 	const blogPost = path.resolve('src/templates/blog-post.js');
 	return graphql(`
 		{
-			allMarkdownRemark {
+			allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
 				edges {
 					node {
-						html
 						id
+						body
 						frontmatter {
 							path
 							title
@@ -25,7 +25,8 @@ exports.createPages = ({ actions, graphql }) => {
 			return Promise.reject(res.errors);
 		}
 
-		res.data.allMarkdownRemark.edges.forEach(({ node }) => {
+		res.data.allMdx.edges.forEach(({ node }) => {
+			console.log(node);
 			createPage({
 				path: node.frontmatter.path,
 				component: blogPost

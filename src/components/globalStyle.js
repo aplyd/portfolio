@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 export const PageContainer = styled.div`
 	margin: 0 auto;
+	/* TODO below padding is not needed, just should replace with spacer */
 	padding-top: 56px;
 	background-color: var(--main-bg-color);
 `;

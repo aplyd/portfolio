@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/layout';
 import { Spacer } from '../components/globalStyle';
 import Footer from '../components/footer';
@@ -20,9 +21,7 @@ const Title = styled.h2`
 	color: var(--accent-light);
 `;
 
-export default function template({ data }) {
-	const post = data.markdownRemark;
-
+export default function template({ data: { mdx: post } }) {
 	return (
 		// <div>
 		// 	<Link to='/blog'>Back</Link>
@@ -36,7 +35,7 @@ export default function template({ data }) {
 				<Spacer height={'large'} />
 				<Title>{post.frontmatter.title}</Title>
 				<Spacer height={'large'} />
-				<div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+				<MDXRenderer>{post.body}</MDXRenderer>
 			</Container>
 			<Contact />
 			<Footer />
@@ -44,15 +43,16 @@ export default function template({ data }) {
 	);
 }
 
-export const postQuery = graphql`
-	query BlogPostByPath($path: String!) {
-		markdownRemark(frontmatter: { path: { eq: $path } }) {
-			html
+export const pageQuery = graphql`
+	query {
+		mdx {
+			id
+			body
 			frontmatter {
-				path
 				title
-				author
 				date
+				author
+				path
 			}
 		}
 	}

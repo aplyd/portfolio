@@ -30,6 +30,8 @@ import styled from 'styled-components';
 import { VscClose } from 'react-icons/vsc';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { MDXProvider } from '@mdx-js/react';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+deckDeckGoHighlightElement();
 
 const MobileMenu = styled(motion.div)`
 	background-color: var(--color-dark);

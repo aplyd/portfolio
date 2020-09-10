@@ -45,7 +45,7 @@ const Blog = ({ data }) => {
 				<Title>Recent Posts</Title>
 				<Spacer height={'small'} />
 				<Line />
-				{data.allMarkdownRemark.edges.map(post => {
+				{data.allMdx.edges.map(post => {
 					console.log(post);
 					return (
 						<React.Fragment key={post.node.id}>
@@ -77,11 +77,12 @@ Blog.propTypes = {
 };
 
 export const pageQuery = graphql`
-	query BlogIndexQuery {
-		allMarkdownRemark {
+	query {
+		allMdx {
 			edges {
 				node {
 					id
+					body
 					frontmatter {
 						author
 						date
