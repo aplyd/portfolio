@@ -1,6 +1,8 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
+// special (utility) components
+
 export const PageContainer = styled.div`
 	margin: 0 auto;
 	padding-top: 56px;
@@ -57,6 +59,8 @@ export const BtnSmall = styled(Btn)`
 	color: ${props => props.color};
 	border: ${props => `1px solid ${props.borderColor}`};
 `;
+
+// global css
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -203,4 +207,60 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 1.4rem;
         }
     }
+`;
+
+// mdx design system
+
+export const H1 = styled.h1`
+	width: 100%;
+	max-width: 70rem;
+	margin: 0 auto;
+	color: var(--accent-light);
+`;
+export const H2 = styled.h2`
+	width: 100%;
+	max-width: 70rem;
+	margin: 0 auto;
+	color: var(--accent-light);
+`;
+export const H3 = styled.h3`
+	width: 100%;
+	max-width: 70rem;
+	margin: 0 auto;
+	color: var(--accent-light);
+`;
+export const H4 = styled.h4`
+	width: 100%;
+	max-width: 70rem;
+	margin: 0 auto;
+	color: var(--accent-light);
+`;
+export const H5 = styled.h5`
+	width: 100%;
+	max-width: 70rem;
+	margin: 0 auto;
+	color: var(--accent-light);
+`;
+
+export const P = styled.p`
+	width: 100%;
+	max-width: 70rem;
+	margin: 0 auto;
+	color: var(--accent-light);
+`;
+
+export const A = styled.a`
+	background: red;
+`;
+
+export const UL = styled.ul`
+	background: red;
+`;
+
+export const OL = styled.ol`
+	background: red;
+`;
+
+export const LI = styled.li`
+	background: red;
 `;
