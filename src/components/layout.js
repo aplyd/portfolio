@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 import Nav from './nav';
 // import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
-
 import {
 	GlobalStyle,
 	PageContainer,

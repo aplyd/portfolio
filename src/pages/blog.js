@@ -55,7 +55,9 @@ const Blog = ({ data }) => {
 									Posted by {post.node.frontmatter.author} on{' '}
 									{post.node.frontmatter.date}
 								</small>
-								<Link to={post.node.frontmatter.path}>
+								<Link
+									to={`/blog/${post.node.frontmatter.path}/`}
+								>
 									Read More
 								</Link>
 							</PostPreviewContainer>

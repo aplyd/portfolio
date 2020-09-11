@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+// import { MDXProvider } from '@mdx-js/react'; will reimplement this and move mdx components from layout.js
 import Layout from '../components/layout';
 import { Spacer } from '../components/globalStyle';
 import Footer from '../components/footer';
@@ -21,21 +22,17 @@ const Title = styled.h2`
 	color: var(--accent-light);
 `;
 
-export default function template({ data: { mdx: post } }) {
+export default function template({ data: { mdx } }) {
 	return (
-		// <div>
-		// 	<Link to='/blog'>Back</Link>
-		// 	<hr></hr>
-		// 	<h1>{post.frontmatter.title}</h1>
-		// 	<div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-		// </div>
 		<Layout>
 			<Container>
 				<Spacer height={'xlarge'} />
 				<Spacer height={'large'} />
-				<Title>{post.frontmatter.title}</Title>
+				<Title>{mdx.frontmatter.title}</Title>
 				<Spacer height={'large'} />
-				<MDXRenderer>{post.body}</MDXRenderer>
+				{/* <MDXProvider> */}
+				<MDXRenderer>{mdx.body}</MDXRenderer>
+				{/* </MDXProvider> */}
 			</Container>
 			<Contact />
 			<Footer />
@@ -44,15 +41,12 @@ export default function template({ data: { mdx: post } }) {
 }
 
 export const pageQuery = graphql`
-	query {
-		mdx {
+	query BlogPostQuery($id: String) {
+		mdx(id: { eq: $id }) {
 			id
 			body
 			frontmatter {
 				title
-				date
-				author
-				path
 			}
 		}
 	}
