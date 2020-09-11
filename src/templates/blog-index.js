@@ -37,7 +37,7 @@ const PostPreviewContainer = styled.div`
 	}
 `;
 
-const Blog = ({ data }) => {
+const template = ({ data }) => {
 	return (
 		<Layout>
 			<Container>
@@ -66,21 +66,21 @@ const Blog = ({ data }) => {
 					);
 				})}
 			</Container>
-			{/* <div>
-				<h1>Latest Posts</h1>
-				
-			</div> */}
 		</Layout>
 	);
 };
 
-Blog.propTypes = {
+template.propTypes = {
 	data: PropTypes.any
 };
 
-export const pageQuery = graphql`
-	query {
-		allMdx {
+export const BlogIndexQuery = graphql`
+	query($skip: Int!, $limit: Int!) {
+		allMdx(
+			sort: { fields: [frontmatter___date], order: DESC }
+			limit: $limit
+			skip: $skip
+		) {
 			edges {
 				node {
 					id
@@ -97,4 +97,4 @@ export const pageQuery = graphql`
 	}
 `;
 
-export default Blog;
+export default template;

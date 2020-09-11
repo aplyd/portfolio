@@ -116,11 +116,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
     }
 
-    ol,
-    ul {
-        list-style: none;
-    }
-
     a {
         text-decoration: none;
     }
@@ -160,6 +155,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     p {
+        font-size: 1.8rem;
+        line-height: 1.6em;
+    }
+
+    li {
         font-size: 1.8rem;
         line-height: 1.6em;
     }

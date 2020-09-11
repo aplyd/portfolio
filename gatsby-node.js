@@ -1,7 +1,7 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
-// create slugs for pages in "posts" folder
+// create blog pages from /posts (ex. /blog/some-blog-post)
 exports.onCreateNode = ({ node, actions, getNode }) => {
 	const { createNodeField } = actions;
 	// you only want to operate on `Mdx` nodes. If you had content from a
@@ -57,4 +57,57 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			context: { id: node.id }
 		});
 	});
+};
+
+// create blog index pages (/blog/2, /blog/3, etc.)
+exports.createPages = async ({ graphql, actions, reporter }) => {
+	const { createPage } = actions;
+
+	const result = await graphql(`
+		query {
+			allMdx {
+				edges {
+					node {
+						id
+						frontmatter {
+							path
+						}
+					}
+				}
+			}
+		}
+	`);
+
+	if (result.errors) {
+		reporter.panicOnBuild(`Error while running GraphQL query.`);
+		return;
+	}
+
+	const posts = result.data.allMdx.edges;
+	const postsPerPage = 2;
+	const numPages = Math.ceil(posts.length / postsPerPage);
+	Array.from({ length: numPages }).forEach((_, i) => {
+		createPage({
+			path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+			component: path.resolve('./src/templates/blog-index.js'),
+			context: {
+				limit: postsPerPage,
+				skip: i * postsPerPage,
+				numPages,
+				currentPage: i + 1
+			}
+		});
+	});
+};
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+	const { createNodeField } = actions;
+	if (node.internal.type === 'Mdx') {
+		const value = createFilePath({ node, getNode });
+		createNodeField({
+			name: `slug`,
+			node,
+			value
+		});
+	}
 };
