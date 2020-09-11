@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import styled from 'styled-components';
 import { Spacer } from '../components/globalStyle';
+import Pagination from '../components/pagination';
 
 const Container = styled.div`
 	max-width: 80rem;
@@ -37,7 +38,7 @@ const PostPreviewContainer = styled.div`
 	}
 `;
 
-const template = ({ data }) => {
+const template = ({ data, pageContext }) => {
 	return (
 		<Layout>
 			<Container>
@@ -46,7 +47,6 @@ const template = ({ data }) => {
 				<Spacer height={'small'} />
 				<Line />
 				{data.allMdx.edges.map(post => {
-					console.log(post);
 					return (
 						<React.Fragment key={post.node.id}>
 							<PostPreviewContainer>
@@ -65,13 +65,18 @@ const template = ({ data }) => {
 						</React.Fragment>
 					);
 				})}
+				<Pagination
+					totalCount={data.allMdx.totalCount}
+					currentPage={pageContext.currentPage}
+				/>
 			</Container>
 		</Layout>
 	);
 };
 
 template.propTypes = {
-	data: PropTypes.any
+	data: PropTypes.any,
+	pageContext: PropTypes.object
 };
 
 export const BlogIndexQuery = graphql`

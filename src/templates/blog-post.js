@@ -22,7 +22,8 @@ const Title = styled.h2`
 	color: var(--accent-light);
 `;
 
-export default function template({ data: { mdx } }) {
+export default function template({ data: { mdx }, pageContext }) {
+	console.log(pageContext);
 	return (
 		<Layout>
 			<Container>
@@ -33,6 +34,11 @@ export default function template({ data: { mdx } }) {
 				{/* <MDXProvider> */}
 				<MDXRenderer>{mdx.body}</MDXRenderer>
 				{/* </MDXProvider> */}
+				{/* <Link
+					to={`${pageContext.pathPrefix}/${pageContext.next.node.frontmatter.path}`}
+				>
+					NEXT
+				</Link> */}
 			</Container>
 			<Contact />
 			<Footer />
@@ -53,5 +59,6 @@ export const pageQuery = graphql`
 `;
 
 template.propTypes = {
-	data: PropTypes.object
+	data: PropTypes.object,
+	pageContext: PropTypes.object
 };
