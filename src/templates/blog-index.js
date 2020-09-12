@@ -86,6 +86,7 @@ export const BlogIndexQuery = graphql`
 			limit: $limit
 			skip: $skip
 		) {
+			totalCount
 			edges {
 				node {
 					id
