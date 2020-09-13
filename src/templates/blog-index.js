@@ -6,9 +6,12 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 import { Spacer } from '../components/globalStyle';
 import Pagination from '../components/pagination';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
 
 const Container = styled.div`
 	max-width: 80rem;
+	min-height: calc(100vh - 12rem);
 	margin: 0 auto;
 	@media screen and (max-width: 800px) {
 		padding-left: 1.6rem;
@@ -70,6 +73,8 @@ const template = ({ data, pageContext }) => {
 					currentPage={pageContext.currentPage}
 				/>
 			</Container>
+			<Contact />
+			<Footer />
 		</Layout>
 	);
 };

@@ -116,10 +116,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
     }
 
-    a {
-        text-decoration: none;
-    }
-
     img {
         max-width: 100%;
         height: auto;
@@ -157,6 +153,15 @@ export const GlobalStyle = createGlobalStyle`
     p {
         font-size: 1.8rem;
         line-height: 1.6em;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 1.8rem;
+    }
+
+    small {
+        font-size: 1.8rem;
     }
 
     li {
