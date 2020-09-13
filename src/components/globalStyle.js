@@ -214,38 +214,38 @@ export const GlobalStyle = createGlobalStyle`
 
 export const H1 = styled.h1`
 	width: 100%;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 	color: var(--accent-light);
 `;
 export const H2 = styled.h2`
 	width: 100%;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 	color: var(--accent-light);
 `;
 export const H3 = styled.h3`
 	width: 100%;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 	color: var(--accent-light);
 `;
 export const H4 = styled.h4`
 	width: 100%;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 	color: var(--accent-light);
 `;
 export const H5 = styled.h5`
 	width: 100%;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 	color: var(--accent-light);
 `;
 
 export const P = styled.p`
 	width: 100%;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 	color: var(--accent-light);
 `;

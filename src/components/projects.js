@@ -8,7 +8,7 @@ const Container = styled.div`
 	position: relative;
 	margin: -260px auto 0 auto;
 	max-width: 80%;
-	@media screen and (max-width: 700px) {
+	@media screen and (max-width: 800px) {
 		max-width: 100%;
 		padding: 0 16px;
 	}
@@ -19,7 +19,7 @@ const Title = styled.h2`
 	font-weight: 700;
 	/* font-size: 3.6rem; */
 	margin: 0 auto;
-	max-width: 70rem;
+	max-width: 80rem;
 	color: var(--accent-light);
 `;
 

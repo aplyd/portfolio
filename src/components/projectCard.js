@@ -9,7 +9,7 @@ import { useAnimation, motion } from 'framer-motion';
 const ProjectContainer = styled.div`
 	width: 100%;
 	position: relative;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: 0 auto;
 `;
 

@@ -11,7 +11,7 @@ import Contact from '../components/contact';
 
 const Container = styled.div`
 	width: 100%;
-	max-width: 70rem;
+	max-width: 80rem;
 	height: 100%;
 	min-height: 100vh;
 	margin: 0 auto;

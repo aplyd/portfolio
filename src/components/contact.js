@@ -6,12 +6,12 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 const Container = styled.div`
 	background-color: var(--color-dark);
-	@media screen and (max-width: 700px) {
+	@media screen and (max-width: 800px) {
 		padding: 0 16px;
 	}
 	&& > div {
 		margin: 0 auto;
-		max-width: 70rem;
+		max-width: 80rem;
 	}
 `;
 

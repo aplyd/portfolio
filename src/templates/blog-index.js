@@ -10,7 +10,7 @@ import Pagination from '../components/pagination';
 const Container = styled.div`
 	max-width: 80rem;
 	margin: 0 auto;
-	@media screen and (max-width: 700px) {
+	@media screen and (max-width: 800px) {
 		padding-left: 1.6rem;
 		padding-right: 1.6rem;
 	}
