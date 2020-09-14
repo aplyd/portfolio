@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Spacer, BtnSmall } from './globalStyle';
 import ScrollText from './scrollText';
 import TextareaAutosize from 'react-textarea-autosize';
+import { FaTwitter, FaGithub, FaDev, FaLinkedin } from 'react-icons/fa';
 
 const Container = styled.div`
 	background-color: var(--color-dark);
@@ -24,6 +25,7 @@ const Title = styled.h2`
 
 const FormContainer = styled.div`
 	max-width: 50rem;
+	position: relative;
 `;
 
 const Form = styled.form``;
@@ -84,30 +86,20 @@ const SendBtn = styled(BtnSmall)`
 	margin-top: 64px;
 `;
 
-// const ArtContainer = styled.div`
-// 	display: grid;
-// 	grid-template-columns: 220px 1fr 220px;
-// 	grid-template-rows: 1fr;
-// 	max-width: 680px;
-// 	margin: 0 auto;
-// `;
+const IconContainer = styled.div`
+	margin-top: 64px;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+`;
 
-// const ScrollTextContainer = styled.div`
-// 	display: flex;
-// 	flex-direction: row;
-// 	overflow: hidden;
-// `;
-
-// const SlantedLine = styled.div`
-// 	width: 50px;
-// 	height: 100px;
-// 	&& > div {
-// 		width: 180px;
-// 		height: 47px;
-// 		border-bottom: 2px solid black;
-// 		transform: translateY(120px) translateX(56px) rotate(120deg);
-// 	}
-// `;
+const Icon = styled.svg`
+	fill: var(--accent-light);
+	width: 4.8rem;
+	height: 4.8rem;
+	margin-left: 2.4rem;
+`;
 
 export default function Contact() {
 	return (
@@ -115,7 +107,7 @@ export default function Contact() {
 			<div>
 				<Spacer height={'xlarge'} />
 				<Spacer height={'medium'} />
-				<Title>Say Hello</Title>
+				<Title>Contact</Title>
 				<FormContainer id='contact'>
 					<Spacer height={'large'} />
 					<Form name='contact' method='POST' data-netlify='true'>
@@ -146,6 +138,32 @@ export default function Contact() {
 						>
 							Send
 						</SendBtn>
+						<IconContainer>
+							<a
+								href='https://twitter.com/austinftacnik'
+								rel='noopener noreferrer'
+							>
+								<Icon as={FaTwitter}></Icon>
+							</a>
+							<a
+								href='https://github.com/aplyd'
+								rel='noopener noreferrer'
+							>
+								<Icon as={FaGithub}></Icon>
+							</a>
+							<a
+								href='https://dev.to/austinftacnik'
+								rel='noopener noreferrer'
+							>
+								<Icon as={FaDev}></Icon>
+							</a>
+							<a
+								href='https://www.linkedin.com/in/austin-ftacnik-3b91b7162'
+								rel='noopener noreferrer'
+							>
+								<Icon as={FaLinkedin}></Icon>
+							</a>
+						</IconContainer>
 					</Form>
 				</FormContainer>
 				<Spacer height={'xlarge'} />

@@ -72,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
         ${'' /* black */}
         --color-dark: #252525;
         ${'' /* light gray */}
-        --color-light: #5F6E83;
+        --color-light: #8e959e;
         ${'' /* medium gray */}
         --color-medium: #bcbcbc;
         ${'' /* white */}
@@ -253,20 +253,27 @@ export const P = styled.p`
 	max-width: 80rem;
 	margin: 0 auto;
 	color: var(--accent-light);
+	padding: 2.4rem 0;
 `;
 
 export const A = styled.a`
-	background: red;
+	color: var(--color-dark);
 `;
 
 export const UL = styled.ul`
-	background: red;
+	color: var(--accent-light);
+	margin-left: 3.6rem;
 `;
 
 export const OL = styled.ol`
-	background: red;
+	color: var(--accent-light);
+	margin-left: 3.6rem;
 `;
 
 export const LI = styled.li`
+	color: var(--accent-light);
+`;
+
+export const Code = styled.code`
 	background: red;
 `;

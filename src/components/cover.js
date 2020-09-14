@@ -39,7 +39,7 @@ const ProfileSVG = styled.svg`
 `;
 
 const ProfileBackground = styled.div`
-	box-shadow: 16px 16px 32px #515e6f, -16px -16px 32px #6d7f97;
+	box-shadow: 34px 34px 67px #797f86, -34px -34px 67px #a3abb6;
 	background-color: var(--color-light);
 	border-radius: 50px;
 	padding: 2.4rem;

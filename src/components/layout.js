@@ -22,7 +22,8 @@ import {
 	A,
 	OL,
 	UL,
-	LI
+	LI,
+	Code
 } from './globalStyle';
 import './layout.css';
 import styled from 'styled-components';
@@ -107,7 +108,8 @@ const Layout = ({ children }) => {
 				a: A,
 				ol: OL,
 				ul: UL,
-				li: LI
+				li: LI,
+				code: Code
 			}}
 		>
 			<GlobalStyle />

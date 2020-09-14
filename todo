@@ -19,7 +19,7 @@
 (()) design blog/posts page
 (()) design individual blog post template
 (()) make post previews in blog-index responsive for mobile
-
+(()) move MDXProvider to blog-post.js 
 (()) use grid overlay to line things up for design
 
 

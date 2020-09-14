@@ -45,8 +45,12 @@ const PostPreviewContainer = styled.div`
 
 const WordsContainer = styled.div`
 	grid-column: 1;
+	position: relative;
 	&& > h3 {
-		min-height: 6rem;
+		padding-right: 1.2rem;
+	}
+	&& > p {
+		padding-top: 0.6rem;
 	}
 `;
 
@@ -62,7 +66,7 @@ const template = ({ data, pageContext }) => {
 			<Container>
 				<Spacer height={'xlarge'} />
 				<Title>Recent Posts</Title>
-				<Spacer height={'small'} />
+				<Spacer height={'large'} />
 				{/* <Line /> */}
 				{data.allMdx.edges.map(post => {
 					return (
@@ -72,8 +76,7 @@ const template = ({ data, pageContext }) => {
 									<WordsContainer>
 										<h3>{post.node.frontmatter.title}</h3>
 										<p>
-											Posted by{' '}
-											{post.node.frontmatter.author} on{' '}
+											{post.node.frontmatter.author} |{' '}
 											{post.node.frontmatter.date}
 										</p>
 									</WordsContainer>
