@@ -9,6 +9,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Container = styled.div`
 	width: 100%;
+	max-width: 80rem;
 	/* background: var(--main-bg-color); */
 	height: 56px;
 	position: fixed;
@@ -120,10 +121,9 @@ export default function Nav({ toggleMobileMenu }) {
 
 	const navItems = [
 		{ title: 'home', link: '/' },
-		{ title: 'info', link: '/info' },
 		{ title: 'projects', shortcut: '#projects' },
-		{ title: 'blog', link: '/blog' },
-		{ title: 'contact', shortcut: '#contact' }
+		{ title: 'contact', shortcut: '#contact' },
+		{ title: 'blog', link: '/blog' }
 	];
 
 	const desktopNav = () => {

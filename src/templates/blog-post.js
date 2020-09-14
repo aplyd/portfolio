@@ -18,7 +18,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-	text-align: center;
+	/* text-align: center; */
 	color: var(--accent-light);
 `;
 

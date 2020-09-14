@@ -32,13 +32,29 @@ const Line = styled.div`
 `;
 
 const PostPreviewContainer = styled.div`
-	background-color: var(--color-dark);
-	border-radius: 50px;
 	color: var(--accent-light);
 	padding: 24px 0;
 	min-height: 24rem;
-	&& > h3 {
+	outline: dotted 1px red;
+	display: grid;
+	grid-template-columns: 1fr 33%;
+	grid-template-rows: 1fr;
+	&&:hover {
+		color: var(--color-dark);
 	}
+`;
+
+const WordsContainer = styled.div`
+	grid-column: 1;
+	&& > h3 {
+		min-height: 6rem;
+	}
+`;
+
+const PhotoContainer = styled.div`
+	grid-column: 2;
+	background: var(--color-dark);
+	border-radius: 50px;
 `;
 
 const template = ({ data, pageContext }) => {
@@ -48,22 +64,23 @@ const template = ({ data, pageContext }) => {
 				<Spacer height={'xlarge'} />
 				<Title>Recent Posts</Title>
 				<Spacer height={'small'} />
-				<Line />
+				{/* <Line /> */}
 				{data.allMdx.edges.map(post => {
 					return (
 						<React.Fragment key={post.node.id}>
-							<PostPreviewContainer>
-								<h3>{post.node.frontmatter.title}</h3>
-								<small>
-									Posted by {post.node.frontmatter.author} on{' '}
-									{post.node.frontmatter.date}
-								</small>
-								<Link
-									to={`/blog/${post.node.frontmatter.path}/`}
-								>
-									Read More
-								</Link>
-							</PostPreviewContainer>
+							<Link to={`/blog/${post.node.frontmatter.path}/`}>
+								<PostPreviewContainer>
+									<WordsContainer>
+										<h3>{post.node.frontmatter.title}</h3>
+										<p>
+											Posted by{' '}
+											{post.node.frontmatter.author} on{' '}
+											{post.node.frontmatter.date}
+										</p>
+									</WordsContainer>
+									<PhotoContainer></PhotoContainer>
+								</PostPreviewContainer>
+							</Link>
 							<Spacer height={'large'} />
 						</React.Fragment>
 					);
