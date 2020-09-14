@@ -6,7 +6,6 @@ import ProjectCard from './projectCard';
 const Container = styled.div`
 	position: relative;
 	margin: -260px auto 0 auto;
-	/* max-width: 80%; */
 	width: 100%;
 	max-width: 80rem;
 	@media screen and (max-width: 800px) {

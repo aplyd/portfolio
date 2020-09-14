@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Spacer, BtnSmall } from './globalStyle';
-import ScrollText from './scrollText';
 import TextareaAutosize from 'react-textarea-autosize';
 import { FaTwitter, FaGithub, FaDev, FaLinkedin } from 'react-icons/fa';
 
@@ -102,19 +101,32 @@ const Icon = styled.svg`
 `;
 
 export default function Contact() {
+	const honeypotForm = () => {
+		return (
+			<form name='contact' netlify netlify-honeypot='bot-field' hidden>
+				<input type='text' name='name' />
+				<input type='email' name='email' />
+				<textarea name='message'></textarea>
+			</form>
+		);
+	};
+
 	return (
 		<Container id='contact'>
 			<div>
 				<Spacer height={'xlarge'} />
 				<Spacer height={'medium'} />
 				<Title>Contact</Title>
+				{honeypotForm()}
 				<FormContainer id='contact'>
 					<Spacer height={'large'} />
 					<Form name='contact' method='POST' data-netlify='true'>
+						<input type='hidden' name='form-name' value='contact' />
 						<NameInput
 							placeholder='Your Name'
 							name='name'
 							type='text'
+							required
 						></NameInput>
 
 						<EmailInput
@@ -128,6 +140,7 @@ export default function Contact() {
 							placeholder='Your Message'
 							maxLength='375'
 							name='message'
+							required
 						></MessageInput>
 
 						<SendBtn
@@ -167,7 +180,6 @@ export default function Contact() {
 					</Form>
 				</FormContainer>
 				<Spacer height={'xlarge'} />
-				<Spacer height={'medium'} />
 			</div>
 		</Container>
 	);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Spacer, BtnLarge } from './globalStyle';
 import {
@@ -46,33 +46,12 @@ const SubTitle = styled(motion.h3)`
 	text-transform: uppercase;
 `;
 
-const CTAbtn = styled(motion.button)`
-	border-radius: 50px;
-	border: none;
-	padding: 28px 48px;
-	text-transform: uppercase;
-	background-color: var(--accent-light);
-	color: var(--color-dark);
-	/* font-weight: 500; */
-`;
-
 const SlantedSVG = styled.svg`
 	width: 100%;
 	transform: scale(-1, 1);
 	/* z-index: 9999; */
 	&& > path {
 		fill: var(--color-dark);
-	}
-`;
-
-const UpsideDownSlantedSVG = styled(SlantedSVG)`
-	transform: scale(-1, -1);
-	margin-top: -2px;
-`;
-
-const MobileSpacer = styled(Spacer)`
-	@media screen and (max-width: 850px) {
-		display: none;
 	}
 `;
 
