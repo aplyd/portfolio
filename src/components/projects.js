@@ -66,22 +66,17 @@ export default function Projects() {
 	return (
 		<>
 			<Container id='projects'>
-				<Spacer height={'small'} />
-
-				<ProjectCardContainer>
-					<ProjectCard {...fpotfp} />
-				</ProjectCardContainer>
-
-				<Spacer height={'medium'} />
-				<ProjectCardContainer>
-					<ProjectCard {...battleship} />
-				</ProjectCardContainer>
-
-				<Spacer height={'medium'} />
-				<ProjectCardContainer>
-					<ProjectCard {...wheresWaldo} />
-				</ProjectCardContainer>
-				<Spacer height={'xlarge'} />
+				<Spacer height={'large'} />
+				{[fpotfp, battleship, wheresWaldo].map(project => {
+					return (
+						<>
+							<ProjectCardContainer>
+								<ProjectCard {...project} />
+							</ProjectCardContainer>
+							<Spacer height={'xlarge'} />
+						</>
+					);
+				})}
 			</Container>
 		</>
 	);

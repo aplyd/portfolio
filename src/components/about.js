@@ -94,7 +94,7 @@ const About = () => {
 				y: 0,
 				transition: {
 					delay: i * 0.3,
-					duration: 1
+					duration: 0.5
 				}
 			}));
 		}

@@ -15,15 +15,9 @@ const ProjectContainer = styled.div`
 
 const Words = styled.div`
 	height: 100%;
-	min-height: 480px;
-	/* height: 480px; */
+	/* min-height: 532px; */
 	width: 100%;
-	padding: 48px 24px 0 24px;
-	/* max-width: 50em; */
-	float: none;
-	padding: 24px 0;
 	margin: 0 auto;
-	overflow: auto;
 `;
 
 const PTitle = styled(motion.h3)`
@@ -43,14 +37,15 @@ const LIicon = styled.svg`
 	position: relative;
 	top: 4px;
 	margin-right: 4px;
-
+	margin-left: 24px;
 	/* font-weight: 500; */
 `;
 
 const ToolsTitle = styled(motion.p)`
 	color: var(--accent-light);
 	text-transform: uppercase;
-	padding-bottom: 16px;
+	padding-bottom: 24px;
+	/* padding-left: 24px; */
 	font-weight: bold;
 `;
 
@@ -66,9 +61,8 @@ const ToolP = styled.p`
 `;
 
 const BtnsContainer = styled(motion.div)`
-	float: right;
-	width: 100%;
 	max-width: 26rem;
+	margin-left: auto;
 	display: flex;
 	justify-content: space-between;
 `;
@@ -82,7 +76,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 				y: 0,
 				transition: {
 					delay: i * 0.3,
-					duration: 1
+					duration: 0.5
 				}
 			}));
 		}
@@ -90,9 +84,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 	return (
 		<VisibilitySensor onChange={handleScroll} partialVisibility={true}>
 			<ProjectContainer>
-				<Spacer height={'large'} />
 				<Words>
-					{/* <Spacer height={'medium'} /> */}
 					<PTitle
 						animate={controls}
 						custom={0}
@@ -111,7 +103,6 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 					</PAbout>
 
 					<Spacer height={'medium'} />
-
 					<ToolsTitle
 						animate={controls}
 						custom={2}
@@ -167,7 +158,6 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 						</a>
 					</BtnsContainer>
 				</Words>
-				<Spacer height={'large'} />
 			</ProjectContainer>
 		</VisibilitySensor>
 	);
