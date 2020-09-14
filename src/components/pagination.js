@@ -35,7 +35,7 @@ const Prev = styled(NavLink)`
 `;
 
 const Pagination = ({ currentPage = 1, totalCount }) => {
-	const totalPages = Math.ceil(totalCount / 2);
+	const totalPages = Math.ceil(totalCount / 10);
 	const nextPage = currentPage + 1;
 	const prevPage = currentPage - 1;
 

@@ -35,7 +35,6 @@ const PostPreviewContainer = styled.div`
 	color: var(--accent-light);
 	padding: 24px 0;
 	min-height: 24rem;
-	outline: dotted 1px red;
 	display: grid;
 	grid-template-columns: 1fr 33%;
 	grid-template-rows: 1fr;
