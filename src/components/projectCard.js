@@ -13,20 +13,17 @@ const ProjectContainer = styled.div`
 	margin: 0 auto;
 `;
 
-const InnerContainer = styled.div`
-	width: 100%;
-	max-width: 60rem;
-	margin: 0 auto;
-`;
-
 const Words = styled.div`
-	height: 480px;
+	height: 100%;
+	min-height: 480px;
+	/* height: 480px; */
 	width: 100%;
 	padding: 48px 24px 0 24px;
 	/* max-width: 50em; */
 	float: none;
 	padding: 24px 0;
 	margin: 0 auto;
+	overflow: auto;
 `;
 
 const PTitle = styled(motion.h3)`
@@ -74,38 +71,6 @@ const BtnsContainer = styled(motion.div)`
 	max-width: 26rem;
 	display: flex;
 	justify-content: space-between;
-`;
-
-const Btn = styled.button`
-	border-radius: 5rem;
-	border: none;
-	height: 5rem;
-	width: 12rem;
-	text-transform: uppercase;
-	/* color: var(--accent-light);
-	background-color: var(--color-light);
-	box-shadow: 16px 16px 32px #a0a0a0, -16px -16px 32px #d8d8d8; */
-`;
-
-const RepoBtn = styled(Btn)`
-	border: solid 1px var(--accent-light);
-	color: var(--accent-light);
-	background-color: var(--color-light);
-	&&:hover {
-		border: solid 1px var(--accent-light);
-		color: var(--accent-light);
-		background-color: var(--color-light);
-	}
-`;
-const DemoBtn = styled(Btn)`
-	background-color: var(--accent-light);
-	color: var(--color-light);
-	border: solid 1px var(--accent-light);
-	&&:hover {
-		background-color: var(--accent-light);
-		color: var(--color-light);
-		border: solid 1px var(--accent-light);
-	}
 `;
 
 const ProjectCard = ({ title, about, tools, repo, demo }) => {

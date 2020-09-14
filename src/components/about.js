@@ -16,10 +16,11 @@ const Background = styled.div`
 `;
 
 const Container = styled(motion.div)`
+	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
 	position: relative;
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 816px) {
 		padding: 0 16px;
 	}
 `;

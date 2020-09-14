@@ -27,6 +27,9 @@ const NavItemsContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	@media screen and (max-width: 800px) {
+		margin-left: 16px;
+	}
 `;
 
 const NavItem = styled.div`

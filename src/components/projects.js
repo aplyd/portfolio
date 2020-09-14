@@ -2,54 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
-import ScrollText from './scrollText';
 
 const Container = styled.div`
 	position: relative;
 	margin: -260px auto 0 auto;
-	max-width: 80%;
+	/* max-width: 80%; */
+	width: 100%;
+	max-width: 80rem;
 	@media screen and (max-width: 800px) {
-		max-width: 100%;
 		padding: 0 16px;
 	}
-`;
-
-const Title = styled.h2`
-	text-transform: uppercase;
-	font-weight: 700;
-	/* font-size: 3.6rem; */
-	margin: 0 auto;
-	max-width: 80rem;
-	color: var(--accent-light);
 `;
 
 const ProjectCardContainer = styled.div`
 	margin: 0 auto;
 	width: 100%;
 `;
-
-// const LowerProjectCardsContainer = styled(ProjectCardsContainer)`
-// 	grid-template-rows: 1fr;
-// `;
-
-const HorizontalLine = styled.div`
-	height: 2px;
-	border-radius: 50px;
-	background-color: var(--accent-light);
-	width: 100%;
-`;
-
-// const MobileHorizontalLine = styled(HorizontalLine)`
-// 	display: none;
-// 	display: block;
-// `;
-
-// const VerticalLine = styled.div`
-// 	width: 2px;
-// 	background-color: black;
-// 	height: 100%;
-// 	display: none;
-// `;
 
 export default function Projects() {
 	const battleship = {
@@ -82,7 +50,7 @@ export default function Projects() {
 		title: 'Front Page',
 		location: '/fpotfp',
 		about:
-			'A simplified Reddit clone without subreddits. Users are able to create accounts via email and and password, post photos and videos, comment on posts as well as vote on posts and other comments. Some of the more challenging parts of this project were validating media uploads and displaying posts/comments.',
+			'A simplified Reddit clone without subreddits. Users are able to create accounts via email and password, post photos and videos, comment and vote on posts and other comments. Some of the more challenging parts of this project were validating media uploads and displaying posts/comments.',
 		tools: [
 			'React',
 			'React Router',
@@ -104,10 +72,12 @@ export default function Projects() {
 					<ProjectCard {...fpotfp} />
 				</ProjectCardContainer>
 
+				<Spacer height={'medium'} />
 				<ProjectCardContainer>
 					<ProjectCard {...battleship} />
 				</ProjectCardContainer>
 
+				<Spacer height={'medium'} />
 				<ProjectCardContainer>
 					<ProjectCard {...wheresWaldo} />
 				</ProjectCardContainer>
