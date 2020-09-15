@@ -72,8 +72,8 @@ const About = () => {
 				opacity: 1,
 				y: 0,
 				transition: {
-					delay: i * 0.3,
-					duration: 0.5
+					delay: i * 0.1,
+					duration: 0.4
 				}
 			}));
 		}
@@ -103,7 +103,6 @@ const About = () => {
 					>
 						<VisibilitySensor
 							// scrollDelay={0}
-							partialVisibility={true}
 							onChange={handleScroll}
 						>
 							<>

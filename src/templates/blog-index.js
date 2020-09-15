@@ -33,19 +33,23 @@ const Line = styled.div`
 
 const PostPreviewContainer = styled.div`
 	color: var(--accent-light);
-	padding: 24px 0;
+	/* padding: 24px 0; */
 	min-height: 24rem;
 	display: grid;
 	grid-template-columns: 1fr 33%;
 	grid-template-rows: 1fr;
+	border-radius: 50px;
 	&&:hover {
-		color: var(--color-dark);
+		transform: scale(1.05);
+		/* background-color: #a3abb6; */
+		box-shadow: 20px 20px 60px #797f86, -20px -20px 60px #a3abb6;
 	}
 `;
 
 const WordsContainer = styled.div`
 	grid-column: 1;
 	position: relative;
+	padding: 24px;
 	&& > h3 {
 		padding-right: 1.2rem;
 	}
@@ -55,6 +59,8 @@ const WordsContainer = styled.div`
 `;
 
 const PhotoContainer = styled.div`
+	margin: 24px;
+	border-radius: 50px;
 	grid-column: 2;
 	background: var(--color-dark);
 	border-radius: 50px;

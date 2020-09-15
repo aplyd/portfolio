@@ -75,16 +75,16 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 				opacity: 1,
 				y: 0,
 				transition: {
-					delay: i * 0.3,
-					duration: 0.5
+					delay: i * 0.1,
+					duration: 0.4
 				}
 			}));
 		}
 	};
 	return (
-		<VisibilitySensor onChange={handleScroll} partialVisibility={true}>
-			<ProjectContainer>
-				<Words>
+		<ProjectContainer>
+			<Words>
+				<VisibilitySensor onChange={handleScroll}>
 					<PTitle
 						animate={controls}
 						custom={0}
@@ -92,74 +92,66 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 					>
 						{title}
 					</PTitle>
+				</VisibilitySensor>
 
-					<Spacer height={'medium'} />
-					<PAbout
-						animate={controls}
-						custom={1}
-						initial={{ opacity: 0, y: 100 }}
-					>
-						{about}
-					</PAbout>
+				<Spacer height={'medium'} />
+				<PAbout
+					animate={controls}
+					custom={1}
+					initial={{ opacity: 0, y: 100 }}
+				>
+					{about}
+				</PAbout>
 
-					<Spacer height={'medium'} />
-					<ToolsTitle
-						animate={controls}
-						custom={2}
-						initial={{ opacity: 0, y: 100 }}
-					>
-						DEVELOPMENT TOOLS
-					</ToolsTitle>
+				<Spacer height={'medium'} />
+				<ToolsTitle
+					animate={controls}
+					custom={2}
+					initial={{ opacity: 0, y: 100 }}
+				>
+					DEVELOPMENT TOOLS
+				</ToolsTitle>
 
-					{tools.map((t, i) => {
-						return (
-							<Tool
-								key={i}
-								animate={controls}
-								custom={3}
-								initial={{ opacity: 0, y: 100 }}
-							>
-								<LIicon as={GiCircle} />
-								<ToolP>{t}</ToolP>
-							</Tool>
-						);
-					})}
-					<Spacer height={'large'} />
-					<BtnsContainer
-						animate={controls}
-						custom={4}
-						initial={{ opacity: 0, y: 100 }}
-					>
-						<a
-							href={repo}
-							target='_blank'
-							rel='noopener noreferrer'
+				{tools.map((t, i) => {
+					return (
+						<Tool
+							key={i}
+							animate={controls}
+							custom={3}
+							initial={{ opacity: 0, y: 100 }}
 						>
-							<BtnSmall
-								backgroundColor={'var(--color-light)'}
-								color={'var(--accent-light)'}
-								borderColor={'var(--accent-light)'}
-							>
-								Repo
-							</BtnSmall>
-						</a>
-						<a
-							href={demo}
-							target='_blank'
-							rel='noopener noreferrer'
+							<LIicon as={GiCircle} />
+							<ToolP>{t}</ToolP>
+						</Tool>
+					);
+				})}
+				<Spacer height={'large'} />
+				<BtnsContainer
+					animate={controls}
+					custom={4}
+					initial={{ opacity: 0, y: 100 }}
+				>
+					<a href={repo} target='_blank' rel='noopener noreferrer'>
+						<BtnSmall
+							backgroundColor={'var(--color-light)'}
+							color={'var(--accent-light)'}
+							borderColor={'var(--accent-light)'}
 						>
-							<BtnSmall
-								backgroundColor={'var(--accent-light)'}
-								color={'var(--color-light)'}
-								borderColor={'var(--accent-light)'}
-							>
-								Demo
-							</BtnSmall>
-						</a>
-					</BtnsContainer>
-				</Words>
-			</ProjectContainer>
-		</VisibilitySensor>
+							Repo
+						</BtnSmall>
+					</a>
+					<a href={demo} target='_blank' rel='noopener noreferrer'>
+						<BtnSmall
+							backgroundColor={'var(--accent-light)'}
+							color={'var(--color-light)'}
+							borderColor={'var(--accent-light)'}
+						>
+							Demo
+						</BtnSmall>
+					</a>
+				</BtnsContainer>
+			</Words>
+		</ProjectContainer>
 	);
 };
 

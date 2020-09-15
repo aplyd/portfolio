@@ -8,6 +8,7 @@ import Layout from '../components/layout';
 import { Spacer } from '../components/globalStyle';
 import Footer from '../components/footer';
 import Contact from '../components/contact';
+import Img from 'gatsby-image';
 
 const Container = styled.div`
 	width: 100%;
@@ -23,7 +24,8 @@ const Title = styled.h2`
 `;
 
 export default function template({ data: { mdx }, pageContext }) {
-	console.log(pageContext);
+	const featuredImage = mdx.frontmatter.featuredImage.childImageSharp.fluid;
+
 	return (
 		<Layout>
 			<Container>
@@ -31,6 +33,7 @@ export default function template({ data: { mdx }, pageContext }) {
 				<Spacer height={'large'} />
 				<Title>{mdx.frontmatter.title}</Title>
 				<Spacer height={'large'} />
+				<Img fluid={featuredImage} />
 				{/* <MDXProvider> */}
 				<MDXRenderer>{mdx.body}</MDXRenderer>
 				{/* </MDXProvider> */}
@@ -53,6 +56,13 @@ export const pageQuery = graphql`
 			body
 			frontmatter {
 				title
+				featuredImage {
+					childImageSharp {
+						fluid(maxWidth: 800) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
 			}
 		}
 	}
