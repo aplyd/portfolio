@@ -90,7 +90,7 @@ const IconContainer = styled.div`
 	display: inline-block;
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	bottom: -7px;
 `;
 
 const Icon = styled.svg`
@@ -103,7 +103,12 @@ const Icon = styled.svg`
 export default function Contact() {
 	const honeypotForm = () => {
 		return (
-			<form name='contact' netlify netlify-honeypot='bot-field' hidden>
+			<form
+				name='contact'
+				netlify='true'
+				netlify-honeypot='bot-field'
+				hidden
+			>
 				<input type='text' name='name' />
 				<input type='email' name='email' />
 				<textarea name='message'></textarea>

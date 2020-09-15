@@ -68,12 +68,12 @@ export default function Projects() {
 				<Spacer height={'large'} />
 				{[fpotfp, battleship, wheresWaldo].map(project => {
 					return (
-						<>
+						<React.Fragment key={project.title}>
 							<ProjectCardContainer>
 								<ProjectCard {...project} />
 							</ProjectCardContainer>
 							<Spacer height={'xlarge'} />
-						</>
+						</React.Fragment>
 					);
 				})}
 			</Container>

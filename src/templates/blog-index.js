@@ -58,11 +58,12 @@ const WordsContainer = styled.div`
 	}
 `;
 
-const PhotoContainer = styled.div`
+const ImageContainer = styled.div`
 	margin: 24px;
-	border-radius: 50px;
 	grid-column: 2;
-	background: var(--color-dark);
+`;
+
+const PreviewImage = styled(Img)`
 	border-radius: 50px;
 `;
 
@@ -90,9 +91,9 @@ const template = ({ data, pageContext }) => {
 											{post.node.frontmatter.date}
 										</p>
 									</WordsContainer>
-									<PhotoContainer>
-										<Img fluid={featuredImage} />
-									</PhotoContainer>
+									<ImageContainer>
+										<PreviewImage fluid={featuredImage} />
+									</ImageContainer>
 								</PostPreviewContainer>
 							</Link>
 							<Spacer height={'large'} />

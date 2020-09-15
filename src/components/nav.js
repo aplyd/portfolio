@@ -123,10 +123,10 @@ export default function Nav({ toggleMobileMenu }) {
 	// };
 
 	const navItems = [
-		{ title: 'home', link: '/' },
+		{ title: 'home', link: '/#' },
 		{ title: 'projects', shortcut: '#projects' },
 		{ title: 'contact', shortcut: '#contact' },
-		{ title: 'blog', link: '/blog' }
+		{ title: 'blog', link: '/blog#' }
 	];
 
 	const desktopNav = () => {
