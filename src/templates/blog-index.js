@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'gatsby';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import styled from 'styled-components';
 import { Spacer } from '../components/globalStyle';
@@ -75,6 +75,10 @@ const template = ({ data, pageContext }) => {
 				<Spacer height={'large'} />
 				{/* <Line /> */}
 				{data.allMdx.edges.map(post => {
+					const featuredImage =
+						post.node.frontmatter.featuredImage.childImageSharp
+							.fluid;
+
 					return (
 						<React.Fragment key={post.node.id}>
 							<Link to={`/blog/${post.node.frontmatter.path}/`}>
@@ -86,7 +90,9 @@ const template = ({ data, pageContext }) => {
 											{post.node.frontmatter.date}
 										</p>
 									</WordsContainer>
-									<PhotoContainer></PhotoContainer>
+									<PhotoContainer>
+										<Img fluid={featuredImage} />
+									</PhotoContainer>
 								</PostPreviewContainer>
 							</Link>
 							<Spacer height={'large'} />
@@ -126,6 +132,13 @@ export const BlogIndexQuery = graphql`
 						date
 						path
 						title
+						featuredImage {
+							childImageSharp {
+								fluid(maxWidth: 800) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
 					}
 				}
 			}
