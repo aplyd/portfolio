@@ -34,22 +34,26 @@ const Line = styled.div`
 const PostPreviewContainer = styled.div`
 	color: var(--accent-light);
 	/* padding: 24px 0; */
-	min-height: 24rem;
+	min-height: 18rem;
 	display: grid;
 	grid-template-columns: 1fr 33%;
-	grid-template-rows: 1fr;
-	border-radius: 50px;
+	grid-gap: 1rem;
 	&&:hover {
 		transform: scale(1.05);
 		/* background-color: #a3abb6; */
-		box-shadow: 20px 20px 60px #797f86, -20px -20px 60px #a3abb6;
+	}
+
+	@media screen and (max-width: 800px) {
+		grid-template-columns: 1fr;
 	}
 `;
 
 const WordsContainer = styled.div`
-	grid-column: 1;
+	@media screen and (max-width: 800px) {
+		grid-row: 2;
+	}
 	position: relative;
-	padding: 24px;
+
 	&& > h3 {
 		padding-right: 1.2rem;
 	}
@@ -59,12 +63,14 @@ const WordsContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-	margin: 24px;
-	grid-column: 2;
+	@media screen and (max-width: 800px) {
+		grid-row: 1;
+	}
 `;
 
 const PreviewImage = styled(Img)`
-	border-radius: 50px;
+	margin-top: 4px;
+	border-radius: 12px;
 `;
 
 const template = ({ data, pageContext }) => {
@@ -90,6 +96,7 @@ const template = ({ data, pageContext }) => {
 											{post.node.frontmatter.author} |{' '}
 											{post.node.frontmatter.date}
 										</p>
+										<p>{post.node.excerpt}</p>
 									</WordsContainer>
 									<ImageContainer>
 										<PreviewImage fluid={featuredImage} />
@@ -128,6 +135,7 @@ export const BlogIndexQuery = graphql`
 				node {
 					id
 					body
+					excerpt
 					frontmatter {
 						author
 						date
