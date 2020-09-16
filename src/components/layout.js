@@ -10,26 +10,11 @@ import PropTypes from 'prop-types';
 import Nav from './nav';
 // import { Link } from 'gatsby'
 // import { useStaticQuery, graphql } from "gatsby"
-import {
-	GlobalStyle,
-	PageContainer,
-	H1,
-	H2,
-	H3,
-	H4,
-	H5,
-	P,
-	A,
-	OL,
-	UL,
-	LI,
-	Code
-} from './globalStyle';
+import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
 import styled from 'styled-components';
 import { VscClose } from 'react-icons/vsc';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
-import { MDXProvider } from '@mdx-js/react';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 deckDeckGoHighlightElement();
 
@@ -97,21 +82,7 @@ const Layout = ({ children }) => {
 	};
 
 	return (
-		<MDXProvider
-			components={{
-				h1: H1,
-				h2: H2,
-				h3: H3,
-				h4: H4,
-				h5: H5,
-				p: P,
-				a: A,
-				ol: OL,
-				ul: UL,
-				li: LI,
-				code: Code
-			}}
-		>
+		<>
 			<GlobalStyle />
 
 			{/* TODO - animate with framer-motion */}
@@ -178,7 +149,7 @@ const Layout = ({ children }) => {
 			<PageContainer>
 				<main>{children}</main>
 			</PageContainer>
-		</MDXProvider>
+		</>
 	);
 };
 

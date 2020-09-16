@@ -54,6 +54,12 @@ module.exports = {
 						options: {
 							theme: `vscode`
 						}
+					},
+					{
+						resolve: `gatsby-remark-images`,
+						options: {
+							maxWidth: 800
+						}
 					}
 				]
 			}

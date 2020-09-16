@@ -3,12 +3,13 @@ import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-// import { MDXProvider } from '@mdx-js/react'; will reimplement this and move mdx components from layout.js
+import { MDXProvider } from '@mdx-js/react';
+import mdxComponents from '../components/mdxComponents';
 import Layout from '../components/layout';
-import { Spacer } from '../components/globalStyle';
 import Footer from '../components/footer';
 import Contact from '../components/contact';
 import Img from 'gatsby-image';
+import { Spacer } from '../components/globalStyle';
 
 const Container = styled.div`
 	width: 100%;
@@ -34,9 +35,9 @@ export default function template({ data: { mdx }, pageContext }) {
 				<Title>{mdx.frontmatter.title}</Title>
 				<Spacer height={'large'} />
 				<Img fluid={featuredImage} />
-				{/* <MDXProvider> */}
-				<MDXRenderer>{mdx.body}</MDXRenderer>
-				{/* </MDXProvider> */}
+				<MDXProvider components={mdxComponents}>
+					<MDXRenderer>{mdx.body}</MDXRenderer>
+				</MDXProvider>
 				{/* <Link
 					to={`${pageContext.pathPrefix}/${pageContext.next.node.frontmatter.path}`}
 				>

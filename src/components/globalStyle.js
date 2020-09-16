@@ -153,6 +153,7 @@ export const GlobalStyle = createGlobalStyle`
     p {
         font-size: 1.8rem;
         line-height: 1.6em;
+        margin-top: 50rem;
     }
 
     a {
@@ -213,67 +214,4 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 1.4rem;
         }
     }
-`;
-
-// mdx design system
-
-export const H1 = styled.h1`
-	width: 100%;
-	max-width: 80rem;
-	margin: 0 auto;
-	color: var(--accent-light);
-`;
-export const H2 = styled.h2`
-	width: 100%;
-	max-width: 80rem;
-	margin: 0 auto;
-	color: var(--accent-light);
-`;
-export const H3 = styled.h3`
-	width: 100%;
-	max-width: 80rem;
-	margin: 0 auto;
-	color: var(--accent-light);
-`;
-export const H4 = styled.h4`
-	width: 100%;
-	max-width: 80rem;
-	margin: 0 auto;
-	color: var(--accent-light);
-`;
-export const H5 = styled.h5`
-	width: 100%;
-	max-width: 80rem;
-	margin: 0 auto;
-	color: var(--accent-light);
-`;
-
-export const P = styled.p`
-	width: 100%;
-	max-width: 80rem;
-	margin: 0 auto;
-	color: var(--accent-light);
-	padding: 2.4rem 0;
-`;
-
-export const A = styled.a`
-	color: var(--color-dark);
-`;
-
-export const UL = styled.ul`
-	color: var(--accent-light);
-	margin-left: 3.6rem;
-`;
-
-export const OL = styled.ol`
-	color: var(--accent-light);
-	margin-left: 3.6rem;
-`;
-
-export const LI = styled.li`
-	color: var(--accent-light);
-`;
-
-export const Code = styled.code`
-	background: red;
 `;
