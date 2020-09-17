@@ -17,6 +17,9 @@ const Container = styled.div`
 	height: 100%;
 	min-height: 100vh;
 	margin: 0 auto;
+	@media screen and (max-width: 816px) {
+		padding: 0 16px;
+	}
 `;
 
 const Title = styled.h2`

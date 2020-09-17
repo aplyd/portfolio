@@ -38,10 +38,9 @@ const PostPreviewContainer = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 33%;
 	grid-gap: 1rem;
-	&&:hover {
+	/* &&:hover {
 		transform: scale(1.05);
-		/* background-color: #a3abb6; */
-	}
+	} */
 
 	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
