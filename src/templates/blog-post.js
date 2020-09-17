@@ -27,21 +27,25 @@ const Title = styled.h2`
 export default function template({ data: { mdx }, pageContext }) {
 	const featuredImage = mdx.frontmatter.featuredImage.childImageSharp.fluid;
 
+	console.log(mdxComponents);
+
 	return (
-		<Layout>
-			<Container>
-				<Spacer height={'xlarge'} />
-				<Spacer height={'large'} />
-				<Title>{mdx.frontmatter.title}</Title>
-				<Spacer height={'large'} />
-				<Img fluid={featuredImage} />
-				<MDXProvider components={mdxComponents}>
+		<MDXProvider components={mdxComponents}>
+			<Layout>
+				<Container>
+					<Spacer height={'xlarge'} />
+					<Spacer height={'large'} />
+					<Title>{mdx.frontmatter.title}</Title>
+					<Spacer height={'large'} />
+					<Img fluid={featuredImage} />
+					<Spacer height={'large'} />
 					<MDXRenderer>{mdx.body}</MDXRenderer>
-				</MDXProvider>
-			</Container>
-			<Contact />
-			<Footer />
-		</Layout>
+					<Spacer height={'large'} />
+				</Container>
+				<Contact />
+				<Footer />
+			</Layout>
+		</MDXProvider>
 	);
 }
 

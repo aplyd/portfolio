@@ -8,7 +8,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Nav from './nav';
-// import { Link } from 'gatsby'
+import { Link } from 'gatsby';
 // import { useStaticQuery, graphql } from "gatsby"
 import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
@@ -84,7 +84,6 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<GlobalStyle />
-
 			{/* TODO - animate with framer-motion */}
 			<AnimatePresence>
 				{isMobileMenuOpen && (
@@ -100,14 +99,18 @@ const Layout = ({ children }) => {
 							<CloseMenuSVG as={VscClose}></CloseMenuSVG>
 						</CloseMenuContainer>
 						<MenuItemContainer>
-							<MenuItem
-								initial={{ opacity: 0, y: 100 }}
-								// custom={1}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.3, delay: 0.1 }}
-							>
-								Home
-							</MenuItem>
+							<Link to='/#'>
+								<MenuItem
+									onClick={() => toggleMobileMenu()}
+									initial={{ opacity: 0, y: 100 }}
+									// custom={1}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.3, delay: 0.1 }}
+								>
+									Home
+								</MenuItem>
+							</Link>
+							{/* <Link to=''>
 							<MenuItem
 								initial={{ opacity: 0, y: 100 }}
 								// custom={1.5}
@@ -116,30 +119,40 @@ const Layout = ({ children }) => {
 							>
 								Info
 							</MenuItem>
-							<MenuItem
-								initial={{ opacity: 0, y: 100 }}
-								// custom={2}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.3, delay: 0.3 }}
-							>
-								Projects
-							</MenuItem>
-							<MenuItem
-								initial={{ opacity: 0, y: 100 }}
-								// custom={2.5}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.3, delay: 0.4 }}
-							>
-								Blog
-							</MenuItem>
-							<MenuItem
-								initial={{ opacity: 0, y: 100 }}
-								// custom={3}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.3, delay: 0.5 }}
-							>
-								Contact
-							</MenuItem>
+							</Link> */}
+							<Link to='/#projects'>
+								<MenuItem
+									onClick={() => toggleMobileMenu()}
+									initial={{ opacity: 0, y: 100 }}
+									// custom={2}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.3, delay: 0.3 }}
+								>
+									Projects
+								</MenuItem>
+							</Link>
+							<Link to='/blog#'>
+								<MenuItem
+									onClick={() => toggleMobileMenu()}
+									initial={{ opacity: 0, y: 100 }}
+									// custom={2.5}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.3, delay: 0.4 }}
+								>
+									Blog
+								</MenuItem>
+							</Link>
+							<Link to='/#contact'>
+								<MenuItem
+									onClick={() => toggleMobileMenu()}
+									initial={{ opacity: 0, y: 100 }}
+									// custom={3}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.3, delay: 0.5 }}
+								>
+									Contact
+								</MenuItem>
+							</Link>
 						</MenuItemContainer>
 					</MobileMenu>
 				)}

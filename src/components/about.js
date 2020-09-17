@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Spacer, BtnLarge } from './globalStyle';
+import { Link } from 'gatsby';
 import {
 	useViewportScroll,
 	useTransform,
@@ -8,7 +9,6 @@ import {
 	useAnimation
 } from 'framer-motion';
 import VisibilitySensor from 'react-visibility-sensor';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Background = styled.div`
 	margin-top: -8px;
@@ -142,7 +142,7 @@ const About = () => {
 									code.
 								</P>
 								<Spacer height={'large'} />
-								<AnchorLink to='/#contact'>
+								<Link to='/#contact'>
 									<BtnLarge
 										initial={{ opacity: 0, y: 100 }}
 										custom={3}
@@ -153,7 +153,7 @@ const About = () => {
 									>
 										Get in touch
 									</BtnLarge>
-								</AnchorLink>
+								</Link>
 								{/* <Spacer height={'xlarge'} /> */}
 								<Spacer height={'xlarge'} />
 							</>

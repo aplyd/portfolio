@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { useScrollToHideNav } from '../hooks/useScrollToHideNav';
 import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
 import { GiStripedSun } from 'react-icons/gi';
 import useWindowWidth from '../hooks/useWindowWidth';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Container = styled.div`
 	width: 100%;
@@ -132,11 +132,11 @@ export default function Nav({ toggleMobileMenu }) {
 	const desktopNav = () => {
 		return navItems.map((i, index) => {
 			return (
-				<AnchorLink to={i.link || '/' + i.shortcut} key={index}>
+				<Link to={i.link || '/' + i.shortcut} key={index}>
 					<NavItem key={index}>
 						<h3>{i.title}</h3>
 					</NavItem>
-				</AnchorLink>
+				</Link>
 			);
 		});
 	};

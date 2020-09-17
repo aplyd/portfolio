@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 
 const H1 = styled.h1`
 	width: 100%;
@@ -36,7 +37,7 @@ const P = styled.p`
 	max-width: 80rem;
 	margin: 0 auto;
 	color: var(--accent-light);
-	padding: 2.4rem 0;
+	padding-bottom: 2.4rem;
 `;
 
 const A = styled.a`
@@ -46,11 +47,13 @@ const A = styled.a`
 const UL = styled.ul`
 	color: var(--accent-light);
 	margin-left: 3.6rem;
+	padding-bottom: 2.4rem;
 `;
 
 const OL = styled.ol`
 	color: var(--accent-light);
 	margin-left: 3.6rem;
+	padding-bottom: 2.4rem;
 `;
 
 const LI = styled.li`
@@ -58,7 +61,11 @@ const LI = styled.li`
 `;
 
 const IMG = styled.img`
-	border-radius: 50px;
+	padding-bottom: 24rem;
+`;
+
+const Code = styled.code`
+	padding: 48rem 0;
 `;
 
 export default {
@@ -72,5 +79,6 @@ export default {
 	ol: OL,
 	ul: UL,
 	li: LI,
-	img: IMG
+	img: IMG,
+	code: Code
 };
