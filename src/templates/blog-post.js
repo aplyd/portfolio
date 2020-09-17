@@ -38,11 +38,6 @@ export default function template({ data: { mdx }, pageContext }) {
 				<MDXProvider components={mdxComponents}>
 					<MDXRenderer>{mdx.body}</MDXRenderer>
 				</MDXProvider>
-				{/* <Link
-					to={`${pageContext.pathPrefix}/${pageContext.next.node.frontmatter.path}`}
-				>
-					NEXT
-				</Link> */}
 			</Container>
 			<Contact />
 			<Footer />

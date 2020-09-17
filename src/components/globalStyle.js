@@ -153,7 +153,6 @@ export const GlobalStyle = createGlobalStyle`
     p {
         font-size: 1.8rem;
         line-height: 1.6em;
-        margin-top: 50rem;
     }
 
     a {
