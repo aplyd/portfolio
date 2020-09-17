@@ -37,12 +37,10 @@ const P = styled.p`
 	margin: 0 auto;
 	color: var(--accent-light);
 	padding: 2.4rem 0;
-	background: red;
 `;
 
 const A = styled.a`
 	color: var(--color-dark);
-	background: blue;
 `;
 
 const UL = styled.ul`
