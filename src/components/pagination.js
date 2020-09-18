@@ -11,6 +11,8 @@ const Container = styled.div`
 	grid-template-columns: 12rem 1fr 12rem;
 	grid-template-rows: 6rem;
 	text-align: center;
+	position: absolute;
+	bottom: 12px;
 	&& > p {
 		color: var(--accent-light);
 		/* text-transform: uppercase; */

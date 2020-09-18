@@ -11,8 +11,9 @@ import Footer from '../components/footer';
 
 const Container = styled.div`
 	max-width: 80rem;
-	min-height: calc(100vh - 12rem);
+	min-height: calc(100vh - 5.6rem);
 	margin: 0 auto;
+	position: relative;
 	@media screen and (max-width: 800px) {
 		padding-left: 1.6rem;
 		padding-right: 1.6rem;
@@ -106,6 +107,8 @@ const template = ({ data, pageContext }) => {
 						</React.Fragment>
 					);
 				})}
+
+				<Spacer height={'xlarge'} />
 				<Pagination
 					totalCount={data.allMdx.totalCount}
 					currentPage={pageContext.currentPage}

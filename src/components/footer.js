@@ -41,12 +41,10 @@ const IconContainer = styled.div`
 
 const Icon = styled.svg`
 	fill: var(--accent-light);
-	width: 4.8rem;
-	height: 4.8rem;
+	width: 3.6rem;
+	height: 3.6rem;
 	margin-left: 2.4rem;
 	@media screen and (max-width: 660px) {
-		width: 3.6rem;
-		height: 3.6rem;
 		margin-left: 1.2rem;
 		margin-right: 1.2rem;
 	}

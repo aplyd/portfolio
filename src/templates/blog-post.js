@@ -9,7 +9,7 @@ import Layout from '../components/layout';
 import Footer from '../components/footer';
 import Contact from '../components/contact';
 import Img from 'gatsby-image';
-import { Spacer } from '../components/globalStyle';
+import { Spacer, BtnSmall } from '../components/globalStyle';
 
 const Container = styled.div`
 	width: 100%;
@@ -39,7 +39,7 @@ export default function template({ data: { mdx }, pageContext }) {
 					<Spacer height={'xlarge'} />
 					<Spacer height={'large'} />
 					<Title>{mdx.frontmatter.title}</Title>
-					<Spacer height={'large'} />
+					<Spacer height={'medium'} />
 					<Img fluid={featuredImage} />
 					<Spacer height={'large'} />
 					<MDXRenderer>{mdx.body}</MDXRenderer>
