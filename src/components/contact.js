@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Spacer, BtnSmall } from './globalStyle';
+import { Spacer, BtnLarge } from './globalStyle';
 import TextareaAutosize from 'react-textarea-autosize';
-import { FaTwitter, FaGithub, FaDev, FaLinkedin } from 'react-icons/fa';
 
 const Container = styled.div`
 	background-color: var(--color-dark);
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 816px) {
 		padding: 0 16px;
 	}
 	&& > div {
@@ -27,7 +26,9 @@ const FormContainer = styled.div`
 	position: relative;
 `;
 
-const Form = styled.form``;
+const Form = styled.form`
+	text-align: right;
+`;
 
 const Input = styled.input`
 	border: none;
@@ -71,7 +72,7 @@ const MessageInput = styled(TextareaAutosize)`
 	border-bottom: 1px solid white;
 	background-color: var(--color-dark);
 	width: 100%;
-	margin-top: 64px;
+	margin-top: 88px;
 	padding-bottom: 2rem;
 	font-size: 2rem;
 	line-height: 2.4rem;
@@ -81,37 +82,8 @@ const MessageInput = styled(TextareaAutosize)`
 		opacity: 1;
 	}
 `;
-const SendBtn = styled(BtnSmall)`
+const SendBtn = styled(BtnLarge)`
 	margin-top: 64px;
-`;
-
-const IconContainer = styled.div`
-	margin-top: 64px;
-	display: inline-block;
-	position: absolute;
-	right: 0;
-	bottom: -7px;
-	@media screen and (max-width: 485px) {
-		position: relative;
-		display: block;
-		/* padding: 0 16px; */
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-		max-width: 265px;
-		margin-top: 57px;
-	}
-`;
-
-const Icon = styled.svg`
-	fill: var(--accent-light);
-	width: 4.8rem;
-	height: 4.8rem;
-	margin-left: 2.4rem;
-	@media screen and (max-width: 485px) {
-		margin-left: 0;
-	}
 `;
 
 export default function Contact() {
@@ -134,7 +106,7 @@ export default function Contact() {
 		<Container id='contact'>
 			<div>
 				<Spacer height={'xlarge'} />
-				<Spacer height={'medium'} />
+
 				<Title>Contact</Title>
 				{honeypotForm()}
 				<FormContainer id='contact'>
@@ -161,7 +133,6 @@ export default function Contact() {
 							name='message'
 							required
 						></MessageInput>
-
 						<SendBtn
 							backgroundColor={'var(--accent-light)'}
 							color={'var(--color-dark)'}
@@ -170,35 +141,9 @@ export default function Contact() {
 						>
 							Send
 						</SendBtn>
-						<IconContainer>
-							<a
-								href='https://twitter.com/austinftacnik'
-								rel='noopener noreferrer'
-							>
-								<Icon as={FaTwitter}></Icon>
-							</a>
-							<a
-								href='https://github.com/aplyd'
-								rel='noopener noreferrer'
-							>
-								<Icon as={FaGithub}></Icon>
-							</a>
-							<a
-								href='https://dev.to/austinftacnik'
-								rel='noopener noreferrer'
-							>
-								<Icon as={FaDev}></Icon>
-							</a>
-							<a
-								href='https://www.linkedin.com/in/austin-ftacnik-3b91b7162'
-								rel='noopener noreferrer'
-							>
-								<Icon as={FaLinkedin}></Icon>
-							</a>
-						</IconContainer>
 					</Form>
+					<Spacer height={'xlarge'} />
 				</FormContainer>
-				<Spacer height={'xlarge'} />
 			</div>
 		</Container>
 	);

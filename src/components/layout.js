@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import Nav from './nav';
 import { Link } from 'gatsby';
 // import { useStaticQuery, graphql } from "gatsby"
+import { FaTwitter, FaGithub, FaDev, FaLinkedin } from 'react-icons/fa';
 import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
 import styled from 'styled-components';
@@ -31,13 +32,13 @@ const MobileMenu = styled(motion.div)`
 
 const MenuItemContainer = styled.div`
 	grid-row: 2;
-	color: var(--accent-light);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
 `;
 const MenuItem = styled(motion.h3)`
+	color: var(--accent-light);
 	padding: 3.8rem 0 1.8rem 0;
 `;
 
@@ -58,6 +59,19 @@ const CloseMenuSVG = styled.svg`
 	height: 100%;
 	padding: 0;
 	cursor: pointer;
+`;
+
+const IconContainer = styled(motion.div)`
+	text-align: center;
+	padding-top: 42px;
+`;
+
+const Icon = styled.svg`
+	fill: var(--accent-light);
+	width: 3.6rem;
+	height: 3.6rem;
+	margin-left: 1.2rem;
+	margin-right: 1.2rem;
 `;
 
 const Layout = ({ children }) => {
@@ -153,6 +167,36 @@ const Layout = ({ children }) => {
 									Contact
 								</MenuItem>
 							</Link>
+							<IconContainer
+								initial={{ opacity: 0, y: 100 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.3, delay: 0.6 }}
+							>
+								<a
+									href='https://twitter.com/austinftacnik'
+									rel='noopener noreferrer'
+								>
+									<Icon as={FaTwitter}></Icon>
+								</a>
+								<a
+									href='https://github.com/aplyd'
+									rel='noopener noreferrer'
+								>
+									<Icon as={FaGithub}></Icon>
+								</a>
+								<a
+									href='https://dev.to/austinftacnik'
+									rel='noopener noreferrer'
+								>
+									<Icon as={FaDev}></Icon>
+								</a>
+								<a
+									href='https://www.linkedin.com/in/austin-ftacnik-3b91b7162'
+									rel='noopener noreferrer'
+								>
+									<Icon as={FaLinkedin}></Icon>
+								</a>
+							</IconContainer>
 						</MenuItemContainer>
 					</MobileMenu>
 				)}
