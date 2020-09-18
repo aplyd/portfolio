@@ -91,6 +91,17 @@ const IconContainer = styled.div`
 	position: absolute;
 	right: 0;
 	bottom: -7px;
+	@media screen and (max-width: 485px) {
+		position: relative;
+		display: block;
+		/* padding: 0 16px; */
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 265px;
+		margin-top: 57px;
+	}
 `;
 
 const Icon = styled.svg`
@@ -98,6 +109,9 @@ const Icon = styled.svg`
 	width: 4.8rem;
 	height: 4.8rem;
 	margin-left: 2.4rem;
+	@media screen and (max-width: 485px) {
+		margin-left: 0;
+	}
 `;
 
 export default function Contact() {
