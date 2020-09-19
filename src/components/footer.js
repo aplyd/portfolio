@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaTwitter, FaGithub, FaDev, FaLinkedin } from 'react-icons/fa';
+import { Spacer } from './globalStyle';
 
 const Container = styled.div`
 	width: 100%;
@@ -23,7 +24,7 @@ const TM = styled.p`
 		font-size: 1.4rem;
 		position: relative;
 		left: 0;
-		bottom: 12px;
+		bottom: 10px;
 	}
 	/* padding: 1.6rem 2.4rem 1.6rem 1.6rem; */
 `;
@@ -50,33 +51,43 @@ const Icon = styled.svg`
 	}
 `;
 
+const SpacerBottom = styled(Spacer)`
+	background: var(--color-dark);
+`;
+
 export default function Footer() {
 	return (
-		<Container>
-			<TM>© 2020 Austin Ftacnik — Seattle, WA</TM>
-			<IconContainer>
-				<a
-					href='https://twitter.com/austinftacnik'
-					rel='noopener noreferrer'
-				>
-					<Icon as={FaTwitter}></Icon>
-				</a>
-				<a href='https://github.com/aplyd' rel='noopener noreferrer'>
-					<Icon as={FaGithub}></Icon>
-				</a>
-				<a
-					href='https://dev.to/austinftacnik'
-					rel='noopener noreferrer'
-				>
-					<Icon as={FaDev}></Icon>
-				</a>
-				<a
-					href='https://www.linkedin.com/in/austin-ftacnik-3b91b7162'
-					rel='noopener noreferrer'
-				>
-					<Icon as={FaLinkedin}></Icon>
-				</a>
-			</IconContainer>
-		</Container>
+		<>
+			<Container>
+				<TM>© 2020 Austin Ftacnik — Seattle, WA</TM>
+				<IconContainer>
+					<a
+						href='https://twitter.com/austinftacnik'
+						rel='noopener noreferrer'
+					>
+						<Icon as={FaTwitter}></Icon>
+					</a>
+					<a
+						href='https://github.com/aplyd'
+						rel='noopener noreferrer'
+					>
+						<Icon as={FaGithub}></Icon>
+					</a>
+					<a
+						href='https://dev.to/austinftacnik'
+						rel='noopener noreferrer'
+					>
+						<Icon as={FaDev}></Icon>
+					</a>
+					<a
+						href='https://www.linkedin.com/in/austin-ftacnik-3b91b7162'
+						rel='noopener noreferrer'
+					>
+						<Icon as={FaLinkedin}></Icon>
+					</a>
+				</IconContainer>
+			</Container>
+			<SpacerBottom height={'small'} />
+		</>
 	);
 }

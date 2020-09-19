@@ -16,8 +16,8 @@ const Container = styled.div`
 	margin: 0 auto;
 	position: relative;
 	@media screen and (max-width: 800px) {
-		padding-left: 1.6rem;
-		padding-right: 1.6rem;
+		margin-left: 1.6rem;
+		margin-right: 1.6rem;
 	}
 `;
 
@@ -94,7 +94,7 @@ const template = ({ data, pageContext }) => {
 								animation={{
 									opacity: 1,
 									transition: {
-										delay: 0.1,
+										delay: 0.15,
 										duration: 0.5
 									}
 								}}

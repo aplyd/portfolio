@@ -65,7 +65,7 @@ const IMG = styled.img`
 `;
 
 const Code = styled.code`
-	padding: 48rem 0;
+	font-size: 1.6rem;
 `;
 
 export default {

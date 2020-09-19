@@ -5,44 +5,13 @@ title: 'Animate Visiblity Component'
 author: 'Austin Ftacnik'
 featuredImage: anas-alshanti-feXpdV001o4-unsplash.jpg
 ---
-import { Spacer } from '../../components/globalStyle.js';
 
-```javascript
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import VisibilitySensor from 'react-visibility-sensor';
-import { motion, useAnimation } from 'framer-motion';
-import styled from 'styled-components';
-
-const Container = styled(motion.div)`
-	${props => props.styles}
-`;
-
-export default function AnimateVisWrapper({
-	children,
-	initial,
-	animation,
-	custom,
-	styles
-}) {
-	const controls = useAnimation();
-	const handleVisible = isVisible => {
-		if (isVisible) {
-			controls.start(i => animation);
-		}
-	};
-
-	return (
-		<VisibilitySensor onChange={handleVisible}>
-			<Container
-				initial={initial}
-				containerStyles={styles}
-				animate={controls}
-				custom={custom}
-			>
-				{children}
-			</Container>
-		</VisibilitySensor>
-	);
+```javascript {numberLines: 21}
+const fuck = () => {
+	return `I can't believe this actually works`
 }
+
+(function() {
+	console.log('haha, wat')
+})()
 ```

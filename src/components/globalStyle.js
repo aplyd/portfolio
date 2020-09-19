@@ -187,10 +187,6 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1.8rem;
     }
 
-    code > div > span {
-        font-size: 2rem;
-    }
-
     @media screen and (max-width: 480px) {
         h1 {
             text-transform: uppercase;

@@ -15,9 +15,7 @@ import { GlobalStyle, PageContainer } from './globalStyle';
 import './layout.css';
 import styled from 'styled-components';
 import { VscClose } from 'react-icons/vsc';
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
-deckDeckGoHighlightElement();
+import { motion, AnimatePresence } from 'framer-motion';
 
 const MobileMenu = styled(motion.div)`
 	background-color: var(--color-dark);
@@ -76,7 +74,6 @@ const Icon = styled.svg`
 
 const Layout = ({ children }) => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-	const controls = useAnimation();
 	// const data = useStaticQuery(graphql`
 	//   query SiteTitleQuery {
 	//     site {
@@ -117,7 +114,6 @@ const Layout = ({ children }) => {
 								<MenuItem
 									onClick={() => toggleMobileMenu()}
 									initial={{ opacity: 0, y: 100 }}
-									// custom={1}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.3, delay: 0.1 }}
 								>
@@ -127,7 +123,6 @@ const Layout = ({ children }) => {
 							{/* <Link to=''>
 							<MenuItem
 								initial={{ opacity: 0, y: 100 }}
-								// custom={1.5}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.3, delay: 0.2 }}
 							>
@@ -138,9 +133,8 @@ const Layout = ({ children }) => {
 								<MenuItem
 									onClick={() => toggleMobileMenu()}
 									initial={{ opacity: 0, y: 100 }}
-									// custom={2}
 									animate={{ opacity: 1, y: 0 }}
-									transition={{ duration: 0.3, delay: 0.3 }}
+									transition={{ duration: 0.3, delay: 0.15 }}
 								>
 									Projects
 								</MenuItem>
@@ -149,9 +143,8 @@ const Layout = ({ children }) => {
 								<MenuItem
 									onClick={() => toggleMobileMenu()}
 									initial={{ opacity: 0, y: 100 }}
-									// custom={2.5}
 									animate={{ opacity: 1, y: 0 }}
-									transition={{ duration: 0.3, delay: 0.4 }}
+									transition={{ duration: 0.3, delay: 0.2 }}
 								>
 									Blog
 								</MenuItem>
@@ -160,9 +153,8 @@ const Layout = ({ children }) => {
 								<MenuItem
 									onClick={() => toggleMobileMenu()}
 									initial={{ opacity: 0, y: 100 }}
-									// custom={3}
 									animate={{ opacity: 1, y: 0 }}
-									transition={{ duration: 0.3, delay: 0.5 }}
+									transition={{ duration: 0.3, delay: 0.25 }}
 								>
 									Contact
 								</MenuItem>
@@ -170,7 +162,7 @@ const Layout = ({ children }) => {
 							<IconContainer
 								initial={{ opacity: 0, y: 100 }}
 								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.3, delay: 0.6 }}
+								transition={{ duration: 0.3, delay: 0.3 }}
 							>
 								<a
 									href='https://twitter.com/austinftacnik'

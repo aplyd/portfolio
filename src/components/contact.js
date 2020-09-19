@@ -83,7 +83,7 @@ const MessageInput = styled(TextareaAutosize)`
 	}
 `;
 const SendBtn = styled(BtnLarge)`
-	margin-top: 64px;
+	margin-top: 88px;
 `;
 
 export default function Contact() {

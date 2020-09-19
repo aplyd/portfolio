@@ -13,23 +13,27 @@
 (̶(̶)̶)̶ ̶m̶o̶v̶e̶ ̶a̶l̶l̶ ̶p̶o̶s̶t̶s̶ ̶t̶o̶ ̶a̶ ̶s̶e̶p̶a̶r̶a̶t̶e̶ ̶f̶o̶l̶d̶e̶r̶ ̶i̶n̶s̶t̶e̶a̶d̶ ̶o̶f̶ ̶t̶h̶e̶m̶ ̶c̶l̶u̶t̶t̶e̶r̶i̶n̶g̶ ̶t̶h̶e̶ ̶`̶p̶a̶g̶e̶s̶`̶ ̶f̶o̶l̶d̶e̶r̶
 (̶(̶)̶)̶ ̶s̶e̶t̶ ̶u̶p̶ ̶p̶a̶g̶i̶n̶t̶a̶i̶o̶n̶ ̶f̶o̶r̶ ̶b̶l̶o̶g̶ ̶p̶o̶s̶t̶s̶
 (̶(̶)̶)̶ ̶m̶a̶k̶e̶ ̶p̶o̶s̶t̶ ̶p̶r̶e̶v̶i̶e̶w̶s̶ ̶i̶n̶ ̶b̶l̶o̶g̶-̶i̶n̶d̶e̶x̶ ̶r̶e̶s̶p̶o̶n̶s̶i̶v̶e̶ ̶f̶o̶r̶ ̶m̶o̶b̶i̶l̶e̶
-
 [̶[̶]̶]̶ ̶i̶n̶l̶i̶n̶e̶ ̶p̶h̶o̶t̶o̶s̶ ̶i̶n̶ ̶m̶a̶r̶k̶d̶o̶w̶n̶
 [̶[̶]̶]̶ ̶h̶o̶o̶k̶ ̶u̶p̶ ̶m̶o̶b̶i̶l̶e̶ ̶m̶e̶n̶u̶ ̶b̶u̶t̶t̶o̶n̶s̶
 [̶[̶]̶]̶ ̶m̶a̶k̶e̶ ̶c̶o̶n̶t̶a̶c̶t̶ ̶i̶c̶o̶n̶s̶ ̶m̶o̶b̶i̶l̶e̶ ̶r̶e̶s̶p̶o̶n̶s̶i̶v̶e̶
-[[]] add social icons to mobile menu
-[[]] add padding to blog-post template for mobile (sides)
+(̶(̶)̶)̶ ̶m̶o̶v̶e̶ ̶M̶D̶X̶P̶r̶o̶v̶i̶d̶e̶r̶ ̶t̶o̶ ̶b̶l̶o̶g̶-̶p̶o̶s̶t̶.̶j̶s̶ ̶
+[̶[̶]̶]̶ ̶a̶d̶d̶ ̶s̶o̶c̶i̶a̶l̶ ̶i̶c̶o̶n̶s̶ ̶t̶o̶ ̶m̶o̶b̶i̶l̶e̶ ̶m̶e̶n̶u̶
+[̶[̶]̶]̶ ̶a̶d̶d̶ ̶p̶a̶d̶d̶i̶n̶g̶ ̶t̶o̶ ̶b̶l̶o̶g̶-̶p̶o̶s̶t̶ ̶t̶e̶m̶p̶l̶a̶t̶e̶ ̶f̶o̶r̶ ̶m̶o̶b̶i̶l̶e̶ ̶(̶s̶i̶d̶e̶s̶)̶
+(̶(̶)̶)̶ ̶d̶e̶s̶i̶g̶n̶ ̶b̶l̶o̶g̶/̶p̶o̶s̶t̶s̶ ̶p̶a̶g̶e̶
+(̶(̶)̶)̶ ̶d̶e̶s̶i̶g̶n̶ ̶i̶n̶d̶i̶v̶i̶d̶u̶a̶l̶ ̶b̶l̶o̶g̶ ̶p̶o̶s̶t̶ ̶t̶e̶m̶p̶l̶a̶t̶e̶
+(̶(̶)̶)̶ ̶u̶s̶e̶ ̶c̶o̶n̶t̶a̶i̶n̶e̶r̶ ̶c̶o̶m̶p̶o̶n̶e̶n̶t̶s̶ ̶f̶o̶r̶ ̶M̶D̶X̶ ̶i̶n̶s̶t̶e̶a̶d̶ ̶o̶f̶ ̶a̶d̶d̶i̶n̶g̶ ̶m̶a̶x̶-̶w̶i̶d̶t̶h̶ ̶t̶o̶ ̶e̶a̶c̶h̶ ̶p̶,̶ ̶h̶1̶,̶ ̶h̶2̶,̶ ̶e̶t̶c̶.̶
 
+
+
+((((((((((( THINGS TODO BEFORE LAUNCH)))))))))))
+(()) style markdown code blocks
+(()) fix mdx
+    [] add padding to all mdx components so i don't have to mess with each post
+    [] make images full width on mobile
+    [] add border radius to images
 (()) scaling font sizes on html so individual font sizes don't have to be touched
     [] about title spacing needs to be more consistent
-(()) use container components for MDX instead of adding max-width to each p, h1, h2, etc.
-    [] add padding to all mdx components so i don't have to mess with each post
 (()) overall spacing should be consistent and line up to a grid
-(()) design blog/posts page
-(()) design individual blog post template
-(()) move MDXProvider to blog-post.js 
-
-
 
 (((((((((( LAST MINUTE TOUCHES ))))))))))
 (()) lighthouse

@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`
+		title: `Austin Ftacnik | Portfolio`,
+		description: `Front-End Developer`,
+		author: `Austin Ftacnik`
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -55,15 +55,15 @@ module.exports = {
 				extensions: ['.mdx', '.md'],
 				gatsbyRemarkPlugins: [
 					{
-						resolve: `gatsby-remark-highlight-code`,
-						options: {
-							theme: `vscode`
-						}
-					},
-					{
 						resolve: `gatsby-remark-images`,
 						options: {
 							maxWidth: 800
+						}
+					},
+					{
+						resolve: `gatsby-remark-vscode`,
+						options: {
+							theme: `High Contrast`
 						}
 					}
 				]
