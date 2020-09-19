@@ -8,6 +8,7 @@ import { Spacer } from '../components/globalStyle';
 import Pagination from '../components/pagination';
 import Contact from '../components/contact';
 import Footer from '../components/footer';
+import AnimateVisWrapper from '../components/animateVisWrapper';
 
 const Container = styled.div`
 	max-width: 80rem;
@@ -81,28 +82,46 @@ const template = ({ data, pageContext }) => {
 				<Title>Recent Posts</Title>
 				<Spacer height={'large'} />
 				{/* <Line /> */}
-				{data.allMdx.edges.map(post => {
+				{data.allMdx.edges.map((post, index) => {
 					const featuredImage =
 						post.node.frontmatter.featuredImage.childImageSharp
 							.fluid;
 
 					return (
 						<React.Fragment key={post.node.id}>
-							<Link to={`/blog/${post.node.frontmatter.path}/`}>
-								<PostPreviewContainer>
-									<WordsContainer>
-										<h3>{post.node.frontmatter.title}</h3>
-										<p>
-											{post.node.frontmatter.author} |{' '}
-											{post.node.frontmatter.date}
-										</p>
-										<p>{post.node.excerpt}</p>
-									</WordsContainer>
-									<ImageContainer>
-										<PreviewImage fluid={featuredImage} />
-									</ImageContainer>
-								</PostPreviewContainer>
-							</Link>
+							<AnimateVisWrapper
+								initial={{ opacity: 0 }}
+								animation={{
+									opacity: 1,
+									transition: {
+										delay: 0.1,
+										duration: 0.5
+									}
+								}}
+								partial={true}
+							>
+								<Link
+									to={`/blog/${post.node.frontmatter.path}/`}
+								>
+									<PostPreviewContainer>
+										<WordsContainer>
+											<h3>
+												{post.node.frontmatter.title}
+											</h3>
+											<p>
+												{post.node.frontmatter.author} |{' '}
+												{post.node.frontmatter.date}
+											</p>
+											<p>{post.node.excerpt}</p>
+										</WordsContainer>
+										<ImageContainer>
+											<PreviewImage
+												fluid={featuredImage}
+											/>
+										</ImageContainer>
+									</PostPreviewContainer>
+								</Link>
+							</AnimateVisWrapper>
 							<Spacer height={'large'} />
 						</React.Fragment>
 					);

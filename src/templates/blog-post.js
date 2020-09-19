@@ -9,7 +9,7 @@ import Layout from '../components/layout';
 import Footer from '../components/footer';
 import Contact from '../components/contact';
 import Img from 'gatsby-image';
-import { Spacer, BtnSmall } from '../components/globalStyle';
+import { Spacer } from '../components/globalStyle';
 
 const Container = styled.div`
 	width: 100%;
