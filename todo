@@ -26,14 +26,12 @@
 
 
 ((((((((((( THINGS TODO BEFORE LAUNCH)))))))))))
-(()) style markdown code blocks
-(()) fix mdx
-    [] add padding to all mdx components so i don't have to mess with each post
-    [] make images full width on mobile
-    [] add border radius to images
-(()) scaling font sizes on html so individual font sizes don't have to be touched
-    [] about title spacing needs to be more consistent
-(()) overall spacing should be consistent and line up to a grid
+(̶(̶)̶)̶ ̶s̶t̶y̶l̶e̶ ̶m̶a̶r̶k̶d̶o̶w̶n̶ ̶c̶o̶d̶e̶ ̶b̶l̶o̶c̶k̶s̶
+(̶(̶)̶)̶ ̶f̶i̶x̶ ̶m̶d̶x̶
+    [̶]̶ ̶a̶d̶d̶ ̶p̶a̶d̶d̶i̶n̶g̶ ̶t̶o̶ ̶a̶l̶l̶ ̶m̶d̶x̶ ̶c̶o̶m̶p̶o̶n̶e̶n̶t̶s̶ ̶s̶o̶ ̶i̶ ̶d̶o̶n̶'̶t̶ ̶h̶a̶v̶e̶ ̶t̶o̶ ̶m̶e̶s̶s̶ ̶w̶i̶t̶h̶ ̶e̶a̶c̶h̶ ̶p̶o̶s̶t̶
+    [̶]̶ ̶m̶a̶k̶e̶ ̶i̶m̶a̶g̶e̶s̶ ̶f̶u̶l̶l̶ ̶w̶i̶d̶t̶h̶ ̶o̶n̶ ̶m̶o̶b̶i̶l̶e̶
+    [̶]̶ ̶a̶d̶d̶ ̶b̶o̶r̶d̶e̶r̶ ̶r̶a̶d̶i̶u̶s̶ ̶t̶o̶ ̶i̶m̶a̶g̶e̶s̶
+(()) STYLING - change color scheme and add possible background image/texture
 
 (((((((((( LAST MINUTE TOUCHES ))))))))))
 (()) lighthouse
@@ -44,3 +42,6 @@
 
 [[[[[[[[ LATER ]]]]]]]]
 (()) design info page
+(()) overall spacing should be consistent and line up to a grid
+(()) scaling font sizes on html so individual font sizes don't have to be touched
+    [] about title spacing needs to be more consistent

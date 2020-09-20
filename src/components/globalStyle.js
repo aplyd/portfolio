@@ -32,10 +32,12 @@ export const SectionWrapper = styled.div`
 	background-color: ${props => props.bgColor};
 `;
 
-export const MobileSpacing = css`
-	@media screen and (max-width: 960px) {
-		margin-left: 16px;
-		margin-right: 16px;
+export const MobileTextPadding = css`
+	padding-top: 1.2rem;
+	padding-bottom: 1.2rem;
+	@media screen and (max-width: 816px) {
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
 	}
 `;
 
@@ -84,6 +86,11 @@ export const GlobalStyle = createGlobalStyle`
         --spacing-large: 64px;
         --spacing-xlarge: 128px;
         --section-height: 664px;
+
+        --grvsc-border-radius: 40px;
+        @media screen and (max-width: 800px) {
+        --grvsc-border-radius: 0;
+        }
     }
 
     html,
@@ -185,6 +192,25 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
         border-radius: 8px;
         font-size: 1.8rem;
+    }
+
+    pre {
+        margin-bottom: 0;
+    }
+
+
+    ${'' /* markdown images */}
+    .gatsby-image-outer-wrapper {
+        display: contents;
+    }
+
+    .gatsby-resp-image-wrapper {
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .gatsby-resp-image-wrapper,  .gatsby-resp-image-bacgkround-image, .gatsby-resp-image-image {
+        border-radius: 40px;
     }
 
     @media screen and (max-width: 480px) {

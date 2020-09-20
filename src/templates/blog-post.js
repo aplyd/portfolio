@@ -9,7 +9,7 @@ import Layout from '../components/layout';
 import Footer from '../components/footer';
 import Contact from '../components/contact';
 import Img from 'gatsby-image';
-import { Spacer } from '../components/globalStyle';
+import { Spacer, MobileTextPadding } from '../components/globalStyle';
 
 const Container = styled.div`
 	width: 100%;
@@ -17,20 +17,26 @@ const Container = styled.div`
 	height: 100%;
 	min-height: 100vh;
 	margin: 0 auto;
-	@media screen and (max-width: 816px) {
-		padding: 0 16px;
-	}
 `;
 
 const Title = styled.h2`
-	/* text-align: center; */
+	${MobileTextPadding}
+	max-width: 80rem;
+	margin: 0 auto;
 	color: var(--accent-light);
+`;
+
+const IMG = styled(Img)`
+	max-width: 80rem;
+	border-radius: 40px;
+	margin: 0 auto;
+	@media screen and (max-width: 800px) {
+		border-radius: 0;
+	}
 `;
 
 export default function template({ data: { mdx }, pageContext }) {
 	const featuredImage = mdx.frontmatter.featuredImage.childImageSharp.fluid;
-
-	console.log(mdxComponents);
 
 	return (
 		<MDXProvider components={mdxComponents}>
@@ -40,7 +46,7 @@ export default function template({ data: { mdx }, pageContext }) {
 					<Spacer height={'large'} />
 					<Title>{mdx.frontmatter.title}</Title>
 					<Spacer height={'medium'} />
-					<Img fluid={featuredImage} />
+					<IMG fluid={featuredImage} />
 					<Spacer height={'large'} />
 					<MDXRenderer>{mdx.body}</MDXRenderer>
 					<Spacer height={'large'} />

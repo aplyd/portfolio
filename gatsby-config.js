@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `Austin Ftacnik | Portfolio`,
+		title: `Austin Ftacnik`,
 		description: `Front-End Developer`,
 		author: `Austin Ftacnik`
 	},
@@ -52,12 +52,14 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
+				root: __dirname,
 				extensions: ['.mdx', '.md'],
 				gatsbyRemarkPlugins: [
 					{
 						resolve: `gatsby-remark-images`,
 						options: {
-							maxWidth: 800
+							maxWidth: 800,
+							linkImagesToOriginal: false
 						}
 					},
 					{
