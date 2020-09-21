@@ -205,9 +205,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .gatsby-resp-image-wrapper {
-        margin-top: 1.2rem;
-        margin-bottom: 1.2rem;
+        margin-top: 2.4rem;
+        margin-bottom: 2.4rem;
     }
+
 
     .gatsby-resp-image-wrapper,  .gatsby-resp-image-bacgkround-image, .gatsby-resp-image-image {
         border-radius: 40px;
