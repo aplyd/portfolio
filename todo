@@ -39,6 +39,10 @@
 (()) design grid (elements should be evenly spread apart)
 (()) favicon
 (()) site title on SEO facing info
+(()) clean up code before build
+    [] remove log statements
+    [] remove unused vars
+    [] refactor DRY
 
 [[[[[[[[ LATER ]]]]]]]]
 (()) design info page
