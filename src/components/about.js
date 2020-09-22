@@ -10,12 +10,20 @@ import {
 } from 'framer-motion';
 import VisibilitySensor from 'react-visibility-sensor';
 
+const Container = styled.div`
+	position: relative;
+	width: 100%;
+	/* top: -350px; */
+`;
+
 const Background = styled.div`
 	margin-top: -8px;
 	background-color: var(--color-dark);
+	z-index: 1000;
+	position: relative;
 `;
 
-const Container = styled(motion.div)`
+const ContentContainer = styled(motion.div)`
 	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
@@ -58,8 +66,8 @@ const SlantedSVG = styled.svg`
 const About = () => {
 	const { scrollY } = useViewportScroll();
 	const controls = useAnimation();
-	const scrollRange = [0, 1150];
-	const scrollTransformRange = [0, -350];
+	const scrollRange = [0, 1100];
+	const scrollTransformRange = [350, 0];
 	const scrollTransform = useTransform(
 		scrollY,
 		scrollRange,
@@ -80,11 +88,11 @@ const About = () => {
 	};
 
 	return (
-		<>
+		<Container>
 			<motion.div style={{ y: scrollTransform }}>
+				{/* <Spacer height={'large'} />
 				<Spacer height={'large'} />
-				<Spacer height={'large'} />
-				<Spacer height={'large'} />
+				<Spacer height={'large'} /> */}
 				<SlantedSVG
 					xmlns='http://www.w3.org/2000/svg'
 					viewBox='0 0 1440 320'
@@ -98,7 +106,7 @@ const About = () => {
 				<Background>
 					<Spacer height={'xlarge'} />
 
-					<Container
+					<ContentContainer
 					// style={{ opacity: opacityVal, y: yTransformVal }}
 					>
 						<VisibilitySensor
@@ -158,7 +166,7 @@ const About = () => {
 								<Spacer height={'xlarge'} />
 							</>
 						</VisibilitySensor>
-					</Container>
+					</ContentContainer>
 				</Background>
 				{/* <UpsideDownSlantedSVG
 					xmlns='http://www.w3.org/2000/svg'
@@ -171,7 +179,7 @@ const About = () => {
 					></path>
 				</UpsideDownSlantedSVG> */}
 			</motion.div>
-		</>
+		</Container>
 	);
 };
 

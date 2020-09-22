@@ -133,7 +133,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 				>
 					<a href={repo} target='_blank' rel='noopener noreferrer'>
 						<BtnSmall
-							backgroundColor={'var(--color-light)'}
+							backgroundColor={'rgba(255, 255, 255, 0)'}
 							color={'var(--accent-light)'}
 							borderColor={'var(--accent-light)'}
 						>

@@ -74,7 +74,7 @@ export const GlobalStyle = createGlobalStyle`
         ${'' /* black */}
         --color-dark: #252525;
         ${'' /* light gray */}
-        --color-light: #8e959e;
+        --color-light: #717171;
         ${'' /* medium gray */}
         --color-medium: #bcbcbc;
         ${'' /* white */}

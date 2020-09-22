@@ -3,11 +3,15 @@ import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
 
+const Background = styled.div`
+	width: 100%;
+	height: 100%;
+`;
+
 const Container = styled.div`
 	position: relative;
 	margin: -260px auto 0 auto;
 	width: 100%;
-	max-width: 80rem;
 	@media screen and (max-width: 800px) {
 		padding: 0 16px;
 	}
@@ -63,9 +67,11 @@ export default function Projects() {
 	};
 
 	return (
-		<>
+		<Background>
 			<Container id='projects'>
-				<Spacer height={'large'} />
+				<Spacer height={'xlarge'} />
+				<Spacer height={'xlarge'} />
+				<Spacer height={'xlarge'} />
 				{[fpotfp, battleship, wheresWaldo].map(project => {
 					return (
 						<React.Fragment key={project.title}>
@@ -77,6 +83,6 @@ export default function Projects() {
 					);
 				})}
 			</Container>
-		</>
+		</Background>
 	);
 }
