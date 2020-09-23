@@ -129,7 +129,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: var(--color-light);
+        background-color: var(--color-dark);
     }
 
     h1 {
