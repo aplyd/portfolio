@@ -12,8 +12,22 @@ const Container = styled.div`
 	position: relative;
 	margin: -260px auto 0 auto;
 	width: 100%;
-	@media screen and (max-width: 800px) {
+	max-width: 80rem;
+	@media screen and (max-width: 816px) {
 		padding: 0 16px;
+	}
+	@media screen and (max-width: 485px) {
+		padding: 0;
+	}
+`;
+
+const FrostedBackground = styled.div`
+	background-color: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(5px);
+	border-radius: 40px;
+	padding: 24px;
+	@media screen and (max-width: 485px) {
+		padding: 24px 16px;
 	}
 `;
 
@@ -72,16 +86,24 @@ export default function Projects() {
 				<Spacer height={'xlarge'} />
 				<Spacer height={'xlarge'} />
 				<Spacer height={'xlarge'} />
-				{[fpotfp, battleship, wheresWaldo].map(project => {
-					return (
-						<React.Fragment key={project.title}>
-							<ProjectCardContainer>
-								<ProjectCard {...project} />
-							</ProjectCardContainer>
-							<Spacer height={'xlarge'} />
-						</React.Fragment>
-					);
-				})}
+				<FrostedBackground>
+					<Spacer height={'medium'} />
+					<ProjectCardContainer>
+						<ProjectCard {...fpotfp} />
+					</ProjectCardContainer>
+
+					<Spacer height={'xlarge'} />
+					<ProjectCardContainer>
+						<ProjectCard {...battleship} />
+					</ProjectCardContainer>
+
+					<Spacer height={'xlarge'} />
+					<ProjectCardContainer>
+						<ProjectCard {...wheresWaldo} />
+					</ProjectCardContainer>
+					<Spacer height={'medium'} />
+				</FrostedBackground>
+				<Spacer height={'xlarge'} />
 			</Container>
 		</Background>
 	);
