@@ -34,7 +34,7 @@ const Line = styled.div`
 `;
 
 const PostPreviewContainer = styled.div`
-	color: var(--accent-light);
+	color: var(--color-dark);
 	/* padding: 24px 0; */
 	min-height: 18rem;
 	display: grid;
@@ -43,7 +43,10 @@ const PostPreviewContainer = styled.div`
 	/* &&:hover {
 		transform: scale(1.05);
 	} */
-
+	background-color: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(5px);
+	border-radius: 40px;
+	padding: 24px;
 	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
 	}
@@ -71,7 +74,7 @@ const ImageContainer = styled.div`
 
 const PreviewImage = styled(Img)`
 	margin-top: 4px;
-	border-radius: 12px;
+	border-radius: 40px;
 `;
 
 const template = ({ data, pageContext }) => {

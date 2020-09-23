@@ -6,35 +6,35 @@ const H1 = styled.h1`
 	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
-	color: var(--accent-light);
+	color: var(--color-dark);
 `;
 const H2 = styled.h2`
 	${MobileTextPadding}
 	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
-	color: var(--accent-light);
+	color: var(--color-dark);
 `;
 const H3 = styled.h3`
 	${MobileTextPadding}
 	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
-	color: var(--accent-light);
+	color: var(--color-dark);
 `;
 const H4 = styled.h4`
 	${MobileTextPadding}
 	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
-	color: var(--accent-light);
+	color: var(--color-dark);
 `;
 const H5 = styled.h5`
 	${MobileTextPadding}
 	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
-	color: var(--accent-light);
+	color: var(--color-dark);
 `;
 
 const P = styled.p`
@@ -42,7 +42,7 @@ const P = styled.p`
 	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
-	color: var(--accent-light);
+	color: var(--color-dark);
 `;
 
 const A = styled.a`
@@ -52,21 +52,21 @@ const A = styled.a`
 
 const UL = styled.ul`
 	${MobileTextPadding}
-	color: var(--accent-light);
+	color: var(--color-dark);
 	margin-left: 3.6rem;
 	padding-bottom: 2.4rem;
 `;
 
 const OL = styled.ol`
 	/* ${MobileTextPadding} */
-	color: var(--accent-light);
+	color: var(--color-dark);
 	margin-left: 3.6rem;
 	padding-bottom: 2.4rem;
 `;
 
 const LI = styled.li`
 	/* ${MobileTextPadding} */
-	color: var(--accent-light);
+	color: var(--color-dark);
 `;
 
 const IMG = styled.img`

@@ -23,7 +23,7 @@ const Title = styled.h2`
 	${MobileTextPadding}
 	max-width: 80rem;
 	margin: 0 auto;
-	color: var(--accent-light);
+	color: var(--color-dark);
 `;
 
 const IMG = styled(Img)`

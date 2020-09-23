@@ -1,41 +1,95 @@
 ---
 path: '/animate-visibility-component'
 date: '2020-09-09'
-title: 'Animate Visiblity Component'
+title: 'Animate Visiblity Wrapper Component (The Easy Way)'
 author: 'Austin Ftacnik'
 featuredImage: anas-alshanti-feXpdV001o4-unsplash.jpg
 ---
 
 import {Spacer} from '../../components/globalStyle.js'
 
+I was building my blog/website and decided to implement this animation I kept seeing around the interwebz where the elements animate as they're scrolled into the viewport. Well, there's a few ways to do this so I decided to go with the easiest way possible (don't reinvent the wheel, amirite).
 
-```javascript
-const fuck = () => {
-	return `I can't believe this actually works`
+One way of doing it would be to get the element's Y coordinate and then listen to the scroll position to begin the animation - but then you'd have to find every elements Y coordinate and that just seems like a mess. Another way of doing it would be to use the IntersectionObserver API, which I've done in the past. The IntersectionObserver API is used to "<a href='https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API' rel='noreferrer noopener'>observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport</a>".
+
+The option I chose was to use a library called <a href='https://github.com/joshwnj/react-visibility-sensor' rel='noreferrer noopener'>'react-visibility-sensor'</a>, which I assume just uses IntersectionObserver under the hood. 
+
+The animations are done with Framer Motion and I also used Styled Components because they make me happy.
+
+<small>I should've mentioned, this is all assuming you're using React.</small>
+
+I found myself using this animation multiple times throughout my site so I decided to create a wrapper component for easy reusability:
+
+```javascript 
+import * as React from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
+import { motion, useAnimation } from 'framer-motion';
+import styled from 'styled-components';
+
+const Container = styled(motion.div)`
+	${props => props.styles}
+`;
+
+export default function AnimateVisWrapper({
+  children,
+  initial,
+  animation,
+  custom,
+  styles,
+  partial
+}) {
+  const controls = useAnimation();
+  const handleVisible = isVisible => {
+  if (isVisible) {
+      controls.start(i => animation);
+    }
+  };
+
+  return (
+  <VisibilitySensor onChange={handleVisible} partialVisibility={partial}>
+      <Container
+        initial={initial}
+		containerStyles={styles}
+		animate={controls}
+		custom={custom}
+  >
+		{children}
+      </Container>
+    </VisibilitySensor>
+  );
 }
-
-(function() {
-	console.log('haha, wat')
-})()
 ```
 <Spacer height={'medium'} />
 
+And the component is used like this:
 
-<h1>HELLO</h1>
+```javascript
+<AnimateVisWrapper
+  initial={{ opacity: 0 }}
+  animation={{
+    opacity: 1,
+    transition: {
+      delay: 0.15,
+      duration: 0.5
+    }
+  }}
+  partial={true}
+>
+  <h1> Hello World? </h1>
+</AnimateVisWrapper>
+```
 
-this should work?
+If you're not familiar with Framer Motion or Styled Components, I'd recommend checking out their docs in the links below.
 
-<h2>WORLD</h2>
+<a href='https://www.framer.com/api/motion/' rel='noreferrer noopener'>Framer Motion</a>
 
-<p>hopefully, we shall see</p>
+<br />
+<br />
 
-<img src="anas-alshanti-feXpdV001o4-unsplash.jpg" />
+<a href='https://styled-components.com/docs' rel='noreferrer noopener'>Styled Components</a>
 
-<h1>BOOM</h1>
+That's it! I honestly feel like using React + Framer Motion + Styled Components is cheating. It makes development such a blast.
 
-hopefully, we shall see
-
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+PS - don't forget those prop types (I always do). 
 
 
