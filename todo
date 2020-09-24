@@ -31,11 +31,13 @@
     [̶]̶ ̶a̶d̶d̶ ̶p̶a̶d̶d̶i̶n̶g̶ ̶t̶o̶ ̶a̶l̶l̶ ̶m̶d̶x̶ ̶c̶o̶m̶p̶o̶n̶e̶n̶t̶s̶ ̶s̶o̶ ̶i̶ ̶d̶o̶n̶'̶t̶ ̶h̶a̶v̶e̶ ̶t̶o̶ ̶m̶e̶s̶s̶ ̶w̶i̶t̶h̶ ̶e̶a̶c̶h̶ ̶p̶o̶s̶t̶
     [̶]̶ ̶m̶a̶k̶e̶ ̶i̶m̶a̶g̶e̶s̶ ̶f̶u̶l̶l̶ ̶w̶i̶d̶t̶h̶ ̶o̶n̶ ̶m̶o̶b̶i̶l̶e̶
     [̶]̶ ̶a̶d̶d̶ ̶b̶o̶r̶d̶e̶r̶ ̶r̶a̶d̶i̶u̶s̶ ̶t̶o̶ ̶i̶m̶a̶g̶e̶s̶
-(()) STYLING - change color scheme and add possible background image/texture
+(̶(̶)̶)̶ ̶S̶T̶Y̶L̶I̶N̶G̶ ̶-̶ ̶c̶h̶a̶n̶g̶e̶ ̶c̶o̶l̶o̶r̶ ̶s̶c̶h̶e̶m̶e̶ ̶a̶n̶d̶ ̶a̶d̶d̶ ̶p̶o̶s̶s̶i̶b̶l̶e̶ ̶b̶a̶c̶k̶g̶r̶o̶u̶n̶d̶ ̶i̶m̶a̶g̶e̶/̶t̶e̶x̶t̶u̶r̶e̶
+(̶(̶)̶)̶ ̶a̶d̶d̶ ̶`̶m̶i̶x̶-̶b̶l̶e̶n̶d̶-̶m̶o̶d̶e̶:̶ ̶d̶i̶f̶f̶e̶r̶e̶n̶c̶e̶`̶ ̶t̶o̶ ̶n̶a̶v̶ ̶w̶h̶e̶n̶ ̶o̶n̶ ̶b̶l̶o̶g̶ ̶p̶a̶g̶e̶
+(()) accessibility
+(()) double check mobile spacings and responsiveness
 
 (((((((((( LAST MINUTE TOUCHES ))))))))))
 (()) lighthouse
-(()) accesibility
 (()) design grid (elements should be evenly spread apart)
 (()) favicon
 (()) site title on SEO facing info
@@ -45,6 +47,7 @@
     [] refactor DRY
 
 [[[[[[[[ LATER ]]]]]]]]
+(()) move blog post title above image while keeping description under (on blog index page)
 (()) design info page
 (()) overall spacing should be consistent and line up to a grid
 (()) scaling font sizes on html so individual font sizes don't have to be touched

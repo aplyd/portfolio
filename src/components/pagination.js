@@ -14,7 +14,7 @@ const Container = styled.div`
 	position: absolute;
 	bottom: 12px;
 	&& > p {
-		color: var(--accent-light);
+		color: var(--dark-color);
 		/* text-transform: uppercase; */
 		display: inline-block;
 		padding-top: 1.2rem;

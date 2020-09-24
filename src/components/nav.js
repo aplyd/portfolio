@@ -10,7 +10,6 @@ import useWindowWidth from '../hooks/useWindowWidth';
 const Container = styled.div`
 	width: 100%;
 	max-width: 80rem;
-	/* background: var(--main-bg-color); */
 	height: 56px;
 	position: fixed;
 	top: ${props => (props.visible ? '0' : '-58px')};
@@ -18,7 +17,7 @@ const Container = styled.div`
 	z-index: 1009;
 	display: flex;
 	flex-direction: row;
-	/* mix-blend-mode: difference; */
+	mix-blend-mode: ${props => (props.homepage ? `normal` : `difference`)};
 `;
 
 const NavItemsContainer = styled.div`
@@ -81,7 +80,7 @@ const MobileNavBtnContainer = styled(ToggleContainer)`
 	}
 `;
 
-export default function Nav({ toggleMobileMenu }) {
+export default function Nav({ toggleMobileMenu, homepage }) {
 	const [visible, setVisible] = useState(true);
 	// const [isDarkMode, setIsDarkMode] = useState(false);
 	useScrollToHideNav(setVisible);
@@ -151,7 +150,7 @@ export default function Nav({ toggleMobileMenu }) {
 	};
 
 	return (
-		<Container visible={visible}>
+		<Container visible={visible} homepage={homepage}>
 			{windowWidth > 620 ? (
 				<NavItemsContainer windowWidth={windowWidth}>
 					{desktopNav()}
@@ -175,5 +174,6 @@ export default function Nav({ toggleMobileMenu }) {
 }
 
 Nav.propTypes = {
-	toggleMobileMenu: PropTypes.func
+	toggleMobileMenu: PropTypes.func,
+	homepage: PropTypes.bool
 };

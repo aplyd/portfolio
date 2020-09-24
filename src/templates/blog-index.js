@@ -34,12 +34,12 @@ const Line = styled.div`
 `;
 
 const PostPreviewContainer = styled.div`
-	color: var(--color-dark);
 	/* padding: 24px 0; */
+	color: var(--color-dark);
 	min-height: 18rem;
 	display: grid;
 	grid-template-columns: 1fr 33%;
-	grid-gap: 1rem;
+	grid-gap: 4rem;
 	/* &&:hover {
 		transform: scale(1.05);
 	} */
@@ -61,9 +61,16 @@ const WordsContainer = styled.div`
 	&& > h3 {
 		padding-right: 1.2rem;
 	}
-	&& > p {
-		padding-top: 0.6rem;
-	}
+`;
+
+const Excerpt = styled.p`
+	color: var(--color-dark);
+	padding-top: 0.6rem;
+`;
+
+const Meta = styled.p`
+	color: var(--accent-light);
+	padding-top: 0.6rem;
 `;
 
 const ImageContainer = styled.div`
@@ -111,11 +118,13 @@ const template = ({ data, pageContext }) => {
 											<h3>
 												{post.node.frontmatter.title}
 											</h3>
-											<p>
+											<Meta>
 												{post.node.frontmatter.author} |{' '}
 												{post.node.frontmatter.date}
-											</p>
-											<p>{post.node.excerpt}</p>
+											</Meta>
+											<Excerpt>
+												{post.node.excerpt}
+											</Excerpt>
 										</WordsContainer>
 										<ImageContainer>
 											<PreviewImage

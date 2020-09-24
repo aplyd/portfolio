@@ -206,7 +206,7 @@ const Layout = ({ children, homepage }) => {
 				)}
 			</AnimatePresence>
 
-			<Nav toggleMobileMenu={toggleMobileMenu} />
+			<Nav toggleMobileMenu={toggleMobileMenu} homepage={homepage} />
 			<PageContainer>
 				<main>{children}</main>
 			</PageContainer>
