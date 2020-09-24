@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const Title = styled.h2`
 	${MobileTextPadding}
-	max-width: 80rem;
+	max-width: 75rem;
 	margin: 0 auto;
 	color: var(--color-dark);
 `;

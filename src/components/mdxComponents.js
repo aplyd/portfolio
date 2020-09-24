@@ -4,35 +4,35 @@ import { MobileTextPadding } from './globalStyle';
 const H1 = styled.h1`
 	${MobileTextPadding}
 	width: 100%;
-	max-width: 80rem;
+	max-width: 75rem;
 	margin: 0 auto;
 	color: var(--color-dark);
 `;
 const H2 = styled.h2`
 	${MobileTextPadding}
 	width: 100%;
-	max-width: 80rem;
+	max-width: 75rem;
 	margin: 0 auto;
 	color: var(--color-dark);
 `;
 const H3 = styled.h3`
 	${MobileTextPadding}
 	width: 100%;
-	max-width: 80rem;
+	max-width: 75rem;
 	margin: 0 auto;
 	color: var(--color-dark);
 `;
 const H4 = styled.h4`
 	${MobileTextPadding}
 	width: 100%;
-	max-width: 80rem;
+	max-width: 75rem;
 	margin: 0 auto;
 	color: var(--color-dark);
 `;
 const H5 = styled.h5`
 	${MobileTextPadding}
 	width: 100%;
-	max-width: 80rem;
+	max-width: 75rem;
 	margin: 0 auto;
 	color: var(--color-dark);
 `;
@@ -40,7 +40,7 @@ const H5 = styled.h5`
 const P = styled.p`
 	${MobileTextPadding}
 	width: 100%;
-	max-width: 80rem;
+	max-width: 75rem;
 	margin: 0 auto;
 	color: var(--color-dark);
 `;
@@ -87,6 +87,15 @@ const Code = styled.code`
 	padding-bottom: 2rem;
 `;
 
+const Small = styled.small`
+	${MobileTextPadding}
+	width: 100%;
+	max-width: 75rem;
+	margin: 0 auto;
+	color: var(--color-dark);
+	font-size: 1.2rem;
+`;
+
 export default {
 	h1: H1,
 	h2: H2,
@@ -99,5 +108,6 @@ export default {
 	ul: UL,
 	li: LI,
 	img: IMG,
-	code: Code
+	code: Code,
+	small: Small
 };
