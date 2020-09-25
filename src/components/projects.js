@@ -26,6 +26,7 @@ const FrostedBackground = styled.div`
 	backdrop-filter: blur(5px);
 	border-radius: 40px;
 	padding: 24px;
+	overflow: hidden;
 	@media screen and (max-width: 485px) {
 		padding: 24px 16px;
 	}
@@ -82,11 +83,11 @@ export default function Projects() {
 
 	return (
 		<Background>
-			<Container id='projects'>
+			<Container>
 				<Spacer height={'xlarge'} />
 				<Spacer height={'xlarge'} />
 				<Spacer height={'xlarge'} />
-				<FrostedBackground>
+				<FrostedBackground id='projects'>
 					<Spacer height={'medium'} />
 					<ProjectCardContainer>
 						<ProjectCard {...fpotfp} />
