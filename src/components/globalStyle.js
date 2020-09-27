@@ -44,7 +44,7 @@ export const MobileTextPadding = css`
 const Btn = styled(motion.button)`
 	text-transform: uppercase;
 	cursor: pointer;
-	border-radius: 5rem;
+	border-radius: 4rem;
 `;
 
 export const BtnLarge = styled(Btn)`
@@ -72,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
 
     :root {
         ${'' /* black */}
-        --color-dark: #252525;
+        --color-dark: #171717;
         ${'' /* light gray */}
         --color-light: #717171;
         ${'' /* medium gray */}

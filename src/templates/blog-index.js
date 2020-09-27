@@ -22,7 +22,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-	color: var(--accent-light);
+	color: var(--color-dark);
 	text-transform: uppercase;
 `;
 
@@ -43,10 +43,10 @@ const PostPreviewContainer = styled.div`
 	/* &&:hover {
 		transform: scale(1.05);
 	} */
-	background-color: rgba(255, 255, 255, 0.15);
+	/* background-color: rgba(255, 255, 255, 0.15);
 	backdrop-filter: blur(5px);
 	border-radius: 40px;
-	padding: 24px;
+	padding: 24px; */
 	@media screen and (max-width: 800px) {
 		grid-template-columns: 1fr;
 	}
@@ -69,7 +69,7 @@ const Excerpt = styled.p`
 `;
 
 const Meta = styled.p`
-	color: var(--accent-light);
+	color: #8a8a8a;
 	padding-top: 0.6rem;
 `;
 
@@ -81,7 +81,7 @@ const ImageContainer = styled.div`
 
 const PreviewImage = styled(Img)`
 	margin-top: 4px;
-	border-radius: 40px;
+	border-radius: 12px;
 `;
 
 const template = ({ data, pageContext }) => {
@@ -90,6 +90,7 @@ const template = ({ data, pageContext }) => {
 			<Container>
 				<Spacer height={'xlarge'} />
 				<Title>Recent Posts</Title>
+				<Spacer height={'large'} />
 				<Spacer height={'large'} />
 				{/* <Line /> */}
 				{data.allMdx.edges.map((post, index) => {

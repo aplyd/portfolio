@@ -8,15 +8,15 @@ featuredImage: anas-alshanti-feXpdV001o4-unsplash.jpg
 
 import {Spacer} from '../../components/globalStyle.js'
 
-I was building my blog/website and decided to implement this animation I kept seeing around the interwebz where the elements animate as they're scrolled into the viewport. Well, there's a few ways to do this so I decided to go with the easiest way possible (don't reinvent the wheel, amirite).
+I was building this blog/website and decided to implement an animation I kept seeing around the interwebz where the elements animate as they're scrolled into the viewport. Well, there's a few ways to do this so I decided to go with the easiest way possible (don't reinvent the wheel, amirite).
 
 One way of doing it would be to get the element's Y coordinate and then listen to the scroll position to begin the animation - but then you'd have to find every elements Y coordinate and that just seems like a mess. Another way of doing it would be to use the IntersectionObserver API, which I've done in the past. The IntersectionObserver API is used to "<a href='https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API' rel='noreferrer noopener'>observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport</a>".
+
+*this assumes you're using React*
 
 The option I chose was to use a library called <a href='https://github.com/joshwnj/react-visibility-sensor' rel='noreferrer noopener'>'react-visibility-sensor'</a>, which I assume just uses IntersectionObserver under the hood. 
 
 The animations are done with Framer Motion and I also used Styled Components because they make me happy.
-
-<small>I should've mentioned, this is all assuming you're using React.</small>
 
 I found myself using this animation multiple times throughout my site so I decided to create a wrapper component for easy reusability:
 

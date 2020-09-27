@@ -43,9 +43,9 @@ export default function template({ data: { mdx }, pageContext }) {
 			<Layout>
 				<Container>
 					<Spacer height={'xlarge'} />
-					<Spacer height={'large'} />
+					{/* <Spacer height={'large'} /> */}
 					<Title>{mdx.frontmatter.title}</Title>
-					<Spacer height={'small'} />
+					<Spacer height={'medium'} />
 					<IMG fluid={featuredImage} />
 					<Spacer height={'large'} />
 					<MDXRenderer>{mdx.body}</MDXRenderer>

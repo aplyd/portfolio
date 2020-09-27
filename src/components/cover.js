@@ -38,7 +38,6 @@ const ProfileSVG = styled.svg`
 	border-radius: 100px;
 	height: 100%;
 	width: 100%;
-	/* background-color: var(--color-light); */
 	display: block;
 	margin: 0 auto;
 	&& > path,
@@ -48,8 +47,6 @@ const ProfileSVG = styled.svg`
 `;
 
 const ProfileBackground = styled.div`
-	/* box-shadow: 34px 34px 67px #797f86, -34px -34px 67px #a3abb6; */
-	/* background-color: var(--color-light); */
 	border-radius: 40px;
 	padding: 2.4rem;
 `;
@@ -76,7 +73,7 @@ export default function Cover() {
 			<DesktopSpacer height={'xlarge'} />
 			<MobileSpacer height={'large'} />
 			<Logo />
-			<MobileSpacer height={'medium'} />
+			<MobileSpacer height={'small'} />
 			<ArtContainer>
 				<SpinningText />
 				<ProfileBackground>
@@ -116,6 +113,7 @@ export default function Cover() {
 					</ProfileSVG>
 				</ProfileBackground>
 			</ArtContainer>
+			<Spacer height={'xlarge'} />
 		</Container>
 		// </Background>
 	);

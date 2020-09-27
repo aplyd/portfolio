@@ -53,14 +53,14 @@ const A = styled.a`
 const UL = styled.ul`
 	${MobileTextPadding}
 	color: var(--color-dark);
-	margin-left: 3.6rem;
+	margin-left: 5rem;
 	padding-bottom: 2.4rem;
 `;
 
 const OL = styled.ol`
-	/* ${MobileTextPadding} */
+	${MobileTextPadding}
 	color: var(--color-dark);
-	margin-left: 3.6rem;
+	margin-left: 5rem;
 	padding-bottom: 2.4rem;
 `;
 

@@ -47,6 +47,7 @@
     [] remove unused vars
     [] refactor DRY
 
+
 [[[[[[[[ LATER ]]]]]]]]
 (()) move blog post title above image while keeping description under (on blog index page)
 (()) design info page

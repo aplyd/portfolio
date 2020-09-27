@@ -19,9 +19,10 @@ const SpinningTextContainer = styled.div`
 	bottom: -38%;
 	right: -33%;
 	@media screen and (max-width: 850px) {
-		/* bottom: -50%;
+		/* bottom: -40%;
 		left: 50%;
 		transform: translate(-50%, 0); */
+		display: none;
 	}
 `;
 

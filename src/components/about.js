@@ -2,18 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer, BtnLarge } from './globalStyle';
 import { Link } from 'gatsby';
-import {
-	useViewportScroll,
-	useTransform,
-	motion,
-	useAnimation
-} from 'framer-motion';
-import VisibilitySensor from 'react-visibility-sensor';
+import { motion, useAnimation } from 'framer-motion';
+import AnimateVisWrapper from './animateVisWrapper';
 
 const Container = styled.div`
 	position: relative;
 	width: 100%;
-	/* top: -350px; */
 `;
 
 const Background = styled.div`
@@ -64,15 +58,7 @@ const SlantedSVG = styled.svg`
 `;
 
 const About = () => {
-	const { scrollY } = useViewportScroll();
 	const controls = useAnimation();
-	const scrollRange = [0, 1100];
-	const scrollTransformRange = [350, 0];
-	const scrollTransform = useTransform(
-		scrollY,
-		scrollRange,
-		scrollTransformRange
-	);
 
 	const handleScroll = isVisible => {
 		if (isVisible) {
@@ -89,96 +75,98 @@ const About = () => {
 
 	return (
 		<Container>
-			<motion.div style={{ y: scrollTransform }}>
-				{/* <Spacer height={'large'} />
-				<Spacer height={'large'} />
-				<Spacer height={'large'} /> */}
-				<SlantedSVG
-					xmlns='http://www.w3.org/2000/svg'
-					viewBox='0 0 1440 320'
-				>
-					<path
-						// fill='#00000'
-						fillOpacity='1'
-						d='M0,288L1440,160L1440,320L0,320Z'
-					></path>
-				</SlantedSVG>
-				<Background>
-					<Spacer height={'xlarge'} />
+			<SlantedSVG
+				xmlns='http://www.w3.org/2000/svg'
+				viewBox='0 0 1440 320'
+			>
+				<path
+					// fill='#00000'
+					fillOpacity='1'
+					d='M0,288L1440,160L1440,320L0,320Z'
+				></path>
+			</SlantedSVG>
+			<Background>
+				<Spacer height={'xlarge'} />
 
-					<ContentContainer
-					// style={{ opacity: opacityVal, y: yTransformVal }}
+				<ContentContainer>
+					<AnimateVisWrapper
+						initial={{ opacity: 0, y: 100 }}
+						animation={{
+							opacity: 1,
+							y: 0,
+							transition: {
+								duration: 0.4
+							}
+						}}
+						partial={true}
 					>
-						<VisibilitySensor
-							// scrollDelay={0}
-							onChange={handleScroll}
-						>
-							<>
-								<BoldTitle
-									// style={{ y: y1, opacity: opac1 }}
-									// style={{ opacity: opacTransform }}
-									initial={{ opacity: 0, y: 100 }}
-									custom={0}
-									animate={controls}
-								>
-									Austin Ftacnik
-								</BoldTitle>
-								<SubTitle
-									// style={{ y: y2, opacity: opac2 }}
-									initial={{ opacity: 0, y: 100 }}
-									custom={1}
-									animate={controls}
-								>
-									Front-End Developer
-								</SubTitle>
-								<Spacer height={'medium'} />
-								<P
-									// style={{ y: y3, opacity: opac3 }}
-									initial={{ opacity: 0, y: 100 }}
-									custom={2}
-									animate={controls}
-								>
-									I began playing guitar a piano in my early
-									teens and shortly after picked photography
-									and filmmaking. I guess you could say
-									I&apos;ve always picked up hobbies that
-									allowed me to express myself. Although
-									I&apos;ve only recently started coding,
-									it&apos;s quickly become my favorite medium.
-									There&apos;s nothing quite like being able
-									to bring ideas to life through design and
-									code.
-								</P>
-								<Spacer height={'large'} />
-								<Link to='/#contact'>
-									<BtnLarge
-										initial={{ opacity: 0, y: 100 }}
-										custom={3}
-										animate={controls}
-										backgroundColor={'var(--accent-light)'}
-										color={'var(--color-dark)'}
-										borderColor={'var(--accent-light)'}
-									>
-										Get in touch
-									</BtnLarge>
-								</Link>
-								{/* <Spacer height={'xlarge'} /> */}
-								<Spacer height={'xlarge'} />
-							</>
-						</VisibilitySensor>
-					</ContentContainer>
-				</Background>
-				{/* <UpsideDownSlantedSVG
-					xmlns='http://www.w3.org/2000/svg'
-					viewBox='0 0 1440 320'
-				>
-					<path
-						fill='#00000'
-						fillOpacity='1'
-						d='M0,288L1440,160L1440,320L0,320Z'
-					></path>
-				</UpsideDownSlantedSVG> */}
-			</motion.div>
+						<BoldTitle>Austin Ftacnik</BoldTitle>
+					</AnimateVisWrapper>
+					<AnimateVisWrapper
+						initial={{ opacity: 0, y: 100 }}
+						animation={{
+							opacity: 1,
+							y: 0,
+							transition: {
+								delay: 0.1,
+								duration: 0.4
+							}
+						}}
+						partial={true}
+					>
+						<SubTitle>Front-End Developer</SubTitle>
+					</AnimateVisWrapper>
+
+					<Spacer height={'medium'} />
+					<AnimateVisWrapper
+						initial={{ opacity: 0, y: 100 }}
+						animation={{
+							opacity: 1,
+							y: 0,
+							transition: {
+								delay: 0.2,
+								duration: 0.4
+							}
+						}}
+						partial={true}
+					>
+						<P>
+							Hi, my name is Austin Ftacnik. In my past life as a
+							wedding photographer, I learned I enjoyed working on
+							my business website, so I decided to make the switch
+							to web development. I specialize in working on the
+							client side of applications, most often with React.
+							When I'm not coding you can find me reading a good
+							book, playing music or lifting weights. During my
+							wedding photography career,
+						</P>
+					</AnimateVisWrapper>
+					<Spacer height={'large'} />
+					<AnimateVisWrapper
+						initial={{ opacity: 0, y: 100 }}
+						animation={{
+							opacity: 1,
+							y: 0,
+							transition: {
+								delay: 0.3,
+								duration: 0.4
+							}
+						}}
+						partial={true}
+					>
+						<Link to='/#contact'>
+							<BtnLarge
+								backgroundColor={'var(--accent-light)'}
+								color={'var(--color-dark)'}
+								borderColor={'var(--accent-light)'}
+							>
+								Get in touch
+							</BtnLarge>
+						</Link>
+					</AnimateVisWrapper>
+					<Spacer height={'xlarge'} />
+				</ContentContainer>
+			</Background>
 		</Container>
 	);
 };

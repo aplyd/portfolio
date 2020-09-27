@@ -25,8 +25,15 @@ const Container = styled.div`
 			: null};
 	background-attachment: ${props => (props.homepage ? `fixed` : null)};
 	background-size: ${props => (props.homepage ? `cover` : null)};
+	/* background-color: #c6c8c9; */
 	width: 100%;
 	height: 100%;
+	@media screen and (max-width: 600px) {
+		background-image: ${props =>
+			props.homepage
+				? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 775 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23395b5c'/%3E%3Cstop offset='1' stop-color='%23395b5c' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='775' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%237b9e8d'/%3E%3Cstop offset='1' stop-color='%237b9e8d' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23879270'/%3E%3Cstop offset='1' stop-color='%23879270' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234c606b'/%3E%3Cstop offset='1' stop-color='%234c606b' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23365445'/%3E%3Cstop offset='1' stop-color='%23365445' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='775' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ebd1a9'/%3E%3Cstop offset='1' stop-color='%23ebd1a9' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='775' height='800'/%3E%3Crect fill='url(%23b)' width='775' height='800'/%3E%3Crect fill='url(%23c)' width='775' height='800'/%3E%3Crect fill='url(%23d)' width='775' height='800'/%3E%3Crect fill='url(%23e)' width='775' height='800'/%3E%3Crect fill='url(%23f)' width='775' height='800'/%3E%3C/svg%3E")`
+				: null};
+	}
 `;
 
 const MobileMenu = styled(motion.div)`
