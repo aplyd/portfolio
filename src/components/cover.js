@@ -113,7 +113,8 @@ export default function Cover() {
 					</ProfileSVG>
 				</ProfileBackground>
 			</ArtContainer>
-			<Spacer height={'xlarge'} />
+			<DesktopSpacer height={'xlarge'} />
+			<MobileSpacer height={'large'} />
 		</Container>
 		// </Background>
 	);
