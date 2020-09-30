@@ -6,6 +6,7 @@ import { useScrollToHideNav } from '../hooks/useScrollToHideNav';
 import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
 import { GiStripedSun } from 'react-icons/gi';
 import useWindowWidth from '../hooks/useWindowWidth';
+import { CgMenu } from 'react-icons/cg';
 
 const Container = styled.div`
 	width: 100%;
@@ -68,16 +69,17 @@ const ToggleContainer = styled.div`
 `;
 
 const MobileNavBtnContainer = styled(ToggleContainer)`
-	top: 13px;
-	left: 15px;
-	&& > h3 {
-		color: var(--accent-light);
-		z-index: 10003;
-		margin-bottom: -4px;
-		font-size: 2.2rem;
-		padding: 0;
-		cursor: pointer;
-	}
+	top: 7px;
+	left: 13px;
+`;
+
+const MobileMenuBtn = styled.svg`
+	color: var(--accent-light);
+	z-index: 10003;
+	height: 3.6rem;
+	width: 3.6rem;
+	padding: 0;
+	cursor: pointer;
 `;
 
 export default function Nav({ toggleMobileMenu, homepage }) {
@@ -143,8 +145,7 @@ export default function Nav({ toggleMobileMenu, homepage }) {
 	const mobileNav = () => {
 		return (
 			<MobileNavBtnContainer onClick={() => toggleMobileMenu(true)}>
-				<h3>ME</h3>
-				<h3>NU</h3>
+				<MobileMenuBtn as={CgMenu} />
 			</MobileNavBtnContainer>
 		);
 	};

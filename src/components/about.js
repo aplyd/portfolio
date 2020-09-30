@@ -131,14 +131,13 @@ const About = () => {
 						partial={true}
 					>
 						<P>
-							Hi, my name is Austin Ftacnik. In my past life as a
-							wedding photographer, I learned I enjoyed working on
-							my business website, so I decided to make the switch
-							to web development. I specialize in working on the
-							client side of applications, most often with React.
-							When I'm not coding you can find me reading a good
-							book, playing music or lifting weights. During my
-							wedding photography career,
+							Hi, I&apos;m Austin Ftacnik. I&apos;m a self-taught,
+							web developer. I specialize in working on the client
+							side of applications, most often with React. When
+							I&apos;m not coding you can find me reading a good
+							book, playing an instrument or hanging out in the
+							gym. Thanks for stopping by, feel free to shoot me a
+							message.
 						</P>
 					</AnimateVisWrapper>
 					<Spacer height={'large'} />
