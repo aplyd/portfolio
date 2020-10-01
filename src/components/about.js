@@ -153,7 +153,7 @@ const About = () => {
 						}}
 						partial={true}
 					>
-						<Link to='/#contact'>
+						<Link to='/#contact' aria-label='go to contact form'>
 							<BtnLarge
 								backgroundColor={'var(--accent-light)'}
 								color={'var(--color-dark)'}

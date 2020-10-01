@@ -138,6 +138,7 @@ export default function Contact() {
 							color={'var(--color-dark)'}
 							borderColor={'var(--accent-light)'}
 							type='submit'
+							aria-label='send contact message'
 						>
 							Send
 						</SendBtn>

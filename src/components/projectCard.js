@@ -136,6 +136,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 							backgroundColor={'rgba(255, 255, 255, 0)'}
 							color={'var(--accent-light)'}
 							borderColor={'var(--accent-light)'}
+							aria-label='link to project repository'
 						>
 							Repo
 						</BtnSmall>
@@ -145,6 +146,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 							backgroundColor={'var(--accent-light)'}
 							color={'var(--color-light)'}
 							borderColor={'var(--accent-light)'}
+							aria-label='link to project demo'
 						>
 							Demo
 						</BtnSmall>

@@ -88,9 +88,8 @@ const template = ({ data, pageContext }) => {
 	return (
 		<Layout>
 			<Container>
-				<Spacer height={'xlarge'} />
-				<Title>Recent Posts</Title>
 				<Spacer height={'large'} />
+				<Title>Recent Posts</Title>
 				<Spacer height={'large'} />
 				{/* <Line /> */}
 				{data.allMdx.edges.map((post, index) => {
