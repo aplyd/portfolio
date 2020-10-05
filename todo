@@ -39,8 +39,8 @@
 (((((((((( LAST MINUTE TOUCHES ))))))))))
 (̶(̶)̶)̶ ̶l̶i̶g̶h̶t̶h̶o̶u̶s̶e̶
 (()) design grid (elements should be evenly spread apart)
-(()) favicon
-(()) site title on SEO facing info
+(̶(̶)̶)̶ ̶f̶a̶v̶i̶c̶o̶n̶
+(̶(̶)̶)̶ ̶s̶i̶t̶e̶ ̶t̶i̶t̶l̶e̶ ̶o̶n̶ ̶S̶E̶O̶ ̶f̶a̶c̶i̶n̶g̶ ̶i̶n̶f̶o̶
 (()) clean up code before build
     [] remove log statements
     [] remove unused vars

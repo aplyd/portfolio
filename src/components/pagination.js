@@ -19,6 +19,7 @@ const Container = styled.div`
 		display: inline-block;
 		padding-top: 1.2rem;
 		grid-column: 2;
+		white-space: nowrap;
 	}
 `;
 

@@ -9,16 +9,13 @@ import Pagination from '../components/pagination';
 import Contact from '../components/contact';
 import Footer from '../components/footer';
 import AnimateVisWrapper from '../components/animateVisWrapper';
+import SEO from '../components/seo';
 
 const Container = styled.div`
 	max-width: 80rem;
 	min-height: calc(100vh - 5.6rem);
 	margin: 0 auto;
 	position: relative;
-	@media screen and (max-width: 800px) {
-		margin-left: 1.6rem;
-		margin-right: 1.6rem;
-	}
 `;
 
 const Title = styled.h2`
@@ -28,7 +25,7 @@ const Title = styled.h2`
 
 const Line = styled.div`
 	height: 2px;
-	border-radius: 50px;
+	border-radius: 40px;
 	width: 100%;
 	background-color: var(--accent-light);
 `;
@@ -38,7 +35,7 @@ const PostPreviewContainer = styled.div`
 	color: var(--color-dark);
 	min-height: 18rem;
 	display: grid;
-	grid-template-columns: 1fr 33%;
+	grid-template-columns: 1fr 40%;
 	grid-gap: 4rem;
 	/* &&:hover {
 		transform: scale(1.05);
@@ -47,30 +44,45 @@ const PostPreviewContainer = styled.div`
 	backdrop-filter: blur(5px);
 	border-radius: 40px;
 	padding: 24px; */
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 816px) {
 		grid-template-columns: 1fr;
 	}
 `;
 
 const WordsContainer = styled.div`
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 816px) {
 		grid-row: 2;
 	}
 	position: relative;
 
 	&& > h3 {
 		padding-right: 1.2rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		@media screen and (max-width: 816px) {
+			padding-left: 1.6rem;
+			padding-right: 1.6rem;
+		}
 	}
 `;
 
 const Excerpt = styled.p`
 	color: var(--color-dark);
 	padding-top: 0.6rem;
+	@media screen and (max-width: 816px) {
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+	}
 `;
 
 const Meta = styled.p`
-	color: #8a8a8a;
+	color: #363636;
+	font-weight: 300;
 	padding-top: 0.6rem;
+	@media screen and (max-width: 816px) {
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+	}
 `;
 
 const ImageContainer = styled.div`
@@ -81,15 +93,19 @@ const ImageContainer = styled.div`
 
 const PreviewImage = styled(Img)`
 	margin-top: 4px;
-	border-radius: 12px;
+	border-radius: 40px;
+	@media screen and (max-width: 800px) {
+		border-radius: 0;
+	}
 `;
 
 const template = ({ data, pageContext }) => {
 	return (
 		<Layout>
+			<SEO title='Blog' />
 			<Container>
 				<Spacer height={'large'} />
-				<Title>Recent Posts</Title>
+				{/* <Title>Recent Posts</Title> */}
 				<Spacer height={'large'} />
 				{/* <Line /> */}
 				{data.allMdx.edges.map((post, index) => {

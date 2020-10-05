@@ -190,7 +190,7 @@ export const GlobalStyle = createGlobalStyle`
         min-width: 48px;
         padding: 4px 24px;
         cursor: pointer;
-        border-radius: 8px;
+        border-radius: 40px;
         font-size: 1.8rem;
     }
 
