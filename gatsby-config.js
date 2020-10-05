@@ -72,6 +72,13 @@ module.exports = {
 					}
 				]
 			}
+		},
+		{
+			resolve: `gatsby-plugin-google-fonts`,
+			options: {
+				fonts: [`roboto:100,300,400,500,700,900,400i,700i`],
+				display: 'block'
+			}
 		}
 
 		// this (optional) plugin enables Progressive Web App + Offline functionality
