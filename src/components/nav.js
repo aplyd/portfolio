@@ -41,14 +41,10 @@ const NavItem = styled.div`
 		font-size: 2rem;
 		text-transform: uppercase;
 		color: var(--accent-light);
-		transform: translateY(0);
-		transition: transform 1s ease-in-out;
 		cursor: pointer;
 	}
 	&&:hover {
 		&& > h3 {
-			transform: translateY(4px);
-			transition: transform 0.3s ease-in-out;
 			color: var(--color-dark);
 		}
 	}
@@ -152,12 +148,12 @@ export default function Nav({ toggleMobileMenu, homepage }) {
 
 	return (
 		<Container visible={visible} homepage={homepage}>
-			{windowWidth > 620 ? (
+			{windowWidth < 620 ? (
+				mobileNav()
+			) : (
 				<NavItemsContainer windowWidth={windowWidth}>
 					{desktopNav()}
 				</NavItemsContainer>
-			) : (
-				mobileNav()
 			)}
 			{/* this is the dark/light mode toggle
 			

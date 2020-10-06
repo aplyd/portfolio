@@ -138,7 +138,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 							borderColor={'var(--accent-light)'}
 							aria-label='link to project repository'
 						>
-							Repo
+							Code
 						</BtnSmall>
 					</a>
 					<a href={demo} target='_blank' rel='noopener noreferrer'>
