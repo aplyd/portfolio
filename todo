@@ -38,16 +38,16 @@
 
 (((((((((( LAST MINUTE TOUCHES ))))))))))
 (̶(̶)̶)̶ ̶l̶i̶g̶h̶t̶h̶o̶u̶s̶e̶
-(()) design grid (elements should be evenly spread apart)
 (̶(̶)̶)̶ ̶f̶a̶v̶i̶c̶o̶n̶
 (̶(̶)̶)̶ ̶s̶i̶t̶e̶ ̶t̶i̶t̶l̶e̶ ̶o̶n̶ ̶S̶E̶O̶ ̶f̶a̶c̶i̶n̶g̶ ̶i̶n̶f̶o̶
-(()) clean up code before build
-    [] remove log statements
-    [] remove unused vars
-    [] refactor DRY
+(̶(̶)̶)̶ ̶c̶l̶e̶a̶n̶ ̶u̶p̶ ̶c̶o̶d̶e̶ ̶b̶e̶f̶o̶r̶e̶ ̶b̶u̶i̶l̶d̶
+    [̶]̶ ̶r̶e̶m̶o̶v̶e̶ ̶l̶o̶g̶ ̶s̶t̶a̶t̶e̶m̶e̶n̶t̶s̶
+    [̶]̶ ̶r̶e̶m̶o̶v̶e̶ ̶u̶n̶u̶s̶e̶d̶ ̶v̶a̶r̶s̶
+    [̶]̶ ̶r̶e̶f̶a̶c̶t̶o̶r̶ ̶D̶R̶Y̶
 
 
 [[[[[[[[ LATER ]]]]]]]]
+(()) design grid (elements should be evenly spread apart)
 (()) double check mobile spacings and responsiveness
 (()) move blog post title above image while keeping description under (on blog index page)
 (()) design info page

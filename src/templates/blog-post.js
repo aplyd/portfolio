@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -35,7 +35,7 @@ const IMG = styled(Img)`
 	}
 `;
 
-export default function template({ data: { mdx }, pageContext }) {
+export default function template({ data: { mdx } }) {
 	const featuredImage = mdx.frontmatter.featuredImage.childImageSharp.fluid;
 
 	return (

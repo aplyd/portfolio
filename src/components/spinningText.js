@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useScrollPos } from '../hooks/useScrollPos';
 import {
-	motion,
-	useViewportScroll,
-	useTransform,
-	useMotionValue
+	motion
+	// useViewportScroll,
+	// useTransform,
+	// useMotionValue
 } from 'framer-motion';
-import useWindowWidth from '../hooks/useWindowWidth';
+// import useWindowWidth from '../hooks/useWindowWidth';
 
 const SpinningTextContainer = styled.div`
 	width: 100%;
@@ -45,7 +45,7 @@ const Text = styled.text`
 
 export default function SpinningText() {
 	let scrollPos = useScrollPos();
-	const [scrollAnimation, setScrollAnimation] = useState(0);
+	// const [scrollAnimation, setScrollAnimation] = useState(0);s
 
 	// complicated way of scaling via window width
 	// const [windowWidth] = useWindowWidth();

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { useScrollToHideNav } from '../hooks/useScrollToHideNav';
-import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
-import { GiStripedSun } from 'react-icons/gi';
+// import { WiMoonAltWaxingCrescent4 } from 'react-icons/wi';
+// import { GiStripedSun } from 'react-icons/gi';
 import useWindowWidth from '../hooks/useWindowWidth';
 import { CgMenu } from 'react-icons/cg';
 
@@ -54,11 +54,11 @@ const NavItem = styled.div`
 	}
 `;
 
-const ToggleModeBtn = styled.svg`
-	color: var(--main-fg-color);
-	font-size: 4.2rem;
-	cursor: pointer;
-`;
+// const ToggleModeBtn = styled.svg`
+// 	color: var(--main-fg-color);
+// 	font-size: 4.2rem;
+// 	cursor: pointer;
+// `;
 
 const ToggleContainer = styled.div`
 	height: 48px;

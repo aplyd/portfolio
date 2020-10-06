@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer, BtnLarge } from './globalStyle';
 import { Link } from 'gatsby';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import AnimateVisWrapper from './animateVisWrapper';
 
 const Container = styled.div`
@@ -58,20 +58,20 @@ const SlantedSVG = styled.svg`
 `;
 
 const About = () => {
-	const controls = useAnimation();
+	// const controls = useAnimation();
 
-	const handleScroll = isVisible => {
-		if (isVisible) {
-			controls.start(i => ({
-				opacity: 1,
-				y: 0,
-				transition: {
-					delay: i * 0.1,
-					duration: 0.4
-				}
-			}));
-		}
-	};
+	// const handleScroll = isVisible => {
+	// 	if (isVisible) {
+	// 		controls.start(i => ({
+	// 			opacity: 1,
+	// 			y: 0,
+	// 			transition: {
+	// 				delay: i * 0.1,
+	// 				duration: 0.4
+	// 			}
+	// 		}));
+	// 	}
+	// };
 
 	return (
 		<Container>

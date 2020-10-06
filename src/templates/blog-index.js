@@ -18,17 +18,17 @@ const Container = styled.div`
 	position: relative;
 `;
 
-const Title = styled.h2`
-	color: var(--color-dark);
-	text-transform: uppercase;
-`;
+// const Title = styled.h2`
+// 	color: var(--color-dark);
+// 	text-transform: uppercase;
+// `;
 
-const Line = styled.div`
-	height: 2px;
-	border-radius: 40px;
-	width: 100%;
-	background-color: var(--accent-light);
-`;
+// const Line = styled.div`
+// 	height: 2px;
+// 	border-radius: 40px;
+// 	width: 100%;
+// 	background-color: var(--accent-light);
+// `;
 
 const PostPreviewContainer = styled.div`
 	/* padding: 24px 0; */
@@ -108,7 +108,7 @@ const template = ({ data, pageContext }) => {
 				{/* <Title>Recent Posts</Title> */}
 				<Spacer height={'large'} />
 				{/* <Line /> */}
-				{data.allMdx.edges.map((post, index) => {
+				{data.allMdx.edges.map(post => {
 					const featuredImage =
 						post.node.frontmatter.featuredImage.childImageSharp
 							.fluid;
