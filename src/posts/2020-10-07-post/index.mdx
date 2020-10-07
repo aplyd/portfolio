@@ -1,0 +1,94 @@
+---
+path: '/typescript-basics'
+date: '2020-10-07'
+title: 'Typescript, The Basics'
+author: 'Austin Ftacnik'
+featuredImage: raphael-schaller-GkinCd2enIY-unsplash.jpg
+---
+
+With its gaining popularity and overly passionate fans, I'd wager it would be more difficult to have *not* heard about TypeScript than to have. Up until this point, I've done everything in my power to avoid learning it (ew Microsoft, amirite) but since I like a challenge, I've decided to use it on my next project. Part of me wanted to know what all of the hype is about and the other part of me figured learning a type safe language would only benefit my as a developer.
+
+For the unfamiliar, TypeScript is a superset of JavaScript and<a href='https://www.typescriptlang.org/'>" extends JavaScript by adding types"</a>.
+
+Even though everything in JavaScript is basically an object, JavaScript still uses types under the hood but doesn't support type safety.
+
+Here are the types that JavaScript supports:
+<ul>
+    <li>number</li>
+    <li>big integer</li>
+    <li>string</li>
+    <li>boolean</li>
+    <li>object</li>
+    <li>function</li>
+    <li>null</li>
+    <li>undefined</li>
+</ul>
+
+What does this mean? Well, let's say you have a function that takes two parameters.
+
+```JavaScript
+const add = (a, b) => {
+    return a + b
+}
+```
+
+Without type safety, JavaScript doesn't care what **types** those values are. You could pass the function `Dog` and `Cat` as strings and it would still attempt to add them together (which would actually work as you'd be concatenating them but it's likely that wasn't your intended result - otherwise you probably would've named the function "concatenate" or something).
+
+*que typescript*
+
+With TS (short for TypeScript), we can guarantee that *only* the correct types will be passed to the function. This "type safety" results in less bugs later down the road and (sometimes) a more pleasant development experience.
+
+```TypeScript
+const add = (a: number, b: number) => {
+    return a + b
+}
+```
+
+There are a few different ways to define types but we'll start with the easiest which is inferred types. They're the easiest because you literally don't have to do anything (yay).
+
+### inferred types
+
+```JavaScript
+const name = 'Austin'
+```
+
+TS is smart enough to know that the above is a string. 
+
+### defined types
+
+```JavaScript
+// string
+const name: string = 'Austin'
+
+// number
+const age: number = 27
+
+// array
+const hobbies: string[] = ['coding', 'reading', 'weight lifting']
+
+```
+
+Pretty straight forward, we're defining the data type when defining the variable.
+
+### type interfaces
+
+```TypeScript
+interface MyObj {
+    name: string,
+    age: number
+}
+
+const myObj: MyObj = {
+    name: 'Austin',
+    age: 27
+}
+```
+
+Fun fact numero dos: when I first started learning JavaScript, I thought "types" and "typing" were somehow related. Types weren't a *super* important aspect of JavaScript so it took me a while to realize "types" referred to "data types" 🤦‍♂️
+
+PS - Microsoft, if you're reading this, I was kidding about what I said. Please hire me. 
+
+### useful links
+<a href='https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html'>TS in 5 minutes from the docs</a>
+<a href='https://www.youtube.com/watch?v=se72XMlG1Ro'>Ben Awad video explaining TS basics</a>
+

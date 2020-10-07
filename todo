@@ -36,6 +36,8 @@
 (̶(̶)̶)̶ ̶a̶c̶c̶e̶s̶s̶i̶b̶i̶l̶i̶t̶y̶ ???
 (()) hamburger menu on initial load ?? 
 (̶(̶)̶)̶ ̶r̶e̶m̶o̶v̶e̶ ̶n̶a̶v̶l̶i̶n̶k̶ ̶a̶n̶i̶m̶a̶t̶i̶o̶n̶s̶
+(()) fix inline code blocks in mdx
+(()) add credit to photo components (maybe make a new component so it can be used in mdx)
 (()) social media icons need padding on large+ screens ?? 
 (()) menu maybe needs background or remains at top of screens ?? 
 (()) replace words "repo" with "code"
