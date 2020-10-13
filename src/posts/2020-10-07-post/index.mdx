@@ -6,22 +6,32 @@ author: 'Austin Ftacnik'
 featuredImage: raphael-schaller-GkinCd2enIY-unsplash.jpg
 ---
 
-With its gaining popularity and overly passionate fans, I'd wager it would be more difficult to have *not* heard about TypeScript than to have. Up until this point, I've done everything in my power to avoid learning it (ew Microsoft, amirite) but since I like a challenge, I've decided to use it on my next project. Part of me wanted to know what all of the hype is about and the other part of me figured learning a type safe language would only benefit my as a developer.
+With its gaining popularity and overly passionate fans, I'd wager it would be more difficult to have *not* heard about TypeScript than to have. Up until this point, I've done everything in my power to avoid learning it (ew, Microsoft?) but since I like a challenge, I've decided to use it on my next project. Part of me wanted to know what all of the hype is about and the other part of me figured learning a type safe language would only benefit my as a developer.
 
 For the unfamiliar, TypeScript is a superset of JavaScript and<a href='https://www.typescriptlang.org/'>" extends JavaScript by adding types"</a>.
 
 Even though everything in JavaScript is basically an object, JavaScript still uses types under the hood but doesn't support type safety.
 
-Here are the types that JavaScript supports:
+Here are the data types that JavaScript supports:
 <ul>
-    <li>number</li>
-    <li>big integer</li>
-    <li>string</li>
     <li>boolean</li>
-    <li>object</li>
-    <li>function</li>
+    <li>big integer</li>
     <li>null</li>
+    <li>number</li>
+    <li>string</li>
+    <li>symbol</li>
+    <li>object</li>
     <li>undefined</li>
+    <li>function?</li>
+</ul>
+
+And here are the ones that TS brings to the table:
+
+<ul>
+    <li>any (basically tells TS to ignore this variable and let me do what I want with it)</li>
+    <li>unknown</li>
+    <li>never</li>
+    <li>void (function that returns undefined)</li>
 </ul>
 
 What does this mean? Well, let's say you have a function that takes two parameters.
@@ -84,9 +94,95 @@ const myObj: MyObj = {
 }
 ```
 
+This almost feels like defining schema in Mongoose to me?
+
 Fun fact numero dos: when I first started learning JavaScript, I thought "types" and "typing" were somehow related. Types weren't a *super* important aspect of JavaScript so it took me a while to realize "types" referred to "data types" 🤦‍♂️
 
-PS - Microsoft, if you're reading this, I was kidding about what I said. Please hire me. 
+### composing types
+
+Unions:
+
+```TypeScript
+type myBool = true | false
+```
+Unions are a way of saying "this should be one of these types". I immediately thought of enums when learning about unions but apparently they're not the same as they can't be enumerated. Since `myBool` can only be `true` or `false`, it's type is set to boolean.
+
+Here's another example:
+
+```TypeScript
+type myFriend = 'Devin' | 'Luke' | `Rillo`
+```
+And once again, TS checks the types and sets `myFriend` to string.
+
+It's also possible to use multiple types, hence the name "unions". 
+
+```TypeScript
+type myPhoneNumber = 1234567 | '123-4567'
+```
+
+Generics:
+
+From the TS documentation "generics provide variables to types"
+
+```TypeScript
+type MyNames = Array<string>
+const myNames: MyNames = ['Austin', 'Ftacnik']
+
+//or 
+
+const yourNames: Array<string> = ['your', 'names']
+```
+As seen above, with generics we were able to define what the array will contain.
+
+Structural Type System aka Duck Typing:
+
+Allows you use to define the shape of values. If two objects share the same shape, they are considered to be of the same type.
+
+```TypeScript
+interface Nums {
+    a: number,
+    b: number,
+}
+
+const multiply = (obj: Nums) => {
+    return obj.a + obj.b
+}
+
+const nums = { a: 2, b: 4}
+const result: number = multiply(nums); // 8
+```
+Notice how we didn't use the `Nums` interface to declare the `nums` type but it still worked correctly because they are of the same shape.
+
+#### Tuple: 
+
+(fixed length array)
+
+```TypeScript
+let x: [string, number];
+x = ['Hello', 8]
+```
+
+#### Enums:
+
+
+
+```TypeScript
+enum Colors {
+    Red,
+    Blue,
+    Green
+}
+
+const myFavoriteColor = Colors.Green;
+
+//or 
+
+const myLeastFavoriteColor = Colors[0]
+```
+
+
+
+PS - Microsoft, if you're reading this, I was kidding about what I said and I actually like using your products, especially Paint. Please hire me. 
 
 ### useful links
 <a href='https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html'>TS in 5 minutes from the docs</a>
