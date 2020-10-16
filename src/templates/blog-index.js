@@ -104,10 +104,8 @@ const template = ({ data, pageContext }) => {
 		<Layout>
 			<SEO title='Blog' />
 			<Container>
-				<Spacer height={'large'} />
-				{/* <Title>Recent Posts</Title> */}
-				<Spacer height={'large'} />
-				{/* <Line /> */}
+				{/* <Spacer height={'large'} />
+				<Spacer height={'large'} /> */}
 				{data.allMdx.edges.map(post => {
 					const featuredImage =
 						post.node.frontmatter.featuredImage.childImageSharp
