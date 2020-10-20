@@ -93,7 +93,7 @@ const ImageContainer = styled.div`
 
 const PreviewImage = styled(Img)`
 	margin-top: 4px;
-	border-radius: 40px;
+	border-radius: var(--rounded);
 	@media screen and (max-width: 800px) {
 		border-radius: 0;
 	}
@@ -104,8 +104,8 @@ const template = ({ data, pageContext }) => {
 		<Layout>
 			<SEO title='Blog' />
 			<Container>
-				{/* <Spacer height={'large'} />
-				<Spacer height={'large'} /> */}
+				<Spacer height={'large'} />
+				<Spacer height={'large'} />
 				{data.allMdx.edges.map(post => {
 					const featuredImage =
 						post.node.frontmatter.featuredImage.childImageSharp

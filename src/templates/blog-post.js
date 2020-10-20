@@ -28,7 +28,7 @@ const Title = styled.h2`
 
 const IMG = styled(Img)`
 	max-width: 80rem;
-	border-radius: 40px;
+	border-radius: var(--rounded);
 	margin: 0 auto;
 	@media screen and (max-width: 800px) {
 		border-radius: 0;

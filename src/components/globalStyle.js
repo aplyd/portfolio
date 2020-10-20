@@ -44,7 +44,7 @@ export const MobileTextPadding = css`
 const Btn = styled(motion.button)`
 	text-transform: uppercase;
 	cursor: pointer;
-	border-radius: 4rem;
+	border-radius: var(--circular);
 `;
 
 export const BtnLarge = styled(Btn)`
@@ -79,15 +79,15 @@ export const GlobalStyle = createGlobalStyle`
         --color-medium: #bcbcbc;
         ${'' /* white */}
         --accent-light: white;
-
         --spacing-xsmall: 4px;
         --spacing-small: 8px;
         --spacing-medium: 32px;
         --spacing-large: 64px;
         --spacing-xlarge: 128px;
         --section-height: 664px;
-
-        --grvsc-border-radius: 40px;
+        --rounded: 1.2rem;
+        --circular: 4rem;
+        --grvsc-border-radius: var(--rounded);
         @media screen and (max-width: 800px) {
         --grvsc-border-radius: 0;
         }
@@ -190,12 +190,21 @@ export const GlobalStyle = createGlobalStyle`
         min-width: 48px;
         padding: 4px 24px;
         cursor: pointer;
-        border-radius: 40px;
+        border-radius: var(--circular);
         font-size: 1.8rem;
     }
 
     pre {
         margin-bottom: 0;
+    }
+
+    code {
+        font-size: 1.4rem;
+        border-radius: 0.8rem;
+        background-color: #000;
+        color: var(--accent-light);
+        padding: 0.6rem 1rem 0.6rem 1.6rem;
+        margin-right: 0.4rem;
     }
 
 
@@ -211,8 +220,10 @@ export const GlobalStyle = createGlobalStyle`
 
 
     .gatsby-resp-image-wrapper,  .gatsby-resp-image-bacgkround-image, .gatsby-resp-image-image {
-        border-radius: 40px;
+        border-radius: var(--rounded);
+        background-color: transparent;
     }
+
 
     @media screen and (max-width: 480px) {
         h1 {

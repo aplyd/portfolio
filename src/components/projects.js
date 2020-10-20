@@ -24,7 +24,7 @@ const Container = styled.div`
 const FrostedBackground = styled.div`
 	background-color: rgba(255, 255, 255, 0.15);
 	backdrop-filter: blur(5px);
-	border-radius: 40px;
+	border-radius: var(--circular);
 	padding: 24px;
 	overflow: hidden;
 	@media screen and (max-width: 485px) {

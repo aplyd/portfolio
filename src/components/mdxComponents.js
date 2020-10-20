@@ -71,7 +71,7 @@ const LI = styled.li`
 
 const IMG = styled.img`
 	overflow: hidden;
-	border-radius: 40px;
+	border-radius: var(--rounded);
 	@media screen and (max-width: 816px) {
 		margin-left: 16px;
 		margin-right: 16px;

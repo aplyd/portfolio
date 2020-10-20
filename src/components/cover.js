@@ -35,7 +35,7 @@ const ArtContainer = styled.div`
 `;
 
 const ProfileSVG = styled.svg`
-	border-radius: 100px;
+	border-radius: var(--rounded);
 	height: 100%;
 	width: 100%;
 	display: block;
@@ -47,7 +47,7 @@ const ProfileSVG = styled.svg`
 `;
 
 const ProfileBackground = styled.div`
-	border-radius: 40px;
+	border-radius: var(--rounded);
 	padding: 2.4rem;
 `;
 
