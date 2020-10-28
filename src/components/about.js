@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer, BtnLarge } from './globalStyle';
 import { Link } from 'gatsby';
-import { motion } from 'framer-motion';
-import AnimateVisWrapper from './animateVisWrapper';
 
 const Container = styled.div`
 	position: relative;
@@ -17,7 +15,7 @@ const Background = styled.div`
 	position: relative;
 `;
 
-const ContentContainer = styled(motion.div)`
+const ContentContainer = styled.div`
 	width: 100%;
 	max-width: 80rem;
 	margin: 0 auto;
@@ -27,12 +25,12 @@ const ContentContainer = styled(motion.div)`
 	}
 `;
 
-const P = styled(motion.p)`
+const P = styled.p`
 	color: var(--accent-light);
 	font-size: 1.9rem;
 `;
 
-const BoldTitle = styled(motion.h1)`
+const BoldTitle = styled.h1`
 	color: var(--accent-light);
 	text-transform: uppercase;
 	font-weight: 500;
@@ -41,7 +39,7 @@ const BoldTitle = styled(motion.h1)`
 	padding-bottom: 0.8rem;
 `;
 
-const SubTitle = styled(motion.h3)`
+const SubTitle = styled.h3`
 	font-weight: 300;
 	margin-top: -4px;
 	color: var(--color-medium);
@@ -58,21 +56,6 @@ const SlantedSVG = styled.svg`
 `;
 
 const About = () => {
-	// const controls = useAnimation();
-
-	// const handleScroll = isVisible => {
-	// 	if (isVisible) {
-	// 		controls.start(i => ({
-	// 			opacity: 1,
-	// 			y: 0,
-	// 			transition: {
-	// 				delay: i * 0.1,
-	// 				duration: 0.4
-	// 			}
-	// 		}));
-	// 	}
-	// };
-
 	return (
 		<Container>
 			<SlantedSVG
@@ -89,82 +72,29 @@ const About = () => {
 				<Spacer height={'xlarge'} />
 
 				<ContentContainer>
-					<AnimateVisWrapper
-						initial={{ opacity: 0, y: 100 }}
-						animation={{
-							opacity: 1,
-							y: 0,
-							transition: {
-								duration: 0.4
-							}
-						}}
-						partial={true}
-					>
-						<BoldTitle>Austin Ftacnik</BoldTitle>
-					</AnimateVisWrapper>
-					<AnimateVisWrapper
-						initial={{ opacity: 0, y: 100 }}
-						animation={{
-							opacity: 1,
-							y: 0,
-							transition: {
-								delay: 0.1,
-								duration: 0.4
-							}
-						}}
-						partial={true}
-					>
-						<SubTitle>Front-End Developer</SubTitle>
-					</AnimateVisWrapper>
-
+					<BoldTitle>Austin Ftacnik</BoldTitle>
+					<SubTitle>Front-End Developer</SubTitle>
 					<Spacer height={'medium'} />
-					<AnimateVisWrapper
-						initial={{ opacity: 0, y: 100 }}
-						animation={{
-							opacity: 1,
-							y: 0,
-							transition: {
-								delay: 0.2,
-								duration: 0.4
-							}
-						}}
-						partial={true}
-					>
-						<P>
-							Hi, I&apos;m Austin Ftacnik. I&apos;m a software
-							developer that specializes in working on the client
-							side of applications, most often with React.
-							I&apos;m passionate about building creative user
-							interfaces and maintainable applications. When
-							I&apos;m not coding you can find me reading a good
-							book, playing an instrument or hanging out in the
-							gym. Thanks for stopping by, feel free to shoot me a
-							message.
-						</P>
-					</AnimateVisWrapper>
+					<P>
+						Hi, I&apos;m Austin Ftacnik. I&apos;m a software
+						developer that specializes in working on the client side
+						of applications, most often with React. I&apos;m
+						passionate about building creative user interfaces and
+						maintainable applications. When I&apos;m not coding you
+						can find me reading a good book, playing an instrument
+						or hanging out in the gym. Thanks for stopping by, feel
+						free to shoot me a message.
+					</P>
 					<Spacer height={'large'} />
-					<AnimateVisWrapper
-						initial={{ opacity: 0, y: 100 }}
-						animation={{
-							opacity: 1,
-							y: 0,
-							transition: {
-								delay: 0.3,
-								duration: 0.4
-							}
-						}}
-						partial={true}
-					>
-						<Link to='/#contact' aria-label='go to contact form'>
-							<BtnLarge
-								backgroundColor={'var(--accent-light)'}
-								color={'var(--color-dark)'}
-								borderColor={'var(--accent-light)'}
-							>
-								Get in touch
-							</BtnLarge>
-						</Link>
-					</AnimateVisWrapper>
+					<Link to='/#contact' aria-label='go to contact form'>
+						<BtnLarge
+							backgroundColor={'var(--accent-light)'}
+							color={'var(--color-dark)'}
+							borderColor={'var(--accent-light)'}
+						>
+							Get in touch
+						</BtnLarge>
+					</Link>
 					<Spacer height={'xlarge'} />
 				</ContentContainer>
 			</Background>

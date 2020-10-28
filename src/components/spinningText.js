@@ -60,7 +60,7 @@ export default function SpinningText() {
 		<SpinningTextContainer>
 			<motion.div
 				// animate={{ rotate: -scrollPos / 2, x: 0, y: 0, rotateY: scrollPos / 4.5 }}
-				animate={{ rotate: -scrollPos / 3, x: 0, y: 0 }}
+				animate={{ rotate: -scrollPos / 4, x: 0, y: 0 }}
 				style={{ transformOrigin: 'center-center' }}
 			>
 				<SpinSVG
