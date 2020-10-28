@@ -104,6 +104,7 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
+        overscroll-behavior: none;
         font-size: 10px;
     }
 
