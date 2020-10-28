@@ -131,9 +131,11 @@ const About = () => {
 						partial={true}
 					>
 						<P>
-							Hi, I&apos;m Austin Ftacnik. I&apos;m a self-taught,
-							web developer. I specialize in working on the client
-							side of applications, most often with React. When
+							Hi, I&apos;m Austin Ftacnik. I&apos;m a software
+							developer that specializes in working on the client
+							side of applications, most often with React.
+							I&apos;m passionate about building creative user
+							interfaces and maintainable applications. When
 							I&apos;m not coding you can find me reading a good
 							book, playing an instrument or hanging out in the
 							gym. Thanks for stopping by, feel free to shoot me a
