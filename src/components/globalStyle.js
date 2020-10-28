@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
-import { motion } from 'framer-motion';
 
 // special (utility) components
 
@@ -41,7 +40,7 @@ export const MobileTextPadding = css`
 	}
 `;
 
-const Btn = styled(motion.button)`
+const Btn = styled.button`
 	text-transform: uppercase;
 	cursor: pointer;
 	border-radius: var(--circular);

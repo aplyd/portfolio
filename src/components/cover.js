@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import Logo from '../components/logo';
-import SpinningText from '../components/spinningText';
 
 // const Background = styled.div`
 // 	height: 120rem;
@@ -75,7 +74,6 @@ export default function Cover() {
 			<Logo />
 			<MobileSpacer height={'small'} />
 			<ArtContainer>
-				<SpinningText />
 				<ProfileBackground>
 					<ProfileSVG
 						version='1.0'
@@ -113,7 +111,7 @@ export default function Cover() {
 					</ProfileSVG>
 				</ProfileBackground>
 			</ArtContainer>
-			<DesktopSpacer height={'xlarge'} />
+			<DesktopSpacer height={'large'} />
 			<MobileSpacer height={'large'} />
 		</Container>
 		// </Background>

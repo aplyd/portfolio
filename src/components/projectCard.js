@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { GiCircle } from 'react-icons/gi';
 import { Spacer, BtnSmall } from './globalStyle';
-import VisibilitySensor from 'react-visibility-sensor';
-import { useAnimation, motion } from 'framer-motion';
 
 const ProjectContainer = styled.div`
 	width: 100%;
@@ -20,13 +18,13 @@ const Words = styled.div`
 	margin: 0 auto;
 `;
 
-const PTitle = styled(motion.h3)`
+const PTitle = styled.h3`
 	font-weight: 500;
 	color: var(--accent-light);
 	text-transform: uppercase;
 `;
 
-const PAbout = styled(motion.p)`
+const PAbout = styled.p`
 	color: var(--accent-light);
 	line-height: 1.3em;
 	min-height: 70px;
@@ -41,7 +39,7 @@ const LIicon = styled.svg`
 	/* font-weight: 500; */
 `;
 
-const ToolsTitle = styled(motion.p)`
+const ToolsTitle = styled.p`
 	color: var(--accent-light);
 	text-transform: uppercase;
 	padding-bottom: 24px;
@@ -49,7 +47,7 @@ const ToolsTitle = styled(motion.p)`
 	font-weight: bold;
 `;
 
-const Tool = styled(motion.div)`
+const Tool = styled.div`
 	padding: 0 16px 8px 0;
 	font-size: 1.8rem;
 	display: flex;
@@ -60,7 +58,7 @@ const ToolP = styled.p`
 	color: var(--accent-light);
 `;
 
-const BtnsContainer = styled(motion.div)`
+const BtnsContainer = styled.div`
 	max-width: 26rem;
 	margin-left: auto;
 	display: flex;
@@ -68,69 +66,27 @@ const BtnsContainer = styled(motion.div)`
 `;
 
 const ProjectCard = ({ title, about, tools, repo, demo }) => {
-	const controls = useAnimation();
-	const handleScroll = isVisible => {
-		if (isVisible) {
-			controls.start(i => ({
-				opacity: 1,
-				y: 0,
-				transition: {
-					delay: i * 0.1,
-					duration: 0.4
-				}
-			}));
-		}
-	};
 	return (
 		<ProjectContainer>
 			<Words>
-				<VisibilitySensor onChange={handleScroll}>
-					<PTitle
-						animate={controls}
-						custom={0}
-						initial={{ opacity: 0, y: 100 }}
-					>
-						{title}
-					</PTitle>
-				</VisibilitySensor>
+				<PTitle>{title}</PTitle>
 
 				<Spacer height={'medium'} />
-				<PAbout
-					animate={controls}
-					custom={1}
-					initial={{ opacity: 0, y: 100 }}
-				>
-					{about}
-				</PAbout>
+				<PAbout>{about}</PAbout>
 
 				<Spacer height={'medium'} />
-				<ToolsTitle
-					animate={controls}
-					custom={2}
-					initial={{ opacity: 0, y: 100 }}
-				>
-					DEVELOPMENT TOOLS
-				</ToolsTitle>
+				<ToolsTitle>DEVELOPMENT TOOLS</ToolsTitle>
 
 				{tools.map((t, i) => {
 					return (
-						<Tool
-							key={i}
-							animate={controls}
-							custom={3}
-							initial={{ opacity: 0, y: 100 }}
-						>
+						<Tool key={i}>
 							<LIicon as={GiCircle} />
 							<ToolP>{t}</ToolP>
 						</Tool>
 					);
 				})}
 				<Spacer height={'large'} />
-				<BtnsContainer
-					animate={controls}
-					custom={4}
-					initial={{ opacity: 0, y: 100 }}
-				>
+				<BtnsContainer>
 					<a href={repo} target='_blank' rel='noopener noreferrer'>
 						<BtnSmall
 							backgroundColor={'rgba(255, 255, 255, 0)'}
