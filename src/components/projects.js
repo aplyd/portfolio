@@ -42,7 +42,7 @@ export default function Projects() {
 		title: 'Battleship',
 		location: '/battleship',
 		about:
-			'A single player, digital version of the popular board game, Battleship. I learned a lot from this project and plan to improve the UI. Randomly generating ship placement on the board was easily the most difficult part of this project.',
+			'Built in React using class components. The board states were stored as arrays and custom helper functions were used to convert the array indexes into coordinates. Randomly placing computer ships challenged my algorithm and data structure abilities.',
 		tools: ['React', 'Styled Components'],
 		repo: 'https://github.com/aplyd/battleship',
 		demo: 'https://aplyd.github.io/battleship/'
@@ -52,7 +52,7 @@ export default function Projects() {
 		title: "Where's Waldo",
 		location: '/wheres-waldo',
 		about:
-			"A timed, digital version of one of my favorite childhood games, Where's Waldo. The timer is done using Firebase Functions on the backend to prevent users from being able to edit their time.",
+			'An online, timed version of the classic Where’s Waldo books. How long each puzzle took was calculated on the backend using Firebase Functions to prevent users from altering their times. The code determining where users click on an image is reusable and works on images of any aspect ratio.',
 		tools: [
 			'React',
 			'React Router',
@@ -68,7 +68,7 @@ export default function Projects() {
 		title: 'Front Page',
 		location: '/fpotfp',
 		about:
-			'A simplified Reddit clone without subreddits. Users are able to create accounts via email and password, post photos and videos, comment and vote on posts and other comments. Some of the more challenging parts of this project were validating media uploads and displaying posts/comments.',
+			'A Reddit clone using React and Firebase. Users are able to create an account, make posts/ comments and vote on other user posts/comments. Since the number of posts and comments were unknown, I used recursion heavily throughout the project both in mutating data and rendering components. Styled-components were also used to leverage scoped css.',
 		tools: [
 			'React',
 			'React Router',
