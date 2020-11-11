@@ -10,6 +10,7 @@ import Footer from '../components/footer';
 import Contact from '../components/contact';
 import Img from 'gatsby-image';
 import { Spacer, MobileTextPadding } from '../components/globalStyle';
+import { IoLogoGithub } from 'react-icons/io';
 
 const Container = styled.div`
 	width: 100%;
@@ -35,8 +36,27 @@ const IMG = styled(Img)`
 	}
 `;
 
+const EditPostContainer = styled.div`
+	width: 100%;
+	padding-bottom: 1.2rem;
+	&& p {
+		text-align: center;
+		margin: 0 auto;
+		font-size: 1.4rem;
+	}
+	&& a {
+		font-size: 1.4rem;
+	}
+`;
+
+const EditOnGithub = styled(IoLogoGithub)``;
+
 export default function template({ data: { mdx } }) {
 	const featuredImage = mdx.frontmatter.featuredImage.childImageSharp.fluid;
+
+	const editURL = `https://github.com/aplyd/portfolio/tree/master/src/${
+		mdx.fileAbsolutePath.split('/src/')[1]
+	}`;
 
 	return (
 		<MDXProvider components={mdxComponents}>
@@ -50,6 +70,21 @@ export default function template({ data: { mdx } }) {
 					<Spacer height={'large'} />
 					<MDXRenderer>{mdx.body}</MDXRenderer>
 					<Spacer height={'large'} />
+					<EditPostContainer>
+						<p>
+							Find an issue with this post? All my posts are
+							available to edit on{' '}
+							<a
+								rel='noopener noreferrer'
+								target='_blank'
+								href={editURL}
+							>
+								{' '}
+								Github
+								<EditOnGithub />
+							</a>
+						</p>
+					</EditPostContainer>
 				</Container>
 				<Contact />
 				<Footer />
@@ -63,6 +98,7 @@ export const pageQuery = graphql`
 		mdx(id: { eq: $id }) {
 			id
 			body
+			fileAbsolutePath
 			frontmatter {
 				title
 				featuredImage {
