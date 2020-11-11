@@ -47,6 +47,12 @@ const EditPostContainer = styled.div`
 	&& a {
 		font-size: 1.4rem;
 	}
+
+	&& svg {
+		position: relative;
+		top: 2px;
+		margin: 0 2px;
+	}
 `;
 
 const EditOnGithub = styled(IoLogoGithub)``;
@@ -73,16 +79,17 @@ export default function template({ data: { mdx } }) {
 					<EditPostContainer>
 						<p>
 							Find an issue with this post? All my posts are
-							available to edit on{' '}
+							available to{' '}
 							<a
 								rel='noopener noreferrer'
 								target='_blank'
 								href={editURL}
 							>
 								{' '}
-								Github
 								<EditOnGithub />
+								edit on Github
 							</a>
+							.
 						</p>
 					</EditPostContainer>
 				</Container>
