@@ -65,7 +65,7 @@ const ToggleContainer = styled.div`
 `;
 
 const MobileNavBtnContainer = styled(ToggleContainer)`
-	top: 7px;
+	top: 10px;
 	left: 13px;
 `;
 

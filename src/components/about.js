@@ -79,12 +79,12 @@ const About = () => {
 						Hello, my name is Austin Ftacnik. I&apos;m a software
 						developer working on the client side of the web. I
 						specialize in building creative user interfaces and
-						maintanable applications, most often with React. Some
-						would call it passion but I genuinely enjoy writing code
-						and solving problems. With a background in photography,
-						I view coding as an art form and am constantly working
-						towards improving my craft. Thanks for stopping by, feel
-						free to contact me.
+						maintanable applications, most often with React. With a
+						background in photography, I view coding as an art form
+						and am constantly working towards improving my craft.
+						Some call it passion but I genuinely enjoy writing code
+						and solving problems. Thanks for stopping by, feel free
+						to contact me.
 					</P>
 					<Spacer height={'large'} />
 					<Link to='/#contact' aria-label='go to contact form'>

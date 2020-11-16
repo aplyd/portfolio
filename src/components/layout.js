@@ -39,7 +39,7 @@ const Container = styled.div`
 const MobileMenu = styled(motion.div)`
 	background-color: var(--color-dark);
 	position: fixed;
-	height: 100vh;
+	height: calc(100vh - calc(100vh - 100%));
 	width: 100vw;
 	overflow: hidden;
 	z-index: 1010;
