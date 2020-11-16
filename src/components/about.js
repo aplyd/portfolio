@@ -76,14 +76,15 @@ const About = () => {
 					<SubTitle>Front-End Developer</SubTitle>
 					<Spacer height={'medium'} />
 					<P>
-						Hi, I&apos;m Austin Ftacnik. I&apos;m a software
-						developer that specializes in working on the client side
-						of applications, most often with React. I&apos;m
-						passionate about building creative user interfaces and
-						maintainable applications. When I&apos;m not coding you
-						can find me reading a good book, playing an instrument
-						or hanging out in the gym. Thanks for stopping by, feel
-						free to shoot me a message.
+						Hello, my name is Austin Ftacnik. I&apos;m a software
+						developer working on the client side of the web. I
+						specialize in building creative user interfaces and
+						maintanable applications, most often with React. Some
+						would call it passion but I genuinely enjoy writing code
+						and solving problems. With a background in photography,
+						I view coding as an art form and am constantly working
+						towards improving my craft. Thanks for stopping by, feel
+						free to contact me.
 					</P>
 					<Spacer height={'large'} />
 					<Link to='/#contact' aria-label='go to contact form'>
