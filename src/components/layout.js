@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Nav from './nav';
 import { Link } from 'gatsby';
@@ -93,21 +93,16 @@ const Icon = styled.svg`
 
 const Layout = ({ children, homepage }) => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-	// const data = useStaticQuery(graphql`
-	//   query SiteTitleQuery {
-	//     site {
-	//       siteMetadata {
-	//         title
-	//       }
-	//     }
-	//   }
-	// `)
 
 	const toggleMobileMenu = menuIsOpening => {
 		if (menuIsOpening) {
 			setIsMobileMenuOpen(true);
+			document.documentElement.style.overflow = 'hidden';
+			document.body.scroll = 'no';
 		} else {
 			setIsMobileMenuOpen(false);
+			document.documentElement.style.overflow = 'scroll';
+			document.body.scroll = 'yes';
 		}
 	};
 
