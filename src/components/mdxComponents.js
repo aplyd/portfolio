@@ -47,7 +47,9 @@ const P = styled.p`
 
 const A = styled.a`
 	/* ${MobileTextPadding} */
-	color: var(--accent-light);
+	color: #808080;
+	text-decoration: underline;
+
 `;
 
 const UL = styled.ul`
