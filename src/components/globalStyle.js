@@ -71,7 +71,7 @@ export const GlobalStyle = createGlobalStyle`
 
     :root {
         ${'' /* black */}
-        --color-dark: #171717;
+        --color-dark: #0f0f0f;
         ${'' /* light gray */}
         --color-light: #717171;
         ${'' /* medium gray */}
