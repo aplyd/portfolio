@@ -83,8 +83,8 @@ const About = () => {
 						background in photography, I view coding as an art form
 						and am constantly working towards improving my craft.
 						Some call it passion but I genuinely enjoy writing code
-						and solving problems. Thanks for stopping by, feel free
-						to contact me.
+						and solving problems. Got any ideas? Let&apos;s the
+						build the future together.
 					</P>
 					<Spacer height={'large'} />
 					<Link to='/#contact' aria-label='go to contact form'>
