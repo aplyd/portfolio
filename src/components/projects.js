@@ -68,7 +68,7 @@ export default function Projects() {
 		title: 'Front Page',
 		location: '/fpotfp',
 		about:
-			'A Reddit clone using React and Firebase. Users are able to create an account, make posts/ comments and vote on other user posts/comments. Since the number of posts and comments were unknown, I used recursion heavily throughout the project both in mutating data and rendering components. Styled-components were also used to leverage scoped css.',
+			'A Reddit clone using React and Firebase. Users are able to create an account, make posts/comments and vote on other user posts/comments. Since the number of posts and comments were unknown, I used recursion heavily throughout the project both in mutating data and rendering components. Styled-components were also used to leverage scoped css.',
 		tools: [
 			'React',
 			'React Router',
