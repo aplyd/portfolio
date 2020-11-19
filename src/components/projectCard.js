@@ -9,6 +9,13 @@ const ProjectContainer = styled.div`
 	position: relative;
 	max-width: 80rem;
 	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	@media screen and (max-width: 750px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
 `;
 
 const Words = styled.div`
@@ -16,6 +23,10 @@ const Words = styled.div`
 	/* min-height: 532px; */
 	width: 100%;
 	margin: 0 auto;
+	grid-column: 1;
+	@media screen and (max-width: 750px) {
+		grid-row: 2;
+	}
 `;
 
 const PTitle = styled.h3`
@@ -65,6 +76,15 @@ const BtnsContainer = styled.div`
 	justify-content: space-between;
 `;
 
+const ProjectPreviewContainer = styled.div`
+	grid-column: 2;
+	background: blue;
+	@media screen and (max-width: 750px) {
+		grid-column: 1;
+		grid-row: 1;
+	}
+`;
+
 const ProjectCard = ({ title, about, tools, repo, demo }) => {
 	return (
 		<ProjectContainer>
@@ -109,6 +129,7 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 					</a>
 				</BtnsContainer>
 			</Words>
+			<ProjectPreviewContainer></ProjectPreviewContainer>
 		</ProjectContainer>
 	);
 };
