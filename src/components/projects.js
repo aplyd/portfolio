@@ -87,23 +87,22 @@ export default function Projects() {
 				<Spacer height={'xlarge'} />
 				<Spacer height={'xlarge'} />
 				<Spacer height={'xlarge'} />
-				<FrostedBackground id='projects'>
-					<Spacer height={'medium'} />
-					<ProjectCardContainer>
-						<ProjectCard {...fpotfp} />
-					</ProjectCardContainer>
 
-					<Spacer height={'xlarge'} />
-					<ProjectCardContainer>
-						<ProjectCard {...battleship} />
-					</ProjectCardContainer>
+				<Spacer height={'medium'} />
+				<ProjectCardContainer>
+					<ProjectCard {...fpotfp} />
+				</ProjectCardContainer>
 
-					<Spacer height={'xlarge'} />
-					<ProjectCardContainer>
-						<ProjectCard {...wheresWaldo} />
-					</ProjectCardContainer>
-					<Spacer height={'medium'} />
-				</FrostedBackground>
+				<Spacer height={'xlarge'} />
+				<ProjectCardContainer>
+					<ProjectCard {...battleship} />
+				</ProjectCardContainer>
+
+				<Spacer height={'xlarge'} />
+				<ProjectCardContainer>
+					<ProjectCard {...wheresWaldo} />
+				</ProjectCardContainer>
+				<Spacer height={'medium'} />
 				<Spacer height={'xlarge'} />
 			</Container>
 		</Background>
