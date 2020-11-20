@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { GiCircle } from 'react-icons/gi';
 import { Spacer, BtnSmall } from './globalStyle';
+import Image from './image';
 
 const ProjectContainer = styled.div`
 	width: 100%;
@@ -71,7 +72,7 @@ const ToolP = styled.p`
 
 const BtnsContainer = styled.div`
 	max-width: 26rem;
-	margin-left: auto;
+	/* margin-left: auto; */
 	display: flex;
 	justify-content: space-between;
 `;
@@ -85,7 +86,7 @@ const ProjectPreviewContainer = styled.div`
 	}
 `;
 
-const ProjectCard = ({ title, about, tools, repo, demo }) => {
+const ProjectCard = ({ title, about, tools, repo, demo, image }) => {
 	return (
 		<ProjectContainer>
 			<Words>
@@ -129,7 +130,10 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 					</a>
 				</BtnsContainer>
 			</Words>
-			<ProjectPreviewContainer></ProjectPreviewContainer>
+			<ProjectPreviewContainer>
+				{/* <Image image={image} /> */}
+				{console.log(image)}
+			</ProjectPreviewContainer>
 		</ProjectContainer>
 	);
 };

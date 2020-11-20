@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
+import FPOTFPpreview from '../images/FPOTFP_preview.jpg';
 
 const Background = styled.div`
 	width: 100%;
@@ -44,6 +45,7 @@ export default function Projects() {
 		about:
 			'Built in React using class components. The board states were stored as arrays and custom helper functions were used to convert the array indexes into coordinates. Randomly placing computer ships challenged my algorithm and data structure abilities.',
 		tools: ['React', 'Styled Components'],
+		image: '',
 		repo: 'https://github.com/aplyd/battleship',
 		demo: 'https://aplyd.github.io/battleship/'
 	};
@@ -60,6 +62,7 @@ export default function Projects() {
 			'Firebase Firestore',
 			'Firebase Functions'
 		],
+		image: '',
 		repo: 'https://github.com/aplyd/wheres-waldo',
 		demo: 'https://aplyd.github.io/wheres-waldo/'
 	};
