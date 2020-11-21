@@ -1,17 +1,36 @@
-import React from 'react';
-import Img from 'gatsby-image';
 import PropType from 'prop-types';
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 
-export default function Image({ image, ...theRest }) {
-	if (!image) {
-		return null;
-	}
-	if (image.extension === 'gif') {
-		return <img src={image.publicURL} {...theRest} />;
-	}
-	return <Img fluid={image.childImageSharp.fluid} {...theRest} />;
-}
+const Image = ({ fileName, alt }) => {
+	const { allImageSharp } = useStaticQuery(graphql`
+		query {
+			allImageSharp {
+				nodes {
+					fluid(maxWidth: 1600) {
+						originalName
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
+			}
+		}
+	`);
+
+	const fluid = allImageSharp.nodes.find(
+		n => n.fluid.originalName === fileName
+	).fluid;
+
+	return (
+		<figure>
+			<Img fluid={fluid} alt={alt} />
+		</figure>
+	);
+};
+
+export default Image;
 
 Image.propTypes = {
-	image: PropType.any
+	fileName: PropType.string,
+	alt: PropType.string
 };

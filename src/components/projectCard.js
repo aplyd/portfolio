@@ -5,21 +5,22 @@ import { GiCircle } from 'react-icons/gi';
 import { Spacer, BtnSmall } from './globalStyle';
 import Image from './image';
 
-const ProjectContainer = styled.div`
+const Container = styled.div`
+	border: solid 1px white;
 	width: 100%;
+	max-width: 100%;
 	position: relative;
-	max-width: 80rem;
-	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
-	@media screen and (max-width: 750px) {
+	grid-template-columns: 30% 70%;
+	grid-template-rows: auto 1fr;
+	/* @media screen and (max-width: 750px) {
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr;
-	}
+		grid-template-rows: 40px 1fr 1fr;
+	} */
 `;
 
 const Words = styled.div`
+	background: green;
 	height: 100%;
 	/* min-height: 532px; */
 	width: 100%;
@@ -30,10 +31,14 @@ const Words = styled.div`
 	}
 `;
 
-const PTitle = styled.h3`
-	font-weight: 500;
-	color: var(--accent-light);
-	text-transform: uppercase;
+const Title = styled.div`
+	background: blue;
+	&& > h3 {
+		padding-top: 0.6rem;
+		font-weight: 500;
+		color: var(--accent-light);
+		text-transform: uppercase;
+	}
 `;
 
 const PAbout = styled.p`
@@ -78,20 +83,24 @@ const BtnsContainer = styled.div`
 `;
 
 const ProjectPreviewContainer = styled.div`
+	background: red;
 	grid-column: 2;
-	background: blue;
-	@media screen and (max-width: 750px) {
+	grid-row: 1 / 3;
+	/* @media screen and (max-width: 750px) {
 		grid-column: 1;
 		grid-row: 1;
-	}
+	} */
 `;
+
+const PreviewImage = styled(Image)``;
 
 const ProjectCard = ({ title, about, tools, repo, demo, image }) => {
 	return (
-		<ProjectContainer>
+		<Container>
+			<Title>
+				<h3>{title}</h3>
+			</Title>
 			<Words>
-				<PTitle>{title}</PTitle>
-
 				<Spacer height={'medium'} />
 				<PAbout>{about}</PAbout>
 
@@ -131,10 +140,9 @@ const ProjectCard = ({ title, about, tools, repo, demo, image }) => {
 				</BtnsContainer>
 			</Words>
 			<ProjectPreviewContainer>
-				{/* <Image image={image} /> */}
-				{console.log(image)}
+				<PreviewImage fileName='FPOTFP_preview.png' />
 			</ProjectPreviewContainer>
-		</ProjectContainer>
+		</Container>
 	);
 };
 

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Spacer } from './globalStyle';
 import ProjectCard from './projectCard';
-import FPOTFPpreview from '../images/FPOTFP_preview.jpg';
 
 const Background = styled.div`
 	width: 100%;
@@ -13,7 +12,8 @@ const Container = styled.div`
 	position: relative;
 	margin: -260px auto 0 auto;
 	width: 100%;
-	max-width: 80rem;
+	padding: 0 60px;
+	/* max-width: 80rem; */
 	@media screen and (max-width: 816px) {
 		padding: 0 16px;
 	}
@@ -22,19 +22,7 @@ const Container = styled.div`
 	}
 `;
 
-const FrostedBackground = styled.div`
-	background-color: rgba(255, 255, 255, 0.15);
-	backdrop-filter: blur(5px);
-	border-radius: var(--circular);
-	padding: 24px;
-	overflow: hidden;
-	@media screen and (max-width: 485px) {
-		padding: 24px 16px;
-	}
-`;
-
 const ProjectCardContainer = styled.div`
-	margin: 0 auto;
 	width: 100%;
 `;
 
@@ -79,7 +67,7 @@ export default function Projects() {
 			'Firebase Firestore',
 			'Firebase Authentication'
 		],
-		image: 'image',
+		image: 'FPOTFP_preview.png',
 		repo: 'https://github.com/aplyd/front-page-of-the-front-page',
 		demo: 'https://aplyd.github.io/front-page-of-the-front-page/'
 	};
