@@ -26,6 +26,9 @@ const Words = styled.div`
 	@media screen and (max-width: 1024px) {
 		grid-row: 3;
 	}
+	@media screen and (max-width: 485px) {
+		padding: 0 16px;
+	}
 `;
 
 const Title = styled.div`
@@ -49,7 +52,6 @@ const LIicon = styled.svg`
 	top: 4px;
 	margin-right: 4px;
 	margin-left: 24px;
-	/* font-weight: 500; */
 `;
 
 const ToolsTitle = styled.p`
@@ -136,7 +138,7 @@ const ProjectCard = ({ title, about, tools, repo, demo, image }) => {
 			</Words>
 			<ProjectPreviewContainer>
 				{/* TODO - needs to be changed to `image` */}
-				<PreviewImage fileName='FPOTFP_preview.png' />
+				<PreviewImage fileName={image} />
 			</ProjectPreviewContainer>
 		</Container>
 	);
