@@ -3,25 +3,41 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { GiCircle } from 'react-icons/gi';
 import { Spacer, BtnSmall } from './globalStyle';
+import Image from './image';
 
-const ProjectContainer = styled.div`
+const Container = styled.div`
 	width: 100%;
+	max-width: 100%;
 	position: relative;
-	max-width: 80rem;
-	margin: 0 auto;
+	display: grid;
+	grid-template-columns: minmax(350px, 30%) minmax(auto, 70%);
+	grid-template-rows: auto 1fr;
+	@media screen and (max-width: 1024px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 60px auto 1fr;
+	}
 `;
 
 const Words = styled.div`
 	height: 100%;
-	/* min-height: 532px; */
 	width: 100%;
 	margin: 0 auto;
+	grid-column: 1;
+	@media screen and (max-width: 1024px) {
+		grid-row: 3;
+	}
+	@media screen and (max-width: 485px) {
+		padding: 0 16px;
+	}
 `;
 
-const PTitle = styled.h3`
-	font-weight: 500;
-	color: var(--accent-light);
-	text-transform: uppercase;
+const Title = styled.div`
+	&& > h3 {
+		padding-top: 0.2rem;
+		font-weight: 500;
+		color: var(--accent-light);
+		text-transform: uppercase;
+	}
 `;
 
 const PAbout = styled.p`
@@ -36,7 +52,6 @@ const LIicon = styled.svg`
 	top: 4px;
 	margin-right: 4px;
 	margin-left: 24px;
-	/* font-weight: 500; */
 `;
 
 const ToolsTitle = styled.p`
@@ -60,17 +75,29 @@ const ToolP = styled.p`
 
 const BtnsContainer = styled.div`
 	max-width: 26rem;
-	margin-left: auto;
+	/* margin-left: auto; */
 	display: flex;
 	justify-content: space-between;
 `;
 
-const ProjectCard = ({ title, about, tools, repo, demo }) => {
-	return (
-		<ProjectContainer>
-			<Words>
-				<PTitle>{title}</PTitle>
+const ProjectPreviewContainer = styled.div`
+	grid-column: 2;
+	grid-row: 1 / 3;
+	@media screen and (max-width: 1024px) {
+		grid-column: 1;
+		grid-row: 2;
+	}
+`;
 
+const PreviewImage = styled(Image)``;
+
+const ProjectCard = ({ title, about, tools, repo, demo, image }) => {
+	return (
+		<Container>
+			<Title>
+				<h3>{title}</h3>
+			</Title>
+			<Words>
 				<Spacer height={'medium'} />
 				<PAbout>{about}</PAbout>
 
@@ -109,7 +136,11 @@ const ProjectCard = ({ title, about, tools, repo, demo }) => {
 					</a>
 				</BtnsContainer>
 			</Words>
-		</ProjectContainer>
+			<ProjectPreviewContainer>
+				{/* TODO - needs to be changed to `image` */}
+				<PreviewImage fileName={image} />
+			</ProjectPreviewContainer>
+		</Container>
 	);
 };
 

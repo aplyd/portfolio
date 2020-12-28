@@ -12,7 +12,8 @@ const Container = styled.div`
 	position: relative;
 	margin: -260px auto 0 auto;
 	width: 100%;
-	max-width: 80rem;
+	padding: 0 60px;
+	/* max-width: 80rem; */
 	@media screen and (max-width: 816px) {
 		padding: 0 16px;
 	}
@@ -21,19 +22,7 @@ const Container = styled.div`
 	}
 `;
 
-const FrostedBackground = styled.div`
-	background-color: rgba(255, 255, 255, 0.15);
-	backdrop-filter: blur(5px);
-	border-radius: var(--circular);
-	padding: 24px;
-	overflow: hidden;
-	@media screen and (max-width: 485px) {
-		padding: 24px 16px;
-	}
-`;
-
 const ProjectCardContainer = styled.div`
-	margin: 0 auto;
 	width: 100%;
 `;
 
@@ -44,6 +33,7 @@ export default function Projects() {
 		about:
 			'Built in React using class components. The board states were stored as arrays and custom helper functions were used to convert the array indexes into coordinates. Randomly placing computer ships challenged my algorithm and data structure abilities.',
 		tools: ['React', 'Styled Components'],
+		image: 'battleship_preview.png',
 		repo: 'https://github.com/aplyd/battleship',
 		demo: 'https://aplyd.github.io/battleship/'
 	};
@@ -60,6 +50,7 @@ export default function Projects() {
 			'Firebase Firestore',
 			'Firebase Functions'
 		],
+		image: 'wheresWaldo_preview.png',
 		repo: 'https://github.com/aplyd/wheres-waldo',
 		demo: 'https://aplyd.github.io/wheres-waldo/'
 	};
@@ -76,7 +67,7 @@ export default function Projects() {
 			'Firebase Firestore',
 			'Firebase Authentication'
 		],
-		image: 'image',
+		image: 'FPOTFP_preview.png',
 		repo: 'https://github.com/aplyd/front-page-of-the-front-page',
 		demo: 'https://aplyd.github.io/front-page-of-the-front-page/'
 	};
@@ -87,23 +78,24 @@ export default function Projects() {
 				<Spacer height={'xlarge'} />
 				<Spacer height={'xlarge'} />
 				<Spacer height={'xlarge'} />
-				<FrostedBackground id='projects'>
-					<Spacer height={'medium'} />
-					<ProjectCardContainer>
-						<ProjectCard {...fpotfp} />
-					</ProjectCardContainer>
 
-					<Spacer height={'xlarge'} />
-					<ProjectCardContainer>
-						<ProjectCard {...battleship} />
-					</ProjectCardContainer>
+				<Spacer height={'medium'} />
+				<ProjectCardContainer>
+					<ProjectCard {...fpotfp} />
+				</ProjectCardContainer>
 
-					<Spacer height={'xlarge'} />
-					<ProjectCardContainer>
-						<ProjectCard {...wheresWaldo} />
-					</ProjectCardContainer>
-					<Spacer height={'medium'} />
-				</FrostedBackground>
+				<Spacer height={'xlarge'} />
+				<Spacer height={'medium'} />
+				<ProjectCardContainer>
+					<ProjectCard {...battleship} />
+				</ProjectCardContainer>
+
+				<Spacer height={'xlarge'} />
+				<Spacer height={'medium'} />
+				<ProjectCardContainer>
+					<ProjectCard {...wheresWaldo} />
+				</ProjectCardContainer>
+				<Spacer height={'medium'} />
 				<Spacer height={'xlarge'} />
 			</Container>
 		</Background>
