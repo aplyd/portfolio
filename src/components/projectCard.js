@@ -6,35 +6,31 @@ import { Spacer, BtnSmall } from './globalStyle';
 import Image from './image';
 
 const Container = styled.div`
-	border: solid 1px white;
 	width: 100%;
 	max-width: 100%;
 	position: relative;
 	display: grid;
-	grid-template-columns: 30% 70%;
+	grid-template-columns: minmax(350px, 30%) minmax(auto, 70%);
 	grid-template-rows: auto 1fr;
-	/* @media screen and (max-width: 750px) {
+	@media screen and (max-width: 1024px) {
 		grid-template-columns: 1fr;
-		grid-template-rows: 40px 1fr 1fr;
-	} */
+		grid-template-rows: 60px auto 1fr;
+	}
 `;
 
 const Words = styled.div`
-	background: green;
 	height: 100%;
-	/* min-height: 532px; */
 	width: 100%;
 	margin: 0 auto;
 	grid-column: 1;
-	@media screen and (max-width: 750px) {
-		grid-row: 2;
+	@media screen and (max-width: 1024px) {
+		grid-row: 3;
 	}
 `;
 
 const Title = styled.div`
-	background: blue;
 	&& > h3 {
-		padding-top: 0.6rem;
+		padding-top: 0.2rem;
 		font-weight: 500;
 		color: var(--accent-light);
 		text-transform: uppercase;
@@ -83,13 +79,12 @@ const BtnsContainer = styled.div`
 `;
 
 const ProjectPreviewContainer = styled.div`
-	background: red;
 	grid-column: 2;
 	grid-row: 1 / 3;
-	/* @media screen and (max-width: 750px) {
+	@media screen and (max-width: 1024px) {
 		grid-column: 1;
-		grid-row: 1;
-	} */
+		grid-row: 2;
+	}
 `;
 
 const PreviewImage = styled(Image)``;
@@ -140,6 +135,7 @@ const ProjectCard = ({ title, about, tools, repo, demo, image }) => {
 				</BtnsContainer>
 			</Words>
 			<ProjectPreviewContainer>
+				{/* TODO - needs to be changed to `image` */}
 				<PreviewImage fileName='FPOTFP_preview.png' />
 			</ProjectPreviewContainer>
 		</Container>
