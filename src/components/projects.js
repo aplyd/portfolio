@@ -85,11 +85,13 @@ export default function Projects() {
 				</ProjectCardContainer>
 
 				<Spacer height={'xlarge'} />
+				<Spacer height={'medium'} />
 				<ProjectCardContainer>
 					<ProjectCard {...battleship} />
 				</ProjectCardContainer>
 
 				<Spacer height={'xlarge'} />
+				<Spacer height={'medium'} />
 				<ProjectCardContainer>
 					<ProjectCard {...wheresWaldo} />
 				</ProjectCardContainer>
