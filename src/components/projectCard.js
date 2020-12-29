@@ -137,8 +137,9 @@ const ProjectCard = ({ title, about, tools, repo, demo, image }) => {
 				</BtnsContainer>
 			</Words>
 			<ProjectPreviewContainer>
-				{/* TODO - needs to be changed to `image` */}
-				<PreviewImage fileName={image} />
+				<a href={demo} target='_blank' rel='noopener noreferrer'>
+					<PreviewImage fileName={image} />
+				</a>
 			</ProjectPreviewContainer>
 		</Container>
 	);
