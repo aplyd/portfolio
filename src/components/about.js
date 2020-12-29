@@ -83,7 +83,7 @@ const About = () => {
 						background in photography, I view coding as an art form
 						and am constantly working towards improving my craft.
 						Some call it passion but I genuinely enjoy writing code
-						and solving problems. Got any ideas? Lets the build the
+						and solving problems. Got any ideas? Let's the build the
 						future together.
 					</P>
 					<Spacer height={'large'} />
