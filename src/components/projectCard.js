@@ -38,6 +38,9 @@ const Title = styled.div`
 		color: var(--accent-light);
 		text-transform: uppercase;
 	}
+	@media screen and (max-width: 485px) {
+		padding: 0 16px;
+	}
 `;
 
 const PAbout = styled.p`
@@ -112,7 +115,8 @@ const ProjectCard = ({ title, about, tools, repo, demo, image }) => {
 						</Tool>
 					);
 				})}
-				<Spacer height={'large'} />
+				<Spacer height={'medium'} />
+				<Spacer height={'small'} />
 				<BtnsContainer>
 					<a href={repo} target='_blank' rel='noopener noreferrer'>
 						<BtnSmall
