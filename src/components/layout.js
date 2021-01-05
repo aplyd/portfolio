@@ -153,7 +153,7 @@ const Layout = ({ children, homepage }) => {
 									Projects
 								</MenuItem>
 							</Link>
-							<Link to='/blog#'>
+							{/* <Link to='/blog#'>
 								<MenuItem
 									onClick={() => toggleMobileMenu()}
 									initial={{ opacity: 0, y: 100 }}
@@ -162,7 +162,7 @@ const Layout = ({ children, homepage }) => {
 								>
 									Blog
 								</MenuItem>
-							</Link>
+							</Link> */}
 							<Link to='/#contact'>
 								<MenuItem
 									onClick={() => toggleMobileMenu()}

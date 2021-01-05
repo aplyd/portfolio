@@ -122,8 +122,7 @@ export default function Nav({ toggleMobileMenu, homepage }) {
 	const navItems = [
 		{ title: 'home', link: '/#' },
 		{ title: 'projects', shortcut: '#projects' },
-		{ title: 'contact', shortcut: '#contact' },
-		{ title: 'blog', link: '/blog#' }
+		{ title: 'contact', shortcut: '#contact' }
 	];
 
 	const desktopNav = () => {
